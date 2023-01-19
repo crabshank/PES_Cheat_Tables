@@ -57,7 +57,7 @@ PES2021.exe.trace+23BB918: 4C 8D 3C 42                 - lea r15,[rdx+rax*2]
 PES2021.exe.trace+23BB91C: 33 C0                       - xor eax,eax
 // ---------- INJECTING HERE ----------
 PES2021.exe.trace+23BB91E: F3 41 0F 11 5C 24 0C        - movss [r12+0C],xmm3
-// ---------- DONE INJECT_2ING  ----------
+// ---------- DONE INJECTING  ----------
 PES2021.exe.trace+23BB925: 48 89 44 24 30              - mov [rsp+30],rax
 PES2021.exe.trace+23BB92A: 40 84 F6                    - test sil,sil
 PES2021.exe.trace+23BB92D: B8 20 00 00 00              - mov eax,00000020
@@ -135,7 +135,7 @@ PES2021.exe.trace+1AF6A9C: F3 0F 59 0D C8 AB AA 00  - mulss xmm1,[PES2021.exe.rd
 PES2021.exe.trace+1AF6AA4: 48 8B 40 10              - mov rax,[rax+10]
 // ---------- INJECTING HERE ----------
 PES2021.exe.trace+1AF6AA8: F3 0F 11 48 44           - movss [rax+44],xmm1
-// ---------- DONE INJECT_5ING  ----------
+// ---------- DONE INJECTING  ----------
 PES2021.exe.trace+1AF6AAD: C3                       - ret
 PES2021.exe.trace+1AF6AAE: CC                       - int 3
 PES2021.exe.trace+1AF6AAF: CC                       - int 3
