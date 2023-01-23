@@ -18,7 +18,7 @@ for i=1, #offsets do
 end
 {$asm}
 
-aobscanmodule(INJECT_sb,PES2021.exe,F3 41 0F 11 5C 24 0C) // should be unique
+aobscanmodule(INJECT_sb,PES2021.exe,F3 41 0F 11 5C 24 0C 48 89 44 24 30) // should be unique
 alloc(newmem,$1000,INJECT_sb)
 
 label(code)
@@ -47,7 +47,7 @@ unregistersymbol(mult_sb)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECT_sbION POINT: PES2021.exe.trace+23BB91E
+// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+23BB91E
 
 PES2021.exe.trace+23BB8E2: 0F B6 B4 24 F0 00 00 00     - movzx esi,byte ptr [rsp+000000F0]
 PES2021.exe.trace+23BB8EA: 48 89 BC 24 98 00 00 00     - mov [rsp+00000098],rdi
@@ -102,7 +102,7 @@ end
 -- mulps xmm,[mult_la]
 {$asm}
 
-aobscanmodule(INJECT_la,PES2021.exe,0F 28 05 92 21 21 00) // should be unique
+aobscanmodule(INJECT_la,PES2021.exe,48 89 44 24 20 C7 44 24 28 FF FF FF FF 89 44 24 2C) // should be unique
 alloc(newmem,$1000,INJECT_la)
 
 label(code)
@@ -115,7 +115,7 @@ code:
   mulps xmm0,[mult_la]
   jmp return
 
-INJECT_la:
+INJECT_la-7:
   jmp newmem
   nop 2
 return:
@@ -123,7 +123,7 @@ registersymbol(INJECT_la)
 
 [DISABLE]
 
-INJECT_la:
+INJECT_la-7:
   db 0F 28 05 92 21 21 00
 
 unregistersymbol(INJECT_la)
@@ -131,7 +131,7 @@ unregisterSymbol(mult_la)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECT_laION POINT: PES2021.exe.trace+23B9D87
+// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+23B9D87
 
 PES2021.exe.trace+23B9D5F: 89 44 24 20              - mov [rsp+20],eax
 PES2021.exe.trace+23B9D63: C7 44 24 24 FF FF FF FF  - mov [rsp+24],FFFFFFFF
@@ -186,7 +186,7 @@ end
 -- mulps xmm,[mult_ra]
 {$asm}
 
-aobscanmodule(INJECT_ra,PES2021.exe,0F 28 35 BE 5F 1E 00) // should be unique
+aobscanmodule(INJECT_ra,PES2021.exe,41 0F 28 C0 48 8B BC 24 88 00 00 00 41 8B CB) // should be unique
 alloc(newmem,$1000,INJECT_ra)
 
 label(code)
@@ -199,7 +199,7 @@ code:
    mulps xmm6,[mult_ra]
   jmp return
 
-INJECT_ra:
+INJECT_ra-07:
   jmp newmem
   nop 2
 return:
@@ -207,7 +207,7 @@ registersymbol(INJECT_ra)
 
 [DISABLE]
 
-INJECT_ra:
+INJECT_ra-07:
   db 0F 28 35 BE 5F 1E 00
 
 unregistersymbol(INJECT_ra)
@@ -215,7 +215,7 @@ unregistersymbol(mult_ra)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECT_raION POINT: PES2021.exe.trace+23B9C8B
+// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+23B9C8B
 
 PES2021.exe.trace+23B9C62: 48 8B AC 24 A8 00 00 00  - mov rbp,[rsp+000000A8]
 PES2021.exe.trace+23B9C6A: 41 8D 43 03              - lea eax,[r11+03]
@@ -276,7 +276,7 @@ for i=1, #offsets do
 end
 {$asm}
 
-aobscanmodule(INJECT_ld,PES2021.exe,0F 28 05 F0 21 21 00) // should be unique
+aobscanmodule(INJECT_ld,PES2021.exe,FF FF FF FF 48 89 44 24 24 89 44 24 2C 0F 28 4C 24 20 0F 54 C1) // should be unique
 alloc(newmem,$1000,INJECT_ld)
 
 label(code)
@@ -289,7 +289,7 @@ code:
   mulps xmm0,[mult_ld]
   jmp return
 
-INJECT_ld:
+INJECT_ld-B:
   jmp newmem
   nop 2
 return:
@@ -297,7 +297,7 @@ registersymbol(INJECT_ld)
 
 [DISABLE]
 
-INJECT_ld:
+INJECT_ld-B:
   db 0F 28 05 F0 21 21 00
 
 unregistersymbol(INJECT_ld)
@@ -305,7 +305,7 @@ unregistersymbol(mult_ld)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECT_ldION POINT: PES2021.exe.trace+23B9D29
+// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+23B9D29
 
 PES2021.exe.trace+23B9D05: 0F C6 CA AA              - shufps xmm1,xmm2,-56
 PES2021.exe.trace+23B9D09: 0F C6 C2 55              - shufps xmm0,xmm2,55
@@ -359,7 +359,7 @@ for i=1, #offsets do
 end
 {$asm}
 
-aobscanmodule(INJECT,PES2021.exe,41 0F 29 07 48 8B 4C 24 30) // should be unique
+aobscanmodule(INJECT,PES2021.exe,0F 28 44 24 20 41 0F 29 07 48 8B 4C 24 30) // should be unique
 
 alloc(newmem,$1000,INJECT)
 
@@ -374,7 +374,7 @@ code:
   mov rcx,[rsp+30]
   jmp return
 
-INJECT:
+INJECT+5:
   jmp newmem
   nop 4
 return:
@@ -382,7 +382,7 @@ registersymbol(INJECT)
 
 [DISABLE]
 
-INJECT:
+INJECT+5:
   db 41 0F 29 07 48 8B 4C 24 30
 
 unregistersymbol(INJECT)
@@ -455,7 +455,7 @@ registerSymbol(vn, mult)
 writeFloat(vn, 1)
 {$asm}
 
-aobscanmodule(INJECT_5,PES2021.exe,F3 0F 11 48 44 C3) // should be unique
+aobscanmodule(INJECT_5,PES2021.exe,48 8B 40 10 F3 0F 11 48 44) // should be unique
 alloc(newmem,$1000,INJECT_5)
 label(code)
 label(return)
@@ -467,14 +467,14 @@ code:
   movss [rax+44],xmm1
   jmp return
 
-INJECT_5:
+INJECT_5+4:
   jmp newmem
 return:
 registersymbol(INJECT_5)
 
 [DISABLE]
 
-INJECT_5:
+INJECT_5+4:
   db F3 0F 11 48 44
 
 unregistersymbol(INJECT_5)
@@ -482,7 +482,7 @@ unregistersymbol(mult_5)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECT_5ION POINT: PES2021.exe.trace+1AF6AA8
+// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+1AF6AA8
 
 PES2021.exe.trace+1AF6A8B: CC                       - int 3
 PES2021.exe.trace+1AF6A8C: CC                       - int 3
@@ -533,7 +533,7 @@ registerSymbol(vn, mult)
 writeFloat(vn, 0.9964)
 
 {$asm}
-aobscanmodule(INJECT_2,PES2021.exe,F3 41 0F 11 5C 24 0C) // should be unique
+aobscanmodule(INJECT_2,PES2021.exe,F3 41 0F 11 5C 24 0C 48 89 44 24 30) // should be unique
 alloc(newmem,$1000,INJECT_2)
 label(code)
 label(return)
@@ -599,4 +599,5 @@ PES2021.exe.trace+23BB94E: 41 0F 2F 5C 24 08           - comiss xmm3,[r12+08]
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
-</CheatTable>
+  <UserdefinedSymbols/>
+  </CheatTable>
