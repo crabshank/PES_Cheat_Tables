@@ -7,20 +7,16 @@
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-{$lua}
---if syntaxcheck then return end
-local vn='mult_la'
-local mult = allocateMemory(16)
-registerSymbol(vn, mult)
-local offsets={'0','4','8','C'}
-for i=1, #offsets do
-    writeFloat(vn .."+"..offsets[i], 1)
-end
--- mulps xmm,[mult_la]
-{$asm}
-
 aobscanmodule(INJECT_la,PES2021.exe,48 89 44 24 20 C7 44 24 28 FF FF FF FF 89 44 24 2C) // should be unique
 alloc(newmem,$1000,INJECT_la)
+
+alloc(mult_la, 16, INJECT_la)
+registersymbol(mult_la)
+mult_la:
+dd (float)1
+dd (float)1
+dd (float)1
+dd (float)1
 
 label(code)
 label(return)
@@ -91,20 +87,18 @@ PES2021.exe.trace+23B9DB8: 0F 28 C7                 - movaps xmm0,xmm7
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-{$lua}
---if syntaxcheck then return end
-local vn='mult_ra'
-local mult = allocateMemory(16)
-registerSymbol(vn, mult)
-local offsets={'0','4','8','C'}
-for i=1, #offsets do
-    writeFloat(vn .."+"..offsets[i], 1)
-end
--- mulps xmm,[mult_ra]
-{$asm}
+
 
 aobscanmodule(INJECT_ra,PES2021.exe,41 0F 28 C0 48 8B BC 24 88 00 00 00 41 8B CB) // should be unique
 alloc(newmem,$1000,INJECT_ra)
+
+alloc(mult_ra, 16, INJECT_ra)
+registersymbol(mult_ra)
+mult_ra:
+dd (float)1
+dd (float)1
+dd (float)1
+dd (float)1
 
 label(code)
 label(return)
@@ -182,19 +176,17 @@ PES2021.exe.trace+23B9CBA: 66 0F 6E D2              - movd xmm2,edx
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-{$lua}
---if syntaxcheck then return end
-local vn='mult_ld'
-local mult = allocateMemory(16)
-registerSymbol(vn, mult)
-local offsets={'0','4','8','C'}
-for i=1, #offsets do
-    writeFloat(vn .."+"..offsets[i], 1)
-end
-{$asm}
 
-aobscanmodule(INJECT_ld,PES2021.exe,FF FF FF FF 48 89 44 24 24 89 44 24 2C 0F 28 4C 24 20 0F 54 C1) // should be unique
-alloc(newmem,$1000,INJECT_ld)
+aobscanmodule(INJECT_d,PES2021.exe,FF FF FF FF 48 89 44 24 24 89 44 24 2C 0F 28 4C 24 20 0F 54 C1) // should be unique
+alloc(newmem,$1000,INJECT_d)
+
+alloc(mult_d, 16, INJECT_d)
+registersymbol(mult_d)
+mult_d:
+dd (float)1
+dd (float)1
+dd (float)1
+dd (float)1
 
 label(code)
 label(return)
@@ -203,22 +195,22 @@ newmem:
 
 code:
   movaps xmm0,[PES2021.exe+25CCF20]
-  mulps xmm0,[mult_ld]
+  mulps xmm0,[mult_d]
   jmp return
 
-INJECT_ld-B:
+INJECT_d-B:
   jmp newmem
   nop 2
 return:
-registersymbol(INJECT_ld)
+registersymbol(INJECT_d)
 
 [DISABLE]
 
-INJECT_ld-B:
+INJECT_d-B:
   db 0F 28 05 F0 21 21 00
 
-unregistersymbol(INJECT_ld)
-unregistersymbol(mult_ld)
+unregistersymbol(INJECT_d)
+unregistersymbol(mult_d)
 dealloc(newmem)
 
 {
@@ -265,20 +257,18 @@ PES2021.exe.trace+23B9D56: 74 29                    - je PES2021.exe.trace+23B9D
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-{$lua}
---if syntaxcheck then return end
-local vn='mult_1'
-local mult = allocateMemory(16)
-registerSymbol(vn, mult)
-local offsets={'0','4','8','C'}
-for i=1, #offsets do
-    writeFloat(vn .."+"..offsets[i], 1)
-end
-{$asm}
 
 aobscanmodule(INJECT,PES2021.exe,0F 28 44 24 20 41 0F 29 07 48 8B 4C 24 30) // should be unique
 
 alloc(newmem,$1000,INJECT)
+
+alloc(mult_1, 16, INJECT)
+registersymbol(mult_1)
+mult_1:
+dd (float)1
+dd (float)1
+dd (float)1
+dd (float)1
 
 label(code)
 label(return)
@@ -364,16 +354,15 @@ PES2021.exe.trace+23B9E1B: C3                    - ret
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-{$lua}
---if syntaxcheck then return end
-local vn='mult_5'
-local mult = allocateMemory(4)
-registerSymbol(vn, mult)
-writeFloat(vn, 1)
-{$asm}
 
 aobscanmodule(INJECT_5,PES2021.exe,48 8B 40 10 F3 0F 11 48 44) // should be unique
 alloc(newmem,$1000,INJECT_5)
+
+alloc(mult_5, 4, INJECT_5)
+registersymbol(mult_5)
+mult_5:
+dd (float)1
+
 label(code)
 label(return)
 
@@ -442,16 +431,17 @@ PES2021.exe.trace+1AF6AB9: 41 55                    - push r13
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-{$lua}
---if syntaxcheck then return end
-local vn='mult_2'
-local mult = allocateMemory(4)
-registerSymbol(vn, mult)
-writeFloat(vn, 0.9964)
-
-{$asm}
 aobscanmodule(INJECT_2,PES2021.exe,F3 41 0F 11 5C 24 0C 48 89 44 24 30) // should be unique
 alloc(newmem,$1000,INJECT_2)
+
+alloc(mult_2, 16, INJECT_2)
+registersymbol(mult_2)
+mult_2:
+dd (float)0.9964
+dd (float)1
+dd (float)1
+dd (float)1
+
 label(code)
 label(return)
 
