@@ -2,48 +2,52 @@
 <CheatTable CheatEngineTableVersion="42">
   <CheatEntries>
     <CheatEntry>
-      <ID>21</ID>
-      <Description>"Pre-kick rush onto ball"</Description>
+      <ID>41</ID>
+      <Description>"Step bounce"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
+{$lua}
+--if syntaxcheck then return end
+local vn='mult_sb'
+local mult = allocateMemory(16)
+registerSymbol(vn, mult)
+local offsets={'0','4','8','C'}
+for i=1, #offsets do
+    writeFloat(vn .."+"..offsets[i], 1)
+end
+{$asm}
 
-aobscanmodule(INJECT_2,PES2021.exe,F3 41 0F 11 5C 24 0C) // should be unique
-alloc(newmem,$1000,INJECT_2)
-alloc(mult_2, 16, INJECT_2)
-registersymbol(mult_2)
-mult_2:
-dd (float)0.9964
-dd (float)1
-dd (float)1
-dd (float)1
+aobscanmodule(INJECT_sb,PES2021.exe,F3 41 0F 11 5C 24 0C) // should be unique
+alloc(newmem,$1000,INJECT_sb)
+
 label(code)
 label(return)
 
 newmem:
 
 code:
-mulps xmm3,[mult_2]
+mulss xmm3,[mult_sb]
   movss [r12+0C],xmm3
   jmp return
 
-INJECT_2:
+INJECT_sb:
   jmp newmem
   nop 2
 return:
-registersymbol(INJECT_2)
+registersymbol(INJECT_sb)
 
 [DISABLE]
 
-INJECT_2:
+INJECT_sb:
   db F3 41 0F 11 5C 24 0C
 
-unregistersymbol(mult_2)
-unregistersymbol(INJECT_2)
+unregistersymbol(INJECT_sb)
+unregistersymbol(mult_sb)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+23BB91E
+// ORIGINAL CODE - INJECT_sbION POINT: PES2021.exe.trace+23BB91E
 
 PES2021.exe.trace+23BB8E2: 0F B6 B4 24 F0 00 00 00     - movzx esi,byte ptr [rsp+000000F0]
 PES2021.exe.trace+23BB8EA: 48 89 BC 24 98 00 00 00     - mov [rsp+00000098],rdi
@@ -72,11 +76,368 @@ PES2021.exe.trace+23BB94E: 41 0F 2F 5C 24 08           - comiss xmm3,[r12+08]
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
-          <ID>8</ID>
-          <Description>"Acceleration"</Description>
+          <ID>42</ID>
+          <Description>"Factor"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>mult_2</Address>
+          <Address>mult_sb</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>57</ID>
+      <Description>"Left arm"</Description>
+      <Options moHideChildren="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+{$lua}
+--if syntaxcheck then return end
+local vn='mult_la'
+local mult = allocateMemory(16)
+registerSymbol(vn, mult)
+local offsets={'0','4','8','C'}
+for i=1, #offsets do
+    writeFloat(vn .."+"..offsets[i], 1)
+end
+-- mulps xmm,[mult_la]
+{$asm}
+
+aobscanmodule(INJECT_la,PES2021.exe,0F 28 05 92 21 21 00) // should be unique
+alloc(newmem,$1000,INJECT_la)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  movaps xmm0,[PES2021.exe+25CCF20]
+  mulps xmm0,[mult_la]
+  jmp return
+
+INJECT_la:
+  jmp newmem
+  nop 2
+return:
+registersymbol(INJECT_la)
+
+[DISABLE]
+
+INJECT_la:
+  db 0F 28 05 92 21 21 00
+
+unregistersymbol(INJECT_la)
+unregisterSymbol(mult_la)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECT_laION POINT: PES2021.exe.trace+23B9D87
+
+PES2021.exe.trace+23B9D5F: 89 44 24 20              - mov [rsp+20],eax
+PES2021.exe.trace+23B9D63: C7 44 24 24 FF FF FF FF  - mov [rsp+24],FFFFFFFF
+PES2021.exe.trace+23B9D6B: 48 89 44 24 28           - mov [rsp+28],rax
+PES2021.exe.trace+23B9D70: 0F 28 4C 24 20           - movaps xmm1,[rsp+20]
+PES2021.exe.trace+23B9D75: 0F 54 C1                 - andps xmm0,xmm1
+PES2021.exe.trace+23B9D78: 0F 55 CE                 - andnps xmm1,xmm6
+PES2021.exe.trace+23B9D7B: 0F 28 F0                 - movaps xmm6,xmm0
+PES2021.exe.trace+23B9D7E: 0F 56 F1                 - orps xmm6,xmm1
+PES2021.exe.trace+23B9D81: 41 F6 C2 04              - test r10l,04
+PES2021.exe.trace+23B9D85: 74 29                    - je PES2021.exe.trace+23B9DB0
+// ---------- INJECTING HERE ----------
+PES2021.exe.trace+23B9D87: 0F 28 05 92 21 21 00     - movaps xmm0,[PES2021.exe.rdata+9DF20]
+// ---------- DONE INJECTING  ----------
+PES2021.exe.trace+23B9D8E: 48 89 44 24 20           - mov [rsp+20],rax
+PES2021.exe.trace+23B9D93: C7 44 24 28 FF FF FF FF  - mov [rsp+28],FFFFFFFF
+PES2021.exe.trace+23B9D9B: 89 44 24 2C              - mov [rsp+2C],eax
+PES2021.exe.trace+23B9D9F: 0F 28 4C 24 20           - movaps xmm1,[rsp+20]
+PES2021.exe.trace+23B9DA4: 0F 54 C1                 - andps xmm0,xmm1
+PES2021.exe.trace+23B9DA7: 0F 55 CE                 - andnps xmm1,xmm6
+PES2021.exe.trace+23B9DAA: 0F 28 F0                 - movaps xmm6,xmm0
+PES2021.exe.trace+23B9DAD: 0F 56 F1                 - orps xmm6,xmm1
+PES2021.exe.trace+23B9DB0: F3 0F 59 3D 48 A8 1A 00  - mulss xmm7,[PES2021.exe.rdata+36600]
+PES2021.exe.trace+23B9DB8: 0F 28 C7                 - movaps xmm0,xmm7
+}
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>60</ID>
+          <Description>"Modifier"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>mult_la+8</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>39</ID>
+      <Description>"Twist (left) + Right arm"</Description>
+      <Options moHideChildren="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+{$lua}
+--if syntaxcheck then return end
+local vn='mult_ra'
+local mult = allocateMemory(16)
+registerSymbol(vn, mult)
+local offsets={'0','4','8','C'}
+for i=1, #offsets do
+    writeFloat(vn .."+"..offsets[i], 1)
+end
+-- mulps xmm,[mult_ra]
+{$asm}
+
+aobscanmodule(INJECT_ra,PES2021.exe,0F 28 35 BE 5F 1E 00) // should be unique
+alloc(newmem,$1000,INJECT_ra)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  movaps xmm6,[PES2021.exe+25A0C50]
+   mulps xmm6,[mult_ra]
+  jmp return
+
+INJECT_ra:
+  jmp newmem
+  nop 2
+return:
+registersymbol(INJECT_ra)
+
+[DISABLE]
+
+INJECT_ra:
+  db 0F 28 35 BE 5F 1E 00
+
+unregistersymbol(INJECT_ra)
+unregistersymbol(mult_ra)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECT_raION POINT: PES2021.exe.trace+23B9C8B
+
+PES2021.exe.trace+23B9C62: 48 8B AC 24 A8 00 00 00  - mov rbp,[rsp+000000A8]
+PES2021.exe.trace+23B9C6A: 41 8D 43 03              - lea eax,[r11+03]
+PES2021.exe.trace+23B9C6E: 83 F8 10                 - cmp eax,10
+PES2021.exe.trace+23B9C71: 76 13                    - jna PES2021.exe.trace+23B9C86
+PES2021.exe.trace+23B9C73: 44 0F B7 54 5F 02        - movzx r10d,word ptr [rdi+rbx*2+02]
+PES2021.exe.trace+23B9C79: 0F B7 04 5F              - movzx eax,word ptr [rdi+rbx*2]
+PES2021.exe.trace+23B9C7D: 41 C1 E2 10              - shl r10d,10
+PES2021.exe.trace+23B9C81: 44 03 D0                 - add r10d,eax
+PES2021.exe.trace+23B9C84: EB 05                    - jmp PES2021.exe.trace+23B9C8B
+PES2021.exe.trace+23B9C86: 44 0F B7 14 5F           - movzx r10d,word ptr [rdi+rbx*2]
+// ---------- INJECTING HERE ----------
+PES2021.exe.trace+23B9C8B: 0F 28 35 BE 5F 1E 00     - movaps xmm6,[PES2021.exe.rdata+71C50]
+// ---------- DONE INJECTING  ----------
+PES2021.exe.trace+23B9C92: 41 0F 28 C0              - movaps xmm0,xmm8
+PES2021.exe.trace+23B9C96: 48 8B BC 24 88 00 00 00  - mov rdi,[rsp+00000088]
+PES2021.exe.trace+23B9C9E: 41 8B CB                 - mov ecx,r11d
+PES2021.exe.trace+23B9CA1: 48 8B 9C 24 A0 00 00 00  - mov rbx,[rsp+000000A0]
+PES2021.exe.trace+23B9CA9: 33 C0                    - xor eax,eax
+PES2021.exe.trace+23B9CAB: 66 41 0F 6E D9           - movd xmm3,r9d
+PES2021.exe.trace+23B9CB0: 0F 5B DB                 - cvtdq2ps xmm3,xmm3
+PES2021.exe.trace+23B9CB3: 41 D3 EA                 - shr r10d,cl
+PES2021.exe.trace+23B9CB6: 41 83 E2 07              - and r10d,07
+PES2021.exe.trace+23B9CBA: 66 0F 6E D2              - movd xmm2,edx
+}
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>44</ID>
+          <Description>"Twist (left)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>mult_ra+4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>45</ID>
+          <Description>"Right arm"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>mult_ra+8</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>47</ID>
+      <Description>"Legs dist from body"</Description>
+      <Options moHideChildren="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+{$lua}
+--if syntaxcheck then return end
+local vn='mult_ld'
+local mult = allocateMemory(16)
+registerSymbol(vn, mult)
+local offsets={'0','4','8','C'}
+for i=1, #offsets do
+    writeFloat(vn .."+"..offsets[i], 1)
+end
+{$asm}
+
+aobscanmodule(INJECT_ld,PES2021.exe,0F 28 05 F0 21 21 00) // should be unique
+alloc(newmem,$1000,INJECT_ld)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  movaps xmm0,[PES2021.exe+25CCF20]
+  mulps xmm0,[mult_ld]
+  jmp return
+
+INJECT_ld:
+  jmp newmem
+  nop 2
+return:
+registersymbol(INJECT_ld)
+
+[DISABLE]
+
+INJECT_ld:
+  db 0F 28 05 F0 21 21 00
+
+unregistersymbol(INJECT_ld)
+unregistersymbol(mult_ld)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECT_ldION POINT: PES2021.exe.trace+23B9D29
+
+PES2021.exe.trace+23B9D05: 0F C6 CA AA              - shufps xmm1,xmm2,-56
+PES2021.exe.trace+23B9D09: 0F C6 C2 55              - shufps xmm0,xmm2,55
+PES2021.exe.trace+23B9D0D: 0F C6 D2 00              - shufps xmm2,xmm2,00
+PES2021.exe.trace+23B9D11: 0F 58 C8                 - addps xmm1,xmm0
+PES2021.exe.trace+23B9D14: 0F 58 CA                 - addps xmm1,xmm2
+PES2021.exe.trace+23B9D17: 0F 51 C9                 - sqrtps xmm1,xmm1
+PES2021.exe.trace+23B9D1A: 0F C6 C9 00              - shufps xmm1,xmm1,00
+PES2021.exe.trace+23B9D1E: F3 44 0F 5E C1           - divss xmm8,xmm1
+PES2021.exe.trace+23B9D23: 41 F6 C2 01              - test r10l,01
+PES2021.exe.trace+23B9D27: 74 29                    - je PES2021.exe.trace+23B9D52
+// ---------- INJECTING HERE ----------
+PES2021.exe.trace+23B9D29: 0F 28 05 F0 21 21 00     - movaps xmm0,[PES2021.exe.rdata+9DF20]
+// ---------- DONE INJECTING  ----------
+PES2021.exe.trace+23B9D30: C7 44 24 20 FF FF FF FF  - mov [rsp+20],FFFFFFFF
+PES2021.exe.trace+23B9D38: 48 89 44 24 24           - mov [rsp+24],rax
+PES2021.exe.trace+23B9D3D: 89 44 24 2C              - mov [rsp+2C],eax
+PES2021.exe.trace+23B9D41: 0F 28 4C 24 20           - movaps xmm1,[rsp+20]
+PES2021.exe.trace+23B9D46: 0F 54 C1                 - andps xmm0,xmm1
+PES2021.exe.trace+23B9D49: 0F 55 CE                 - andnps xmm1,xmm6
+PES2021.exe.trace+23B9D4C: 0F 28 F0                 - movaps xmm6,xmm0
+PES2021.exe.trace+23B9D4F: 0F 56 F1                 - orps xmm6,xmm1
+PES2021.exe.trace+23B9D52: 41 F6 C2 02              - test r10l,02
+PES2021.exe.trace+23B9D56: 74 29                    - je PES2021.exe.trace+23B9D81
+}
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>48</ID>
+          <Description>"Distance"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>mult_ld</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"Animation change"</Description>
+      <Options moHideChildren="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+{$lua}
+--if syntaxcheck then return end
+local vn='mult_1'
+local mult = allocateMemory(16)
+registerSymbol(vn, mult)
+local offsets={'0','4','8','C'}
+for i=1, #offsets do
+    writeFloat(vn .."+"..offsets[i], 1)
+end
+{$asm}
+
+aobscanmodule(INJECT,PES2021.exe,41 0F 29 07 48 8B 4C 24 30) // should be unique
+
+alloc(newmem,$1000,INJECT)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mulps xmm0,[mult_1]
+  movaps [r15],xmm0
+  mov rcx,[rsp+30]
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop 4
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 41 0F 29 07 48 8B 4C 24 30
+
+unregistersymbol(INJECT)
+unregistersymbol(mult_1)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+23B9DEB
+
+PES2021.exe.trace+23B9DC0: F3 41 0F 59 C0        - mulss xmm0,xmm8
+PES2021.exe.trace+23B9DC5: 41 0F 59 F1           - mulps xmm6,xmm9
+PES2021.exe.trace+23B9DC9: 0F 28 C8              - movaps xmm1,xmm0
+PES2021.exe.trace+23B9DCC: 0F 28 C7              - movaps xmm0,xmm7
+PES2021.exe.trace+23B9DCF: 0F C6 C9 00           - shufps xmm1,xmm1,00
+PES2021.exe.trace+23B9DD3: 0F 59 CE              - mulps xmm1,xmm6
+PES2021.exe.trace+23B9DD6: 0F 29 4C 24 20        - movaps [rsp+20],xmm1
+PES2021.exe.trace+23B9DDB: E8 AC 69 1E FF        - call PES2021.exe.trace+15A078C
+PES2021.exe.trace+23B9DE0: F3 0F 11 44 24 2C     - movss [rsp+2C],xmm0
+PES2021.exe.trace+23B9DE6: 0F 28 44 24 20        - movaps xmm0,[rsp+20]
+// ---------- INJECTING HERE ----------
+PES2021.exe.trace+23B9DEB: 41 0F 29 07           - movaps [r15],xmm0
+// ---------- DONE INJECTING  ----------
+PES2021.exe.trace+23B9DEF: 48 8B 4C 24 30        - mov rcx,[rsp+30]
+PES2021.exe.trace+23B9DF4: 48 33 CC              - xor rcx,rsp
+PES2021.exe.trace+23B9DF7: E8 E4 45 1E FF        - call PES2021.exe.trace+159E3E0
+PES2021.exe.trace+23B9DFC: 0F 28 74 24 70        - movaps xmm6,[rsp+70]
+PES2021.exe.trace+23B9E01: 0F 28 7C 24 60        - movaps xmm7,[rsp+60]
+PES2021.exe.trace+23B9E06: 44 0F 28 44 24 50     - movaps xmm8,[rsp+50]
+PES2021.exe.trace+23B9E0C: 44 0F 28 4C 24 40     - movaps xmm9,[rsp+40]
+PES2021.exe.trace+23B9E12: 48 81 C4 90 00 00 00  - add rsp,00000090
+PES2021.exe.trace+23B9E19: 41 5F                 - pop r15
+PES2021.exe.trace+23B9E1B: C3                    - ret
+}
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"Lean"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>mult_1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>6</ID>
+          <Description>"Arms in/out"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>mult_1+4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32</ID>
+          <Description>"Arm distance from body"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>mult_1+8</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
@@ -86,23 +447,23 @@ PES2021.exe.trace+23BB94E: 41 0F 2F 5C 24 08           - comiss xmm3,[r12+08]
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
+{$lua}
+--if syntaxcheck then return end
+local vn='mult_5'
+local mult = allocateMemory(4)
+registerSymbol(vn, mult)
+writeFloat(vn, 1)
+{$asm}
 
 aobscanmodule(INJECT_5,PES2021.exe,F3 0F 11 48 44 C3) // should be unique
 alloc(newmem,$1000,INJECT_5)
-alloc(mult_5, 16, INJECT_5)
-registersymbol(mult_5)
-mult_5:
-dd (float)1
-dd (float)1
-dd (float)1
-dd (float)1
 label(code)
 label(return)
 
 newmem:
 
 code:
-mulps xmm1,[mult_5]
+  mulss xmm1,[mult_5]
   movss [rax+44],xmm1
   jmp return
 
@@ -159,102 +520,83 @@ PES2021.exe.trace+1AF6AB9: 41 55                    - push r13
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
-      <ID>0</ID>
-      <Description>"Animation change"</Description>
+      <ID>21</ID>
+      <Description>"Pre-kick rush onto ball"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
+{$lua}
+--if syntaxcheck then return end
+local vn='mult_2'
+local mult = allocateMemory(4)
+registerSymbol(vn, mult)
+writeFloat(vn, 0.9964)
 
-aobscanmodule(INJECT,PES2021.exe,41 0F 29 07 48 8B 4C 24 30) // should be unique
-
-alloc(newmem,$1000,INJECT)
-
+{$asm}
+aobscanmodule(INJECT_2,PES2021.exe,F3 41 0F 11 5C 24 0C) // should be unique
+alloc(newmem,$1000,INJECT_2)
 label(code)
 label(return)
-
-alloc(mult_1, 16, INJECT)
-registersymbol(mult_1)
-mult_1:
-dd (float)1
-dd (float)1
-dd (float)1
-dd (float)1
 
 newmem:
 
 code:
-  mulps xmm0,[mult_1]
-  movaps [r15],xmm0
-  mov rcx,[rsp+30]
+  mulss xmm3,[mult_2]
+  movss [r12+0C],xmm3
   jmp return
 
-INJECT:
+INJECT_2:
   jmp newmem
-  nop 4
+  nop 2
 return:
-registersymbol(INJECT)
+registersymbol(INJECT_2)
 
 [DISABLE]
 
-INJECT:
-  db 41 0F 29 07 48 8B 4C 24 30
+INJECT_2:
+  db F3 41 0F 11 5C 24 0C
 
-unregistersymbol(INJECT)
-unregistersymbol(mult_1)
+unregistersymbol(mult_2)
+unregistersymbol(INJECT_2)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+23B9DEB
+// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+23BB91E
 
-PES2021.exe.trace+23B9DC0: F3 41 0F 59 C0        - mulss xmm0,xmm8
-PES2021.exe.trace+23B9DC5: 41 0F 59 F1           - mulps xmm6,xmm9
-PES2021.exe.trace+23B9DC9: 0F 28 C8              - movaps xmm1,xmm0
-PES2021.exe.trace+23B9DCC: 0F 28 C7              - movaps xmm0,xmm7
-PES2021.exe.trace+23B9DCF: 0F C6 C9 00           - shufps xmm1,xmm1,00
-PES2021.exe.trace+23B9DD3: 0F 59 CE              - mulps xmm1,xmm6
-PES2021.exe.trace+23B9DD6: 0F 29 4C 24 20        - movaps [rsp+20],xmm1
-PES2021.exe.trace+23B9DDB: E8 AC 69 1E FF        - call PES2021.exe.trace+15A078C
-PES2021.exe.trace+23B9DE0: F3 0F 11 44 24 2C     - movss [rsp+2C],xmm0
-PES2021.exe.trace+23B9DE6: 0F 28 44 24 20        - movaps xmm0,[rsp+20]
+PES2021.exe.trace+23BB8E2: 0F B6 B4 24 F0 00 00 00     - movzx esi,byte ptr [rsp+000000F0]
+PES2021.exe.trace+23BB8EA: 48 89 BC 24 98 00 00 00     - mov [rsp+00000098],rdi
+PES2021.exe.trace+23BB8F2: 33 FF                       - xor edi,edi
+PES2021.exe.trace+23BB8F4: 4C 89 AC 24 90 00 00 00     - mov [rsp+00000090],r13
+PES2021.exe.trace+23BB8FC: 45 33 ED                    - xor r13d,r13d
+PES2021.exe.trace+23BB8FF: 4C 89 B4 24 88 00 00 00     - mov [rsp+00000088],r14
+PES2021.exe.trace+23BB907: 44 0F B6 B4 24 F8 00 00 00  - movzx r14d,byte ptr [rsp+000000F8]
+PES2021.exe.trace+23BB910: 4C 89 BC 24 80 00 00 00     - mov [rsp+00000080],r15
+PES2021.exe.trace+23BB918: 4C 8D 3C 42                 - lea r15,[rdx+rax*2]
+PES2021.exe.trace+23BB91C: 33 C0                       - xor eax,eax
 // ---------- INJECTING HERE ----------
-PES2021.exe.trace+23B9DEB: 41 0F 29 07           - movaps [r15],xmm0
+PES2021.exe.trace+23BB91E: F3 41 0F 11 5C 24 0C        - movss [r12+0C],xmm3
 // ---------- DONE INJECTING  ----------
-PES2021.exe.trace+23B9DEF: 48 8B 4C 24 30        - mov rcx,[rsp+30]
-PES2021.exe.trace+23B9DF4: 48 33 CC              - xor rcx,rsp
-PES2021.exe.trace+23B9DF7: E8 E4 45 1E FF        - call PES2021.exe.trace+159E3E0
-PES2021.exe.trace+23B9DFC: 0F 28 74 24 70        - movaps xmm6,[rsp+70]
-PES2021.exe.trace+23B9E01: 0F 28 7C 24 60        - movaps xmm7,[rsp+60]
-PES2021.exe.trace+23B9E06: 44 0F 28 44 24 50     - movaps xmm8,[rsp+50]
-PES2021.exe.trace+23B9E0C: 44 0F 28 4C 24 40     - movaps xmm9,[rsp+40]
-PES2021.exe.trace+23B9E12: 48 81 C4 90 00 00 00  - add rsp,00000090
-PES2021.exe.trace+23B9E19: 41 5F                 - pop r15
-PES2021.exe.trace+23B9E1B: C3                    - ret
+PES2021.exe.trace+23BB925: 48 89 44 24 30              - mov [rsp+30],rax
+PES2021.exe.trace+23BB92A: 40 84 F6                    - test sil,sil
+PES2021.exe.trace+23BB92D: B8 20 00 00 00              - mov eax,00000020
+PES2021.exe.trace+23BB932: 88 4C 24 20                 - mov [rsp+20],cl
+PES2021.exe.trace+23BB936: 44 0F 45 C8                 - cmovne r9d,eax
+PES2021.exe.trace+23BB93A: 44 89 54 24 24              - mov [rsp+24],r10d
+PES2021.exe.trace+23BB93F: 48 63 84 24 E8 00 00 00     - movsxd  rax,dword ptr [rsp+000000E8]
+PES2021.exe.trace+23BB947: 44 0F AF C8                 - imul r9d,eax
+PES2021.exe.trace+23BB94B: 4C 8B D8                    - mov r11,rax
+PES2021.exe.trace+23BB94E: 41 0F 2F 5C 24 08           - comiss xmm3,[r12+08]
 }
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
-          <ID>1</ID>
-          <Description>"mult 1"</Description>
+          <ID>8</ID>
+          <Description>"Acceleration"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>mult_1</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>6</ID>
-          <Description>"mult 2"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
-          <Address>mult_1+4</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>32</ID>
-          <Description>"mult 3"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
-          <Address>mult_1+8</Address>
+          <Address>mult_2</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
-  <UserdefinedSymbols/>
 </CheatTable>
