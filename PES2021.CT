@@ -247,7 +247,7 @@ PES2021.exe.trace+23B9D56: 74 29                    - je PES2021.exe.trace+23B9D
           <Description>"Distance"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>mult_ld</Address>
+          <Address>mult_d</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
