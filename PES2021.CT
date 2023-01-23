@@ -2,89 +2,6 @@
 <CheatTable CheatEngineTableVersion="42">
   <CheatEntries>
     <CheatEntry>
-      <ID>41</ID>
-      <Description>"Step bounce"</Description>
-      <Options moHideChildren="1"/>
-      <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
-{$lua}
---if syntaxcheck then return end
-local vn='mult_sb'
-local mult = allocateMemory(16)
-registerSymbol(vn, mult)
-local offsets={'0','4','8','C'}
-for i=1, #offsets do
-    writeFloat(vn .."+"..offsets[i], 1)
-end
-{$asm}
-
-aobscanmodule(INJECT_sb,PES2021.exe,F3 41 0F 11 5C 24 0C 48 89 44 24 30) // should be unique
-alloc(newmem,$1000,INJECT_sb)
-
-label(code)
-label(return)
-
-newmem:
-
-code:
-mulss xmm3,[mult_sb]
-  movss [r12+0C],xmm3
-  jmp return
-
-INJECT_sb:
-  jmp newmem
-  nop 2
-return:
-registersymbol(INJECT_sb)
-
-[DISABLE]
-
-INJECT_sb:
-  db F3 41 0F 11 5C 24 0C
-
-unregistersymbol(INJECT_sb)
-unregistersymbol(mult_sb)
-dealloc(newmem)
-
-{
-// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+23BB91E
-
-PES2021.exe.trace+23BB8E2: 0F B6 B4 24 F0 00 00 00     - movzx esi,byte ptr [rsp+000000F0]
-PES2021.exe.trace+23BB8EA: 48 89 BC 24 98 00 00 00     - mov [rsp+00000098],rdi
-PES2021.exe.trace+23BB8F2: 33 FF                       - xor edi,edi
-PES2021.exe.trace+23BB8F4: 4C 89 AC 24 90 00 00 00     - mov [rsp+00000090],r13
-PES2021.exe.trace+23BB8FC: 45 33 ED                    - xor r13d,r13d
-PES2021.exe.trace+23BB8FF: 4C 89 B4 24 88 00 00 00     - mov [rsp+00000088],r14
-PES2021.exe.trace+23BB907: 44 0F B6 B4 24 F8 00 00 00  - movzx r14d,byte ptr [rsp+000000F8]
-PES2021.exe.trace+23BB910: 4C 89 BC 24 80 00 00 00     - mov [rsp+00000080],r15
-PES2021.exe.trace+23BB918: 4C 8D 3C 42                 - lea r15,[rdx+rax*2]
-PES2021.exe.trace+23BB91C: 33 C0                       - xor eax,eax
-// ---------- INJECTING HERE ----------
-PES2021.exe.trace+23BB91E: F3 41 0F 11 5C 24 0C        - movss [r12+0C],xmm3
-// ---------- DONE INJECTING  ----------
-PES2021.exe.trace+23BB925: 48 89 44 24 30              - mov [rsp+30],rax
-PES2021.exe.trace+23BB92A: 40 84 F6                    - test sil,sil
-PES2021.exe.trace+23BB92D: B8 20 00 00 00              - mov eax,00000020
-PES2021.exe.trace+23BB932: 88 4C 24 20                 - mov [rsp+20],cl
-PES2021.exe.trace+23BB936: 44 0F 45 C8                 - cmovne r9d,eax
-PES2021.exe.trace+23BB93A: 44 89 54 24 24              - mov [rsp+24],r10d
-PES2021.exe.trace+23BB93F: 48 63 84 24 E8 00 00 00     - movsxd  rax,dword ptr [rsp+000000E8]
-PES2021.exe.trace+23BB947: 44 0F AF C8                 - imul r9d,eax
-PES2021.exe.trace+23BB94B: 4C 8B D8                    - mov r11,rax
-PES2021.exe.trace+23BB94E: 41 0F 2F 5C 24 08           - comiss xmm3,[r12+08]
-}
-</AssemblerScript>
-      <CheatEntries>
-        <CheatEntry>
-          <ID>42</ID>
-          <Description>"Factor"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
-          <Address>mult_sb</Address>
-        </CheatEntry>
-      </CheatEntries>
-    </CheatEntry>
-    <CheatEntry>
       <ID>57</ID>
       <Description>"Left arm"</Description>
       <Options moHideChildren="1"/>
@@ -600,4 +517,4 @@ PES2021.exe.trace+23BB94E: 41 0F 2F 5C 24 08           - comiss xmm3,[r12+08]
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
-  </CheatTable>
+</CheatTable>
