@@ -6,70 +6,63 @@
       <Description>"Left arm"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
-aobscanmodule(INJECT_la,PES2021.exe,48 89 44 24 20 C7 44 24 28 FF FF FF FF 89 44 24 2C) // should be unique
-alloc(newmem,$1000,INJECT_la)
+      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+vars.script_ref='Left_arm' --  opcode_inj[vars.script_ref] stores vars
+vars.inj_name='INJECT_la'
+vars.alloc_size='$1000'
+vars.varis_1_n='mult_la'
+vars.varis_1_d='dd (float)1\ndd (float)1\ndd (float)1\ndd (float)1'
+vars.varis_1_size=16
 
-alloc(mult_la, 16, INJECT_la)
-registersymbol(mult_la)
-mult_la:
-dd (float)1
-dd (float)1
-dd (float)1
-dd (float)1
+local pattern='^%s*mov.+%s*xmm%d+,%s*%[[^%]]+%]'
+local aobs={'48 89 44 24 20 C7 44 24 28 FF FF FF FF 89 44 24 2C',-24,0}
+local lookahead_n=32
+local parts={{'[^%]]+',1,'localAddress'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
+local module_names='PES2021.exe'
 
-label(code)
-label(return)
+local scrpt=[[
+	define($%s{inj_name},$%s{address_string})
+    registersymbol($%s{inj_name})
+	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
+    registersymbol($%s{varis_1_n})
+	$%s{varis_1_n}:
+	$%s{varis_1_d}
 
-newmem:
+	label(code)
+	label(return)
 
-code:
-  movaps xmm0,[PES2021.exe+25CCF20]
-  mulps xmm0,[mult_la]
-  jmp return
+	newmem:
+	code:
+	  $%s{opcode}
+      mulps $%s{x_reg},[$%s{varis_1_n}]
+      $%s{overwritten}
+	  jmp return
 
-INJECT_la-7:
-  jmp newmem
-  nop 2
-return:
-registersymbol(INJECT_la)
+	$%s{inj_name}:
+	  jmp newmem
+	  $%s{post_jmp}
+	return:
+]]
+
+[ENABLE]
+
+opcode_inj.inject(vars,scrpt,pattern,aobs,lookahead_n,parts,module_names)
 
 [DISABLE]
+local dsb=[[
+$%s{inj_name}:
+ $%s{opcode}
+ $%s{overwritten}
 
-INJECT_la-7:
-  db 0F 28 05 92 21 21 00
-
-unregistersymbol(INJECT_la)
-unregisterSymbol(mult_la)
+unregistersymbol($%s{varis_1_n})
+unregistersymbol($%s{inj_name})
 dealloc(newmem)
+]]
 
-{
-// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+23B9D87
-
-PES2021.exe.trace+23B9D5F: 89 44 24 20              - mov [rsp+20],eax
-PES2021.exe.trace+23B9D63: C7 44 24 24 FF FF FF FF  - mov [rsp+24],FFFFFFFF
-PES2021.exe.trace+23B9D6B: 48 89 44 24 28           - mov [rsp+28],rax
-PES2021.exe.trace+23B9D70: 0F 28 4C 24 20           - movaps xmm1,[rsp+20]
-PES2021.exe.trace+23B9D75: 0F 54 C1                 - andps xmm0,xmm1
-PES2021.exe.trace+23B9D78: 0F 55 CE                 - andnps xmm1,xmm6
-PES2021.exe.trace+23B9D7B: 0F 28 F0                 - movaps xmm6,xmm0
-PES2021.exe.trace+23B9D7E: 0F 56 F1                 - orps xmm6,xmm1
-PES2021.exe.trace+23B9D81: 41 F6 C2 04              - test r10l,04
-PES2021.exe.trace+23B9D85: 74 29                    - je PES2021.exe.trace+23B9DB0
-// ---------- INJECTING HERE ----------
-PES2021.exe.trace+23B9D87: 0F 28 05 92 21 21 00     - movaps xmm0,[PES2021.exe.rdata+9DF20]
-// ---------- DONE INJECTING  ----------
-PES2021.exe.trace+23B9D8E: 48 89 44 24 20           - mov [rsp+20],rax
-PES2021.exe.trace+23B9D93: C7 44 24 28 FF FF FF FF  - mov [rsp+28],FFFFFFFF
-PES2021.exe.trace+23B9D9B: 89 44 24 2C              - mov [rsp+2C],eax
-PES2021.exe.trace+23B9D9F: 0F 28 4C 24 20           - movaps xmm1,[rsp+20]
-PES2021.exe.trace+23B9DA4: 0F 54 C1                 - andps xmm0,xmm1
-PES2021.exe.trace+23B9DA7: 0F 55 CE                 - andnps xmm1,xmm6
-PES2021.exe.trace+23B9DAA: 0F 28 F0                 - movaps xmm6,xmm0
-PES2021.exe.trace+23B9DAD: 0F 56 F1                 - orps xmm6,xmm1
-PES2021.exe.trace+23B9DB0: F3 0F 59 3D 48 A8 1A 00  - mulss xmm7,[PES2021.exe.rdata+36600]
-PES2021.exe.trace+23B9DB8: 0F 28 C7                 - movaps xmm0,xmm7
-}
+opcode_inj.disable(opcode_inj[vars.script_ref],dsb)
+opcode_inj[vars.script_ref]=nil
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -86,72 +79,63 @@ PES2021.exe.trace+23B9DB8: 0F 28 C7                 - movaps xmm0,xmm7
       <Description>"Twist (left) + Right arm"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
+      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+vars.script_ref='Twist_left_right_arm' --  opcode_inj[vars.script_ref] stores vars
+vars.inj_name='INJECT_ra'
+vars.alloc_size='$1000'
+vars.varis_1_n='mult_ra'
+vars.varis_1_d='dd (float)1\ndd (float)1\ndd (float)1\ndd (float)1'
+vars.varis_1_size=16
 
+local pattern='^%s*mov.+%s*xmm%d+,%s*%[[^%]]+%]'
+local aobs={'41 0F 28 C0 48 8B BC 24 88 00 00 00 41 8B CB',-32,0}
+local lookahead_n=32
+local parts={{'[^%]]+',1,'localAddress'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
+local module_names='PES2021.exe'
 
-aobscanmodule(INJECT_ra,PES2021.exe,41 0F 28 C0 48 8B BC 24 88 00 00 00 41 8B CB) // should be unique
-alloc(newmem,$1000,INJECT_ra)
+local scrpt=[[
+	define($%s{inj_name},$%s{address_string})
+    registersymbol($%s{inj_name})
+	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
+    registersymbol($%s{varis_1_n})
+	$%s{varis_1_n}:
+	$%s{varis_1_d}
 
-alloc(mult_ra, 16, INJECT_ra)
-registersymbol(mult_ra)
-mult_ra:
-dd (float)1
-dd (float)1
-dd (float)1
-dd (float)1
+	label(code)
+	label(return)
 
-label(code)
-label(return)
+	newmem:
+	code:
+	  $%s{opcode}
+      mulps $%s{x_reg},[$%s{varis_1_n}]
+      $%s{overwritten}
+	  jmp return
 
-newmem:
+	$%s{inj_name}:
+	  jmp newmem
+	  $%s{post_jmp}
+	return:
+]]
 
-code:
-  movaps xmm6,[PES2021.exe+25A0C50]
-   mulps xmm6,[mult_ra]
-  jmp return
+[ENABLE]
 
-INJECT_ra-07:
-  jmp newmem
-  nop 2
-return:
-registersymbol(INJECT_ra)
+opcode_inj.inject(vars,scrpt,pattern,aobs,lookahead_n,parts,module_names)
 
 [DISABLE]
+local dsb=[[
+$%s{inj_name}:
+ $%s{opcode}
+ $%s{overwritten}
 
-INJECT_ra-07:
-  db 0F 28 35 BE 5F 1E 00
-
-unregistersymbol(INJECT_ra)
-unregistersymbol(mult_ra)
+unregistersymbol($%s{varis_1_n})
+unregistersymbol($%s{inj_name})
 dealloc(newmem)
+]]
 
-{
-// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+23B9C8B
-
-PES2021.exe.trace+23B9C62: 48 8B AC 24 A8 00 00 00  - mov rbp,[rsp+000000A8]
-PES2021.exe.trace+23B9C6A: 41 8D 43 03              - lea eax,[r11+03]
-PES2021.exe.trace+23B9C6E: 83 F8 10                 - cmp eax,10
-PES2021.exe.trace+23B9C71: 76 13                    - jna PES2021.exe.trace+23B9C86
-PES2021.exe.trace+23B9C73: 44 0F B7 54 5F 02        - movzx r10d,word ptr [rdi+rbx*2+02]
-PES2021.exe.trace+23B9C79: 0F B7 04 5F              - movzx eax,word ptr [rdi+rbx*2]
-PES2021.exe.trace+23B9C7D: 41 C1 E2 10              - shl r10d,10
-PES2021.exe.trace+23B9C81: 44 03 D0                 - add r10d,eax
-PES2021.exe.trace+23B9C84: EB 05                    - jmp PES2021.exe.trace+23B9C8B
-PES2021.exe.trace+23B9C86: 44 0F B7 14 5F           - movzx r10d,word ptr [rdi+rbx*2]
-// ---------- INJECTING HERE ----------
-PES2021.exe.trace+23B9C8B: 0F 28 35 BE 5F 1E 00     - movaps xmm6,[PES2021.exe.rdata+71C50]
-// ---------- DONE INJECTING  ----------
-PES2021.exe.trace+23B9C92: 41 0F 28 C0              - movaps xmm0,xmm8
-PES2021.exe.trace+23B9C96: 48 8B BC 24 88 00 00 00  - mov rdi,[rsp+00000088]
-PES2021.exe.trace+23B9C9E: 41 8B CB                 - mov ecx,r11d
-PES2021.exe.trace+23B9CA1: 48 8B 9C 24 A0 00 00 00  - mov rbx,[rsp+000000A0]
-PES2021.exe.trace+23B9CA9: 33 C0                    - xor eax,eax
-PES2021.exe.trace+23B9CAB: 66 41 0F 6E D9           - movd xmm3,r9d
-PES2021.exe.trace+23B9CB0: 0F 5B DB                 - cvtdq2ps xmm3,xmm3
-PES2021.exe.trace+23B9CB3: 41 D3 EA                 - shr r10d,cl
-PES2021.exe.trace+23B9CB6: 41 83 E2 07              - and r10d,07
-PES2021.exe.trace+23B9CBA: 66 0F 6E D2              - movd xmm2,edx
-}
+opcode_inj.disable(opcode_inj[vars.script_ref],dsb)
+opcode_inj[vars.script_ref]=nil
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -175,71 +159,63 @@ PES2021.exe.trace+23B9CBA: 66 0F 6E D2              - movd xmm2,edx
       <Description>"Legs dist from body"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
+      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+vars.script_ref='Legs_dist_body' --  opcode_inj[vars.script_ref] stores vars
+vars.inj_name='INJECT_d'
+vars.alloc_size='$1000'
+vars.varis_1_n='mult_d'
+vars.varis_1_d='dd (float)1\ndd (float)1\ndd (float)1\ndd (float)1'
+vars.varis_1_size=16
 
-aobscanmodule(INJECT_d,PES2021.exe,FF FF FF FF 48 89 44 24 24 89 44 24 2C 0F 28 4C 24 20 0F 54 C1) // should be unique
-alloc(newmem,$1000,INJECT_d)
+local pattern='^%s*mov.+%s*xmm%d+,%s*%[[^%]]+%]'
+local aobs={'FF FF FF FF 48 89 44 24 24 89 44 24 2C 0F 28 4C 24 20 0F 54 C1',-32,0}
+local lookahead_n=32
+local parts={{'[^%]]+',1,'localAddress'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
+local module_names='PES2021.exe'
 
-alloc(mult_d, 16, INJECT_d)
-registersymbol(mult_d)
-mult_d:
-dd (float)1
-dd (float)1
-dd (float)1
-dd (float)1
+local scrpt=[[
+	define($%s{inj_name},$%s{address_string})
+    registersymbol($%s{inj_name})
+	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
+    registersymbol($%s{varis_1_n})
+	$%s{varis_1_n}:
+	$%s{varis_1_d}
 
-label(code)
-label(return)
+	label(code)
+	label(return)
 
-newmem:
+	newmem:
+	code:
+	  $%s{opcode}
+      mulps $%s{x_reg},[$%s{varis_1_n}]
+      $%s{overwritten}
+	  jmp return
 
-code:
-  movaps xmm0,[PES2021.exe+25CCF20]
-  mulps xmm0,[mult_d]
-  jmp return
+	$%s{inj_name}:
+	  jmp newmem
+	  $%s{post_jmp}
+	return:
+]]
 
-INJECT_d-B:
-  jmp newmem
-  nop 2
-return:
-registersymbol(INJECT_d)
+[ENABLE]
+
+opcode_inj.inject(vars,scrpt,pattern,aobs,lookahead_n,parts,module_names)
 
 [DISABLE]
+local dsb=[[
+$%s{inj_name}:
+ $%s{opcode}
+ $%s{overwritten}
 
-INJECT_d-B:
-  db 0F 28 05 F0 21 21 00
-
-unregistersymbol(INJECT_d)
-unregistersymbol(mult_d)
+unregistersymbol($%s{varis_1_n})
+unregistersymbol($%s{inj_name})
 dealloc(newmem)
+]]
 
-{
-// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+23B9D29
-
-PES2021.exe.trace+23B9D05: 0F C6 CA AA              - shufps xmm1,xmm2,-56
-PES2021.exe.trace+23B9D09: 0F C6 C2 55              - shufps xmm0,xmm2,55
-PES2021.exe.trace+23B9D0D: 0F C6 D2 00              - shufps xmm2,xmm2,00
-PES2021.exe.trace+23B9D11: 0F 58 C8                 - addps xmm1,xmm0
-PES2021.exe.trace+23B9D14: 0F 58 CA                 - addps xmm1,xmm2
-PES2021.exe.trace+23B9D17: 0F 51 C9                 - sqrtps xmm1,xmm1
-PES2021.exe.trace+23B9D1A: 0F C6 C9 00              - shufps xmm1,xmm1,00
-PES2021.exe.trace+23B9D1E: F3 44 0F 5E C1           - divss xmm8,xmm1
-PES2021.exe.trace+23B9D23: 41 F6 C2 01              - test r10l,01
-PES2021.exe.trace+23B9D27: 74 29                    - je PES2021.exe.trace+23B9D52
-// ---------- INJECTING HERE ----------
-PES2021.exe.trace+23B9D29: 0F 28 05 F0 21 21 00     - movaps xmm0,[PES2021.exe.rdata+9DF20]
-// ---------- DONE INJECTING  ----------
-PES2021.exe.trace+23B9D30: C7 44 24 20 FF FF FF FF  - mov [rsp+20],FFFFFFFF
-PES2021.exe.trace+23B9D38: 48 89 44 24 24           - mov [rsp+24],rax
-PES2021.exe.trace+23B9D3D: 89 44 24 2C              - mov [rsp+2C],eax
-PES2021.exe.trace+23B9D41: 0F 28 4C 24 20           - movaps xmm1,[rsp+20]
-PES2021.exe.trace+23B9D46: 0F 54 C1                 - andps xmm0,xmm1
-PES2021.exe.trace+23B9D49: 0F 55 CE                 - andnps xmm1,xmm6
-PES2021.exe.trace+23B9D4C: 0F 28 F0                 - movaps xmm6,xmm0
-PES2021.exe.trace+23B9D4F: 0F 56 F1                 - orps xmm6,xmm1
-PES2021.exe.trace+23B9D52: 41 F6 C2 02              - test r10l,02
-PES2021.exe.trace+23B9D56: 74 29                    - je PES2021.exe.trace+23B9D81
-}
+opcode_inj.disable(opcode_inj[vars.script_ref],dsb)
+opcode_inj[vars.script_ref]=nil
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -256,73 +232,63 @@ PES2021.exe.trace+23B9D56: 74 29                    - je PES2021.exe.trace+23B9D
       <Description>"Animation change"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
+      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+vars.script_ref='Animation_change' --  opcode_inj[vars.script_ref] stores vars
+vars.inj_name='INJECT_anim'
+vars.alloc_size='$1000'
+vars.varis_1_n='mult_1'
+vars.varis_1_d='dd (float)1\ndd (float)1\ndd (float)1\ndd (float)1'
+vars.varis_1_size=16
 
-aobscanmodule(INJECT,PES2021.exe,0F 28 44 24 20 41 0F 29 07 48 8B 4C 24 30) // should be unique
+local pattern='^%s*mov.+%s*xmm%d+,%s*%[[^%]]+%]'
+local aobs={'0F 28 44 24 20 41 0F 29 07 48 8B 4C 24 30',-10,16}
+local lookahead_n=32
+local parts={{'[^%]]+',1,'localAddress'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
+local module_names='PES2021.exe'
 
-alloc(newmem,$1000,INJECT)
+local scrpt=[[
+	define($%s{inj_name},$%s{address_string})
+    registersymbol($%s{inj_name})
+	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
+    registersymbol($%s{varis_1_n})
+	$%s{varis_1_n}:
+	$%s{varis_1_d}
 
-alloc(mult_1, 16, INJECT)
-registersymbol(mult_1)
-mult_1:
-dd (float)1
-dd (float)1
-dd (float)1
-dd (float)1
+	label(code)
+	label(return)
 
-label(code)
-label(return)
+	newmem:
+	code:
+      $%s{opcode}
+      mulps $%s{x_reg},[$%s{varis_1_n}]
+      $%s{overwritten}
+	  jmp return
 
-newmem:
+	$%s{inj_name}:
+	  jmp newmem
+	  $%s{post_jmp}
+	return:
+]]
 
-code:
-  mulps xmm0,[mult_1]
-  movaps [r15],xmm0
-  mov rcx,[rsp+30]
-  jmp return
+[ENABLE]
 
-INJECT+5:
-  jmp newmem
-  nop 4
-return:
-registersymbol(INJECT)
+opcode_inj.inject(vars,scrpt,pattern,aobs,lookahead_n,parts,module_names)
 
 [DISABLE]
+local dsb=[[
+$%s{inj_name}:
+ $%s{opcode}
+ $%s{overwritten}
 
-INJECT+5:
-  db 41 0F 29 07 48 8B 4C 24 30
-
-unregistersymbol(INJECT)
-unregistersymbol(mult_1)
+unregistersymbol($%s{varis_1_n})
+unregistersymbol($%s{inj_name})
 dealloc(newmem)
+]]
 
-{
-// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+23B9DEB
-
-PES2021.exe.trace+23B9DC0: F3 41 0F 59 C0        - mulss xmm0,xmm8
-PES2021.exe.trace+23B9DC5: 41 0F 59 F1           - mulps xmm6,xmm9
-PES2021.exe.trace+23B9DC9: 0F 28 C8              - movaps xmm1,xmm0
-PES2021.exe.trace+23B9DCC: 0F 28 C7              - movaps xmm0,xmm7
-PES2021.exe.trace+23B9DCF: 0F C6 C9 00           - shufps xmm1,xmm1,00
-PES2021.exe.trace+23B9DD3: 0F 59 CE              - mulps xmm1,xmm6
-PES2021.exe.trace+23B9DD6: 0F 29 4C 24 20        - movaps [rsp+20],xmm1
-PES2021.exe.trace+23B9DDB: E8 AC 69 1E FF        - call PES2021.exe.trace+15A078C
-PES2021.exe.trace+23B9DE0: F3 0F 11 44 24 2C     - movss [rsp+2C],xmm0
-PES2021.exe.trace+23B9DE6: 0F 28 44 24 20        - movaps xmm0,[rsp+20]
-// ---------- INJECTING HERE ----------
-PES2021.exe.trace+23B9DEB: 41 0F 29 07           - movaps [r15],xmm0
-// ---------- DONE INJECTING  ----------
-PES2021.exe.trace+23B9DEF: 48 8B 4C 24 30        - mov rcx,[rsp+30]
-PES2021.exe.trace+23B9DF4: 48 33 CC              - xor rcx,rsp
-PES2021.exe.trace+23B9DF7: E8 E4 45 1E FF        - call PES2021.exe.trace+159E3E0
-PES2021.exe.trace+23B9DFC: 0F 28 74 24 70        - movaps xmm6,[rsp+70]
-PES2021.exe.trace+23B9E01: 0F 28 7C 24 60        - movaps xmm7,[rsp+60]
-PES2021.exe.trace+23B9E06: 44 0F 28 44 24 50     - movaps xmm8,[rsp+50]
-PES2021.exe.trace+23B9E0C: 44 0F 28 4C 24 40     - movaps xmm9,[rsp+40]
-PES2021.exe.trace+23B9E12: 48 81 C4 90 00 00 00  - add rsp,00000090
-PES2021.exe.trace+23B9E19: 41 5F                 - pop r15
-PES2021.exe.trace+23B9E1B: C3                    - ret
-}
+opcode_inj.disable(opcode_inj[vars.script_ref],dsb)
+opcode_inj[vars.script_ref]=nil
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -353,67 +319,63 @@ PES2021.exe.trace+23B9E1B: C3                    - ret
       <Description>"Animation speed"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
+      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+vars.script_ref='Animation_speed' --  opcode_inj[vars.script_ref] stores vars
+vars.inj_name='INJECT_5'
+vars.alloc_size='$1000'
+vars.varis_1_n='mult_5'
+vars.varis_1_d='dd (float)1'
+vars.varis_1_size=4
 
-aobscanmodule(INJECT_5,PES2021.exe,48 8B 40 10 F3 0F 11 48 44) // should be unique
-alloc(newmem,$1000,INJECT_5)
+local pattern='^%s*mul.+%s*xmm%d+,%s*%[[^%]]+%]'
+local aobs={'48 8B 40 10 F3 0F 11 48 44',-24,16}
+local lookahead_n=32
+local parts={{'[^%]]+',1,'localAddress'},{'xmm%d+',1,'x_reg'}}
+local module_names='PES2021.exe'
 
-alloc(mult_5, 4, INJECT_5)
-registersymbol(mult_5)
-mult_5:
-dd (float)1
+local scrpt=[[
+	define($%s{inj_name},$%s{address_string})
+    registersymbol($%s{inj_name})
+	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
+    registersymbol($%s{varis_1_n})
+	$%s{varis_1_n}:
+	$%s{varis_1_d}
 
-label(code)
-label(return)
+	label(code)
+	label(return)
 
-newmem:
+	newmem:
+	code:
+	  $%s{opcode}
+      mulss $%s{x_reg},[$%s{varis_1_n}]
+      $%s{overwritten}
+	  jmp return
 
-code:
-  mulss xmm1,[mult_5]
-  movss [rax+44],xmm1
-  jmp return
+	$%s{inj_name}:
+	  jmp newmem
+	  $%s{post_jmp}
+	return:
+]]
 
-INJECT_5+4:
-  jmp newmem
-return:
-registersymbol(INJECT_5)
+[ENABLE]
+
+opcode_inj.inject(vars,scrpt,pattern,aobs,lookahead_n,parts,module_names)
 
 [DISABLE]
+local dsb=[[
+$%s{inj_name}:
+ $%s{opcode}
+ $%s{overwritten}
 
-INJECT_5+4:
-  db F3 0F 11 48 44
-
-unregistersymbol(INJECT_5)
-unregistersymbol(mult_5)
+unregistersymbol($%s{varis_1_n})
+unregistersymbol($%s{inj_name})
 dealloc(newmem)
+]]
 
-{
-// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+1AF6AA8
-
-PES2021.exe.trace+1AF6A8B: CC                       - int 3
-PES2021.exe.trace+1AF6A8C: CC                       - int 3
-PES2021.exe.trace+1AF6A8D: CC                       - int 3
-PES2021.exe.trace+1AF6A8E: CC                       - int 3
-PES2021.exe.trace+1AF6A8F: CC                       - int 3
-PES2021.exe.trace+1AF6A90: 48 8B 81 88 00 00 00     - mov rax,[rcx+00000088]
-PES2021.exe.trace+1AF6A97: 48 85 C0                 - test rax,rax
-PES2021.exe.trace+1AF6A9A: 74 11                    - je PES2021.exe.trace+1AF6AAD
-PES2021.exe.trace+1AF6A9C: F3 0F 59 0D C8 AB AA 00  - mulss xmm1,[PES2021.exe.rdata+7366C]
-PES2021.exe.trace+1AF6AA4: 48 8B 40 10              - mov rax,[rax+10]
-// ---------- INJECTING HERE ----------
-PES2021.exe.trace+1AF6AA8: F3 0F 11 48 44           - movss [rax+44],xmm1
-// ---------- DONE INJECTING  ----------
-PES2021.exe.trace+1AF6AAD: C3                       - ret
-PES2021.exe.trace+1AF6AAE: CC                       - int 3
-PES2021.exe.trace+1AF6AAF: CC                       - int 3
-PES2021.exe.trace+1AF6AB0: 48 8B C4                 - mov rax,rsp
-PES2021.exe.trace+1AF6AB3: 55                       - push rbp
-PES2021.exe.trace+1AF6AB4: 53                       - push rbx
-PES2021.exe.trace+1AF6AB5: 56                       - push rsi
-PES2021.exe.trace+1AF6AB6: 57                       - push rdi
-PES2021.exe.trace+1AF6AB7: 41 54                    - push r12
-PES2021.exe.trace+1AF6AB9: 41 55                    - push r13
-}
+opcode_inj.disable(opcode_inj[vars.script_ref],dsb)
+opcode_inj[vars.script_ref]=nil
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -430,70 +392,63 @@ PES2021.exe.trace+1AF6AB9: 41 55                    - push r13
       <Description>"Pre-kick rush onto ball"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
-aobscanmodule(INJECT_2,PES2021.exe,F3 41 0F 11 5C 24 0C 48 89 44 24 30) // should be unique
-alloc(newmem,$1000,INJECT_2)
+      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+vars.script_ref='Pre_kick_rush' --  opcode_inj[vars.script_ref] stores vars
+vars.inj_name='INJECT_2'
+vars.alloc_size='$1000'
+vars.varis_1_n='mult_2'
+vars.varis_1_d='dd (float)0.9964\ndd (float)1\ndd (float)1\ndd (float)1'
+vars.varis_1_size=16
 
-alloc(mult_2, 16, INJECT_2)
-registersymbol(mult_2)
-mult_2:
-dd (float)0.9964
-dd (float)1
-dd (float)1
-dd (float)1
+local pattern='^%s*movss%s*%[[^%]]+%]%s*,%s*xmm%d+'
+local aobs={'F3 41 0F 11 5C 24 0C 48',-10,20}
+local lookahead_n=32
+local parts={{'[^%]]+',1,'localAddress'},{'xmm%d+',1,'x_reg'}}
+local module_names='PES2021.exe'
 
-label(code)
-label(return)
+local scrpt=[[
+	define($%s{inj_name},$%s{address_string})
+    registersymbol($%s{inj_name})
+	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
+    registersymbol($%s{varis_1_n})
+	$%s{varis_1_n}:
+	$%s{varis_1_d}
 
-newmem:
+	label(code)
+	label(return)
 
-code:
-  mulss xmm3,[mult_2]
-  movss [r12+0C],xmm3
-  jmp return
+	newmem:
+	code:
+	  mulss $%s{x_reg},[$%s{varis_1_n}]
+	  $%s{opcode}
+      $%s{overwritten}
+	  jmp return
 
-INJECT_2:
-  jmp newmem
-  nop 2
-return:
-registersymbol(INJECT_2)
+	$%s{inj_name}:
+	  jmp newmem
+	  $%s{post_jmp}
+	return:
+]]
+
+[ENABLE]
+
+opcode_inj.inject(vars,scrpt,pattern,aobs,lookahead_n,parts,module_names)
 
 [DISABLE]
+local dsb=[[
+$%s{inj_name}:
+ $%s{opcode}
+ $%s{overwritten}
 
-INJECT_2:
-  db F3 41 0F 11 5C 24 0C
-
-unregistersymbol(mult_2)
-unregistersymbol(INJECT_2)
+unregistersymbol($%s{varis_1_n})
+unregistersymbol($%s{inj_name})
 dealloc(newmem)
+]]
 
-{
-// ORIGINAL CODE - INJECTION POINT: PES2021.exe.trace+23BB91E
-
-PES2021.exe.trace+23BB8E2: 0F B6 B4 24 F0 00 00 00     - movzx esi,byte ptr [rsp+000000F0]
-PES2021.exe.trace+23BB8EA: 48 89 BC 24 98 00 00 00     - mov [rsp+00000098],rdi
-PES2021.exe.trace+23BB8F2: 33 FF                       - xor edi,edi
-PES2021.exe.trace+23BB8F4: 4C 89 AC 24 90 00 00 00     - mov [rsp+00000090],r13
-PES2021.exe.trace+23BB8FC: 45 33 ED                    - xor r13d,r13d
-PES2021.exe.trace+23BB8FF: 4C 89 B4 24 88 00 00 00     - mov [rsp+00000088],r14
-PES2021.exe.trace+23BB907: 44 0F B6 B4 24 F8 00 00 00  - movzx r14d,byte ptr [rsp+000000F8]
-PES2021.exe.trace+23BB910: 4C 89 BC 24 80 00 00 00     - mov [rsp+00000080],r15
-PES2021.exe.trace+23BB918: 4C 8D 3C 42                 - lea r15,[rdx+rax*2]
-PES2021.exe.trace+23BB91C: 33 C0                       - xor eax,eax
-// ---------- INJECTING HERE ----------
-PES2021.exe.trace+23BB91E: F3 41 0F 11 5C 24 0C        - movss [r12+0C],xmm3
-// ---------- DONE INJECTING  ----------
-PES2021.exe.trace+23BB925: 48 89 44 24 30              - mov [rsp+30],rax
-PES2021.exe.trace+23BB92A: 40 84 F6                    - test sil,sil
-PES2021.exe.trace+23BB92D: B8 20 00 00 00              - mov eax,00000020
-PES2021.exe.trace+23BB932: 88 4C 24 20                 - mov [rsp+20],cl
-PES2021.exe.trace+23BB936: 44 0F 45 C8                 - cmovne r9d,eax
-PES2021.exe.trace+23BB93A: 44 89 54 24 24              - mov [rsp+24],r10d
-PES2021.exe.trace+23BB93F: 48 63 84 24 E8 00 00 00     - movsxd  rax,dword ptr [rsp+000000E8]
-PES2021.exe.trace+23BB947: 44 0F AF C8                 - imul r9d,eax
-PES2021.exe.trace+23BB94B: 4C 8B D8                    - mov r11,rax
-PES2021.exe.trace+23BB94E: 41 0F 2F 5C 24 08           - comiss xmm3,[r12+08]
-}
+opcode_inj.disable(opcode_inj[vars.script_ref],dsb)
+opcode_inj[vars.script_ref]=nil
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
