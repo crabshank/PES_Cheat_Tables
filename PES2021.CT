@@ -329,8 +329,8 @@ vars.varis_1_n='mult_5'
 vars.varis_1_d='dd (float)1'
 vars.varis_1_size=4
 
-local pattern='^%s*mul.+%s*xmm%d+,%s*%[[^%]]+%]'
-local aobs={'48 8B 40 10 F3 0F 11 48 44',-24,16}
+local pattern='^%s*movss%s*%[[^%]]+%]%s*,%s*xmm%d+'
+local aobs={'48 8B 40 10 F3 0F 11 48 44',0,16}
 local lookahead_n=32
 local parts={{'[^%]]+',1,'localAddress'},{'xmm%d+',1,'x_reg'}}
 local module_names='PES2021.exe'
@@ -348,8 +348,8 @@ local scrpt=[[
 
 	newmem:
 	code:
-	  $%s{opcode}
       mulss $%s{x_reg},[$%s{varis_1_n}]
+      $%s{opcode}
       $%s{overwritten}
 	  jmp return
 
