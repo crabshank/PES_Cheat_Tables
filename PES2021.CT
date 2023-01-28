@@ -313,15 +313,37 @@ if syntaxcheck then return end
 local vars={}
 --OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
 local suffix='_5'
+vars.varis_2_n='mult'..suffix..'_1'
+vars.varis_2_d=[[db 00 00 E0 FF FF FF EF 41
+db F3 04 35 3F]] --(max_float_double +0, sqHalf +8)
+vars.varis_2_size=12
 vars.varis_1_n='mult'..suffix
-vars.varis_1_d='dd (float)1'
-vars.varis_1_size=4
+vars.varis_1_d='dd (float)1\ndd (float)1\ndd (float)0.5\ndd (float)1'
+vars.varis_1_size=16   --(u +0, r +4, 0.5 +8, 1+C)
+
+vars.varis_regs_n='mult'..suffix..'_regs'
+vars.varis_regs_size=104   --(3 X general + 5 X xmm =&gt; 8*3+5*16) (+0, +8, +10, || +20, +30, +40, +50, +60)
+
+
 local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
 local module_names='PES2021.exe'
+vars.post={}
+
+vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that are not 'x_reg'
+ local xn=tonumber(vars.xreg_n)
+ local c=1
+ for i=0,15 do
+  if xn~=i then
+   vars['xmm~'..c]='xmm'..i
+   c=c+1
+  end
+ end
+ return vars --IMPORTANT!
+end
 
 --COMPULSORY
 local newmem_name='newmem'..suffix
-local newmem_size='$1000'
+local newmem_size='$2000'
 local script_ref='Animation_speed' --  opcode_inj[vars.script_ref] stores vars
 local inj_name='INJECT'..suffix
 local pattern='^%s*movss%s*%[[^%]]+%]%s*,%s*xmm%d+'
@@ -332,20 +354,90 @@ local inj_script=[[
 	define($%s{inj_name},$%s{address_string})
     registersymbol($%s{inj_name})
     alloc($%s{newmem_name}, $%s{newmem_size}, $%s{inj_name})
-	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
+alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
     registersymbol($%s{varis_1_n})
 	$%s{varis_1_n}:
 	$%s{varis_1_d}
 
+    alloc($%s{varis_2_n}, $%d{varis_2_size}, $%s{inj_name})
+    registersymbol($%s{varis_2_n})
+	$%s{varis_2_n}:
+	$%s{varis_2_d}
+
+    alloc($%s{varis_regs_n}, $%d{varis_regs_size}, $%s{inj_name})
+    registersymbol($%s{varis_regs_n})
+
+    label(over_half)
+    label(sq_end)
 	label(code)
 	label(return)
 
 	$%s{newmem_name}:
 	code:
-      mulss $%s{x_reg},[$%s{varis_1_n}]
+	mov [$%s{varis_regs_n}] , rcx //BACKUP
+	mov [$%s{varis_regs_n}+8] , rbx //BACKUP
+	mov [$%s{varis_regs_n}+10] , rax //BACKUP
+    rdtsc
+    mov rbx,rax
+    shl rbx,6
+    mov rcx,rax
+    shl rcx,18
+    imul rcx,rbx
+    imul rcx,rax
+    xor rax,rcx //seed in rax
+    mov rcx,rax //use pgc
+    mov rbx,rax
+    shr rbx,12
+    xor rax,rbx
+    shr rax,1B
+    shr rcx,3B
+    ror eax,cl // 32 bit random number in eax
+																movdqu [$%s{varis_regs_n}+20], $%s{x_reg} //BACKUP
+																movdqu [$%s{varis_regs_n}+30] , $%s{xmm~4} //BACKUP
+																movdqu [$%s{varis_regs_n}+40], $%s{xmm~1} //BACKUP
+																movdqu [$%s{varis_regs_n}+50], $%s{xmm~2} //BACKUP
+																movdqu [$%s{varis_regs_n}+60], $%s{xmm~3} //BACKUP
+        cvtsi2ss $%s{x_reg}, rax
+        cvtss2sd $%s{x_reg}, $%s{x_reg}
+        divsd $%s{x_reg}, [$%s{varis_2_n}] //div by max float (in double precision)
+        cvtsd2ss $%s{x_reg}, $%s{x_reg} //random float in $%s{x_reg}
+
+	mov rcx, [$%s{varis_regs_n}]  //RESTORE
+	mov rbx, [$%s{varis_regs_n}+8]  //RESTORE
+	mov rax, [$%s{varis_regs_n}+10]  //RESTORE
+
+    movss $%s{xmm~1}, [$%s{varis_1_n}+C] //1
+    movss $%s{xmm~2}, [$%s{varis_2_n}+8] //sqHalf
+    movss $%s{xmm~3}, [$%s{varis_1_n}+8] //0.5
+	ucomiss $%s{x_reg}, $%s{xmm~3}
+	ja over_half
+	sqrtss $%s{xmm~4}, $%s{x_reg}
+	mulss $%s{xmm~4}, $%s{xmm~2}
+	movss $%s{xmm~1}, $%s{xmm~4}
+	jmp sq_end
+	over_half:
+	movss $%s{xmm~4}, $%s{xmm~1}
+	subss $%s{xmm~4}, $%s{x_reg}
+	sqrtss $%s{xmm~4}, $%s{xmm~4}
+	mulss $%s{xmm~4}, $%s{xmm~2}
+	subss $%s{xmm~1}, $%s{xmm~4}
+	sq_end:
+	movss  $%s{xmm~4},  [$%s{varis_1_n}+4] //r
+	movss  $%s{xmm~3},  [$%s{varis_1_n}] //u
+	subss  $%s{xmm~3},  $%s{xmm~4}
+	mulss  $%s{xmm~4},  $%s{xmm~1} //mul by x
+	addss  $%s{xmm~4},  $%s{xmm~4}
+	addss  $%s{xmm~4},  $%s{xmm~3} //FINAL MULT
+	movdqu $%s{x_reg}, [$%s{varis_regs_n}+20] //RESTORE $%s{x_reg}
+	mulss $%s{x_reg},$%s{xmm~4}
       $%s{opcode}
-      $%s{overwritten}
-	  jmp return
+	movdqu $%s{xmm~3}, [$%s{varis_regs_n}+60] //RESTORE $%s{xmm~3}
+	movdqu $%s{xmm~2}, [$%s{varis_regs_n}+50] //RESTORE $%s{xmm~2}
+	movdqu $%s{xmm~1}, [$%s{varis_regs_n}+40] //RESTORE $%s{xmm~1}
+	movdqu $%s{xmm~4}, [$%s{varis_regs_n}+30] //RESTORE $%s{xmm~4}
+	movdqu $%s{x_reg}, [$%s{varis_regs_n}+20] //RESTORE $%s{x_reg}
+    $%s{overwritten}
+	jmp return
 
 	$%s{inj_name}:
 	  jmp $%s{newmem_name}
@@ -363,10 +455,17 @@ opcode_inj[script_ref]=nil
       <CheatEntries>
         <CheatEntry>
           <ID>31</ID>
-          <Description>"Speed"</Description>
+          <Description>"Speed mean"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
           <Address>mult_5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>61</ID>
+          <Description>"Speed range"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>mult_5+4</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
@@ -439,4 +538,4 @@ opcode_inj[script_ref]=nil
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
-</CheatTable>
+ </CheatTable>
