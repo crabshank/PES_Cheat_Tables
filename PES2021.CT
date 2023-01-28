@@ -155,21 +155,50 @@ opcode_inj[script_ref]=nil
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
-    <CheatEntry>
+     <CheatEntry>
       <ID>47</ID>
       <Description>"Legs dist from body"</Description>
       <Options moHideChildren="1"/>
+      <Color>00FFFF</Color>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
 --OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
 local suffix='_d'
+vars.varis_2_n='mult'..suffix..'_1'
+vars.varis_2_d=[[db 00 00 E0 FF FF FF EF 41
+db F3 04 35 3F]] --(max_float_double +0, sqHalf +8)
+vars.varis_2_size=12
 vars.varis_1_n='mult'..suffix
-vars.varis_1_d='dd (float)1\ndd (float)1\ndd (float)1\ndd (float)1'
-vars.varis_1_size=16
+vars.varis_1_d='dd (float)1\ndd (float)1\ndd (float)0.5\ndd (float)1'
+vars.varis_1_size=16   --(u +0, r +4, 0.5 +8, 1+C)
+
+vars.varis_ones_n='mult'..suffix..'_ones'
+vars.varis_ones_d='dd (float)1\ndd (float)1\ndd (float)1\ndd (float)1'
+vars.varis_ones_size=16
+vars.push_reg=','
+vars.push_xmm='sub rsp,10\nmovdqu [rsp],'
+
+vars.pop_xmm=',[rsp]\nadd rsp,10'
+vars.varis_regs_n='mult'..suffix..'_regs'
+vars.varis_regs_size=88   --(3 X general + 5 X xmm =&amp;gt; 8*3+5*16) (+0, +8, +10, || +20, +30, +40, +50)
 local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
 local module_names='PES2021.exe'
+vars.post={}
+
+vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that are not 'x_reg'
+ local xn=tonumber(vars.xreg_n)
+ local c=1
+ for i=0,15 do
+  if xn~=i then
+   vars['xmm~'..c]='xmm'..i
+   c=c+1
+  end
+ end
+ return vars --IMPORTANT!
+end
+
 
 --COMPULSORY
 local newmem_name='newmem'..suffix
@@ -184,18 +213,114 @@ local inj_script=[[
 	define($%s{inj_name},$%s{address_string})
     registersymbol($%s{inj_name})
     alloc($%s{newmem_name}, $%s{newmem_size}, $%s{inj_name})
-	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
+alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
     registersymbol($%s{varis_1_n})
 	$%s{varis_1_n}:
 	$%s{varis_1_d}
+
+    alloc($%s{varis_2_n}, $%d{varis_2_size}, $%s{inj_name})
+    registersymbol($%s{varis_2_n})
+	$%s{varis_2_n}:
+	$%s{varis_2_d}
+
+    alloc($%s{varis_ones_n}, $%d{varis_ones_size}, $%s{inj_name})
+    registersymbol($%s{varis_ones_n})
+	$%s{varis_ones_n}:
+	$%s{varis_ones_d}
+
+    alloc($%s{varis_regs_n}, $%d{varis_regs_size}, $%s{inj_name})
+    registersymbol($%s{varis_regs_n})
+
 
 	label(code)
 	label(return)
 
 	$%s{newmem_name}:
 	code:
-	  $%s{opcode}
-      mulps $%s{x_reg},[$%s{varis_1_n}]
+	      push rcx
+          push rbx
+          push rax
+          $%s{push_xmm} $%s{xmm~1}
+
+    mov rax,[7FFE0014] //Windows internal clock
+    mov rbx,rax
+    shl rbx,6
+    mov rcx,rax
+    shl rcx,18
+    imul rcx,rbx
+    imul rcx,rax
+    shr rcx,20 //ecx has the number
+
+    cvtsi2ss $%s{x_reg}, rcx
+    cvtss2sd $%s{x_reg}, $%s{x_reg}
+
+             sub rsp,8 //manual push
+					 mov [rsp],FFE00000
+					 mov [rsp+4],41EFFFFF //move max_float into stack
+					 divsd $%s{x_reg}, [rsp] //div by max float (in double precision)
+             add rsp,8 //manually remove pushes
+
+    cvtsd2ss $%s{x_reg}, $%s{x_reg} //random float in $%s{x_reg}
+
+    $%s{push_xmm} $%s{xmm~2}
+    $%s{push_xmm} $%s{xmm~3}
+    $%s{push_xmm} $%s{xmm~4}
+    $%s{push_xmm} $%s{xmm~5}
+$%s{push_xmm} $%s{x_reg}
+	cvtss2si ecx, $%s{x_reg}  //b as int
+	cvtsi2ss  $%s{xmm~5}, ecx // b
+
+    sub rsp,20 //manual push 8*4byte
+        mov [rsp], C0000000 //-2
+        mov [rsp+4], 3F800000 //1
+        mov [rsp+8], 40000000 //2
+        mov [rsp+C], 3F3504F3 //sqHalf
+
+		movss $%s{xmm~1},  [rsp+C] //sqHalf
+		movss $%s{xmm~2}, [rsp] //-2
+		movss $%s{xmm~3}, [rsp+4] //1
+		movss $%s{xmm~4}, [rsp+4] //2
+
+
+		mulss $%s{xmm~4}, $%s{xmm~5} //x~4=b*2
+		subss $%s{xmm~3}, $%s{xmm~4} // x~3=1-b*2
+		mulss $%s{xmm~1}, $%s{xmm~3} // x~1 = ( sqHalf* (1-b*2) )
+		mulss $%s{xmm~2}, $%s{xmm~5} //x~2 = -2*b
+		mulss $%s{xmm~2}, $%s{x_reg} // x~2=(-2*b)*x
+		addss $%s{xmm~2}, $%s{xmm~5}//x~2=(-2*b*x)+b
+		addss $%s{xmm~2}, $%s{x_reg} // x~2=(-2*b*x)+b+x
+		sqrtss $%s{xmm~2}, $%s{xmm~2} // // x~2=sqrt(-2*b*x+b+x)
+		mulss  $%s{xmm~1},$%s{xmm~2} // x~1 = ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x)
+		addss $%s{xmm~1}, $%s{xmm~5} //  x~1 = b+ ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x) || FINAL!
+
+		 mov [rsp+10], 3F800000 //1
+		 mov [rsp+14], 3F800000 //1
+		 mov [rsp+18], 3F800000 //1
+		 mov [rsp+1C], 3F800000 //1
+
+		movups $%s{xmm~4}, [rsp+10] //x~4={1,1,1,1}
+
+		add rsp,20 //manually remove pushes
+
+		mulss  $%s{xmm~4},  [$%s{varis_1_n}+4] //{r,1,1,1}
+		movss  $%s{xmm~3},  [$%s{varis_1_n}] //u
+		subss  $%s{xmm~3},  $%s{xmm~4}
+		mulss  $%s{xmm~4},  $%s{xmm~1} //mul by adj_x
+		addss  $%s{xmm~4},  $%s{xmm~4}
+		addss  $%s{xmm~4},  $%s{xmm~3} //FINAL MULT in x~4 !
+
+          movdqu $%s{x_reg} $%s{pop_xmm}
+	  $%s{opcode}  //loads 4 x floats into $%s{x_reg}
+		mulps $%s{x_reg},$%s{xmm~4}
+
+          movdqu $%s{xmm~5} $%s{pop_xmm}
+          movdqu $%s{xmm~4} $%s{pop_xmm}
+          movdqu $%s{xmm~3} $%s{pop_xmm}
+          movdqu $%s{xmm~2} $%s{pop_xmm}
+          movdqu $%s{xmm~1} $%s{pop_xmm}
+	      pop rax
+          pop rbx
+          pop rcx
       $%s{overwritten}
 	  jmp return
 
@@ -215,10 +340,17 @@ opcode_inj[script_ref]=nil
       <CheatEntries>
         <CheatEntry>
           <ID>48</ID>
-          <Description>"Distance"</Description>
+          <Description>"Distance mean"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
           <Address>mult_d</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>62</ID>
+          <Description>"Distance range"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>mult_d+4</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
