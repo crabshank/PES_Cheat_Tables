@@ -449,28 +449,28 @@ opcode_inj[script_ref]=nil
       <CheatEntries>
         <CheatEntry>
           <ID>44</ID>
-          <Description>"Twist (left) mean"</Description>
+          <Description>"Right arm mean"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
           <Address>mult_ra</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>67</ID>
-          <Description>"Twist (left) range"</Description>
+          <Description>"Right arm"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
           <Address>mult_ra+4</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>66</ID>
-          <Description>"Right arm mean"</Description>
+          <Description>"Twist (left) mean"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
           <Address>mult_ra+8</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>45</ID>
-          <Description>"Right arm range"</Description>
+          <Description>"Twist (left) range"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
           <Address>mult_ra+C</Address>
@@ -979,14 +979,14 @@ opcode_inj[script_ref]=nil
       <CheatEntries>
         <CheatEntry>
           <ID>1</ID>
-          <Description>"Lean average"</Description>
+          <Description>"Arms in/out average"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
           <Address>mult_1</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>6</ID>
-          <Description>"Lean range"</Description>
+          <Description>"Arms in/out range"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
           <Address>mult_1+4</Address>
@@ -1007,14 +1007,14 @@ opcode_inj[script_ref]=nil
         </CheatEntry>
         <CheatEntry>
           <ID>64</ID>
-          <Description>"Arms in/out average"</Description>
+          <Description>"Lean average"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
           <Address>mult_1+10</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>63</ID>
-          <Description>"Arms in/out range"</Description>
+          <Description>"Lean range"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
           <Address>mult_1+14</Address>
@@ -1195,18 +1195,18 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
-          <ID>61</ID>
-          <Description>"Speed range"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
-          <Address>mult_5+4</Address>
-        </CheatEntry>
-        <CheatEntry>
           <ID>31</ID>
           <Description>"Speed mean"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
           <Address>mult_5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>61</ID>
+          <Description>"Speed range"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>mult_5+4</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
