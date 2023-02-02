@@ -12,7 +12,11 @@ local vars={}
 --OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
 local suffix='_la'
 vars.varis_1_n='mult'..suffix
-vars.varis_1_d='dd (float)1\ndd (float)1'
+
+local m1=1 -- mean
+local r1=0 -- range
+
+vars.varis_1_d='dd (float)'..m1..'\ndd (float)'..r1
 vars.varis_1_size=8
 local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
 local module_names='PES2021.exe'
@@ -216,7 +220,13 @@ local vars={}
 --OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
 local suffix='_ra'
 vars.varis_1_n='mult'..suffix
-vars.varis_1_d='dd (float)1\ndd (float)1\ndd (float)1\ndd (float)1'
+
+local m1=1 -- Right arm mean
+local r1=0 -- Right arm range
+local m2=1 -- Twist (left) mean
+local r2=0 -- Twist (left) range
+
+vars.varis_1_d='dd (float)'..m1..'\ndd (float)'..r1..'\ndd (float)'..m2..'\ndd (float)'..r2
 vars.varis_1_size=16
 local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
 local module_names='PES2021.exe'
@@ -271,7 +281,6 @@ local aobs={'41 0F 28 C0 48 8B BC 24 88 00 00 00 41 8B CB',-32,0}
 local lookahead_n=32
 
 local inj_script=[[
-
 	define(${inj_name},${address_string})
     registersymbol(${inj_name})
     alloc(${newmem_name}, ${newmem_size}, ${inj_name})
@@ -285,10 +294,11 @@ local inj_script=[[
 
 	${newmem_name}:
 	code:
-${push_xmm}(6)
+    ${push_xmm}(6)
     push rcx
     push rbx
     push rax
+    ${push_xmm}(8)
     ${push_xmm}(7)
     ${push_xmm}(4)
     ${push_xmm}(1)
@@ -297,7 +307,7 @@ ${push_xmm}(6)
     ${push_xmm}(5)
     ${push_xmm}(0)
 
-
+${stack_push}(18)
     mov rax,[7FFE0014] //Windows internal clock
     mov rbx,rax
     shl rbx,6
@@ -307,50 +317,21 @@ ${push_xmm}(6)
     imul rcx,rax
     shr rcx,20 //ecx has the number
 
-    cvtsi2ss ${x_reg}, rcx
-    cvtss2sd ${x_reg}, ${x_reg}
+    cvtsi2ss ${xmm~7}, rcx
+    cvtss2sd ${xmm~7}, ${xmm~7}
 
-    ${stack_push}(8)
         mov [rsp],FFE00000
         mov [rsp+4],41EFFFFF //move max_float into stack
-        divsd ${x_reg}, [rsp] //div by max float (in double precision)
-    ${stack_pop}(8)
+        divsd ${xmm~7}, [rsp] //div by max float (in double precision)
 
-    cvtsd2ss ${x_reg}, ${x_reg} //random float in ${x_reg}
 
-    cvtss2si ecx, ${x_reg}  //b as int
-    cvtsi2ss  ${xmm~5}, ecx // b
+    cvtsd2ss ${xmm~7}, ${xmm~7} //random float in ${xmm~7}
 
-        ${stack_push}(10)
-        mov [rsp], C0000000 //-2
-        mov [rsp+4], 3F800000 //1
-        mov [rsp+8], 40000000 //2
-        mov [rsp+C], 3F3504F3 //sqHalf
+    cvtss2si ecx, ${xmm~7}  //b as int
+    cvtsi2ss  ${xmm~8}, ecx // b
 
-        movss ${xmm~1},  [rsp+C] //sqHalf
-        movss ${xmm~2}, [rsp] //-2
-        movss ${xmm~3}, [rsp+4] //1
-        movss ${xmm~4}, [rsp+8] //2
-
-        mulss ${xmm~4}, ${xmm~5} //x~4=b*2
-        subss ${xmm~3}, ${xmm~4} // x~3=1-b*2
-        mulss ${xmm~1}, ${xmm~3} // x~1 = ( sqHalf* (1-b*2) )
-        mulss ${xmm~2}, ${xmm~5} //x~2 = -2*b
-        mulss ${xmm~2}, ${x_reg} // x~2=(-2*b)*x
-        addss ${xmm~2}, ${xmm~5}//x~2=(-2*b*x)+b
-        addss ${xmm~2}, ${x_reg} // x~2=(-2*b*x)+b+x
-        sqrtss ${xmm~2}, ${xmm~2} // // x~2=sqrt(-2*b*x+b+x)
-        mulss  ${xmm~1},${xmm~2} // x~1 = ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x)
-        addss ${xmm~1}, ${xmm~5} //  x~1 = b+ ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x) || FINAL!
-    ${stack_pop}(10)
-
-    movss  ${xmm~4},  [${varis_1_n}+4] //{r,1,1,1}
-    movss  ${xmm~3},  [${varis_1_n}] //u
-    subss  ${xmm~3},  ${xmm~4}
-    mulss  ${xmm~4},  ${xmm~1} //mul by adj_x
-    addss  ${xmm~4},  ${xmm~4}
-    addss  ${xmm~4},  ${xmm~3} //FINAL MULT in x~4 !
-    movss ${xmm~6}, ${xmm~4}
+    movss ${x_reg},${xmm~7}
+    movss ${xmm~5},${xmm~8}
 
     //ROUND 2
 
@@ -363,59 +344,73 @@ ${push_xmm}(6)
     imul rcx,rax
     shr rcx,20 //ecx has the number
 
-    cvtsi2ss ${x_reg}, rcx
-    cvtss2sd ${x_reg}, ${x_reg}
+    cvtsi2ss ${xmm~7}, rcx
+    cvtss2sd ${xmm~7}, ${xmm~7}
 
-    ${stack_push}(8)
-        mov [rsp],FFE00000
-        mov [rsp+4],41EFFFFF //move max_float into stack
-        divsd ${x_reg}, [rsp] //div by max float (in double precision)
-    ${stack_pop}(8)
+        divsd ${xmm~7}, [rsp] //div by max float (in double precision)
 
-    cvtsd2ss ${x_reg}, ${x_reg} //random float in ${x_reg}
+    cvtsd2ss ${xmm~7}, ${xmm~7} //random float in ${xmm~7}
 
-    cvtss2si ecx, ${x_reg}  //b as int
-    cvtsi2ss  ${xmm~5}, ecx // b
+    cvtss2si ecx, ${xmm~7}  //b as int
+    cvtsi2ss  ${xmm~8}, ecx // b
 
-    ${stack_push}(10)
-        mov [rsp], C0000000 //-2
-        mov [rsp+4], 3F800000 //1
-        mov [rsp+8], 40000000 //2
-        mov [rsp+C], 3F3504F3 //sqHalf
+    pslldq ${x_reg},4
+    movss ${x_reg},${xmm~7}
+     pslldq ${xmm~5},4
+    movss ${xmm~5},${xmm~8}
 
-        movss ${xmm~1},  [rsp+C] //sqHalf
-        movss ${xmm~2}, [rsp] //-2
-        movss ${xmm~3}, [rsp+4] //1
-        movss ${xmm~4}, [rsp+8] //2
+        mov [rsp+8], C0000000 //-2
+        mov [rsp+C], 3F800000 //1
+        mov [rsp+10], 40000000 //2
+        mov [rsp+14], 3F3504F3 //sqHalf
 
-        mulss ${xmm~4}, ${xmm~5} //x~4=b*2
-        subss ${xmm~3}, ${xmm~4} // x~3=1-b*2
-        mulss ${xmm~1}, ${xmm~3} // x~1 = ( sqHalf* (1-b*2) )
-        mulss ${xmm~2}, ${xmm~5} //x~2 = -2*b
-        mulss ${xmm~2}, ${x_reg} // x~2=(-2*b)*x
-        addss ${xmm~2}, ${xmm~5}//x~2=(-2*b*x)+b
-        addss ${xmm~2}, ${x_reg} // x~2=(-2*b*x)+b+x
-        sqrtss ${xmm~2}, ${xmm~2} // // x~2=sqrt(-2*b*x+b+x)
-        mulss  ${xmm~1},${xmm~2} // x~1 = ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x)
-        addss ${xmm~1}, ${xmm~5} //  x~1 = b+ ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x) || FINAL!
-    ${stack_pop}(10)
+        movss ${xmm~1},  [rsp+14] //sqHalf
+        shufps ${xmm~1},${xmm~1},0 // every element := [0]
+        movss ${xmm~2}, [rsp+8] //-2
+        shufps ${xmm~2},${xmm~2},0 // every element := [0]
+        movss ${xmm~3}, [rsp+C] //1
+        shufps ${xmm~3},${xmm~3},0 // every element := [0]
+        movss ${xmm~4}, [rsp+10] //2
+        shufps ${xmm~4},${xmm~4},0 // every element := [0]
 
-    movss  ${xmm~4},  [${varis_1_n}+C] //{r,1,1,1}
-    movss  ${xmm~3},  [${varis_1_n}+8] //u
-    subss  ${xmm~3},  ${xmm~4}
-    mulss  ${xmm~4},  ${xmm~1} //mul by adj_x
-    addss  ${xmm~4},  ${xmm~4}
-    addss  ${xmm~4},  ${xmm~3} //FINAL MULT in x~4 !
-    pslldq ${xmm~6},4
-    movss ${xmm~6}, ${xmm~4} // (?,?,r,r)
-    pslldq ${xmm~6},4 // (?,r,r,~)
+        mulps ${xmm~4}, ${xmm~5} //x~4=b*2
+        subps ${xmm~3}, ${xmm~4} // x~3=1-b*2
+        mulps ${xmm~1}, ${xmm~3} // x~1 = ( sqHalf* (1-b*2) )
+        mulps ${xmm~2}, ${xmm~5} //x~2 = -2*b
+        mulps ${xmm~2}, ${x_reg} // x~2=(-2*b)*x
+        addps ${xmm~2}, ${xmm~5}//x~2=(-2*b*x)+b
+        addps ${xmm~2}, ${x_reg} // x~2=(-2*b*x)+b+x
+        sqrtps ${xmm~2}, ${xmm~2} // // x~2=sqrt(-2*b*x+b+x)
+        mulps  ${xmm~1},${xmm~2} // x~1 = ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x)
+        addps ${xmm~1}, ${xmm~5} //  x~1 = b+ ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x) || FINAL!
 
-    ${stack_push}(20)
+
+	movss ${xmm~5}, [${varis_1_n}+C]
+    movss ${xmm~4}, ${xmm~5}
+	pslldq ${xmm~4},4
+	movss ${xmm~5}, [${varis_1_n}+4]
+    movss ${xmm~4}, ${xmm~5}
+
+
+    movss ${xmm~5}, [${varis_1_n}+8]
+    movss ${xmm~3}, ${xmm~5}
+	pslldq ${xmm~3},4
+	movss ${xmm~5}, [${varis_1_n}]
+    movss ${xmm~3}, ${xmm~5}
+
+    subps  ${xmm~3},  ${xmm~4}
+    mulps  ${xmm~4},  ${xmm~1} //mul by adj_x
+    addps  ${xmm~4},  ${xmm~4}
+    addps  ${xmm~4},  ${xmm~3} //FINAL MULTS in x~4 !
+
+    movups ${xmm~6}, ${xmm~4} // (~,~,r,r)
+    pslldq ${xmm~6},4 //(~,r,r,~)
+
         movdqu [rsp], ${xmm~6}
         mov [rsp], 3F800000 //1
         mov [rsp+C], 3F800000 //1
         movups ${xmm~6}, [rsp] ////(1,r,r,1)
-    ${stack_pop}(20)
+    ${stack_pop}(18)
 
     ${pop_xmm}(0)
     ${pop_xmm}(5)
@@ -424,6 +419,7 @@ ${push_xmm}(6)
     ${pop_xmm}(1)
     ${pop_xmm}(4)
     ${pop_xmm}(7)
+    ${pop_xmm}(8)
     pop rax
     pop rbx
     pop rcx
@@ -489,7 +485,11 @@ local vars={}
 local suffix='_d'
 
 vars.varis_1_n='mult'..suffix
-vars.varis_1_d='dd (float)1\ndd (float)1'
+
+local m1=1 -- mean
+local r1=0 -- range
+
+vars.varis_1_d='dd (float)'..m1..'\ndd (float)'..r1
 vars.varis_1_size=8   --(u +0, r +4)
 
 vars.push_xmm='sub rsp,10\nmovdqu [rsp],'
@@ -688,7 +688,15 @@ local vars={}
 --OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
 local suffix='_anim'
 vars.varis_1_n='mult_1'
-vars.varis_1_d='dd (float)1\ndd (float)1\ndd (float)1\ndd (float)1\ndd (float)1\ndd (float)1'
+
+local m1=1 -- Arms in/out mean
+local r1=0 -- Arms in/out range
+local m2=1 -- Arms dist mean
+local r2=0 -- Arms dist range
+local m3=1 -- Lean avg
+local r3=0 -- Lean range
+
+vars.varis_1_d='dd (float)'..m1..'\ndd (float)'..r1..'\ndd (float)'..m2..'\ndd (float)'..r2..'\ndd (float)'..m3..'\ndd (float)'..r3
 vars.varis_1_size=24
 local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
 local module_names='PES2021.exe'
@@ -743,8 +751,7 @@ local aobs={'0F 28 44 24 20 41 0F 29 07 48 8B 4C 24 30',-10,16}
 local lookahead_n=32
 
 local inj_script=[[
-
-	define(${inj_name},${address_string})
+define(${inj_name},${address_string})
     registersymbol(${inj_name})
     alloc(${newmem_name}, ${newmem_size}, ${inj_name})
 	alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
@@ -757,12 +764,14 @@ local inj_script=[[
 
 	${newmem_name}:
 	code:
-    movaps ${xmm~7},[rsp+20]
+	    ${push_xmm}(9) //-10
+		    movaps ${xmm~9},[rsp+20+10]
+	    ${push_xmm}(7)
 ${push_xmm}(6)
     push rcx
     push rbx
     push rax
-    ${push_xmm}(7)
+	    ${push_xmm}(8)
     ${push_xmm}(4)
     ${push_xmm}(1)
     ${push_xmm}(2)
@@ -770,7 +779,7 @@ ${push_xmm}(6)
     ${push_xmm}(5)
     ${push_xmm}(0)
 
-
+${stack_push}(18)
     mov rax,[7FFE0014] //Windows internal clock
     mov rbx,rax
     shl rbx,6
@@ -780,56 +789,22 @@ ${push_xmm}(6)
     imul rcx,rax
     shr rcx,20 //ecx has the number
 
-    cvtsi2ss ${x_reg}, rcx
-    cvtss2sd ${x_reg}, ${x_reg}
+    cvtsi2ss ${xmm~7}, rcx
+    cvtss2sd ${xmm~7}, ${xmm~7}
 
-    ${stack_push}(8)
         mov [rsp],FFE00000
         mov [rsp+4],41EFFFFF //move max_float into stack
-        divsd ${x_reg}, [rsp] //div by max float (in double precision)
-    ${stack_pop}(8)
+        divsd ${xmm~7}, [rsp] //div by max float (in double precision)
 
-    cvtsd2ss ${x_reg}, ${x_reg} //random float in ${x_reg}
 
-    cvtss2si ecx, ${x_reg}  //b as int
-    cvtsi2ss  ${xmm~5}, ecx // b
+    cvtsd2ss ${xmm~7}, ${xmm~7} //random float in ${xmm~7}
+	//pslldq ${x_reg},4
+	movss ${x_reg}, ${xmm~7}
 
-        ${stack_push}(20)
-        mov [rsp], C0000000 //-2
-        mov [rsp+4], 3F800000 //1
-        mov [rsp+8], 40000000 //2
-        mov [rsp+C], 3F3504F3 //sqHalf
-
-        movss ${xmm~1},  [rsp+C] //sqHalf
-        movss ${xmm~2}, [rsp] //-2
-        movss ${xmm~3}, [rsp+4] //1
-        movss ${xmm~4}, [rsp+8] //2
-
-        mulss ${xmm~4}, ${xmm~5} //x~4=b*2
-        subss ${xmm~3}, ${xmm~4} // x~3=1-b*2
-        mulss ${xmm~1}, ${xmm~3} // x~1 = ( sqHalf* (1-b*2) )
-        mulss ${xmm~2}, ${xmm~5} //x~2 = -2*b
-        mulss ${xmm~2}, ${x_reg} // x~2=(-2*b)*x
-        addss ${xmm~2}, ${xmm~5}//x~2=(-2*b*x)+b
-        addss ${xmm~2}, ${x_reg} // x~2=(-2*b*x)+b+x
-        sqrtss ${xmm~2}, ${xmm~2} // // x~2=sqrt(-2*b*x+b+x)
-        mulss  ${xmm~1},${xmm~2} // x~1 = ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x)
-        addss ${xmm~1}, ${xmm~5} //  x~1 = b+ ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x) || FINAL!
-
-        mov [rsp+10], 3F800000 //1
-        mov [rsp+14], 3F800000 //1
-        mov [rsp+18], 3F800000 //1
-        mov [rsp+1C], 3F800000 //1
-
-        movups ${xmm~6}, [rsp+10] //x~4={1,1,1,1}
-    ${stack_pop}(20)
-    movss  ${xmm~4},  [${varis_1_n}+4] //{r,1,1,1}
-    movss  ${xmm~3},  [${varis_1_n}] //u
-    subss  ${xmm~3},  ${xmm~4}
-    mulss  ${xmm~4},  ${xmm~1} //mul by adj_x
-    addss  ${xmm~4},  ${xmm~4}
-    addss  ${xmm~4},  ${xmm~3} //FINAL MULT in x~4 !
-    movss ${xmm~6}, ${xmm~4}
+	cvtss2si ecx, ${xmm~7}  //b as int
+    cvtsi2ss  ${xmm~8}, ecx // b
+	//pslldq ${xmm~5},4
+	movss ${xmm~5}, ${xmm~8}
 
     //ROUND 2
 
@@ -842,53 +817,24 @@ ${push_xmm}(6)
     imul rcx,rax
     shr rcx,20 //ecx has the number
 
-    cvtsi2ss ${x_reg}, rcx
-    cvtss2sd ${x_reg}, ${x_reg}
+    cvtsi2ss ${xmm~7}, rcx
+    cvtss2sd ${xmm~7}, ${xmm~7}
 
-    ${stack_push}(8)
         mov [rsp],FFE00000
         mov [rsp+4],41EFFFFF //move max_float into stack
-        divsd ${x_reg}, [rsp] //div by max float (in double precision)
-    ${stack_pop}(8)
+        divsd ${xmm~7}, [rsp] //div by max float (in double precision)
 
-    cvtsd2ss ${x_reg}, ${x_reg} //random float in ${x_reg}
 
-    cvtss2si ecx, ${x_reg}  //b as int
-    cvtsi2ss  ${xmm~5}, ecx // b
+    cvtsd2ss ${xmm~7}, ${xmm~7} //random float in ${xmm~7}
+	pslldq ${x_reg},4
+	movss ${x_reg}, ${xmm~7}
 
-    ${stack_push}(10)
-        mov [rsp], C0000000 //-2
-        mov [rsp+4], 3F800000 //1
-        mov [rsp+8], 40000000 //2
-        mov [rsp+C], 3F3504F3 //sqHalf
+	cvtss2si ecx, ${xmm~7}  //b as int
+    cvtsi2ss  ${xmm~8}, ecx // b
+	pslldq ${xmm~5},4
+	movss ${xmm~5}, ${xmm~8}
 
-        movss ${xmm~1},  [rsp+C] //sqHalf
-        movss ${xmm~2}, [rsp] //-2
-        movss ${xmm~3}, [rsp+4] //1
-        movss ${xmm~4}, [rsp+8] //2
-
-        mulss ${xmm~4}, ${xmm~5} //x~4=b*2
-        subss ${xmm~3}, ${xmm~4} // x~3=1-b*2
-        mulss ${xmm~1}, ${xmm~3} // x~1 = ( sqHalf* (1-b*2) )
-        mulss ${xmm~2}, ${xmm~5} //x~2 = -2*b
-        mulss ${xmm~2}, ${x_reg} // x~2=(-2*b)*x
-        addss ${xmm~2}, ${xmm~5}//x~2=(-2*b*x)+b
-        addss ${xmm~2}, ${x_reg} // x~2=(-2*b*x)+b+x
-        sqrtss ${xmm~2}, ${xmm~2} // // x~2=sqrt(-2*b*x+b+x)
-        mulss  ${xmm~1},${xmm~2} // x~1 = ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x)
-        addss ${xmm~1}, ${xmm~5} //  x~1 = b+ ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x) || FINAL!
-    ${stack_pop}(10)
-
-    movss  ${xmm~4},  [${varis_1_n}+C] //{r,1,1,1}
-    movss  ${xmm~3},  [${varis_1_n}+8] //u
-    subss  ${xmm~3},  ${xmm~4}
-    mulss  ${xmm~4},  ${xmm~1} //mul by adj_x
-    addss  ${xmm~4},  ${xmm~4}
-    addss  ${xmm~4},  ${xmm~3} //FINAL MULT in x~4 !
-      pslldq ${xmm~6},4
-    movss ${xmm~6}, ${xmm~4}
-
-//ROUND 3:
+	//ROUND 3
 
     mov rax,[7FFE0014] //Windows internal clock
     mov rbx,rax
@@ -899,67 +845,92 @@ ${push_xmm}(6)
     imul rcx,rax
     shr rcx,20 //ecx has the number
 
-    cvtsi2ss ${x_reg}, rcx
-    cvtss2sd ${x_reg}, ${x_reg}
+    cvtsi2ss ${xmm~7}, rcx
+    cvtss2sd ${xmm~7}, ${xmm~7}
 
-    ${stack_push}(8)
         mov [rsp],FFE00000
         mov [rsp+4],41EFFFFF //move max_float into stack
-        divsd ${x_reg}, [rsp] //div by max float (in double precision)
-    ${stack_pop}(8)
-
-    cvtsd2ss ${x_reg}, ${x_reg} //random float in ${x_reg}
-
-    cvtss2si ecx, ${x_reg}  //b as int
-    cvtsi2ss  ${xmm~5}, ecx // b
-
-    ${stack_push}(10)
-        mov [rsp], C0000000 //-2
-        mov [rsp+4], 3F800000 //1
-        mov [rsp+8], 40000000 //2
-        mov [rsp+C], 3F3504F3 //sqHalf
-
-        movss ${xmm~1},  [rsp+C] //sqHalf
-        movss ${xmm~2}, [rsp] //-2
-        movss ${xmm~3}, [rsp+4] //1
-        movss ${xmm~4}, [rsp+8] //2
-
-        mulss ${xmm~4}, ${xmm~5} //x~4=b*2
-        subss ${xmm~3}, ${xmm~4} // x~3=1-b*2
-        mulss ${xmm~1}, ${xmm~3} // x~1 = ( sqHalf* (1-b*2) )
-        mulss ${xmm~2}, ${xmm~5} //x~2 = -2*b
-        mulss ${xmm~2}, ${x_reg} // x~2=(-2*b)*x
-        addss ${xmm~2}, ${xmm~5}//x~2=(-2*b*x)+b
-        addss ${xmm~2}, ${x_reg} // x~2=(-2*b*x)+b+x
-        sqrtss ${xmm~2}, ${xmm~2} // // x~2=sqrt(-2*b*x+b+x)
-        mulss  ${xmm~1},${xmm~2} // x~1 = ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x)
-        addss ${xmm~1}, ${xmm~5} //  x~1 = b+ ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x) || FINAL!
-    ${stack_pop}(10)
-
-    movss  ${xmm~4},  [${varis_1_n}+14] //{r,1,1,1}
-    movss  ${xmm~3},  [${varis_1_n}+10] //u
-    subss  ${xmm~3},  ${xmm~4}
-    mulss  ${xmm~4},  ${xmm~1} //mul by adj_x
-    addss  ${xmm~4},  ${xmm~4}
-    addss  ${xmm~4},  ${xmm~3} //FINAL MULT in x~4 !
-      pslldq ${xmm~6},4
-    movss ${xmm~6}, ${xmm~4}
+        divsd ${xmm~7}, [rsp] //div by max float (in double precision)
 
 
+    cvtsd2ss ${xmm~7}, ${xmm~7} //random float in ${xmm~7}
+	pslldq ${x_reg},4
+	movss ${x_reg}, ${xmm~7} // x_reg: (~,r,r,r)
+
+    cvtss2si ecx, ${xmm~7}  //b as int
+    cvtsi2ss  ${xmm~8}, ecx // b
+	pslldq ${xmm~5},4
+	movss ${xmm~5}, ${xmm~8} // x~5: (~,r,r,r)
+
+	mov [rsp+8], C0000000 //-2
+	mov [rsp+C], 3F800000 //1
+	mov [rsp+10], 40000000 //2
+	mov [rsp+14], 3F3504F3 //sqHalf
+
+	movss ${xmm~1},  [rsp+14] //sqHalf
+	shufps ${xmm~1},${xmm~1},0 // every element := [0]
+	movss ${xmm~2}, [rsp+8] //-2
+	shufps ${xmm~2},${xmm~2},0 // every element := [0]
+	movss ${xmm~3}, [rsp+C] //1
+	shufps ${xmm~3},${xmm~3},0 // every element := [0]
+	movss ${xmm~4}, [rsp+10] //2
+	shufps ${xmm~4},${xmm~4},0 // every element := [0]
+
+	mulps ${xmm~4}, ${xmm~5} //x~4=b*2
+	subps ${xmm~3}, ${xmm~4} // x~3=1-b*2
+	mulps ${xmm~1}, ${xmm~3} // x~1 = ( sqHalf* (1-b*2) )
+	mulps ${xmm~2}, ${xmm~5} //x~2 = -2*b
+	mulps ${xmm~2}, ${x_reg} // x~2=(-2*b)*x
+	addps ${xmm~2}, ${xmm~5}//x~2=(-2*b*x)+b
+	addps ${xmm~2}, ${x_reg} // x~2=(-2*b*x)+b+x
+	sqrtps ${xmm~2}, ${xmm~2} // // x~2=sqrt(-2*b*x+b+x)
+	mulps  ${xmm~1},${xmm~2} // x~1 = ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x)
+	addps ${xmm~1}, ${xmm~5} //  x~1 = b+ ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x) || FINAL!
+
+	movss ${xmm~5}, [${varis_1_n}+4]
+    movss ${xmm~4}, ${xmm~5} // (~,~,~,g)
+	pslldq ${xmm~4},4 // (~,~,g,~)
+	movss ${xmm~5}, [${varis_1_n}+C]
+	movss ${xmm~4}, ${xmm~5} // (~,~,g,g)
+	pslldq ${xmm~4},4 // (~,g,g,~)
+    movss ${xmm~5}, [${varis_1_n}+14]
+    movss ${xmm~4}, ${xmm~5} // (~,g,g,g)
+
+	movss ${xmm~5}, [${varis_1_n}]
+    movss ${xmm~3}, ${xmm~5} // (~,~,~,u)
+	pslldq ${xmm~3},4 // (~,~,u,~)
+	movss ${xmm~5}, [${varis_1_n}+8]
+	movss ${xmm~3}, ${xmm~5} // (~,~,u,u)
+	pslldq ${xmm~3},4 // (~,u,u,~)
+    movss ${xmm~5}, [${varis_1_n}+10]
+    movss ${xmm~3}, ${xmm~5} // (~,u,u,u)
+
+	subps  ${xmm~3},  ${xmm~4}
+    mulps  ${xmm~4},  ${xmm~1} //mul by adj_x
+    addps  ${xmm~4},  ${xmm~4}
+    addps  ${xmm~4},  ${xmm~3} //FINAL MULTS in x~4 !
+
+	movdqu [rsp], ${xmm~4}
+	mov [rsp+C], 3F800000 //1
+	movups ${xmm~6}, [rsp] ////(1,mlt,mlt,mlt)
+
+ ${stack_pop}(18)
     ${pop_xmm}(0)
-    mulps ${xmm~7},${xmm~6}
-    movups ${x_reg},${xmm~7}
+    mulps ${xmm~9},${xmm~6}
+    movups ${x_reg},${xmm~9}
     ${pop_xmm}(5)
     ${pop_xmm}(3)
     ${pop_xmm}(2)
     ${pop_xmm}(1)
     ${pop_xmm}(4)
-    ${pop_xmm}(7)
+    ${pop_xmm}(8)
     pop rax
     pop rbx
     pop rcx
       //${opcode}
       ${pop_xmm}(6)
+	      ${pop_xmm}(7)
+	      ${pop_xmm}(9)
       ${overwritten}
 	  jmp return
 
@@ -1032,7 +1003,11 @@ local vars={}
 --OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
 local suffix='_5'
 vars.varis_1_n='mult'..suffix
-vars.varis_1_d='dd (float)1\ndd (float)1'
+
+local m1=1 -- mean
+local r1=0 -- range
+
+vars.varis_1_d='dd (float)'..m1..'\ndd (float)'..r1
 vars.varis_1_size=8   --(u +0, r +4, 0.5 +8, 1+C)
 
 local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
@@ -1221,7 +1196,9 @@ local vars={}
 --OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
 local suffix='_2'
 vars.varis_1_n='mult'..suffix
-vars.varis_1_d='dd (float)0.9964\n'
+
+local rush=0.9964
+vars.varis_1_d='dd (float)'..rush..'\n'
 vars.varis_1_size=4
 local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
 local module_names='PES2021.exe'
