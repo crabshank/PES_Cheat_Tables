@@ -1376,6 +1376,145 @@ opcode_inj[script_ref]=nil
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
+    <CheatEntry>
+      <ID>74</ID>
+      <Description>"Angle hijack (Stadium)"</Description>
+      <Options moHideChildren="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+--OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+local suffix='_camAngle'
+vars.varis_1_n='mult'..suffix
+
+local angle=5
+vars.varis_1_d='dd (float)'..angle
+vars.varis_1_size=4
+local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
+local module_names='PES2021.exe'
+vars.post={}
+
+vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that are not 'x_reg'
+ local xn=tonumber(vars.xreg_n)
+ local c=1
+ for i=0,15 do
+  if xn~=i then
+   vars['xmm~'..c]='xmm'..i
+   c=c+1
+  end
+ end
+ return vars --IMPORTANT!
+end
+
+-- token functions (below) run after ['post'] functions
+vars['push_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
+    local s='sub rsp,10\nmovdqu [rsp], '
+    if n=='0' then
+		return s .. vars['x_reg']
+	else
+		return s .. vars['xmm~'..n]
+	end
+end
+
+vars['pop_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
+    local s=',[rsp]\nadd rsp,10'
+    if n=='0' then
+		return 'movdqu '..vars['x_reg'] .. s
+	else
+		return 'movdqu '..vars['xmm~'..n] .. s
+	end
+end
+
+vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
+		return 'sub rsp, ' .. n
+end
+
+vars['stack_pop']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
+		return 'add rsp, ' .. n
+end
+
+--COMPULSORY
+local newmem_name='newmem'..suffix
+local newmem_size='$1000'
+local script_ref='Hijack_angle' --  opcode_inj[vars.script_ref] stores vars
+local inj_name='INJECT'..suffix
+local pattern='^%s*movss%s*%[[^%]]+%]%s*,%s*xmm%d+'
+local aobs={'40 10 F3 0F 11 48 14',0,4}
+local lookahead_n=32
+
+local inj_script=[[
+	define($%s{inj_name},$%s{address_string})
+    registersymbol($%s{inj_name})
+    alloc($%s{newmem_name}, $%s{newmem_size}, $%s{inj_name})
+	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
+    registersymbol($%s{varis_1_n})
+	$%s{varis_1_n}:
+	$%s{varis_1_d}
+
+	label(code)
+	label(return)
+
+	$%s{newmem_name}:
+	code:
+	  mulss $%s{x_reg},[$%s{varis_1_n}]
+	  $%s{opcode}
+      $%s{overwritten}
+	  jmp return
+
+	$%s{inj_name}:
+	  jmp $%s{newmem_name}
+	  $%s{post_jmp}
+	return:
+]]
+
+[ENABLE]
+opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+
+{$asm}
+aobscanmodule(INJECT_2,PES2021.exe,73 19 0F 2F CC 72) // should be unique
+alloc(newmem_2,$1000,INJECT_2)
+
+INJECT_2:
+  db 90 90
+registersymbol(INJECT_2)
+
+aobscanmodule(INJECT_3,PES2021.exe,D6 01 76 45 F3 0F 10 05) // should be unique
+alloc(newmem_3,$1000,INJECT_3)
+
+INJECT_3:
+  db D6 01 90 90
+registersymbol(INJECT_3)
+
+
+[DISABLE]
+opcode_inj.disable(script_ref)
+opcode_inj[script_ref]=nil
+
+{$asm}
+INJECT_2:
+  db 73 19 0F 2F CC
+
+unregistersymbol(INJECT_2)
+dealloc(newmem_2)
+
+INJECT_3:
+  db D6 01 76 45
+
+unregistersymbol(INJECT_3)
+dealloc(newmem_3)
+
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>72</ID>
+          <Description>"Angle mult"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>mult_camAngle</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
 </CheatTable>
