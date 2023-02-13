@@ -1256,7 +1256,7 @@ opcode_inj[script_ref]=nil
     </CheatEntry>
     <CheatEntry>
       <ID>69</ID>
-      <Description>"Free broadcast"</Description>
+      <Description>"Broadcast focus"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{$lua}
@@ -1266,10 +1266,9 @@ local vars={}
 local suffix='_bcc'
 vars.varis_1_n='mult'..suffix
 
-local zoom=1.165
 local focus=0.025
-vars.varis_1_d='dd (float)'..zoom..'\ndd (float)'..focus
-vars.varis_1_size=8
+vars.varis_1_d='dd (float)'..focus
+vars.varis_1_size=4
 local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
 local module_names='PES2021.exe'
 vars.post={}
@@ -1317,7 +1316,7 @@ end
 --COMPULSORY
 local newmem_name='newmem'..suffix
 local newmem_size='$1000'
-local script_ref='Free_broadcast' --  opcode_inj[vars.script_ref] stores vars
+local script_ref='Broadcast_focus' --  opcode_inj[vars.script_ref] stores vars
 local inj_name='INJECT'..suffix
 local pattern='^%s*mov.+%s*xmm%d+,%s*%[[^%]]+%]'
 local aobs={'8B 43 08 42 0F 10 04 01',0,6}
@@ -1340,11 +1339,10 @@ local inj_script=[[
     ${push_xmm}(1)
     ${stack_push}(20)
         mov [rsp], 3F800000 //1
-        movss ${xmm~1}, [${varis_1_n}] //zoom
-        movss [rsp+4], ${xmm~1}
+        mov [rsp+4], 3F800000 //1
         mov [rsp+8], 3F800000 //1
         movss ${xmm~1}, [rbx+18] //ball pos (width)
-        mulss ${xmm~1}, [${varis_1_n}+4]
+        mulss ${xmm~1}, [${varis_1_n}]
         movss [rsp+C], ${xmm~1} //adj focus
         movups ${xmm~1}, [rsp]
 	  ${opcode}
@@ -1371,17 +1369,10 @@ opcode_inj[script_ref]=nil
       <CheatEntries>
         <CheatEntry>
           <ID>70</ID>
-          <Description>"Zoom"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
-          <Address>mult_bcc</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>71</ID>
           <Description>"Focus"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>mult_bcc+4</Address>
+          <Address>mult_bcc</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
