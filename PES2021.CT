@@ -1198,7 +1198,7 @@ local suffix='_2'
 vars.varis_1_n='mult'..suffix
 
 local rush=0.9964
-vars.varis_1_d='dd (float)'..rush..'\n'
+vars.varis_1_d='dd (float)'..rush
 vars.varis_1_size=4
 local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
 local module_names='PES2021.exe'
@@ -1206,7 +1206,7 @@ local module_names='PES2021.exe'
 --COMPULSORY
 local newmem_name='newmem'..suffix
 local newmem_size='$1000'
-local script_ref='Animation_speed' --  opcode_inj[vars.script_ref] stores vars
+local script_ref='Pre_kick_rush' --  opcode_inj[vars.script_ref] stores vars
 local inj_name='INJECT'..suffix
 local pattern='^%s*movss%s*%[[^%]]+%]%s*,%s*xmm%d+'
 local aobs={'F3 41 0F 11 5C 24 0C 48',-10,20}
@@ -1251,6 +1251,137 @@ opcode_inj[script_ref]=nil
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
           <Address>mult_2</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>69</ID>
+      <Description>"Free broadcast"</Description>
+      <Options moHideChildren="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+--OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+local suffix='_bcc'
+vars.varis_1_n='mult'..suffix
+
+local zoom=1.165
+local focus=0.025
+vars.varis_1_d='dd (float)'..zoom..'\ndd (float)'..focus
+vars.varis_1_size=8
+local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
+local module_names='PES2021.exe'
+vars.post={}
+
+vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that are not 'x_reg'
+ local xn=tonumber(vars.xreg_n)
+ local c=1
+ for i=0,15 do
+  if xn~=i then
+   vars['xmm~'..c]='xmm'..i
+   c=c+1
+  end
+ end
+ return vars --IMPORTANT!
+end
+
+-- token functions (below) run after ['post'] functions
+vars['push_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
+    local s='sub rsp,10\nmovdqu [rsp], '
+    if n=='0' then
+		return s .. vars['x_reg']
+	else
+		return s .. vars['xmm~'..n]
+	end
+end
+
+vars['pop_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
+    local s=',[rsp]\nadd rsp,10'
+    if n=='0' then
+		return 'movdqu '..vars['x_reg'] .. s
+	else
+		return 'movdqu '..vars['xmm~'..n] .. s
+	end
+end
+
+vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
+		return 'sub rsp, ' .. n
+end
+
+vars['stack_pop']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
+		return 'add rsp, ' .. n
+end
+
+
+--COMPULSORY
+local newmem_name='newmem'..suffix
+local newmem_size='$1000'
+local script_ref='Free_broadcast' --  opcode_inj[vars.script_ref] stores vars
+local inj_name='INJECT'..suffix
+local pattern='^%s*mov.+%s*xmm%d+,%s*%[[^%]]+%]'
+local aobs={'8B 43 08 42 0F 10 04 01',0,6}
+local lookahead_n=64
+
+local inj_script=[[
+	define($%s{inj_name},$%s{address_string})
+    registersymbol($%s{inj_name})
+    alloc($%s{newmem_name}, $%s{newmem_size}, $%s{inj_name})
+	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
+    registersymbol($%s{varis_1_n})
+	$%s{varis_1_n}:
+	$%s{varis_1_d}
+
+	label(code)
+	label(return)
+
+	$%s{newmem_name}:
+	code:
+    ${push_xmm}(1)
+    ${stack_push}(20)
+        mov [rsp], 3F800000 //1
+        movss ${xmm~1}, [${varis_1_n}] //zoom
+        movss [rsp+4], ${xmm~1}
+        mov [rsp+8], 3F800000 //1
+        movss ${xmm~1}, [rbx+18] //ball pos (width)
+        mulss ${xmm~1}, [${varis_1_n}+4]
+        movss [rsp+C], ${xmm~1} //adj focus
+        movups ${xmm~1}, [rsp]
+	  ${opcode}
+      mulps ${x_reg},${xmm~1}
+      ${stack_pop}(20)
+      ${pop_xmm}(1)
+      ${overwritten}
+	  jmp return
+
+
+	$%s{inj_name}:
+	  jmp $%s{newmem_name}
+	  $%s{post_jmp}
+	return:
+]]
+
+[ENABLE]
+opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+
+[DISABLE]
+opcode_inj.disable(script_ref)
+opcode_inj[script_ref]=nil
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>70</ID>
+          <Description>"Zoom"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>mult_bcc</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>71</ID>
+          <Description>"Focus"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>mult_bcc+4</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
