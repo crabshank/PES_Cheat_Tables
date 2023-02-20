@@ -1515,6 +1515,54 @@ dealloc(newmem_3)
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
+    <CheatEntry>
+      <ID>75</ID>
+      <Description>"Cutscene heights fix"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+--OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+local suffix='_chg'
+local parts={{'.+',1,'jb_address'}}
+local module_names='PES2021.exe'
+
+--COMPULSORY
+local newmem_name='newmem'..suffix
+local newmem_size='$1000'
+local script_ref='Cutscenes_height' --  opcode_inj[vars.script_ref] stores vars
+local inj_name='INJECT'..suffix
+local pattern='^%s*jb%s+.+'
+local aobs={'2F C5 72 05 0F 28 D1 EB 03',0,4}
+local lookahead_n=32
+
+local inj_script=[[
+  define(${inj_name},${address_string})
+  registersymbol(${inj_name})
+  alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+
+  label(code)
+  //label(return)
+
+$%s{newmem_name}:
+	code:
+jmp ${jb_address}
+      //$%s{overwritten}
+	  //jmp return
+
+ ${inj_name}:
+	  jmp ${newmem_name}
+  //${post_jmp}
+  //return:
+]]
+
+[ENABLE]
+opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+
+[DISABLE]
+opcode_inj.disable(script_ref)
+opcode_inj[script_ref]=nil
+</AssemblerScript>
+    </CheatEntry>
   </CheatEntries>
-  <UserdefinedSymbols/>
 </CheatTable>
