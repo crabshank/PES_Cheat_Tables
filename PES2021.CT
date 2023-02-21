@@ -1564,5 +1564,54 @@ opcode_inj.disable(script_ref)
 opcode_inj[script_ref]=nil
 </AssemblerScript>
     </CheatEntry>
+    <CheatEntry>
+      <ID>76</ID>
+      <Description>"Smoother animation experiment"</Description>
+      <Options moHideChildren="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+--OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+local suffix='_sma'
+local parts={{'.+',1,'jne_address'}}
+--COMPULSORY
+local newmem_name='newmem'..suffix
+local newmem_size='$1000'
+local script_ref='Smooth_anim_exp' --  opcode_inj[vars.script_ref] stores vars
+local inj_name='INJECT'..suffix
+local pattern='^%s*jne%s+.+'
+local aobs={'66 39 08 75 4A 41 81 BD 44 08 00 00 97 00 00 00',2,5}
+local lookahead_n=32
+
+local inj_script=[[
+
+define(${inj_name},${address_string})
+    registersymbol(${inj_name})
+    alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+
+	label(code)
+//label(return)
+
+	$%s{newmem_name}:
+	code:
+    jmp ${jne_address}
+
+	$%s{inj_name}:
+	  jmp ${newmem_name}
+	  ${post_jmp}
+	//return:
+
+]]
+
+[ENABLE]
+opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+
+[DISABLE]
+opcode_inj.disable(script_ref)
+opcode_inj[script_ref]=nil
+</AssemblerScript>
+    </CheatEntry>
   </CheatEntries>
+  <UserdefinedSymbols/>
 </CheatTable>
