@@ -1685,7 +1685,7 @@ local newmem_size='$1000'
 local script_ref='Game_speed' --  opcode_inj[vars.script_ref] stores vars
 local inj_name='INJECT'..suffix
 local pattern='^%s*movss%s+xmm%d+,%s*%[[^%]]+%]'
-local aobs={'CC CC CC F3 0F 10 05 7C 7B 6C 01',2,4}
+local aobs={'44 88 49 10 44 89 41 14 89 51 18',-127,-123}
 local lookahead_n=32
 
 local inj_script=[[
