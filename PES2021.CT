@@ -33,6 +33,7 @@ scrpts[7].Active=true -- Brodacst focus
 scrpts[8].Active=true -- Angle hijack (stadium)
 scrpts[9].Active=true -- Cutscenes heights
 scrpts[10].Active=true -- Smoother anim
+scrpts[11].Active=true -- Game speed
 
 [DISABLE]
 scrpts[1].Active=false -- Left arm
@@ -45,6 +46,7 @@ scrpts[7].Active=false -- Brodacst focus
 scrpts[8].Active=false -- Angle hijack (stadium)
 scrpts[9].Active=false -- Cutscenes heights
 scrpts[10].Active=false -- Smoother anim
+scrpts[11].Active=true -- Game speed
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -1658,6 +1660,75 @@ opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pa
 opcode_inj.disable(script_ref)
 opcode_inj[script_ref]=nil
 </AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>79</ID>
+          <Description>"Game speed (Lower is faster [1/x])"</Description>
+          <Options moHideChildren="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+--OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+local suffix='_speed'
+vars.varis_1_n='mult'..suffix
+
+local spd=1
+vars.varis_1_d='dd (float)'..spd
+vars.varis_1_size=4
+local parts={{'xmm%d+',1,'x_reg'}}
+local module_names='PES2021.exe'
+
+--COMPULSORY
+local newmem_name='newmem'..suffix
+local newmem_size='$1000'
+local script_ref='Game_speed' --  opcode_inj[vars.script_ref] stores vars
+local inj_name='INJECT'..suffix
+local pattern='^%s*movss%s+xmm%d+,%s*%[[^%]]+%]'
+local aobs={'CC CC CC F3 0F 10 05 7C 7B 6C 01',2,4}
+local lookahead_n=32
+
+local inj_script=[[
+	define($%s{inj_name},$%s{address_string})
+    registersymbol($%s{inj_name})
+    alloc($%s{newmem_name}, $%s{newmem_size}, $%s{inj_name})
+	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
+    registersymbol($%s{varis_1_n})
+	$%s{varis_1_n}:
+	$%s{varis_1_d}
+
+	label(code)
+	label(return)
+
+	$%s{newmem_name}:
+	code:
+    ${opcode}
+	  mulss ${x_reg},[${varis_1_n}]
+      ${overwritten}
+	  jmp return
+
+	${inj_name}:
+	  jmp ${newmem_name}
+	  ${post_jmp}
+	return:
+]]
+
+[ENABLE]
+opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+
+[DISABLE]
+opcode_inj.disable(script_ref)
+opcode_inj[script_ref]=nil
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>80</ID>
+              <Description>"Speed"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>mult_speed</Address>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
