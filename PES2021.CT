@@ -1366,8 +1366,8 @@ local newmem_name='newmem'..suffix
 local newmem_size='$1000'
 local script_ref='Broadcast_focus' --  opcode_inj[vars.script_ref] stores vars
 local inj_name='INJECT'..suffix
-local pattern='^%s*mov.+%s*xmm%d+,%s*%[[^%]]+%]'
-local aobs={'8B 43 08 42 0F 10 04 01',0,6}
+local pattern='^%s*mov.ps%s*xmm%d+%s*,%s*%[%s*%a+%d*%s*%+%s*%a+%d+%s*%]'
+local aobs={'48 6B C8 58 8B 43 08 42 0F 10',6,8}
 local lookahead_n=64
 
 local inj_script=[[
@@ -1394,6 +1394,7 @@ local inj_script=[[
         mulss ${xmm~1}, [${varis_1_n}]
         movss [rsp+C], ${xmm~1} //adj focus
         movups ${xmm~1}, [rsp]
+
 	  ${opcode}
       mulps ${x_reg},${xmm~1}
       ${stack_pop}(20)
