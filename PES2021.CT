@@ -1387,6 +1387,7 @@ local inj_script=[[
         mov [rsp], 3F800000 //1
         mov [rsp+4], 3F800000 //1
         mov [rsp+8], 3F800000 //1
+
         movss ${xmm~1}, [rbx+18] //ball pos (width)
         mulss ${xmm~1}, [${varis_1_n}]
         movss [rsp+C], ${xmm~1} //adj focus
