@@ -25,7 +25,7 @@ unregistersymbol(base)
         </CheatEntry>
         <CheatEntry>
           <ID>2</ID>
-          <Description>"base-A0 (default = 0)"</Description>
+          <Description>"base-A0 (??) (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
@@ -33,7 +33,7 @@ unregistersymbol(base)
         </CheatEntry>
         <CheatEntry>
           <ID>3</ID>
-          <Description>"base-9F (default = 0)"</Description>
+          <Description>"base-9F (??) (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
@@ -125,7 +125,7 @@ unregistersymbol(base)
         </CheatEntry>
         <CheatEntry>
           <ID>16</ID>
-          <Description>"base-92 (default = 7)"</Description>
+          <Description>"base-92 (Angle for dist max) (default = 7)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
@@ -135,7 +135,6 @@ unregistersymbol(base)
           <ID>17</ID>
           <Description>"base-91 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-91</Address>
         </CheatEntry>
@@ -143,7 +142,6 @@ unregistersymbol(base)
           <ID>18</ID>
           <Description>"base-90 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-90</Address>
         </CheatEntry>
@@ -151,14 +149,14 @@ unregistersymbol(base)
           <ID>19</ID>
           <Description>"base-8F (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-8F</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>20</ID>
-          <Description>"base-8E (default = 0)"</Description>
+          <Description>"base-8E (Angle for dist min) (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-8E</Address>
         </CheatEntry>
@@ -173,7 +171,6 @@ unregistersymbol(base)
           <ID>22</ID>
           <Description>"base-8C (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-8C</Address>
         </CheatEntry>
@@ -181,7 +178,6 @@ unregistersymbol(base)
           <ID>23</ID>
           <Description>"base-8B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-8B</Address>
         </CheatEntry>
@@ -189,7 +185,6 @@ unregistersymbol(base)
           <ID>24</ID>
           <Description>"base-8A (default = 40)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-8A</Address>
         </CheatEntry>
@@ -197,7 +192,6 @@ unregistersymbol(base)
           <ID>25</ID>
           <Description>"base-89 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-89</Address>
         </CheatEntry>
@@ -205,7 +199,6 @@ unregistersymbol(base)
           <ID>26</ID>
           <Description>"base-88 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-88</Address>
         </CheatEntry>
@@ -213,13 +206,12 @@ unregistersymbol(base)
           <ID>27</ID>
           <Description>"base-87 (default = 2.0000157)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-87</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>28</ID>
-          <Description>"base-86 (default = 12)"</Description>
+          <Description>"base-86 (Dist min) (default = 12)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
@@ -229,7 +221,6 @@ unregistersymbol(base)
           <ID>29</ID>
           <Description>"base-85 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-85</Address>
         </CheatEntry>
@@ -237,7 +228,6 @@ unregistersymbol(base)
           <ID>30</ID>
           <Description>"base-84 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-84</Address>
         </CheatEntry>
@@ -245,7 +235,6 @@ unregistersymbol(base)
           <ID>31</ID>
           <Description>"base-83 (default = 1.5845755e+29)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-83</Address>
         </CheatEntry>
@@ -475,10 +464,11 @@ unregistersymbol(base)
         </CheatEntry>
         <CheatEntry>
           <ID>64</ID>
-          <Description>"base-62 (default = 0.0185184)"</Description>
+          <Description>"base-62 (FLAG?) (default = 0.0185184)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base-62</Address>
         </CheatEntry>
         <CheatEntry>
@@ -532,8 +522,9 @@ unregistersymbol(base)
         </CheatEntry>
         <CheatEntry>
           <ID>72</ID>
-          <Description>"base-5A (default = 1)"</Description>
+          <Description>"base-5A (Enemy dist min) (default = 1)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-5A</Address>
         </CheatEntry>
@@ -548,7 +539,6 @@ unregistersymbol(base)
           <ID>74</ID>
           <Description>"base-58 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-58</Address>
         </CheatEntry>
@@ -556,13 +546,12 @@ unregistersymbol(base)
           <ID>75</ID>
           <Description>"base-57 (default = -2.000015)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-57</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>76</ID>
-          <Description>"base-56 (default = 1.5)"</Description>
+          <Description>"base-56 (Enemy X Pos) (default = 1.5)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
@@ -572,7 +561,6 @@ unregistersymbol(base)
           <ID>77</ID>
           <Description>"base-55 (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-55</Address>
         </CheatEntry>
@@ -580,7 +568,6 @@ unregistersymbol(base)
           <ID>78</ID>
           <Description>"base-54 (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-54</Address>
         </CheatEntry>
@@ -588,7 +575,6 @@ unregistersymbol(base)
           <ID>79</ID>
           <Description>"base-53 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-53</Address>
         </CheatEntry>
@@ -650,7 +636,7 @@ unregistersymbol(base)
         </CheatEntry>
         <CheatEntry>
           <ID>88</ID>
-          <Description>"base-4A (default = 13)"</Description>
+          <Description>"base-4A (Pass Dist Max) (default = 13)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
@@ -660,7 +646,6 @@ unregistersymbol(base)
           <ID>89</ID>
           <Description>"base-49 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-49</Address>
         </CheatEntry>
@@ -668,7 +653,6 @@ unregistersymbol(base)
           <ID>90</ID>
           <Description>"base-48 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-48</Address>
         </CheatEntry>
@@ -1045,7 +1029,7 @@ unregistersymbol(base)
         </CheatEntry>
         <CheatEntry>
           <ID>144</ID>
-          <Description>"base-12 (default = 1)"</Description>
+          <Description>"base-12 (Para max speed rate) (default = 1)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
@@ -1055,7 +1039,6 @@ unregistersymbol(base)
           <ID>145</ID>
           <Description>"base-11 (default = 2.2608330e+23)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-11</Address>
         </CheatEntry>
@@ -1063,7 +1046,6 @@ unregistersymbol(base)
           <ID>146</ID>
           <Description>"base-10 (default = 2.7182891e+23)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-10</Address>
         </CheatEntry>
@@ -1071,13 +1053,12 @@ unregistersymbol(base)
           <ID>147</ID>
           <Description>"base-F (default = 2.7200760e+23)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-F</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>148</ID>
-          <Description>"base-E (default = 0.9)"</Description>
+          <Description>"base-E (Para min speed rate) (default = 0.9)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
@@ -1087,7 +1068,6 @@ unregistersymbol(base)
           <ID>149</ID>
           <Description>"base-D (default = -2.5441423e+38)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-D</Address>
         </CheatEntry>
@@ -1142,7 +1122,7 @@ unregistersymbol(base)
         </CheatEntry>
         <CheatEntry>
           <ID>157</ID>
-          <Description>"base-2 (default = 31)"</Description>
+          <Description>"base-2 (Recieve speed #2) (default = 31)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
@@ -1152,7 +1132,6 @@ unregistersymbol(base)
           <ID>158</ID>
           <Description>"base-1 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base-1</Address>
         </CheatEntry>
@@ -1160,7 +1139,6 @@ unregistersymbol(base)
           <ID>159</ID>
           <Description>"base (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base+0</Address>
         </CheatEntry>
@@ -1168,7 +1146,6 @@ unregistersymbol(base)
           <ID>160</ID>
           <Description>"base+1 (default = -3.6893774e+19)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base+1</Address>
         </CheatEntry>
@@ -1465,6 +1442,886 @@ unregistersymbol(base)
   <UserdefinedSymbols/>
   <DisassemblerComments>
     <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD402</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD404</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD408</Address>
+      <Comment>〈logical compare〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD40B</Address>
+      <Comment>〈jump near if not equal (ZF=0)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD411</Address>
+      <Comment>〈compare two operands〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD415</Address>
+      <Comment>〈jump near if not equal (ZF=0)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD41B</Address>
+      <Comment>〈Add〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD41F</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD423</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD426</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD42A</Address>
+      <Comment>〈add (sign extended)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD42E</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD432</Address>
+      <Comment>〈compare two operands〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD436</Address>
+      <Comment>〈jump short if not equal (ZF=0)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD438</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD43C</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD440</Address>
+      <Comment>〈compare two operands〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD444</Address>
+      <Comment>〈jump near if below or equal (CF=1 or ZF=1)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD44A</Address>
+      <Comment>〈logical exclusive or〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD44C</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD44F</Address>
+      <Comment>〈call procedure〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD454</Address>
+      <Comment>〈jump near〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD459</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD45D</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD461</Address>
+      <Comment>〈jump short〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD463</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6B1</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6B4</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6B8</Address>
+      <Comment>〈add (sign extended)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6BC</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6C0</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6C4</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6C7</Address>
+      <Comment>〈unsigned divide by 2 3 times〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6CB</Address>
+      <Comment>〈compare two operands〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6CF</Address>
+      <Comment>〈jump short if above or equal (CF=0)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6D1</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6D4</Address>
+      <Comment>〈load effective address〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6D7</Address>
+      <Comment>〈bit test〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6DB</Address>
+      <Comment>〈load effective address〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6DF</Address>
+      <Comment>〈load effective address〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6E3</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6E6</Address>
+      <Comment>〈jump short if below/carry (CF=1)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6E8</Address>
+      <Comment>〈bit test and set〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6EC</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6EF</Address>
+      <Comment>〈jump short〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6F1</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6F5</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6F9</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD6FD</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD701</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD705</Address>
+      <Comment>〈jump near〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+3FD70A</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC1ED</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC1F0</Address>
+      <Comment>〈call procedure〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC1F5</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC1FE</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC207</Address>
+      <Comment>〈scalar single-fp multiply〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC20F</Address>
+      <Comment>〈scalar single-fp subtract〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC213</Address>
+      <Comment>〈scalar single-fp multiply〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC217</Address>
+      <Comment>〈scalar single-fp divide〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC21F</Address>
+      <Comment>〈add the lower sp fp number from xmm2/mem to xmm1.〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC223</Address>
+      <Comment>〈scalar single-fp multiply〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC228</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC22C</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC235</Address>
+      <Comment>〈add x to y〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC23C</Address>
+      <Comment>〈pop a value from the stack〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC23E</Address>
+      <Comment>〈pop a value from the stack〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC240</Address>
+      <Comment>〈near return to calling procedure〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC241</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC242</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC243</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC244</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC245</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC246</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC247</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC248</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC249</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC24A</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC24B</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DC24C</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DDFE1</Address>
+      <Comment>〈jump short if equal (ZF=1)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DDFE3</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DDFE8</Address>
+      <Comment>〈jump short〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DDFEA</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DDFEF</Address>
+      <Comment>〈add the lower sp fp number from xmm2/mem to xmm1.〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DDFF4</Address>
+      <Comment>〈scalar ordered single-fp compare and set eflags〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DDFF7</Address>
+      <Comment>〈jump short if not above (ZF=1 or CF=1)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DDFF9</Address>
+      <Comment>〈logical exclusive or〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DDFFB</Address>
+      <Comment>〈jump near〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE000</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE008</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE011</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE01A</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE023</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE029</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE02F</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE035</Address>
+      <Comment>〈logical compare〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE037</Address>
+      <Comment>〈jump short if not equal (ZF=0)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE039</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE041</Address>
+      <Comment>〈scalar ordered single-fp compare and set eflags〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE044</Address>
+      <Comment>〈jump short if above (ZF=0 and CF=0)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE046</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE049</Address>
+      <Comment>〈load effective address〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE051</Address>
+      <Comment>〈load effective address〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE056</Address>
+      <Comment>〈call procedure〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE05B</Address>
+      <Comment>〈logical exclusive or〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE05D</Address>
+      <Comment>〈logical compare〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE05F</Address>
+      <Comment>〈jump short if not sign (SF=0)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE061</Address>
+      <Comment>〈load effective address〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE064</Address>
+      <Comment>〈jump short〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE066</Address>
+      <Comment>〈compare two operands〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE069</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE06B</Address>
+      <Comment>〈set byte if less〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE06F</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE075</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE077</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE07C</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE07F</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE085</Address>
+      <Comment>〈scalar single-fp subtract〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE08A</Address>
+      <Comment>〈scalar single-fp multiply〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE08F</Address>
+      <Comment>〈logical exclusive or〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE092</Address>
+      <Comment>〈call procedure〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE097</Address>
+      <Comment>〈move scalar double-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0A0</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0A3</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0AC</Address>
+      <Comment>〈compare two operands〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0AF</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0B8</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0C1</Address>
+      <Comment>〈jump short if above or equal (CF=0)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0C3</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0C5</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0C7</Address>
+      <Comment>〈signed multiply〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0CB</Address>
+      <Comment>〈Add〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0CE</Address>
+      <Comment>〈load effective address〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0D2</Address>
+      <Comment>〈jump short〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0D4</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0D7</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0DC</Address>
+      <Comment>〈scalar ordered single-fp compare and set eflags〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0E0</Address>
+      <Comment>〈jump near if above (CF=0 and ZF=0)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0E6</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0E9</Address>
+      <Comment>〈scalar single-fp multiply〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0ED</Address>
+      <Comment>〈scalar ordered single-fp compare and set eflags〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0F0</Address>
+      <Comment>〈jump near if above (CF=0 and ZF=0)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+6DE0F6</Address>
+      <Comment>〈compare two operands〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CEE3</Address>
+      <Comment>〈move with sign-extension〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CEE9</Address>
+      <Comment>〈load effective address〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CEEC</Address>
+      <Comment>〈compare two operands〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CEF1</Address>
+      <Comment>〈jump short if above (ZF=0 and CF=0)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CEF3</Address>
+      <Comment>〈Move doubleword to quadword with signextension〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CEF6</Address>
+      <Comment>〈Add〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CEF9</Address>
+      <Comment>〈move unaligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CEFD</Address>
+      <Comment>〈move unaligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF02</Address>
+      <Comment>〈jump short〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF04</Address>
+      <Comment>〈move unaligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF09</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF0C</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF0E</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF16</Address>
+      <Comment>〈move with sign-extension〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF1B</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF1F</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF22</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF2A</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF2C</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF2F</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF32</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF36</Address>
+      <Comment>〈call procedure〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF3B</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF40</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF43</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF4B</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF4E</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF57</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF5F</Address>
+      <Comment>〈add the lower sp fp number from xmm2/mem to xmm1.〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF64</Address>
+      <Comment>〈scalar single-fp multiply〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF68</Address>
+      <Comment>〈scalar single-fp multiply〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF6C</Address>
+      <Comment>〈scalar single-fp subtract〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF70</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF75</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF78</Address>
+      <Comment>〈call procedure〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF7B</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF7D</Address>
+      <Comment>〈call procedure〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF82</Address>
+      <Comment>〈logical compare〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF84</Address>
+      <Comment>〈jump near if equal (ZF=1)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF8A</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF92</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CF9B</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CFA4</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CFAD</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CFB6</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CFBC</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+71CFC2</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81951A</Address>
+      <Comment>〈add the lower sp fp number from xmm2/mem to xmm1.〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81951E</Address>
+      <Comment>〈call procedure〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+819523</Address>
+      <Comment>〈compare two operands〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+819527</Address>
+      <Comment>〈move aligned four packed single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81952A</Address>
+      <Comment>〈move scalar double-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+819533</Address>
+      <Comment>〈bit-wise logical xor for single-fp data〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+819537</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81953C</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+819541</Address>
+      <Comment>〈jump near if equal (ZF=1)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+819547</Address>
+      <Comment>〈compare two operands〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81954C</Address>
+      <Comment>〈jump near if not equal (ZF=0)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+819552</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+819557</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81955A</Address>
+      <Comment>〈call procedure〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81955F</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+819568</Address>
+      <Comment>〈load effective address〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81956C</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+819575</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+819578</Address>
+      <Comment>〈call procedure〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81957D</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+819580</Address>
+      <Comment>〈call procedure〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+819585</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81958A</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81958F</Address>
+      <Comment>〈scalar single-fp subtract〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+819594</Address>
+      <Comment>〈scalar single-fp subtract〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+819598</Address>
+      <Comment>〈scalar single-fp multiply〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81959C</Address>
+      <Comment>〈scalar single-fp multiply〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81A2AC</Address>
+      <Comment>〈compare two operands〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81A2AF</Address>
+      <Comment>〈jump short if above or equal (CF=0)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
       <Address>"FL_2023.exe"+81A2B1</Address>
       <Comment>〈copy memory〉 %s</Comment>
     </DisassemblerComment>
@@ -1569,104 +2426,240 @@ unregistersymbol(base)
       <Comment>〈move scalar single-fp〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F020</Address>
+      <Address>"FL_2023.exe"+81AE9A</Address>
+      <Comment>〈logical exclusive or〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AE9D</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AEA2</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AEAA</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AEB2</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AEB7</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AEBC</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AEBF</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AEC4</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AEC9</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AECE</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AED3</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AED8</Address>
+      <Comment>〈move scalar single-fp〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AEDE</Address>
+      <Comment>〈call procedure〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AEE1</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AEE5</Address>
       <Comment>〈load effective address〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F025</Address>
-      <Comment>〈push word or doubleword onto the stack〉 %s</Comment>
+      <Address>"FL_2023.exe"+81AEEA</Address>
+      <Comment>〈copy memory〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F026</Address>
-      <Comment>〈push word or doubleword onto the stack〉 %s</Comment>
+      <Address>"FL_2023.exe"+81AEEE</Address>
+      <Comment>〈copy memory〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F027</Address>
-      <Comment>〈push word or doubleword onto the stack〉 %s</Comment>
+      <Address>"FL_2023.exe"+81AEF0</Address>
+      <Comment>〈call procedure〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F028</Address>
-      <Comment>〈compare two operands〉 %s</Comment>
+      <Address>"FL_2023.exe"+81AEF5</Address>
+      <Comment>〈logical compare〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F02F</Address>
+      <Address>"FL_2023.exe"+81AEF7</Address>
       <Comment>〈jump short if not equal (ZF=0)〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F031</Address>
-      <Comment>〈load effective address〉 %s</Comment>
-    </DisassemblerComment>
-    <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F038</Address>
-      <Comment>〈load effective address〉 %s</Comment>
-    </DisassemblerComment>
-    <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F03F</Address>
+      <Address>"FL_2023.exe"+81AEF9</Address>
       <Comment>〈copy memory〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F042</Address>
-      <Comment>〈add 00001000 to rax (sign extended)〉 %s</Comment>
-    </DisassemblerComment>
-    <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F048</Address>
-      <Comment>〈compare two operands〉 %s</Comment>
-    </DisassemblerComment>
-    <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F04B</Address>
-      <Comment>〈jump short if not greater or equal (SF~=OF)〉 %s</Comment>
-    </DisassemblerComment>
-    <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F04D</Address>
+      <Address>"FL_2023.exe"+81AEFC</Address>
       <Comment>〈copy memory〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F054</Address>
-      <Comment>〈pop a value from the stack〉 %s</Comment>
+      <Address>"FL_2023.exe"+81AEFF</Address>
+      <Comment>〈call procedure〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F055</Address>
-      <Comment>〈pop a value from the stack〉 %s</Comment>
+      <Address>"FL_2023.exe"+81AF02</Address>
+      <Comment>〈copy memory〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F056</Address>
-      <Comment>〈pop a value from the stack〉 %s</Comment>
+      <Address>"FL_2023.exe"+81AF05</Address>
+      <Comment>〈copy memory〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F057</Address>
+      <Address>"FL_2023.exe"+81AF08</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AF0A</Address>
+      <Comment>〈call procedure〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AF0C</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+81AF10</Address>
       <Comment>〈load effective address〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F05C</Address>
-      <Comment>〈jump near〉 %s</Comment>
+      <Address>"FL_2023.exe"+81AF15</Address>
+      <Comment>〈copy memory〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F061</Address>
-      <Comment>〈Add〉 %s</Comment>
+      <Address>"FL_2023.exe"+81AF18</Address>
+      <Comment>〈copy memory〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F063</Address>
-      <Comment>〈Add〉 %s</Comment>
+      <Address>"FL_2023.exe"+81AF1A</Address>
+      <Comment>〈call procedure〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F065</Address>
-      <Comment>〈Add〉 %s</Comment>
+      <Address>"FL_2023.exe"+81AF1F</Address>
+      <Comment>〈logical compare〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F067</Address>
-      <Comment>〈Add〉 %s</Comment>
+      <Address>"FL_2023.exe"+81AF21</Address>
+      <Comment>〈jump short if not equal (ZF=0)〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F069</Address>
-      <Comment>〈Add〉 %s</Comment>
+      <Address>"Notepad.exe"+3DA80</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F06B</Address>
-      <Comment>〈Add〉 %s</Comment>
+      <Address>7FF617D3DA81</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"FL_2023.exe"+1B95F06D</Address>
-      <Comment>〈Add〉 %s</Comment>
+      <Address>7FF617D3DA82</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA83</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"Notepad.exe"+3DA84</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA85</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA86</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA87</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA88</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"Notepad.exe"+3DA89</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA8A</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA8B</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA8C</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"Notepad.exe"+3DA8D</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA8E</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA8F</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA90</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA91</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"Notepad.exe"+3DA92</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"Notepad.exe"+3DA93</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA94</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA95</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA96</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>7FF617D3DA97</Address>
+      <Comment>〈call to interrupt procedure-3:trap to debugger〉 %s</Comment>
     </DisassemblerComment>
   </DisassemblerComments>
 </CheatTable>
