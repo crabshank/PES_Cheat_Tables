@@ -813,7 +813,7 @@ define(${inj_name},${address_string})
 	${newmem_name}:
 	code:
 	    ${push_xmm}(9) //-10
-		    movaps ${xmm~9},[rsp+20+10]
+		    movaps ${xmm~9},[${localAddress}+10]
 	    ${push_xmm}(7)
 ${push_xmm}(6)
     push rcx
