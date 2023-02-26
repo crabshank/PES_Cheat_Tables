@@ -464,7 +464,7 @@ unregistersymbol(base)
         </CheatEntry>
         <CheatEntry>
           <ID>64</ID>
-          <Description>"base-62 (FLAG?) (default = 01)"</Description>
+          <Description>"base-62 (Debug -&gt; Enable) (default = 01)"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
