@@ -26,6 +26,6 @@ base+4 (default = 0.982) - 83F8A2BC (#360)	mulss xmm0,[rdi+r14*4+00000160]
 base+1C (default = 0.972) - 83F8A2D4 (#384)	mulss xmm10,[rdi+r14*4+00000178]
 base+4C (default = 8) - 83F8A304 (#432)	movss xmm1,[rdi+r14*4+000001A8]
 base+64 (default = 0) - 83F8A31C (#456)	movss xmm2,[rdi+r14*4+000001C0]
-base+7C (default = 0) - 83F8A334 (#480)	idiv [rdi+r14*4+000001D8]
+base+7C (default = 5) - 83F8A334 (#480)	idiv [rdi+r14*4+000001D8]
 base+34 (default = 25) - 83F8A2EC (#408)	movss xmm2,[rdi+r14*4+00000190]
 base+90
