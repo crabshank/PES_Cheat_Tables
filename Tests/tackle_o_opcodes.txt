@@ -1,0 +1,63 @@
+batchRW.attach_loop(4,500) ()
+
+Address list loop ended! 
+
+Looping through address list... 
+Read addresses: 
+base-D (default = -0) (#76) mov ecx,[rax+34]
+base-38 (default = 4) (#33) movss xmm14,[rax+0C]
+base-3B (default = 0) (#30) movss xmm0,[rax+08]
+base-3A (default = 0) (#31) movss xmm0,[rax+08]
+base-39 (default = -0) (#32) movss xmm0,[rax+08]
+base-20 (default = 14) (#57) movss xmm6,[rax+24]
+base-1F (default = 0) (#58) movss xmm6,[rax+24]
+base-1C (default = 0) (#61) mov eax,[rax+28]
+base-1E (default = 0) (#59) movss xmm6,[rax+24]
+base-1D (default = 0) (#60) movss xmm6,[rax+24]
+base-1B (default = 0) (#62) mov eax,[rax+28]
+base-1A (default = 0) (#63) mov eax,[rax+28]
+base-19 (default = 0) (#64) mov eax,[rax+28]
+base-14 (default = 0) (#69) mov ecx,[rax+30]
+base-13 (default = 0) (#70) mov ecx,[rax+30]
+base-10 (default = 0) (#73) mov ecx,[rax+34]
+base-12 (default = 0) (#71) mov ecx,[rax+30]
+base-11 (default = 0) (#72) mov ecx,[rax+30]
+base-F (default = -0) (#74) mov ecx,[rax+34]
+base-E (default = -0) (#75) mov ecx,[rax+34]
+base+41 (default = 0) (#154) cmp dword ptr [rbx+00000084],01
+base+42 (default = -0.0000001) (#155) cmp dword ptr [rbx+00000084],01
+base+43 (default = -0) (#156) cmp dword ptr [rbx+00000084],01
+base-1 (default = 0) (#88) movss xmm6,[rbx+40]
+base+8 (default = 105) (#97) movss xmm11,[rbx+4C]
+base+40 (default = 0) (#153) cmp dword ptr [rbx+00000084],01
+base-4 (default = 135) (#85) movss xmm11,[rbx+40]
+base-3 (default = 0) (#86) movss xmm6,[rbx+40]
+base-2 (default = -0) (#87) movss xmm11,[rbx+40]
+base+9 (default = 0) (#98) movss xmm11,[rbx+4C]
+base-24 (default = 0) (#53) cmp [rbx+20],al
+base+A (default = 0) (#99) movss xmm11,[rbx+4C]
+base+B (default = 0) (#100) movss xmm11,[rbx+4C]
+base-37 (default = 0) (#34) movss xmm14,[rax+0C]
+base-36 (default = 0) (#35) movss xmm14,[rax+0C]
+base+3C (default = 0.7) (#149) movss xmm1,[rax+00000080]
+base+3D (default = 0) (#150) movss xmm1,[rax+00000080]
+base+3E (default = 0) (#151) movss xmm1,[rax+00000080]
+base+3F (default = 0) (#152) movss xmm1,[rax+00000080]
+base-3C (default = 1) (#29) movss xmm0,[rax+08]
+base-34 (default = 0) (#37) movss xmm14,[rax+10]
+base-33 (default = 0) (#38) movss xmm14,[rax+10]
+base-32 (default = 0) (#39) movss xmm14,[rax+10]
+base-31 (default = -0.0000001) (#40) movss xmm14,[rax+10]
+base-30 (default = 22.5) (#41) movss xmm7,[rax+14]
+base-2F (default = 0) (#42) movss xmm7,[rax+14]
+base-2E (default = 0) (#43) movss xmm7,[rax+14]
+base-2D (default = 0.0000001) (#44) movss xmm7,[rax+14]
+base-2C (default = 11.25) (#45) movss xmm7,[rbp+18]
+base-2B (default = 0) (#46) movss xmm7,[rbp+18]
+base-2A (default = 0) (#47) movss xmm7,[rbp+18]
+base-28 (default = 0) (#49) cmp [rbp+1C],al
+base+30 (default = 0.5) (#137) movss xmm0,[rax+74]
+base+31 (default = -2.0027802e+8) (#138) movss xmm0,[rax+74]
+base+34 (default = 0.4) (#141) movss xmm0,[rax+78]
+base+32 (default = -1.0760806e+8) (#139) movss xmm0,[rax+74]
+base+33 (default = -1.0737510e+8) (#140) movss xmm0,[rax+74]
