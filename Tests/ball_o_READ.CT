@@ -3373,169 +3373,170 @@ unregistersymbol(base)
           <ID>476</ID>
           <Description>"base+78 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base+78</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>477</ID>
           <Description>"base+79 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base+79</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>478</ID>
           <Description>"base+7A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base+7A</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>479</ID>
           <Description>"base+7B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base+7B</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>480</ID>
-          <Description>"base+7C (Gounnderprob #2 ?) (default = 0)"</Description>
+          <Description>"base+7C (Gounnderprob #2) (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base+7C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>481</ID>
           <Description>"base+7D (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base+7D</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>482</ID>
           <Description>"base+7E (default = 0)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base+7E</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>483</ID>
           <Description>"base+7F (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base+7F</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>484</ID>
           <Description>"base+80 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base+80</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>485</ID>
           <Description>"base+81 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base+81</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>486</ID>
           <Description>"base+82 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base+82</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>487</ID>
           <Description>"base+83 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base+83</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>488</ID>
           <Description>"base+84 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base+84</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>489</ID>
           <Description>"base+85 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base+85</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>490</ID>
           <Description>"base+86 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base+86</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>491</ID>
           <Description>"base+87 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base+87</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>492</ID>
           <Description>"base+88 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base+88</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>493</ID>
           <Description>"base+89 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base+89</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>494</ID>
           <Description>"base+8A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base+8A</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>495</ID>
           <Description>"base+8B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base+8B</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>496</ID>
           <Description>"base+8C (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base+8C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>497</ID>
           <Description>"base+8D (default = -6.1897002e+26)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base+8D</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>498</ID>
           <Description>"base+8E (default = 1.2670154e+11)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base+8E</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>499</ID>
           <Description>"base+8F (default = -0.00005)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base+8F</Address>
         </CheatEntry>
         <CheatEntry>
