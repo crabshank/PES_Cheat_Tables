@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="42">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"feintCommand_o_PTR"</Description>
+      <Options moHideChildren="1"/>
+	  <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+	  aobscan(base,58 6E B5 42 01 00 00 00 45 4E 45 4D 59 5F 41 4E 47 4C 45)  // should be unique
+registersymbol(base)
+
+[DISABLE]
+
+unregistersymbol(base)
+
+</AssemblerScript>
+	  <CheatEntries>
+	  </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
