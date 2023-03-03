@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="42">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"mlScreenShot_o_PTR"</Description>
+      <Options moHideChildren="1"/>
+	  <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+	  aobscan(base,FF FF FF 00 00 C8 41 01 00 00 00 01)  // should be unique
+registersymbol(base)
+
+[DISABLE]
+
+unregistersymbol(base)
+
+</AssemblerScript>
+	  <CheatEntries>
+	  <CheatEntry>
+			  <ID>1</ID>
+			  <Description>"base-135 (default = 208)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base-135</Address>
+			</CheatEntry>
+			</CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
