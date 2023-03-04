@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="42">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"ballplayerShoot_o"</Description>
+      <Options moHideChildren="1"/>
+	  <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+	  aobscan(base,F8 68 B5 42 01 00)  // should be unique
+registersymbol(base)
+
+[DISABLE]
+
+unregistersymbol(base)
+
+</AssemblerScript>
+	  <CheatEntries>
+	  <CheatEntry>
+			  <ID>1</ID>
+			  <Description>"base (default = 248)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+0</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>2</ID>
+			  <Description>"base+1 (default = 104)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+1</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>3</ID>
+			  <Description>"base+2 (default = 181)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+2</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>4</ID>
+			  <Description>"base+3 (default = 66)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+3</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>5</ID>
+			  <Description>"base+4 (default = 1)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+4</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>6</ID>
+			  <Description>"base+5 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+5</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>7</ID>
+			  <Description>"base+6 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+6</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>8</ID>
+			  <Description>"base+7 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+7</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>9</ID>
+			  <Description>"base+8 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+8</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>10</ID>
+			  <Description>"base+9 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+9</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>11</ID>
+			  <Description>"base+A (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+A</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>12</ID>
+			  <Description>"base+B (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+B</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>13</ID>
+			  <Description>"base+C (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+C</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>14</ID>
+			  <Description>"base+D (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+D</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>15</ID>
+			  <Description>"base+E (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+E</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>16</ID>
+			  <Description>"base+F (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+F</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>17</ID>
+			  <Description>"base+10 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+10</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>18</ID>
+			  <Description>"base+11 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+11</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>19</ID>
+			  <Description>"base+12 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+12</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>20</ID>
+			  <Description>"base+13 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+13</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>21</ID>
+			  <Description>"base+14 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+14</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>22</ID>
+			  <Description>"base+15 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+15</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>23</ID>
+			  <Description>"base+16 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+16</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>24</ID>
+			  <Description>"base+17 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Byte</VariableType>
+			  <Address>base+17</Address>
+			</CheatEntry>
+			</CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
