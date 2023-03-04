@@ -16,25 +16,25 @@ registersymbol(base)
 
 unregistersymbol(base)
 
+
 </AssemblerScript>
 	  <CheatEntries>
 	  <CheatEntry>
-			  <ID>1</ID>
-			  <Description>"base-1C"</Description>
-			  <ShowAsHex>1</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base-1C</Address>
-			</CheatEntry>
-			</CheatEntries>	
-			<CheatEntry>
-			  <ID>2</ID>
-			  <Description>"base+1258B"</Description>
-			  <ShowAsHex>1</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base+1258B</Address>
-			</CheatEntry>
+		  <ID>1</ID>
+		  <Description>"base-1C"</Description>
+		  <ShowAsHex>1</ShowAsHex>
+		  <ShowAsSigned>0</ShowAsSigned>
+		  <VariableType>Byte</VariableType>
+		  <Address>base-1C</Address>
+		</CheatEntry>
+				<CheatEntry>
+		  <ID>2</ID>
+		  <Description>"base+1258B"</Description>
+		  <ShowAsHex>1</ShowAsHex>
+		  <ShowAsSigned>0</ShowAsSigned>
+		  <VariableType>Byte</VariableType>
+		  <Address>base+1258B</Address>
+		</CheatEntry>
 			</CheatEntries>
     </CheatEntry>
   </CheatEntries>
