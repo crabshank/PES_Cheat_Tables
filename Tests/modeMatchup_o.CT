@@ -66,6 +66,30 @@ unregistersymbol(base)
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>7</ID>
+			  <Description>"base-C (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base-C</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>8</ID>
+			  <Description>"base-B (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base-B</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>9</ID>
+			  <Description>"base-A (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base-A</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>10</ID>
 			  <Description>"base-9 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -73,7 +97,7 @@ unregistersymbol(base)
 			  <Address>base-9</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>8</ID>
+			  <ID>11</ID>
 			  <Description>"base-8 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -81,7 +105,7 @@ unregistersymbol(base)
 			  <Address>base-8</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>9</ID>
+			  <ID>12</ID>
 			  <Description>"base-7 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -89,7 +113,7 @@ unregistersymbol(base)
 			  <Address>base-7</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>10</ID>
+			  <ID>13</ID>
 			  <Description>"base-6 (default = 270)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -97,7 +121,7 @@ unregistersymbol(base)
 			  <Address>base-6</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>11</ID>
+			  <ID>14</ID>
 			  <Description>"base-5 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -105,7 +129,7 @@ unregistersymbol(base)
 			  <Address>base-5</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>12</ID>
+			  <ID>15</ID>
 			  <Description>"base-4 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -113,7 +137,7 @@ unregistersymbol(base)
 			  <Address>base-4</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>13</ID>
+			  <ID>16</ID>
 			  <Description>"base-3 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -121,7 +145,7 @@ unregistersymbol(base)
 			  <Address>base-3</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>14</ID>
+			  <ID>17</ID>
 			  <Description>"base-2 (default = 10)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -129,7 +153,7 @@ unregistersymbol(base)
 			  <Address>base-2</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>15</ID>
+			  <ID>18</ID>
 			  <Description>"base-1 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -137,7 +161,7 @@ unregistersymbol(base)
 			  <Address>base-1</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>16</ID>
+			  <ID>19</ID>
 			  <Description>"base (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -145,7 +169,7 @@ unregistersymbol(base)
 			  <Address>base+0</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>17</ID>
+			  <ID>20</ID>
 			  <Description>"base+1 (default = -0.0000001)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -153,7 +177,7 @@ unregistersymbol(base)
 			  <Address>base+1</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>18</ID>
+			  <ID>21</ID>
 			  <Description>"base+2 (default = 90)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -161,7 +185,7 @@ unregistersymbol(base)
 			  <Address>base+2</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>19</ID>
+			  <ID>22</ID>
 			  <Description>"base+3 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -169,7 +193,7 @@ unregistersymbol(base)
 			  <Address>base+3</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>20</ID>
+			  <ID>23</ID>
 			  <Description>"base+4 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -177,7 +201,7 @@ unregistersymbol(base)
 			  <Address>base+4</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>21</ID>
+			  <ID>24</ID>
 			  <Description>"base+5 (default = 2.0000157)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -185,7 +209,7 @@ unregistersymbol(base)
 			  <Address>base+5</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>22</ID>
+			  <ID>25</ID>
 			  <Description>"base+6 (default = 3)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -193,7 +217,7 @@ unregistersymbol(base)
 			  <Address>base+6</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>23</ID>
+			  <ID>26</ID>
 			  <Description>"base+7 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -201,7 +225,7 @@ unregistersymbol(base)
 			  <Address>base+7</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>24</ID>
+			  <ID>27</ID>
 			  <Description>"base+8 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -209,7 +233,7 @@ unregistersymbol(base)
 			  <Address>base+8</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>25</ID>
+			  <ID>28</ID>
 			  <Description>"base+9 (default = 131073)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -217,7 +241,7 @@ unregistersymbol(base)
 			  <Address>base+9</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>26</ID>
+			  <ID>29</ID>
 			  <Description>"base+A (default = 200)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -225,7 +249,7 @@ unregistersymbol(base)
 			  <Address>base+A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>27</ID>
+			  <ID>30</ID>
 			  <Description>"base+B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -233,7 +257,7 @@ unregistersymbol(base)
 			  <Address>base+B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>28</ID>
+			  <ID>31</ID>
 			  <Description>"base+C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -241,7 +265,7 @@ unregistersymbol(base)
 			  <Address>base+C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>29</ID>
+			  <ID>32</ID>
 			  <Description>"base+D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -249,7 +273,7 @@ unregistersymbol(base)
 			  <Address>base+D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>30</ID>
+			  <ID>33</ID>
 			  <Description>"base+E (default = 10)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -257,7 +281,7 @@ unregistersymbol(base)
 			  <Address>base+E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>31</ID>
+			  <ID>34</ID>
 			  <Description>"base+F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -265,7 +289,7 @@ unregistersymbol(base)
 			  <Address>base+F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>32</ID>
+			  <ID>35</ID>
 			  <Description>"base+10 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -273,7 +297,7 @@ unregistersymbol(base)
 			  <Address>base+10</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>33</ID>
+			  <ID>36</ID>
 			  <Description>"base+11 (default = -0.0000001)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -281,7 +305,7 @@ unregistersymbol(base)
 			  <Address>base+11</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>34</ID>
+			  <ID>37</ID>
 			  <Description>"base+12 (default = 90)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -289,7 +313,7 @@ unregistersymbol(base)
 			  <Address>base+12</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>35</ID>
+			  <ID>38</ID>
 			  <Description>"base+13 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -297,7 +321,7 @@ unregistersymbol(base)
 			  <Address>base+13</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>36</ID>
+			  <ID>39</ID>
 			  <Description>"base+14 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -305,7 +329,7 @@ unregistersymbol(base)
 			  <Address>base+14</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>37</ID>
+			  <ID>40</ID>
 			  <Description>"base+15 (default = 2.0000157)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -313,7 +337,7 @@ unregistersymbol(base)
 			  <Address>base+15</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>38</ID>
+			  <ID>41</ID>
 			  <Description>"base+16 (default = 3)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -321,7 +345,7 @@ unregistersymbol(base)
 			  <Address>base+16</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>39</ID>
+			  <ID>42</ID>
 			  <Description>"base+17 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -329,7 +353,7 @@ unregistersymbol(base)
 			  <Address>base+17</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>40</ID>
+			  <ID>43</ID>
 			  <Description>"base+18 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -337,7 +361,7 @@ unregistersymbol(base)
 			  <Address>base+18</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>41</ID>
+			  <ID>44</ID>
 			  <Description>"base+19 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -345,7 +369,7 @@ unregistersymbol(base)
 			  <Address>base+19</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>42</ID>
+			  <ID>45</ID>
 			  <Description>"base+1A (default = 340)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -353,7 +377,7 @@ unregistersymbol(base)
 			  <Address>base+1A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>43</ID>
+			  <ID>46</ID>
 			  <Description>"base+1B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -361,7 +385,7 @@ unregistersymbol(base)
 			  <Address>base+1B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>44</ID>
+			  <ID>47</ID>
 			  <Description>"base+1C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -369,7 +393,7 @@ unregistersymbol(base)
 			  <Address>base+1C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>45</ID>
+			  <ID>48</ID>
 			  <Description>"base+1D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -377,7 +401,7 @@ unregistersymbol(base)
 			  <Address>base+1D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>46</ID>
+			  <ID>49</ID>
 			  <Description>"base+1E (default = 10)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -385,7 +409,7 @@ unregistersymbol(base)
 			  <Address>base+1E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>47</ID>
+			  <ID>50</ID>
 			  <Description>"base+1F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -393,7 +417,7 @@ unregistersymbol(base)
 			  <Address>base+1F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>48</ID>
+			  <ID>51</ID>
 			  <Description>"base+20 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -401,7 +425,7 @@ unregistersymbol(base)
 			  <Address>base+20</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>49</ID>
+			  <ID>52</ID>
 			  <Description>"base+21 (default = -0.0000001)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -409,7 +433,7 @@ unregistersymbol(base)
 			  <Address>base+21</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>50</ID>
+			  <ID>53</ID>
 			  <Description>"base+22 (default = 90)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -417,7 +441,7 @@ unregistersymbol(base)
 			  <Address>base+22</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>51</ID>
+			  <ID>54</ID>
 			  <Description>"base+23 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -425,7 +449,7 @@ unregistersymbol(base)
 			  <Address>base+23</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>52</ID>
+			  <ID>55</ID>
 			  <Description>"base+24 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -433,7 +457,7 @@ unregistersymbol(base)
 			  <Address>base+24</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>53</ID>
+			  <ID>56</ID>
 			  <Description>"base+25 (default = 2.0000157)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -441,7 +465,7 @@ unregistersymbol(base)
 			  <Address>base+25</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>54</ID>
+			  <ID>57</ID>
 			  <Description>"base+26 (default = 3)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -449,7 +473,7 @@ unregistersymbol(base)
 			  <Address>base+26</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>55</ID>
+			  <ID>58</ID>
 			  <Description>"base+27 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -457,7 +481,7 @@ unregistersymbol(base)
 			  <Address>base+27</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>56</ID>
+			  <ID>59</ID>
 			  <Description>"base+28 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -465,7 +489,7 @@ unregistersymbol(base)
 			  <Address>base+28</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>57</ID>
+			  <ID>60</ID>
 			  <Description>"base+29 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -473,7 +497,7 @@ unregistersymbol(base)
 			  <Address>base+29</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>58</ID>
+			  <ID>61</ID>
 			  <Description>"base+2A (default = 270)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -481,7 +505,7 @@ unregistersymbol(base)
 			  <Address>base+2A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>59</ID>
+			  <ID>62</ID>
 			  <Description>"base+2B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -489,7 +513,7 @@ unregistersymbol(base)
 			  <Address>base+2B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>60</ID>
+			  <ID>63</ID>
 			  <Description>"base+2C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -497,7 +521,7 @@ unregistersymbol(base)
 			  <Address>base+2C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>61</ID>
+			  <ID>64</ID>
 			  <Description>"base+2D (default = -131073.05)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -505,7 +529,7 @@ unregistersymbol(base)
 			  <Address>base+2D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>62</ID>
+			  <ID>65</ID>
 			  <Description>"base+2E (default = 25)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -513,7 +537,7 @@ unregistersymbol(base)
 			  <Address>base+2E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>63</ID>
+			  <ID>66</ID>
 			  <Description>"base+2F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -521,7 +545,7 @@ unregistersymbol(base)
 			  <Address>base+2F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>64</ID>
+			  <ID>67</ID>
 			  <Description>"base+30 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -529,7 +553,7 @@ unregistersymbol(base)
 			  <Address>base+30</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>65</ID>
+			  <ID>68</ID>
 			  <Description>"base+31 (default = -0.0000001)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -537,7 +561,7 @@ unregistersymbol(base)
 			  <Address>base+31</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>66</ID>
+			  <ID>69</ID>
 			  <Description>"base+32 (default = 90)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -545,7 +569,7 @@ unregistersymbol(base)
 			  <Address>base+32</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>67</ID>
+			  <ID>70</ID>
 			  <Description>"base+33 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -553,7 +577,7 @@ unregistersymbol(base)
 			  <Address>base+33</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>68</ID>
+			  <ID>71</ID>
 			  <Description>"base+34 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -561,7 +585,7 @@ unregistersymbol(base)
 			  <Address>base+34</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>69</ID>
+			  <ID>72</ID>
 			  <Description>"base+35 (default = 2.0000157)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -569,7 +593,7 @@ unregistersymbol(base)
 			  <Address>base+35</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>70</ID>
+			  <ID>73</ID>
 			  <Description>"base+36 (default = 3)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -577,7 +601,7 @@ unregistersymbol(base)
 			  <Address>base+36</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>71</ID>
+			  <ID>74</ID>
 			  <Description>"base+37 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -585,7 +609,7 @@ unregistersymbol(base)
 			  <Address>base+37</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>72</ID>
+			  <ID>75</ID>
 			  <Description>"base+38 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -593,7 +617,7 @@ unregistersymbol(base)
 			  <Address>base+38</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>73</ID>
+			  <ID>76</ID>
 			  <Description>"base+39 (default = 131073)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -601,7 +625,7 @@ unregistersymbol(base)
 			  <Address>base+39</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>74</ID>
+			  <ID>77</ID>
 			  <Description>"base+3A (default = 200)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -609,7 +633,7 @@ unregistersymbol(base)
 			  <Address>base+3A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>75</ID>
+			  <ID>78</ID>
 			  <Description>"base+3B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -617,7 +641,7 @@ unregistersymbol(base)
 			  <Address>base+3B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>76</ID>
+			  <ID>79</ID>
 			  <Description>"base+3C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -625,7 +649,7 @@ unregistersymbol(base)
 			  <Address>base+3C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>77</ID>
+			  <ID>80</ID>
 			  <Description>"base+3D (default = -131073.05)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -633,7 +657,7 @@ unregistersymbol(base)
 			  <Address>base+3D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>78</ID>
+			  <ID>81</ID>
 			  <Description>"base+3E (default = 25)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -641,7 +665,7 @@ unregistersymbol(base)
 			  <Address>base+3E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>79</ID>
+			  <ID>82</ID>
 			  <Description>"base+3F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -649,7 +673,7 @@ unregistersymbol(base)
 			  <Address>base+3F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>80</ID>
+			  <ID>83</ID>
 			  <Description>"base+40 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -657,7 +681,7 @@ unregistersymbol(base)
 			  <Address>base+40</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>81</ID>
+			  <ID>84</ID>
 			  <Description>"base+41 (default = -0.0000001)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -665,7 +689,7 @@ unregistersymbol(base)
 			  <Address>base+41</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>82</ID>
+			  <ID>85</ID>
 			  <Description>"base+42 (default = 90)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -673,7 +697,7 @@ unregistersymbol(base)
 			  <Address>base+42</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>83</ID>
+			  <ID>86</ID>
 			  <Description>"base+43 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -681,7 +705,7 @@ unregistersymbol(base)
 			  <Address>base+43</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>84</ID>
+			  <ID>87</ID>
 			  <Description>"base+44 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -689,7 +713,7 @@ unregistersymbol(base)
 			  <Address>base+44</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>85</ID>
+			  <ID>88</ID>
 			  <Description>"base+45 (default = 2.0000157)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -697,7 +721,7 @@ unregistersymbol(base)
 			  <Address>base+45</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>86</ID>
+			  <ID>89</ID>
 			  <Description>"base+46 (default = 3)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -705,7 +729,7 @@ unregistersymbol(base)
 			  <Address>base+46</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>87</ID>
+			  <ID>90</ID>
 			  <Description>"base+47 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -713,7 +737,7 @@ unregistersymbol(base)
 			  <Address>base+47</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>88</ID>
+			  <ID>91</ID>
 			  <Description>"base+48 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -721,7 +745,7 @@ unregistersymbol(base)
 			  <Address>base+48</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>89</ID>
+			  <ID>92</ID>
 			  <Description>"base+49 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -729,7 +753,7 @@ unregistersymbol(base)
 			  <Address>base+49</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>90</ID>
+			  <ID>93</ID>
 			  <Description>"base+4A (default = 340)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -737,7 +761,7 @@ unregistersymbol(base)
 			  <Address>base+4A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>91</ID>
+			  <ID>94</ID>
 			  <Description>"base+4B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -745,7 +769,7 @@ unregistersymbol(base)
 			  <Address>base+4B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>92</ID>
+			  <ID>95</ID>
 			  <Description>"base+4C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -753,7 +777,7 @@ unregistersymbol(base)
 			  <Address>base+4C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>93</ID>
+			  <ID>96</ID>
 			  <Description>"base+4D (default = -131073.05)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -761,7 +785,7 @@ unregistersymbol(base)
 			  <Address>base+4D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>94</ID>
+			  <ID>97</ID>
 			  <Description>"base+4E (default = 25)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -769,7 +793,7 @@ unregistersymbol(base)
 			  <Address>base+4E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>95</ID>
+			  <ID>98</ID>
 			  <Description>"base+4F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -777,7 +801,7 @@ unregistersymbol(base)
 			  <Address>base+4F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>96</ID>
+			  <ID>99</ID>
 			  <Description>"base+50 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -785,7 +809,7 @@ unregistersymbol(base)
 			  <Address>base+50</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>97</ID>
+			  <ID>100</ID>
 			  <Description>"base+51 (default = -0.0000001)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -793,7 +817,7 @@ unregistersymbol(base)
 			  <Address>base+51</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>98</ID>
+			  <ID>101</ID>
 			  <Description>"base+52 (default = 90)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -801,7 +825,7 @@ unregistersymbol(base)
 			  <Address>base+52</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>99</ID>
+			  <ID>102</ID>
 			  <Description>"base+53 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -809,7 +833,7 @@ unregistersymbol(base)
 			  <Address>base+53</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>100</ID>
+			  <ID>103</ID>
 			  <Description>"base+54 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -817,7 +841,7 @@ unregistersymbol(base)
 			  <Address>base+54</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>101</ID>
+			  <ID>104</ID>
 			  <Description>"base+55 (default = 2.0000157)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -825,7 +849,7 @@ unregistersymbol(base)
 			  <Address>base+55</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>102</ID>
+			  <ID>105</ID>
 			  <Description>"base+56 (default = 3)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -833,7 +857,7 @@ unregistersymbol(base)
 			  <Address>base+56</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>103</ID>
+			  <ID>106</ID>
 			  <Description>"base+57 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -841,7 +865,7 @@ unregistersymbol(base)
 			  <Address>base+57</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>104</ID>
+			  <ID>107</ID>
 			  <Description>"base+58 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -849,7 +873,7 @@ unregistersymbol(base)
 			  <Address>base+58</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>105</ID>
+			  <ID>108</ID>
 			  <Description>"base+59 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -857,7 +881,7 @@ unregistersymbol(base)
 			  <Address>base+59</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>106</ID>
+			  <ID>109</ID>
 			  <Description>"base+5A (default = 270)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -865,7 +889,7 @@ unregistersymbol(base)
 			  <Address>base+5A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>107</ID>
+			  <ID>110</ID>
 			  <Description>"base+5B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -873,7 +897,7 @@ unregistersymbol(base)
 			  <Address>base+5B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>108</ID>
+			  <ID>111</ID>
 			  <Description>"base+5C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -881,7 +905,7 @@ unregistersymbol(base)
 			  <Address>base+5C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>109</ID>
+			  <ID>112</ID>
 			  <Description>"base+5D (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -889,7 +913,7 @@ unregistersymbol(base)
 			  <Address>base+5D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>110</ID>
+			  <ID>113</ID>
 			  <Description>"base+5E (default = 5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -897,7 +921,7 @@ unregistersymbol(base)
 			  <Address>base+5E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>111</ID>
+			  <ID>114</ID>
 			  <Description>"base+5F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -905,7 +929,7 @@ unregistersymbol(base)
 			  <Address>base+5F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>112</ID>
+			  <ID>115</ID>
 			  <Description>"base+60 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -913,7 +937,7 @@ unregistersymbol(base)
 			  <Address>base+60</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>113</ID>
+			  <ID>116</ID>
 			  <Description>"base+61 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -921,7 +945,7 @@ unregistersymbol(base)
 			  <Address>base+61</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>114</ID>
+			  <ID>117</ID>
 			  <Description>"base+62 (default = 270)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -929,7 +953,7 @@ unregistersymbol(base)
 			  <Address>base+62</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>115</ID>
+			  <ID>118</ID>
 			  <Description>"base+63 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -937,7 +961,7 @@ unregistersymbol(base)
 			  <Address>base+63</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>116</ID>
+			  <ID>119</ID>
 			  <Description>"base+64 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -945,7 +969,7 @@ unregistersymbol(base)
 			  <Address>base+64</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>117</ID>
+			  <ID>120</ID>
 			  <Description>"base+65 (default = 2.000016)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -953,7 +977,7 @@ unregistersymbol(base)
 			  <Address>base+65</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>118</ID>
+			  <ID>121</ID>
 			  <Description>"base+66 (default = 3)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -961,7 +985,7 @@ unregistersymbol(base)
 			  <Address>base+66</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>119</ID>
+			  <ID>122</ID>
 			  <Description>"base+67 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -969,7 +993,7 @@ unregistersymbol(base)
 			  <Address>base+67</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>120</ID>
+			  <ID>123</ID>
 			  <Description>"base+68 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -977,7 +1001,7 @@ unregistersymbol(base)
 			  <Address>base+68</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>121</ID>
+			  <ID>124</ID>
 			  <Description>"base+69 (default = 1.5845753e+29)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -985,7 +1009,7 @@ unregistersymbol(base)
 			  <Address>base+69</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>122</ID>
+			  <ID>125</ID>
 			  <Description>"base+6A (default = 240)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -993,7 +1017,7 @@ unregistersymbol(base)
 			  <Address>base+6A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>123</ID>
+			  <ID>126</ID>
 			  <Description>"base+6B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1001,7 +1025,7 @@ unregistersymbol(base)
 			  <Address>base+6B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>124</ID>
+			  <ID>127</ID>
 			  <Description>"base+6C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1009,7 +1033,7 @@ unregistersymbol(base)
 			  <Address>base+6C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>125</ID>
+			  <ID>128</ID>
 			  <Description>"base+6D (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1017,7 +1041,7 @@ unregistersymbol(base)
 			  <Address>base+6D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>126</ID>
+			  <ID>129</ID>
 			  <Description>"base+6E (default = 5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1025,7 +1049,7 @@ unregistersymbol(base)
 			  <Address>base+6E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>127</ID>
+			  <ID>130</ID>
 			  <Description>"base+6F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1033,7 +1057,7 @@ unregistersymbol(base)
 			  <Address>base+6F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>128</ID>
+			  <ID>131</ID>
 			  <Description>"base+70 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1041,7 +1065,7 @@ unregistersymbol(base)
 			  <Address>base+70</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>129</ID>
+			  <ID>132</ID>
 			  <Description>"base+71 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1049,7 +1073,7 @@ unregistersymbol(base)
 			  <Address>base+71</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>130</ID>
+			  <ID>133</ID>
 			  <Description>"base+72 (default = 270)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1057,7 +1081,7 @@ unregistersymbol(base)
 			  <Address>base+72</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>131</ID>
+			  <ID>134</ID>
 			  <Description>"base+73 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1065,7 +1089,7 @@ unregistersymbol(base)
 			  <Address>base+73</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>132</ID>
+			  <ID>135</ID>
 			  <Description>"base+74 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1073,7 +1097,7 @@ unregistersymbol(base)
 			  <Address>base+74</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>133</ID>
+			  <ID>136</ID>
 			  <Description>"base+75 (default = 2.000016)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1081,7 +1105,7 @@ unregistersymbol(base)
 			  <Address>base+75</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>134</ID>
+			  <ID>137</ID>
 			  <Description>"base+76 (default = 3)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1089,7 +1113,7 @@ unregistersymbol(base)
 			  <Address>base+76</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>135</ID>
+			  <ID>138</ID>
 			  <Description>"base+77 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1097,7 +1121,7 @@ unregistersymbol(base)
 			  <Address>base+77</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>136</ID>
+			  <ID>139</ID>
 			  <Description>"base+78 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1105,7 +1129,7 @@ unregistersymbol(base)
 			  <Address>base+78</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>137</ID>
+			  <ID>140</ID>
 			  <Description>"base+79 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1113,7 +1137,7 @@ unregistersymbol(base)
 			  <Address>base+79</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>138</ID>
+			  <ID>141</ID>
 			  <Description>"base+7A (default = 300)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1121,7 +1145,7 @@ unregistersymbol(base)
 			  <Address>base+7A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>139</ID>
+			  <ID>142</ID>
 			  <Description>"base+7B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1129,7 +1153,7 @@ unregistersymbol(base)
 			  <Address>base+7B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>140</ID>
+			  <ID>143</ID>
 			  <Description>"base+7C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1137,7 +1161,7 @@ unregistersymbol(base)
 			  <Address>base+7C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>141</ID>
+			  <ID>144</ID>
 			  <Description>"base+7D (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1145,7 +1169,7 @@ unregistersymbol(base)
 			  <Address>base+7D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>142</ID>
+			  <ID>145</ID>
 			  <Description>"base+7E (default = 5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1153,7 +1177,7 @@ unregistersymbol(base)
 			  <Address>base+7E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>143</ID>
+			  <ID>146</ID>
 			  <Description>"base+7F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1161,7 +1185,7 @@ unregistersymbol(base)
 			  <Address>base+7F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>144</ID>
+			  <ID>147</ID>
 			  <Description>"base+80 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1169,7 +1193,7 @@ unregistersymbol(base)
 			  <Address>base+80</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>145</ID>
+			  <ID>148</ID>
 			  <Description>"base+81 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1177,7 +1201,7 @@ unregistersymbol(base)
 			  <Address>base+81</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>146</ID>
+			  <ID>149</ID>
 			  <Description>"base+82 (default = 270)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1185,7 +1209,7 @@ unregistersymbol(base)
 			  <Address>base+82</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>147</ID>
+			  <ID>150</ID>
 			  <Description>"base+83 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1193,7 +1217,7 @@ unregistersymbol(base)
 			  <Address>base+83</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>148</ID>
+			  <ID>151</ID>
 			  <Description>"base+84 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1201,7 +1225,7 @@ unregistersymbol(base)
 			  <Address>base+84</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>149</ID>
+			  <ID>152</ID>
 			  <Description>"base+85 (default = 2.000016)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1209,7 +1233,7 @@ unregistersymbol(base)
 			  <Address>base+85</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>150</ID>
+			  <ID>153</ID>
 			  <Description>"base+86 (default = 3)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1217,7 +1241,7 @@ unregistersymbol(base)
 			  <Address>base+86</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>151</ID>
+			  <ID>154</ID>
 			  <Description>"base+87 (default = -2.5554408e+38)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1225,7 +1249,31 @@ unregistersymbol(base)
 			  <Address>base+87</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>152</ID>
+			  <ID>155</ID>
+			  <Description>"base+88 (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+88</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>156</ID>
+			  <Description>"base+89 (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+89</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>157</ID>
+			  <Description>"base+8A (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+8A</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>158</ID>
 			  <Description>"base+8B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1233,7 +1281,7 @@ unregistersymbol(base)
 			  <Address>base+8B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>153</ID>
+			  <ID>159</ID>
 			  <Description>"base+8C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1241,7 +1289,7 @@ unregistersymbol(base)
 			  <Address>base+8C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>154</ID>
+			  <ID>160</ID>
 			  <Description>"base+8D (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1249,7 +1297,7 @@ unregistersymbol(base)
 			  <Address>base+8D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>155</ID>
+			  <ID>161</ID>
 			  <Description>"base+8E (default = 20)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1257,7 +1305,7 @@ unregistersymbol(base)
 			  <Address>base+8E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>156</ID>
+			  <ID>162</ID>
 			  <Description>"base+8F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1265,7 +1313,7 @@ unregistersymbol(base)
 			  <Address>base+8F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>157</ID>
+			  <ID>163</ID>
 			  <Description>"base+90 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1273,7 +1321,7 @@ unregistersymbol(base)
 			  <Address>base+90</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>158</ID>
+			  <ID>164</ID>
 			  <Description>"base+91 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1281,7 +1329,7 @@ unregistersymbol(base)
 			  <Address>base+91</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>159</ID>
+			  <ID>165</ID>
 			  <Description>"base+92 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1289,7 +1337,7 @@ unregistersymbol(base)
 			  <Address>base+92</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>160</ID>
+			  <ID>166</ID>
 			  <Description>"base+93 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1297,7 +1345,7 @@ unregistersymbol(base)
 			  <Address>base+93</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>161</ID>
+			  <ID>167</ID>
 			  <Description>"base+94 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1305,7 +1353,7 @@ unregistersymbol(base)
 			  <Address>base+94</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>162</ID>
+			  <ID>168</ID>
 			  <Description>"base+95 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1313,7 +1361,7 @@ unregistersymbol(base)
 			  <Address>base+95</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>163</ID>
+			  <ID>169</ID>
 			  <Description>"base+96 (default = 20)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1321,7 +1369,7 @@ unregistersymbol(base)
 			  <Address>base+96</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>164</ID>
+			  <ID>170</ID>
 			  <Description>"base+97 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1329,7 +1377,7 @@ unregistersymbol(base)
 			  <Address>base+97</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>165</ID>
+			  <ID>171</ID>
 			  <Description>"base+98 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1337,7 +1385,7 @@ unregistersymbol(base)
 			  <Address>base+98</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>166</ID>
+			  <ID>172</ID>
 			  <Description>"base+99 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1345,7 +1393,7 @@ unregistersymbol(base)
 			  <Address>base+99</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>167</ID>
+			  <ID>173</ID>
 			  <Description>"base+9A (default = 20)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1353,7 +1401,7 @@ unregistersymbol(base)
 			  <Address>base+9A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>168</ID>
+			  <ID>174</ID>
 			  <Description>"base+9B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1361,7 +1409,7 @@ unregistersymbol(base)
 			  <Address>base+9B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>169</ID>
+			  <ID>175</ID>
 			  <Description>"base+9C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1369,7 +1417,7 @@ unregistersymbol(base)
 			  <Address>base+9C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>170</ID>
+			  <ID>176</ID>
 			  <Description>"base+9D (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1377,7 +1425,7 @@ unregistersymbol(base)
 			  <Address>base+9D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>171</ID>
+			  <ID>177</ID>
 			  <Description>"base+9E (default = 20)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1385,7 +1433,7 @@ unregistersymbol(base)
 			  <Address>base+9E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>172</ID>
+			  <ID>178</ID>
 			  <Description>"base+9F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1393,7 +1441,7 @@ unregistersymbol(base)
 			  <Address>base+9F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>173</ID>
+			  <ID>179</ID>
 			  <Description>"base+A0 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1401,7 +1449,7 @@ unregistersymbol(base)
 			  <Address>base+A0</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>174</ID>
+			  <ID>180</ID>
 			  <Description>"base+A1 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1409,7 +1457,7 @@ unregistersymbol(base)
 			  <Address>base+A1</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>175</ID>
+			  <ID>181</ID>
 			  <Description>"base+A2 (default = -20)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1417,7 +1465,7 @@ unregistersymbol(base)
 			  <Address>base+A2</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>176</ID>
+			  <ID>182</ID>
 			  <Description>"base+A3 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1425,7 +1473,7 @@ unregistersymbol(base)
 			  <Address>base+A3</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>177</ID>
+			  <ID>183</ID>
 			  <Description>"base+A4 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1433,7 +1481,7 @@ unregistersymbol(base)
 			  <Address>base+A4</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>178</ID>
+			  <ID>184</ID>
 			  <Description>"base+A5 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1441,7 +1489,7 @@ unregistersymbol(base)
 			  <Address>base+A5</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>179</ID>
+			  <ID>185</ID>
 			  <Description>"base+A6 (default = 35)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1449,7 +1497,7 @@ unregistersymbol(base)
 			  <Address>base+A6</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>180</ID>
+			  <ID>186</ID>
 			  <Description>"base+A7 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1457,7 +1505,7 @@ unregistersymbol(base)
 			  <Address>base+A7</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>181</ID>
+			  <ID>187</ID>
 			  <Description>"base+A8 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1465,7 +1513,7 @@ unregistersymbol(base)
 			  <Address>base+A8</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>182</ID>
+			  <ID>188</ID>
 			  <Description>"base+A9 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1473,7 +1521,7 @@ unregistersymbol(base)
 			  <Address>base+A9</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>183</ID>
+			  <ID>189</ID>
 			  <Description>"base+AA (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1481,7 +1529,7 @@ unregistersymbol(base)
 			  <Address>base+AA</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>184</ID>
+			  <ID>190</ID>
 			  <Description>"base+AB (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1489,7 +1537,7 @@ unregistersymbol(base)
 			  <Address>base+AB</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>185</ID>
+			  <ID>191</ID>
 			  <Description>"base+AC (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1497,7 +1545,7 @@ unregistersymbol(base)
 			  <Address>base+AC</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>186</ID>
+			  <ID>192</ID>
 			  <Description>"base+AD (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1505,7 +1553,7 @@ unregistersymbol(base)
 			  <Address>base+AD</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>187</ID>
+			  <ID>193</ID>
 			  <Description>"base+AE (default = 35)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1513,7 +1561,7 @@ unregistersymbol(base)
 			  <Address>base+AE</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>188</ID>
+			  <ID>194</ID>
 			  <Description>"base+AF (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1521,7 +1569,7 @@ unregistersymbol(base)
 			  <Address>base+AF</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>189</ID>
+			  <ID>195</ID>
 			  <Description>"base+B0 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1529,7 +1577,7 @@ unregistersymbol(base)
 			  <Address>base+B0</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>190</ID>
+			  <ID>196</ID>
 			  <Description>"base+B1 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1537,7 +1585,7 @@ unregistersymbol(base)
 			  <Address>base+B1</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>191</ID>
+			  <ID>197</ID>
 			  <Description>"base+B2 (default = 20)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1545,7 +1593,7 @@ unregistersymbol(base)
 			  <Address>base+B2</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>192</ID>
+			  <ID>198</ID>
 			  <Description>"base+B3 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1553,7 +1601,7 @@ unregistersymbol(base)
 			  <Address>base+B3</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>193</ID>
+			  <ID>199</ID>
 			  <Description>"base+B4 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1561,7 +1609,7 @@ unregistersymbol(base)
 			  <Address>base+B4</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>194</ID>
+			  <ID>200</ID>
 			  <Description>"base+B5 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1569,7 +1617,7 @@ unregistersymbol(base)
 			  <Address>base+B5</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>195</ID>
+			  <ID>201</ID>
 			  <Description>"base+B6 (default = 35)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1577,7 +1625,7 @@ unregistersymbol(base)
 			  <Address>base+B6</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>196</ID>
+			  <ID>202</ID>
 			  <Description>"base+B7 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1585,7 +1633,7 @@ unregistersymbol(base)
 			  <Address>base+B7</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>197</ID>
+			  <ID>203</ID>
 			  <Description>"base+B8 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1593,7 +1641,7 @@ unregistersymbol(base)
 			  <Address>base+B8</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>198</ID>
+			  <ID>204</ID>
 			  <Description>"base+B9 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1601,7 +1649,7 @@ unregistersymbol(base)
 			  <Address>base+B9</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>199</ID>
+			  <ID>205</ID>
 			  <Description>"base+BA (default = -20)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1609,7 +1657,7 @@ unregistersymbol(base)
 			  <Address>base+BA</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>200</ID>
+			  <ID>206</ID>
 			  <Description>"base+BB (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1617,7 +1665,7 @@ unregistersymbol(base)
 			  <Address>base+BB</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>201</ID>
+			  <ID>207</ID>
 			  <Description>"base+BC (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1625,7 +1673,7 @@ unregistersymbol(base)
 			  <Address>base+BC</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>202</ID>
+			  <ID>208</ID>
 			  <Description>"base+BD (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1633,7 +1681,7 @@ unregistersymbol(base)
 			  <Address>base+BD</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>203</ID>
+			  <ID>209</ID>
 			  <Description>"base+BE (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1641,15 +1689,15 @@ unregistersymbol(base)
 			  <Address>base+BE</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>204</ID>
-			  <Description>"base+BF (default = 5.4975581e+11)"</Description>
+			  <ID>210</ID>
+			  <Description>"base+BF (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base+BF</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>205</ID>
+			  <ID>211</ID>
 			  <Description>"base+C0 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1657,7 +1705,7 @@ unregistersymbol(base)
 			  <Address>base+C0</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>206</ID>
+			  <ID>212</ID>
 			  <Description>"base+C1 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1665,7 +1713,7 @@ unregistersymbol(base)
 			  <Address>base+C1</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>207</ID>
+			  <ID>213</ID>
 			  <Description>"base+C2 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1673,7 +1721,7 @@ unregistersymbol(base)
 			  <Address>base+C2</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>208</ID>
+			  <ID>214</ID>
 			  <Description>"base+C3 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1681,7 +1729,7 @@ unregistersymbol(base)
 			  <Address>base+C3</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>209</ID>
+			  <ID>215</ID>
 			  <Description>"base+C4 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1689,7 +1737,7 @@ unregistersymbol(base)
 			  <Address>base+C4</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>210</ID>
+			  <ID>216</ID>
 			  <Description>"base+C5 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1697,12 +1745,1316 @@ unregistersymbol(base)
 			  <Address>base+C5</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>211</ID>
+			  <ID>217</ID>
 			  <Description>"base+C6 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base+C6</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>218</ID>
+			  <Description>"base+C7 (default = 3.6893488e+19)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+C7</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>219</ID>
+			  <Description>"base+C8 (default = -4.0352253e+18)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+C8</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>220</ID>
+			  <Description>"base+C9 (default = 0.0000004)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+C9</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>221</ID>
+			  <Description>"base+CA (default = -0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+CA</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>222</ID>
+			  <Description>"base+CB (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+CB</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>223</ID>
+			  <Description>"base+CC (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+CC</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>224</ID>
+			  <Description>"base+CD (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+CD</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>225</ID>
+			  <Description>"base+CE (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+CE</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>226</ID>
+			  <Description>"base+CF (default = -0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+CF</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>227</ID>
+			  <Description>"base+D0 (default = -6.0528379e+18)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+D0</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>228</ID>
+			  <Description>"base+D1 (default = 0.0000004)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+D1</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>229</ID>
+			  <Description>"base+D2 (default = -0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+D2</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>230</ID>
+			  <Description>"base+D3 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+D3</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>231</ID>
+			  <Description>"base+D4 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+D4</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>232</ID>
+			  <Description>"base+D5 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+D5</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>233</ID>
+			  <Description>"base+D6 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+D6</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>234</ID>
+			  <Description>"base+D7 (default = -0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+D7</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>235</ID>
+			  <Description>"base+D8 (default = -6.0528379e+18)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+D8</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>236</ID>
+			  <Description>"base+D9 (default = 0.0000004)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+D9</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>237</ID>
+			  <Description>"base+DA (default = -0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+DA</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>238</ID>
+			  <Description>"base+DB (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+DB</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>239</ID>
+			  <Description>"base+DC (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+DC</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>240</ID>
+			  <Description>"base+DD (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+DD</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>241</ID>
+			  <Description>"base+DE (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+DE</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>242</ID>
+			  <Description>"base+DF (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+DF</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>243</ID>
+			  <Description>"base+E0 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+E0</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>244</ID>
+			  <Description>"base+E1 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+E1</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>245</ID>
+			  <Description>"base+E2 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+E2</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>246</ID>
+			  <Description>"base+E3 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+E3</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>247</ID>
+			  <Description>"base+E4 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+E4</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>248</ID>
+			  <Description>"base+E5 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+E5</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>249</ID>
+			  <Description>"base+E6 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+E6</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>250</ID>
+			  <Description>"base+E7 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+E7</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>251</ID>
+			  <Description>"base+E8 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+E8</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>252</ID>
+			  <Description>"base+E9 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+E9</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>253</ID>
+			  <Description>"base+EA (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+EA</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>254</ID>
+			  <Description>"base+EB (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+EB</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>255</ID>
+			  <Description>"base+EC (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+EC</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>256</ID>
+			  <Description>"base+ED (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+ED</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>257</ID>
+			  <Description>"base+EE (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+EE</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>258</ID>
+			  <Description>"base+EF (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+EF</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>259</ID>
+			  <Description>"base+F0 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+F0</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>260</ID>
+			  <Description>"base+F1 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+F1</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>261</ID>
+			  <Description>"base+F2 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+F2</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>262</ID>
+			  <Description>"base+F3 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+F3</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>263</ID>
+			  <Description>"base+F4 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+F4</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>264</ID>
+			  <Description>"base+F5 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+F5</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>265</ID>
+			  <Description>"base+F6 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+F6</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>266</ID>
+			  <Description>"base+F7 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+F7</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>267</ID>
+			  <Description>"base+F8 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+F8</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>268</ID>
+			  <Description>"base+F9 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+F9</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>269</ID>
+			  <Description>"base+FA (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+FA</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>270</ID>
+			  <Description>"base+FB (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+FB</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>271</ID>
+			  <Description>"base+FC (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+FC</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>272</ID>
+			  <Description>"base+FD (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+FD</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>273</ID>
+			  <Description>"base+FE (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+FE</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>274</ID>
+			  <Description>"base+FF (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+FF</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>275</ID>
+			  <Description>"base+100 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+100</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>276</ID>
+			  <Description>"base+101 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+101</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>277</ID>
+			  <Description>"base+102 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+102</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>278</ID>
+			  <Description>"base+103 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+103</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>279</ID>
+			  <Description>"base+104 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+104</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>280</ID>
+			  <Description>"base+105 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+105</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>281</ID>
+			  <Description>"base+106 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+106</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>282</ID>
+			  <Description>"base+107 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+107</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>283</ID>
+			  <Description>"base+108 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+108</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>284</ID>
+			  <Description>"base+109 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+109</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>285</ID>
+			  <Description>"base+10A (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+10A</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>286</ID>
+			  <Description>"base+10B (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+10B</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>287</ID>
+			  <Description>"base+10C (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+10C</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>288</ID>
+			  <Description>"base+10D (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+10D</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>289</ID>
+			  <Description>"base+10E (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+10E</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>290</ID>
+			  <Description>"base+10F (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+10F</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>291</ID>
+			  <Description>"base+110 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+110</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>292</ID>
+			  <Description>"base+111 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+111</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>293</ID>
+			  <Description>"base+112 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+112</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>294</ID>
+			  <Description>"base+113 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+113</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>295</ID>
+			  <Description>"base+114 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+114</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>296</ID>
+			  <Description>"base+115 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+115</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>297</ID>
+			  <Description>"base+116 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+116</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>298</ID>
+			  <Description>"base+117 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+117</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>299</ID>
+			  <Description>"base+118 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+118</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>300</ID>
+			  <Description>"base+119 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+119</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>301</ID>
+			  <Description>"base+11A (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+11A</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>302</ID>
+			  <Description>"base+11B (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+11B</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>303</ID>
+			  <Description>"base+11C (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+11C</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>304</ID>
+			  <Description>"base+11D (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+11D</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>305</ID>
+			  <Description>"base+11E (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+11E</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>306</ID>
+			  <Description>"base+11F (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+11F</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>307</ID>
+			  <Description>"base+120 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+120</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>308</ID>
+			  <Description>"base+121 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+121</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>309</ID>
+			  <Description>"base+122 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+122</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>310</ID>
+			  <Description>"base+123 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+123</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>311</ID>
+			  <Description>"base+124 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+124</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>312</ID>
+			  <Description>"base+125 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+125</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>313</ID>
+			  <Description>"base+126 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+126</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>314</ID>
+			  <Description>"base+127 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+127</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>315</ID>
+			  <Description>"base+128 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+128</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>316</ID>
+			  <Description>"base+129 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+129</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>317</ID>
+			  <Description>"base+12A (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+12A</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>318</ID>
+			  <Description>"base+12B (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+12B</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>319</ID>
+			  <Description>"base+12C (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+12C</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>320</ID>
+			  <Description>"base+12D (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+12D</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>321</ID>
+			  <Description>"base+12E (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+12E</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>322</ID>
+			  <Description>"base+12F (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+12F</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>323</ID>
+			  <Description>"base+130 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+130</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>324</ID>
+			  <Description>"base+131 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+131</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>325</ID>
+			  <Description>"base+132 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+132</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>326</ID>
+			  <Description>"base+133 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+133</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>327</ID>
+			  <Description>"base+134 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+134</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>328</ID>
+			  <Description>"base+135 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+135</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>329</ID>
+			  <Description>"base+136 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+136</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>330</ID>
+			  <Description>"base+137 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+137</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>331</ID>
+			  <Description>"base+138 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+138</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>332</ID>
+			  <Description>"base+139 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+139</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>333</ID>
+			  <Description>"base+13A (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+13A</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>334</ID>
+			  <Description>"base+13B (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+13B</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>335</ID>
+			  <Description>"base+13C (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+13C</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>336</ID>
+			  <Description>"base+13D (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+13D</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>337</ID>
+			  <Description>"base+13E (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+13E</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>338</ID>
+			  <Description>"base+13F (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+13F</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>339</ID>
+			  <Description>"base+140 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+140</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>340</ID>
+			  <Description>"base+141 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+141</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>341</ID>
+			  <Description>"base+142 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+142</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>342</ID>
+			  <Description>"base+143 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+143</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>343</ID>
+			  <Description>"base+144 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+144</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>344</ID>
+			  <Description>"base+145 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+145</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>345</ID>
+			  <Description>"base+146 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+146</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>346</ID>
+			  <Description>"base+147 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+147</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>347</ID>
+			  <Description>"base+148 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+148</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>348</ID>
+			  <Description>"base+149 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+149</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>349</ID>
+			  <Description>"base+14A (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+14A</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>350</ID>
+			  <Description>"base+14B (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+14B</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>351</ID>
+			  <Description>"base+14C (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+14C</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>352</ID>
+			  <Description>"base+14D (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+14D</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>353</ID>
+			  <Description>"base+14E (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+14E</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>354</ID>
+			  <Description>"base+14F (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+14F</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>355</ID>
+			  <Description>"base+150 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+150</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>356</ID>
+			  <Description>"base+151 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+151</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>357</ID>
+			  <Description>"base+152 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+152</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>358</ID>
+			  <Description>"base+153 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+153</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>359</ID>
+			  <Description>"base+154 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+154</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>360</ID>
+			  <Description>"base+155 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+155</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>361</ID>
+			  <Description>"base+156 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+156</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>362</ID>
+			  <Description>"base+157 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+157</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>363</ID>
+			  <Description>"base+158 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+158</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>364</ID>
+			  <Description>"base+159 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+159</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>365</ID>
+			  <Description>"base+15A (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+15A</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>366</ID>
+			  <Description>"base+15B (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+15B</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>367</ID>
+			  <Description>"base+15C (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+15C</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>368</ID>
+			  <Description>"base+15D (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+15D</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>369</ID>
+			  <Description>"base+15E (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+15E</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>370</ID>
+			  <Description>"base+15F (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+15F</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>371</ID>
+			  <Description>"base+160 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+160</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>372</ID>
+			  <Description>"base+161 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+161</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>373</ID>
+			  <Description>"base+162 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+162</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>374</ID>
+			  <Description>"base+163 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+163</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>375</ID>
+			  <Description>"base+164 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+164</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>376</ID>
+			  <Description>"base+165 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+165</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>377</ID>
+			  <Description>"base+166 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+166</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>378</ID>
+			  <Description>"base+167 (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+167</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>379</ID>
+			  <Description>"base+168 (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+168</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>380</ID>
+			  <Description>"base+169 (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base+169</Address>
 			</CheatEntry>
 			</CheatEntries>
     </CheatEntry>
