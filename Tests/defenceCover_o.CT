@@ -966,10 +966,11 @@ unregistersymbol(base_defenceCover)
         </CheatEntry>
         <CheatEntry>
           <ID>121</ID>
-          <Description>"base_defenceCover+74 (default = 0)"</Description>
+          <Description>"base_defenceCover+74 (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_defenceCover+74</Address>
         </CheatEntry>
         <CheatEntry>
