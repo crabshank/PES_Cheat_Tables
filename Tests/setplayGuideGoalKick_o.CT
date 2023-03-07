@@ -7,7 +7,7 @@
       <Options moHideChildren="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base_spgGoalKick,48 42 00 00 F0 41 00 C6 9E 42 00 00 98 41)  // should be unique
+	  aobscan(base_spgGoalKick,00 00 A0 40 00 00 A0 40 00 00 48 42 00 00 F0 41 00 00 00 00 00 00 98 41 00 00)  // should be unique
 registersymbol(base_spgGoalKick)
 
 {$lua}
@@ -38,86 +38,6 @@ unregistersymbol(base_spgGoalKick)
 	  <CheatEntries>
 	  <CheatEntry>
 			  <ID>1</ID>
-			  <Description>"base_spgGoalKick-16 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_spgGoalKick-16</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>2</ID>
-			  <Description>"base_spgGoalKick-15 (default = -1.3421773e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_spgGoalKick-15</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>3</ID>
-			  <Description>"base_spgGoalKick-14 (default = -1.0747904e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_spgGoalKick-14</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>4</ID>
-			  <Description>"base_spgGoalKick-13 (default = 1.0737459e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_spgGoalKick-13</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>5</ID>
-			  <Description>"base_spgGoalKick-12 (default = 0.8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_spgGoalKick-12</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>6</ID>
-			  <Description>"base_spgGoalKick-11 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_spgGoalKick-11</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>7</ID>
-			  <Description>"base_spgGoalKick-10 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_spgGoalKick-10</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>8</ID>
-			  <Description>"base_spgGoalKick-F (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_spgGoalKick-F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>9</ID>
-			  <Description>"base_spgGoalKick-E (default = 2)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_spgGoalKick-E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>10</ID>
-			  <Description>"base_spgGoalKick-D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_spgGoalKick-D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>11</ID>
 			  <Description>"base_spgGoalKick-C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -125,55 +45,55 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick-C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>12</ID>
-			  <Description>"base_spgGoalKick-B (default = -0)"</Description>
+			  <ID>2</ID>
+			  <Description>"base_spgGoalKick-B (default = -1.3421773e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick-B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>13</ID>
-			  <Description>"base_spgGoalKick-A (default = 5)"</Description>
+			  <ID>3</ID>
+			  <Description>"base_spgGoalKick-A (default = -1.0747904e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick-A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>14</ID>
-			  <Description>"base_spgGoalKick-9 (default = 0)"</Description>
+			  <ID>4</ID>
+			  <Description>"base_spgGoalKick-9 (default = 1.0737459e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick-9</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>15</ID>
-			  <Description>"base_spgGoalKick-8 (default = 0)"</Description>
+			  <ID>5</ID>
+			  <Description>"base_spgGoalKick-8 (default = 0.8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick-8</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>16</ID>
-			  <Description>"base_spgGoalKick-7 (default = -0)"</Description>
+			  <ID>6</ID>
+			  <Description>"base_spgGoalKick-7 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick-7</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>17</ID>
-			  <Description>"base_spgGoalKick-6 (default = 5)"</Description>
+			  <ID>7</ID>
+			  <Description>"base_spgGoalKick-6 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick-6</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>18</ID>
+			  <ID>8</ID>
 			  <Description>"base_spgGoalKick-5 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -181,159 +101,159 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick-5</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>19</ID>
-			  <Description>"base_spgGoalKick-4 (default = 0)"</Description>
+			  <ID>9</ID>
+			  <Description>"base_spgGoalKick-4 (default = 2)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick-4</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>20</ID>
-			  <Description>"base_spgGoalKick-3 (default = 131073)"</Description>
+			  <ID>10</ID>
+			  <Description>"base_spgGoalKick-3 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick-3</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>21</ID>
-			  <Description>"base_spgGoalKick-2 (default = 50)"</Description>
+			  <ID>11</ID>
+			  <Description>"base_spgGoalKick-2 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick-2</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>22</ID>
-			  <Description>"base_spgGoalKick-1 (default = 0)"</Description>
+			  <ID>12</ID>
+			  <Description>"base_spgGoalKick-1 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick-1</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>23</ID>
-			  <Description>"base_spgGoalKick (default = 0)"</Description>
+			  <ID>13</ID>
+			  <Description>"base_spgGoalKick (default = 5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+0</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>24</ID>
-			  <Description>"base_spgGoalKick+1 (default = -1.5845757e+29)"</Description>
+			  <ID>14</ID>
+			  <Description>"base_spgGoalKick+1 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+1</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>25</ID>
-			  <Description>"base_spgGoalKick+2 (default = 30)"</Description>
+			  <ID>15</ID>
+			  <Description>"base_spgGoalKick+2 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+2</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>26</ID>
-			  <Description>"base_spgGoalKick+3 (default = 0)"</Description>
+			  <ID>16</ID>
+			  <Description>"base_spgGoalKick+3 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+3</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>27</ID>
-			  <Description>"base_spgGoalKick+4 (default = -8208.4844)"</Description>
+			  <ID>17</ID>
+			  <Description>"base_spgGoalKick+4 (default = 5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+4</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>28</ID>
-			  <Description>"base_spgGoalKick+5 (default = -0)"</Description>
+			  <ID>18</ID>
+			  <Description>"base_spgGoalKick+5 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+5</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>29</ID>
-			  <Description>"base_spgGoalKick+6 (default = 79.386719)"</Description>
+			  <ID>19</ID>
+			  <Description>"base_spgGoalKick+6 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+6</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>30</ID>
-			  <Description>"base_spgGoalKick+7 (default = 0)"</Description>
+			  <ID>20</ID>
+			  <Description>"base_spgGoalKick+7 (default = 131073)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+7</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>31</ID>
-			  <Description>"base_spgGoalKick+8 (default = 0)"</Description>
+			  <ID>21</ID>
+			  <Description>"base_spgGoalKick+8 (default = 50)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+8</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>32</ID>
-			  <Description>"base_spgGoalKick+9 (default = -0)"</Description>
+			  <ID>22</ID>
+			  <Description>"base_spgGoalKick+9 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+9</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>33</ID>
-			  <Description>"base_spgGoalKick+A (default = 19)"</Description>
+			  <ID>23</ID>
+			  <Description>"base_spgGoalKick+A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>34</ID>
-			  <Description>"base_spgGoalKick+B (default = 0)"</Description>
+			  <ID>24</ID>
+			  <Description>"base_spgGoalKick+B (default = -1.5845757e+29)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>35</ID>
-			  <Description>"base_spgGoalKick+C (default = 0)"</Description>
+			  <ID>25</ID>
+			  <Description>"base_spgGoalKick+C (default = 30)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>36</ID>
-			  <Description>"base_spgGoalKick+D (default = -0)"</Description>
+			  <ID>26</ID>
+			  <Description>"base_spgGoalKick+D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>37</ID>
-			  <Description>"base_spgGoalKick+E (default = 17)"</Description>
+			  <ID>27</ID>
+			  <Description>"base_spgGoalKick+E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>38</ID>
+			  <ID>28</ID>
 			  <Description>"base_spgGoalKick+F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -341,7 +261,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>39</ID>
+			  <ID>29</ID>
 			  <Description>"base_spgGoalKick+10 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -349,7 +269,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+10</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>40</ID>
+			  <ID>30</ID>
 			  <Description>"base_spgGoalKick+11 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -357,191 +277,191 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+11</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>41</ID>
-			  <Description>"base_spgGoalKick+12 (default = 10)"</Description>
+			  <ID>31</ID>
+			  <Description>"base_spgGoalKick+12 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+12</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>42</ID>
-			  <Description>"base_spgGoalKick+13 (default = 0)"</Description>
+			  <ID>32</ID>
+			  <Description>"base_spgGoalKick+13 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+13</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>43</ID>
-			  <Description>"base_spgGoalKick+14 (default = 0)"</Description>
+			  <ID>33</ID>
+			  <Description>"base_spgGoalKick+14 (default = 19)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+14</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>44</ID>
-			  <Description>"base_spgGoalKick+15 (default = -0)"</Description>
+			  <ID>34</ID>
+			  <Description>"base_spgGoalKick+15 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+15</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>45</ID>
-			  <Description>"base_spgGoalKick+16 (default = 20)"</Description>
+			  <ID>35</ID>
+			  <Description>"base_spgGoalKick+16 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+16</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>46</ID>
-			  <Description>"base_spgGoalKick+17 (default = 0)"</Description>
+			  <ID>36</ID>
+			  <Description>"base_spgGoalKick+17 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+17</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>47</ID>
-			  <Description>"base_spgGoalKick+18 (default = 0)"</Description>
+			  <ID>37</ID>
+			  <Description>"base_spgGoalKick+18 (default = 17)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+18</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>48</ID>
-			  <Description>"base_spgGoalKick+19 (default = -0)"</Description>
+			  <ID>38</ID>
+			  <Description>"base_spgGoalKick+19 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+19</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>49</ID>
-			  <Description>"base_spgGoalKick+1A (default = 80)"</Description>
+			  <ID>39</ID>
+			  <Description>"base_spgGoalKick+1A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+1A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>50</ID>
-			  <Description>"base_spgGoalKick+1B (default = -2.5870100e+38)"</Description>
+			  <ID>40</ID>
+			  <Description>"base_spgGoalKick+1B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+1B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>51</ID>
-			  <Description>"base_spgGoalKick+1C (default = ❌)"</Description>
+			  <ID>41</ID>
+			  <Description>"base_spgGoalKick+1C (default = 10)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+1C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>52</ID>
-			  <Description>"base_spgGoalKick+1D (default = ❌)"</Description>
+			  <ID>42</ID>
+			  <Description>"base_spgGoalKick+1D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+1D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>53</ID>
-			  <Description>"base_spgGoalKick+1E (default = ❌)"</Description>
+			  <ID>43</ID>
+			  <Description>"base_spgGoalKick+1E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+1E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>54</ID>
-			  <Description>"base_spgGoalKick+1F (default = 0)"</Description>
+			  <ID>44</ID>
+			  <Description>"base_spgGoalKick+1F (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+1F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>55</ID>
-			  <Description>"base_spgGoalKick+20 (default = 0)"</Description>
+			  <ID>45</ID>
+			  <Description>"base_spgGoalKick+20 (default = 20)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+20</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>56</ID>
-			  <Description>"base_spgGoalKick+21 (default = -8192.249)"</Description>
+			  <ID>46</ID>
+			  <Description>"base_spgGoalKick+21 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+21</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>57</ID>
-			  <Description>"base_spgGoalKick+22 (default = 99)"</Description>
+			  <ID>47</ID>
+			  <Description>"base_spgGoalKick+22 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+22</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>58</ID>
-			  <Description>"base_spgGoalKick+23 (default = 0)"</Description>
+			  <ID>48</ID>
+			  <Description>"base_spgGoalKick+23 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+23</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>59</ID>
-			  <Description>"base_spgGoalKick+24 (default = 0)"</Description>
+			  <ID>49</ID>
+			  <Description>"base_spgGoalKick+24 (default = 80)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+24</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>60</ID>
-			  <Description>"base_spgGoalKick+25 (default = 0)"</Description>
+			  <ID>50</ID>
+			  <Description>"base_spgGoalKick+25 (default = -2.5870100e+38)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+25</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>61</ID>
-			  <Description>"base_spgGoalKick+26 (default = 40)"</Description>
+			  <ID>51</ID>
+			  <Description>"base_spgGoalKick+26 (default = ❌)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+26</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>62</ID>
-			  <Description>"base_spgGoalKick+27 (default = 0)"</Description>
+			  <ID>52</ID>
+			  <Description>"base_spgGoalKick+27 (default = ❌)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+27</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>63</ID>
-			  <Description>"base_spgGoalKick+28 (default = 0)"</Description>
+			  <ID>53</ID>
+			  <Description>"base_spgGoalKick+28 (default = ❌)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+28</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>64</ID>
+			  <ID>54</ID>
 			  <Description>"base_spgGoalKick+29 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -549,7 +469,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+29</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>65</ID>
+			  <ID>55</ID>
 			  <Description>"base_spgGoalKick+2A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -557,23 +477,23 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+2A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>66</ID>
-			  <Description>"base_spgGoalKick+2B (default = 0)"</Description>
+			  <ID>56</ID>
+			  <Description>"base_spgGoalKick+2B (default = -8192.249)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+2B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>67</ID>
-			  <Description>"base_spgGoalKick+2C (default = 0)"</Description>
+			  <ID>57</ID>
+			  <Description>"base_spgGoalKick+2C (default = 99)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+2C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>68</ID>
+			  <ID>58</ID>
 			  <Description>"base_spgGoalKick+2D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -581,15 +501,15 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+2D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>69</ID>
-			  <Description>"base_spgGoalKick+2E (default = 2.5)"</Description>
+			  <ID>59</ID>
+			  <Description>"base_spgGoalKick+2E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+2E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>70</ID>
+			  <ID>60</ID>
 			  <Description>"base_spgGoalKick+2F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -597,15 +517,15 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+2F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>71</ID>
-			  <Description>"base_spgGoalKick+30 (default = 0)"</Description>
+			  <ID>61</ID>
+			  <Description>"base_spgGoalKick+30 (default = 40)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+30</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>72</ID>
+			  <ID>62</ID>
 			  <Description>"base_spgGoalKick+31 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -613,15 +533,15 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+31</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>73</ID>
-			  <Description>"base_spgGoalKick+32 (default = 2)"</Description>
+			  <ID>63</ID>
+			  <Description>"base_spgGoalKick+32 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+32</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>74</ID>
+			  <ID>64</ID>
 			  <Description>"base_spgGoalKick+33 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -629,7 +549,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+33</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>75</ID>
+			  <ID>65</ID>
 			  <Description>"base_spgGoalKick+34 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -637,23 +557,23 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+34</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>76</ID>
-			  <Description>"base_spgGoalKick+35 (default = -0)"</Description>
+			  <ID>66</ID>
+			  <Description>"base_spgGoalKick+35 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+35</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>77</ID>
-			  <Description>"base_spgGoalKick+36 (default = 1)"</Description>
+			  <ID>67</ID>
+			  <Description>"base_spgGoalKick+36 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+36</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>78</ID>
+			  <ID>68</ID>
 			  <Description>"base_spgGoalKick+37 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -661,15 +581,15 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+37</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>79</ID>
-			  <Description>"base_spgGoalKick+38 (default = 0)"</Description>
+			  <ID>69</ID>
+			  <Description>"base_spgGoalKick+38 (default = 2.5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+38</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>80</ID>
+			  <ID>70</ID>
 			  <Description>"base_spgGoalKick+39 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -677,7 +597,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+39</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>81</ID>
+			  <ID>71</ID>
 			  <Description>"base_spgGoalKick+3A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -685,7 +605,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+3A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>82</ID>
+			  <ID>72</ID>
 			  <Description>"base_spgGoalKick+3B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -693,175 +613,175 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+3B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>83</ID>
-			  <Description>"base_spgGoalKick+3C (default = 0)"</Description>
+			  <ID>73</ID>
+			  <Description>"base_spgGoalKick+3C (default = 2)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+3C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>84</ID>
-			  <Description>"base_spgGoalKick+3D (default = -0)"</Description>
+			  <ID>74</ID>
+			  <Description>"base_spgGoalKick+3D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+3D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>85</ID>
-			  <Description>"base_spgGoalKick+3E (default = 4)"</Description>
+			  <ID>75</ID>
+			  <Description>"base_spgGoalKick+3E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+3E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>86</ID>
-			  <Description>"base_spgGoalKick+3F (default = -2.0185088e+8)"</Description>
+			  <ID>76</ID>
+			  <Description>"base_spgGoalKick+3F (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+3F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>87</ID>
-			  <Description>"base_spgGoalKick+40 (default = -1.0761114e+8)"</Description>
+			  <ID>77</ID>
+			  <Description>"base_spgGoalKick+40 (default = 1)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+40</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>88</ID>
-			  <Description>"base_spgGoalKick+41 (default = 1.0737510e+8)"</Description>
+			  <ID>78</ID>
+			  <Description>"base_spgGoalKick+41 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+41</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>89</ID>
-			  <Description>"base_spgGoalKick+42 (default = 0.8)"</Description>
+			  <ID>79</ID>
+			  <Description>"base_spgGoalKick+42 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+42</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>90</ID>
-			  <Description>"base_spgGoalKick+43 (default = -2.0059258e+8)"</Description>
+			  <ID>80</ID>
+			  <Description>"base_spgGoalKick+43 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+43</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>91</ID>
-			  <Description>"base_spgGoalKick+44 (default = -1.0760867e+8)"</Description>
+			  <ID>81</ID>
+			  <Description>"base_spgGoalKick+44 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+44</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>92</ID>
-			  <Description>"base_spgGoalKick+45 (default = 1.0737510e+8)"</Description>
+			  <ID>82</ID>
+			  <Description>"base_spgGoalKick+45 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+45</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>93</ID>
-			  <Description>"base_spgGoalKick+46 (default = 0.2)"</Description>
+			  <ID>83</ID>
+			  <Description>"base_spgGoalKick+46 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+46</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>94</ID>
-			  <Description>"base_spgGoalKick+47 (default = 0)"</Description>
+			  <ID>84</ID>
+			  <Description>"base_spgGoalKick+47 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+47</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>95</ID>
-			  <Description>"base_spgGoalKick+48 (default = 0)"</Description>
+			  <ID>85</ID>
+			  <Description>"base_spgGoalKick+48 (default = 4)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+48</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>96</ID>
-			  <Description>"base_spgGoalKick+49 (default = 0)"</Description>
+			  <ID>86</ID>
+			  <Description>"base_spgGoalKick+49 (default = -2.0185088e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+49</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>97</ID>
-			  <Description>"base_spgGoalKick+4A (default = 0)"</Description>
+			  <ID>87</ID>
+			  <Description>"base_spgGoalKick+4A (default = -1.0761114e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+4A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>98</ID>
-			  <Description>"base_spgGoalKick+4B (default = 0)"</Description>
+			  <ID>88</ID>
+			  <Description>"base_spgGoalKick+4B (default = 1.0737510e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+4B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>99</ID>
-			  <Description>"base_spgGoalKick+4C (default = 0)"</Description>
+			  <ID>89</ID>
+			  <Description>"base_spgGoalKick+4C (default = 0.8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+4C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>100</ID>
-			  <Description>"base_spgGoalKick+4D (default = 0)"</Description>
+			  <ID>90</ID>
+			  <Description>"base_spgGoalKick+4D (default = -2.0059258e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+4D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>101</ID>
-			  <Description>"base_spgGoalKick+4E (default = 0)"</Description>
+			  <ID>91</ID>
+			  <Description>"base_spgGoalKick+4E (default = -1.0760867e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+4E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>102</ID>
-			  <Description>"base_spgGoalKick+4F (default = 0)"</Description>
+			  <ID>92</ID>
+			  <Description>"base_spgGoalKick+4F (default = 1.0737510e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+4F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>103</ID>
-			  <Description>"base_spgGoalKick+50 (default = 0)"</Description>
+			  <ID>93</ID>
+			  <Description>"base_spgGoalKick+50 (default = 0.2)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+50</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>104</ID>
+			  <ID>94</ID>
 			  <Description>"base_spgGoalKick+51 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -869,7 +789,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+51</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>105</ID>
+			  <ID>95</ID>
 			  <Description>"base_spgGoalKick+52 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -877,7 +797,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+52</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>106</ID>
+			  <ID>96</ID>
 			  <Description>"base_spgGoalKick+53 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -885,7 +805,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+53</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>107</ID>
+			  <ID>97</ID>
 			  <Description>"base_spgGoalKick+54 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -893,7 +813,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+54</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>108</ID>
+			  <ID>98</ID>
 			  <Description>"base_spgGoalKick+55 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -901,7 +821,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+55</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>109</ID>
+			  <ID>99</ID>
 			  <Description>"base_spgGoalKick+56 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -909,15 +829,15 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+56</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>110</ID>
-			  <Description>"base_spgGoalKick+57 (default = 9.4447330e+21)"</Description>
+			  <ID>100</ID>
+			  <Description>"base_spgGoalKick+57 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+57</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>111</ID>
+			  <ID>101</ID>
 			  <Description>"base_spgGoalKick+58 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -925,15 +845,15 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+58</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>112</ID>
-			  <Description>"base_spgGoalKick+59 (default = 9.4735560e+21)"</Description>
+			  <ID>102</ID>
+			  <Description>"base_spgGoalKick+59 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+59</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>113</ID>
+			  <ID>103</ID>
 			  <Description>"base_spgGoalKick+5A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -941,7 +861,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+5A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>114</ID>
+			  <ID>104</ID>
 			  <Description>"base_spgGoalKick+5B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -949,7 +869,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+5B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>115</ID>
+			  <ID>105</ID>
 			  <Description>"base_spgGoalKick+5C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -957,15 +877,15 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+5C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>116</ID>
-			  <Description>"base_spgGoalKick+5D (default = -131072)"</Description>
+			  <ID>106</ID>
+			  <Description>"base_spgGoalKick+5D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+5D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>117</ID>
+			  <ID>107</ID>
 			  <Description>"base_spgGoalKick+5E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -973,7 +893,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+5E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>118</ID>
+			  <ID>108</ID>
 			  <Description>"base_spgGoalKick+5F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -981,7 +901,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+5F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>119</ID>
+			  <ID>109</ID>
 			  <Description>"base_spgGoalKick+60 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -989,15 +909,15 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+60</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>120</ID>
-			  <Description>"base_spgGoalKick+61 (default = -131072)"</Description>
+			  <ID>110</ID>
+			  <Description>"base_spgGoalKick+61 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+61</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>121</ID>
+			  <ID>111</ID>
 			  <Description>"base_spgGoalKick+62 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1005,7 +925,7 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+62</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>122</ID>
+			  <ID>112</ID>
 			  <Description>"base_spgGoalKick+63 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1013,15 +933,15 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+63</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>123</ID>
-			  <Description>"base_spgGoalKick+64 (default = ❌)"</Description>
+			  <ID>113</ID>
+			  <Description>"base_spgGoalKick+64 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+64</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>124</ID>
+			  <ID>114</ID>
 			  <Description>"base_spgGoalKick+65 (default = ❌)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1029,12 +949,20 @@ unregistersymbol(base_spgGoalKick)
 			  <Address>base_spgGoalKick+65</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>125</ID>
+			  <ID>115</ID>
 			  <Description>"base_spgGoalKick+66 (default = ❌)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_spgGoalKick+66</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>116</ID>
+			  <Description>"base_spgGoalKick+67 (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_spgGoalKick+67</Address>
 			</CheatEntry>
 			</CheatEntries>
     </CheatEntry>
