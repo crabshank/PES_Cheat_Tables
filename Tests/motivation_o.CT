@@ -7,10 +7,15 @@
       <Options moHideChildren="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base_motivation,00 00 00 33 33 73 3F 66 66 86 3F 6E 00 6F)  // should be unique
-registersymbol(base_motivation)
-
 {$lua}
+local aob=AOBScan('33 33 73 3F 66 66 86 3F', "", 0)
+local aob_count=aob.Count
+if aob_count>0 then
+	local res=aob[0]
+	local dec_res=tonumber(res,16)
+	registerSymbol('base_motivation',dec_res)
+end
+aob.destroy()
 local al = getAddressList()
 local vars={}
 for i=1, al.Count-1 do --skip script
@@ -38,126 +43,150 @@ unregistersymbol(base_motivation)
 	  <CheatEntries>
 	  <CheatEntry>
 			  <ID>1</ID>
-			  <Description>"base_motivation-1 (default = 0)"</Description>
+			  <Description>"base_motivation-4 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_motivation-4</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>2</ID>
+			  <Description>"base_motivation-3 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_motivation-3</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>3</ID>
+			  <Description>"base_motivation-2 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_motivation-2</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>4</ID>
+			  <Description>"base_motivation-1 (default = 1.4197625e+31)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation-1</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>2</ID>
-			  <Description>"base_motivation (default = 0)"</Description>
+			  <ID>5</ID>
+			  <Description>"base_motivation (default = 0.95)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+0</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>3</ID>
-			  <Description>"base_motivation+1 (default = 0)"</Description>
+			  <ID>6</ID>
+			  <Description>"base_motivation+1 (default = 2.2602426e+23)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+1</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>4</ID>
-			  <Description>"base_motivation+2 (default = 1.4197625e+31)"</Description>
+			  <ID>7</ID>
+			  <Description>"base_motivation+2 (default = 2.7182868e+23)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+2</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>5</ID>
-			  <Description>"base_motivation+3 (default = 0.95)"</Description>
+			  <ID>8</ID>
+			  <Description>"base_motivation+3 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+3</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>6</ID>
-			  <Description>"base_motivation+4 (default = 2.2602426e+23)"</Description>
+			  <ID>9</ID>
+			  <Description>"base_motivation+4 (default = 1.05)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+4</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>7</ID>
-			  <Description>"base_motivation+5 (default = 2.7182868e+23)"</Description>
+			  <ID>10</ID>
+			  <Description>"base_motivation+5 (default = 6.2153414e+34)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+5</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>8</ID>
-			  <Description>"base_motivation+6 (default = -0)"</Description>
+			  <ID>11</ID>
+			  <Description>"base_motivation+6 (default = 7.3565066e+22)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+6</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>9</ID>
-			  <Description>"base_motivation+7 (default = 1.05)"</Description>
+			  <ID>12</ID>
+			  <Description>"base_motivation+7 (default = 4.5451933e+30)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+7</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>10</ID>
-			  <Description>"base_motivation+8 (default = 1.4818529e+28)"</Description>
+			  <ID>13</ID>
+			  <Description>"base_motivation+8 (default = 1.6266946e+10)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+8</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>11</ID>
-			  <Description>"base_motivation+9 (default = 0)"</Description>
+			  <ID>14</ID>
+			  <Description>"base_motivation+9 (default = 1.0079871e+27)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+9</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>12</ID>
-			  <Description>"base_motivation+A (default = 3.9747361e+28)"</Description>
+			  <ID>15</ID>
+			  <Description>"base_motivation+A (default = 2.7245177e+20)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>13</ID>
-			  <Description>"base_motivation+B (default = 1.8491859e+28)"</Description>
+			  <ID>16</ID>
+			  <Description>"base_motivation+B (default = 7.3153977e+34)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>14</ID>
-			  <Description>"base_motivation+C (default = 0)"</Description>
+			  <ID>17</ID>
+			  <Description>"base_motivation+C (default = 1.0214628e+6)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>15</ID>
-			  <Description>"base_motivation+D (default = 9.9368968e+27)"</Description>
+			  <ID>18</ID>
+			  <Description>"base_motivation+D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>16</ID>
+			  <ID>19</ID>
 			  <Description>"base_motivation+E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -165,15 +194,15 @@ unregistersymbol(base_motivation)
 			  <Address>base_motivation+E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>17</ID>
-			  <Description>"base_motivation+F (default = 9.9367658e+27)"</Description>
+			  <ID>20</ID>
+			  <Description>"base_motivation+F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>18</ID>
+			  <ID>21</ID>
 			  <Description>"base_motivation+10 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -181,7 +210,7 @@ unregistersymbol(base_motivation)
 			  <Address>base_motivation+10</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>19</ID>
+			  <ID>22</ID>
 			  <Description>"base_motivation+11 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -189,7 +218,7 @@ unregistersymbol(base_motivation)
 			  <Address>base_motivation+11</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>20</ID>
+			  <ID>23</ID>
 			  <Description>"base_motivation+12 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -197,7 +226,7 @@ unregistersymbol(base_motivation)
 			  <Address>base_motivation+12</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>21</ID>
+			  <ID>24</ID>
 			  <Description>"base_motivation+13 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -205,7 +234,7 @@ unregistersymbol(base_motivation)
 			  <Address>base_motivation+13</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>22</ID>
+			  <ID>25</ID>
 			  <Description>"base_motivation+14 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -213,308 +242,28 @@ unregistersymbol(base_motivation)
 			  <Address>base_motivation+14</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>23</ID>
-			  <Description>"base_motivation+15 (default = 0)"</Description>
+			  <ID>26</ID>
+			  <Description>"base_motivation+15 (default = ❌)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+15</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>24</ID>
-			  <Description>"base_motivation+16 (default = 0)"</Description>
+			  <ID>27</ID>
+			  <Description>"base_motivation+16 (default = ❌)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+16</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>25</ID>
-			  <Description>"base_motivation+17 (default = 0)"</Description>
+			  <ID>28</ID>
+			  <Description>"base_motivation+17 (default = ❌)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_motivation+17</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>26</ID>
-			  <Description>"base_motivation+18 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+18</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>27</ID>
-			  <Description>"base_motivation+19 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+19</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>28</ID>
-			  <Description>"base_motivation+1A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+1A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>29</ID>
-			  <Description>"base_motivation+1B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+1B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>30</ID>
-			  <Description>"base_motivation+1C (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+1C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>31</ID>
-			  <Description>"base_motivation+1D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+1D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>32</ID>
-			  <Description>"base_motivation+1E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+1E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>33</ID>
-			  <Description>"base_motivation+1F (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+1F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>34</ID>
-			  <Description>"base_motivation+20 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+20</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>35</ID>
-			  <Description>"base_motivation+21 (default = 2.5353012e+30)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+21</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>36</ID>
-			  <Description>"base_motivation+22 (default = -4.9083431e+33)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+22</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>37</ID>
-			  <Description>"base_motivation+23 (default = ❌)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+23</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>38</ID>
-			  <Description>"base_motivation+24 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+24</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>39</ID>
-			  <Description>"base_motivation+25 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+25</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>40</ID>
-			  <Description>"base_motivation+26 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+26</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>41</ID>
-			  <Description>"base_motivation+27 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+27</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>42</ID>
-			  <Description>"base_motivation+28 (default = 0.0000001)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+28</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>43</ID>
-			  <Description>"base_motivation+29 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+29</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>44</ID>
-			  <Description>"base_motivation+2A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+2A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>45</ID>
-			  <Description>"base_motivation+2B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+2B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>46</ID>
-			  <Description>"base_motivation+2C (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+2C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>47</ID>
-			  <Description>"base_motivation+2D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+2D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>48</ID>
-			  <Description>"base_motivation+2E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+2E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>49</ID>
-			  <Description>"base_motivation+2F (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+2F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>50</ID>
-			  <Description>"base_motivation+30 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+30</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>51</ID>
-			  <Description>"base_motivation+31 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+31</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>52</ID>
-			  <Description>"base_motivation+32 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+32</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>53</ID>
-			  <Description>"base_motivation+33 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+33</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>54</ID>
-			  <Description>"base_motivation+34 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+34</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>55</ID>
-			  <Description>"base_motivation+35 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+35</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>56</ID>
-			  <Description>"base_motivation+36 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+36</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>57</ID>
-			  <Description>"base_motivation+37 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+37</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>58</ID>
-			  <Description>"base_motivation+38 (default = ❌)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+38</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>59</ID>
-			  <Description>"base_motivation+39 (default = ❌)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+39</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>60</ID>
-			  <Description>"base_motivation+3A (default = ❌)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_motivation+3A</Address>
 			</CheatEntry>
 			</CheatEntries>
     </CheatEntry>
