@@ -209,7 +209,6 @@ unregistersymbol(base_spaceRun)
           <ID>25</ID>
           <Description>"base_spaceRun-23 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun-23</Address>
         </CheatEntry>
@@ -217,7 +216,6 @@ unregistersymbol(base_spaceRun)
           <ID>26</ID>
           <Description>"base_spaceRun-22 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun-22</Address>
         </CheatEntry>
@@ -225,7 +223,6 @@ unregistersymbol(base_spaceRun)
           <ID>27</ID>
           <Description>"base_spaceRun-21 (default = -0.0000001)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun-21</Address>
         </CheatEntry>
@@ -241,7 +238,6 @@ unregistersymbol(base_spaceRun)
           <ID>29</ID>
           <Description>"base_spaceRun-1F (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun-1F</Address>
         </CheatEntry>
@@ -249,7 +245,6 @@ unregistersymbol(base_spaceRun)
           <ID>30</ID>
           <Description>"base_spaceRun-1E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun-1E</Address>
         </CheatEntry>
@@ -257,16 +252,16 @@ unregistersymbol(base_spaceRun)
           <ID>31</ID>
           <Description>"base_spaceRun-1D (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun-1D</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>32</ID>
-          <Description>"base_spaceRun-1C (default = -0)"</Description>
+          <Description>"base_spaceRun-1C (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_spaceRun-1C</Address>
         </CheatEntry>
         <CheatEntry>
@@ -292,17 +287,16 @@ unregistersymbol(base_spaceRun)
         </CheatEntry>
         <CheatEntry>
           <ID>36</ID>
-          <Description>"base_spaceRun-18 (default = 0)"</Description>
+          <Description>"base_spaceRun-18 (default = 100)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_spaceRun-18</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>37</ID>
           <Description>"base_spaceRun-17 (default = 8.7960930e+12)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun-17</Address>
         </CheatEntry>
@@ -310,7 +304,6 @@ unregistersymbol(base_spaceRun)
           <ID>38</ID>
           <Description>"base_spaceRun-16 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun-16</Address>
         </CheatEntry>
@@ -318,7 +311,6 @@ unregistersymbol(base_spaceRun)
           <ID>39</ID>
           <Description>"base_spaceRun-15 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun-15</Address>
         </CheatEntry>
@@ -362,7 +354,6 @@ unregistersymbol(base_spaceRun)
           <ID>45</ID>
           <Description>"base_spaceRun-F (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun-F</Address>
         </CheatEntry>
@@ -370,7 +361,6 @@ unregistersymbol(base_spaceRun)
           <ID>46</ID>
           <Description>"base_spaceRun-E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun-E</Address>
         </CheatEntry>
@@ -378,7 +368,6 @@ unregistersymbol(base_spaceRun)
           <ID>47</ID>
           <Description>"base_spaceRun-D (default = 131073.02)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun-D</Address>
         </CheatEntry>
@@ -394,7 +383,6 @@ unregistersymbol(base_spaceRun)
           <ID>49</ID>
           <Description>"base_spaceRun-B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun-B</Address>
         </CheatEntry>
@@ -402,7 +390,6 @@ unregistersymbol(base_spaceRun)
           <ID>50</ID>
           <Description>"base_spaceRun-A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun-A</Address>
         </CheatEntry>
@@ -410,16 +397,15 @@ unregistersymbol(base_spaceRun)
           <ID>51</ID>
           <Description>"base_spaceRun-9 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun-9</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>52</ID>
-          <Description>"base_spaceRun-8 (default = 0)"</Description>
+          <Description>"base_spaceRun-8 (default = 2)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_spaceRun-8</Address>
         </CheatEntry>
         <CheatEntry>
@@ -445,10 +431,10 @@ unregistersymbol(base_spaceRun)
         </CheatEntry>
         <CheatEntry>
           <ID>56</ID>
-          <Description>"base_spaceRun-4 (default = 0)"</Description>
+          <Description>"base_spaceRun-4 (default = 4)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_spaceRun-4</Address>
         </CheatEntry>
         <CheatEntry>
@@ -484,7 +470,6 @@ unregistersymbol(base_spaceRun)
           <ID>61</ID>
           <Description>"base_spaceRun+1 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+1</Address>
         </CheatEntry>
@@ -492,7 +477,6 @@ unregistersymbol(base_spaceRun)
           <ID>62</ID>
           <Description>"base_spaceRun+2 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+2</Address>
         </CheatEntry>
@@ -500,7 +484,6 @@ unregistersymbol(base_spaceRun)
           <ID>63</ID>
           <Description>"base_spaceRun+3 (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+3</Address>
         </CheatEntry>
@@ -516,7 +499,6 @@ unregistersymbol(base_spaceRun)
           <ID>65</ID>
           <Description>"base_spaceRun+5 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+5</Address>
         </CheatEntry>
@@ -524,7 +506,6 @@ unregistersymbol(base_spaceRun)
           <ID>66</ID>
           <Description>"base_spaceRun+6 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+6</Address>
         </CheatEntry>
@@ -532,7 +513,6 @@ unregistersymbol(base_spaceRun)
           <ID>67</ID>
           <Description>"base_spaceRun+7 (default = -131073.02)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+7</Address>
         </CheatEntry>
@@ -660,7 +640,6 @@ unregistersymbol(base_spaceRun)
           <ID>85</ID>
           <Description>"base_spaceRun+19 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+19</Address>
         </CheatEntry>
@@ -668,7 +647,6 @@ unregistersymbol(base_spaceRun)
           <ID>86</ID>
           <Description>"base_spaceRun+1A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+1A</Address>
         </CheatEntry>
@@ -676,7 +654,6 @@ unregistersymbol(base_spaceRun)
           <ID>87</ID>
           <Description>"base_spaceRun+1B (default = -1.5845755e+29)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+1B</Address>
         </CheatEntry>
@@ -692,7 +669,6 @@ unregistersymbol(base_spaceRun)
           <ID>89</ID>
           <Description>"base_spaceRun+1D (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+1D</Address>
         </CheatEntry>
@@ -700,7 +676,6 @@ unregistersymbol(base_spaceRun)
           <ID>90</ID>
           <Description>"base_spaceRun+1E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+1E</Address>
         </CheatEntry>
@@ -708,7 +683,6 @@ unregistersymbol(base_spaceRun)
           <ID>91</ID>
           <Description>"base_spaceRun+1F (default = -0.0000001)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+1F</Address>
         </CheatEntry>
@@ -724,7 +698,6 @@ unregistersymbol(base_spaceRun)
           <ID>93</ID>
           <Description>"base_spaceRun+21 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+21</Address>
         </CheatEntry>
@@ -732,7 +705,6 @@ unregistersymbol(base_spaceRun)
           <ID>94</ID>
           <Description>"base_spaceRun+22 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+22</Address>
         </CheatEntry>
@@ -740,7 +712,6 @@ unregistersymbol(base_spaceRun)
           <ID>95</ID>
           <Description>"base_spaceRun+23 (default = -1.4411632e+17)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+23</Address>
         </CheatEntry>
@@ -756,7 +727,6 @@ unregistersymbol(base_spaceRun)
           <ID>97</ID>
           <Description>"base_spaceRun+25 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+25</Address>
         </CheatEntry>
@@ -764,7 +734,6 @@ unregistersymbol(base_spaceRun)
           <ID>98</ID>
           <Description>"base_spaceRun+26 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+26</Address>
         </CheatEntry>
@@ -772,7 +741,6 @@ unregistersymbol(base_spaceRun)
           <ID>99</ID>
           <Description>"base_spaceRun+27 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+27</Address>
         </CheatEntry>
@@ -780,7 +748,6 @@ unregistersymbol(base_spaceRun)
           <ID>100</ID>
           <Description>"base_spaceRun+28 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+28</Address>
         </CheatEntry>
@@ -807,10 +774,10 @@ unregistersymbol(base_spaceRun)
         </CheatEntry>
         <CheatEntry>
           <ID>104</ID>
-          <Description>"base_spaceRun+2C (default = 0)"</Description>
+          <Description>"base_spaceRun+2C (default = 2)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_spaceRun+2C</Address>
         </CheatEntry>
         <CheatEntry>
@@ -846,7 +813,6 @@ unregistersymbol(base_spaceRun)
           <ID>109</ID>
           <Description>"base_spaceRun+31 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+31</Address>
         </CheatEntry>
@@ -854,7 +820,6 @@ unregistersymbol(base_spaceRun)
           <ID>110</ID>
           <Description>"base_spaceRun+32 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+32</Address>
         </CheatEntry>
@@ -862,7 +827,6 @@ unregistersymbol(base_spaceRun)
           <ID>111</ID>
           <Description>"base_spaceRun+33 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+33</Address>
         </CheatEntry>
@@ -878,7 +842,6 @@ unregistersymbol(base_spaceRun)
           <ID>113</ID>
           <Description>"base_spaceRun+35 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+35</Address>
         </CheatEntry>
@@ -886,7 +849,6 @@ unregistersymbol(base_spaceRun)
           <ID>114</ID>
           <Description>"base_spaceRun+36 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+36</Address>
         </CheatEntry>
@@ -894,7 +856,6 @@ unregistersymbol(base_spaceRun)
           <ID>115</ID>
           <Description>"base_spaceRun+37 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+37</Address>
         </CheatEntry>
@@ -903,14 +864,13 @@ unregistersymbol(base_spaceRun)
           <Description>"base_spaceRun+38 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_spaceRun+38</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>117</ID>
           <Description>"base_spaceRun+39 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+39</Address>
         </CheatEntry>
@@ -918,7 +878,6 @@ unregistersymbol(base_spaceRun)
           <ID>118</ID>
           <Description>"base_spaceRun+3A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+3A</Address>
         </CheatEntry>
@@ -926,7 +885,6 @@ unregistersymbol(base_spaceRun)
           <ID>119</ID>
           <Description>"base_spaceRun+3B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+3B</Address>
         </CheatEntry>
@@ -942,7 +900,6 @@ unregistersymbol(base_spaceRun)
           <ID>121</ID>
           <Description>"base_spaceRun+3D (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+3D</Address>
         </CheatEntry>
@@ -950,7 +907,6 @@ unregistersymbol(base_spaceRun)
           <ID>122</ID>
           <Description>"base_spaceRun+3E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+3E</Address>
         </CheatEntry>
@@ -958,7 +914,6 @@ unregistersymbol(base_spaceRun)
           <ID>123</ID>
           <Description>"base_spaceRun+3F (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+3F</Address>
         </CheatEntry>
@@ -974,7 +929,6 @@ unregistersymbol(base_spaceRun)
           <ID>125</ID>
           <Description>"base_spaceRun+41 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+41</Address>
         </CheatEntry>
@@ -982,7 +936,6 @@ unregistersymbol(base_spaceRun)
           <ID>126</ID>
           <Description>"base_spaceRun+42 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+42</Address>
         </CheatEntry>
@@ -990,7 +943,6 @@ unregistersymbol(base_spaceRun)
           <ID>127</ID>
           <Description>"base_spaceRun+43 (default = -0.0000305)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+43</Address>
         </CheatEntry>
@@ -1034,7 +986,6 @@ unregistersymbol(base_spaceRun)
           <ID>133</ID>
           <Description>"base_spaceRun+49 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+49</Address>
         </CheatEntry>
@@ -1042,7 +993,6 @@ unregistersymbol(base_spaceRun)
           <ID>134</ID>
           <Description>"base_spaceRun+4A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+4A</Address>
         </CheatEntry>
@@ -1050,7 +1000,6 @@ unregistersymbol(base_spaceRun)
           <ID>135</ID>
           <Description>"base_spaceRun+4B (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+4B</Address>
         </CheatEntry>
@@ -1066,7 +1015,6 @@ unregistersymbol(base_spaceRun)
           <ID>137</ID>
           <Description>"base_spaceRun+4D (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+4D</Address>
         </CheatEntry>
@@ -1074,7 +1022,6 @@ unregistersymbol(base_spaceRun)
           <ID>138</ID>
           <Description>"base_spaceRun+4E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+4E</Address>
         </CheatEntry>
@@ -1082,13 +1029,12 @@ unregistersymbol(base_spaceRun)
           <ID>139</ID>
           <Description>"base_spaceRun+4F (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+4F</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>140</ID>
-          <Description>"base_spaceRun+50 (default = 82)"</Description>
+          <Description>"base_spaceRun+50 (default = 82f)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
@@ -1098,7 +1044,6 @@ unregistersymbol(base_spaceRun)
           <ID>141</ID>
           <Description>"base_spaceRun+51 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+51</Address>
         </CheatEntry>
@@ -1106,7 +1051,6 @@ unregistersymbol(base_spaceRun)
           <ID>142</ID>
           <Description>"base_spaceRun+52 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+52</Address>
         </CheatEntry>
@@ -1114,7 +1058,6 @@ unregistersymbol(base_spaceRun)
           <ID>143</ID>
           <Description>"base_spaceRun+53 (default = -131073.03)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+53</Address>
         </CheatEntry>
@@ -1130,7 +1073,6 @@ unregistersymbol(base_spaceRun)
           <ID>145</ID>
           <Description>"base_spaceRun+55 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+55</Address>
         </CheatEntry>
@@ -1138,7 +1080,6 @@ unregistersymbol(base_spaceRun)
           <ID>146</ID>
           <Description>"base_spaceRun+56 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+56</Address>
         </CheatEntry>
@@ -1146,15 +1087,15 @@ unregistersymbol(base_spaceRun)
           <ID>147</ID>
           <Description>"base_spaceRun+57 (default = 1.5845757e+29)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+57</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>148</ID>
-          <Description>"base_spaceRun+58 (default = 15)"</Description>
+          <Description>"base_spaceRun+58 (default = 15f)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_spaceRun+58</Address>
         </CheatEntry>
         <CheatEntry>
@@ -1162,7 +1103,7 @@ unregistersymbol(base_spaceRun)
           <Description>"base_spaceRun+59 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_spaceRun+59</Address>
         </CheatEntry>
         <CheatEntry>
@@ -1170,7 +1111,7 @@ unregistersymbol(base_spaceRun)
           <Description>"base_spaceRun+5A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_spaceRun+5A</Address>
         </CheatEntry>
         <CheatEntry>
@@ -1178,7 +1119,7 @@ unregistersymbol(base_spaceRun)
           <Description>"base_spaceRun+5B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_spaceRun+5B</Address>
         </CheatEntry>
         <CheatEntry>
@@ -1249,7 +1190,6 @@ unregistersymbol(base_spaceRun)
           <ID>161</ID>
           <Description>"base_spaceRun+65 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+65</Address>
         </CheatEntry>
@@ -1257,7 +1197,6 @@ unregistersymbol(base_spaceRun)
           <ID>162</ID>
           <Description>"base_spaceRun+66 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+66</Address>
         </CheatEntry>
@@ -1265,7 +1204,6 @@ unregistersymbol(base_spaceRun)
           <ID>163</ID>
           <Description>"base_spaceRun+67 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+67</Address>
         </CheatEntry>
@@ -1281,7 +1219,6 @@ unregistersymbol(base_spaceRun)
           <ID>165</ID>
           <Description>"base_spaceRun+69 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+69</Address>
         </CheatEntry>
@@ -1289,7 +1226,6 @@ unregistersymbol(base_spaceRun)
           <ID>166</ID>
           <Description>"base_spaceRun+6A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+6A</Address>
         </CheatEntry>
@@ -1297,7 +1233,6 @@ unregistersymbol(base_spaceRun)
           <ID>167</ID>
           <Description>"base_spaceRun+6B (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+6B</Address>
         </CheatEntry>
@@ -1369,7 +1304,6 @@ unregistersymbol(base_spaceRun)
           <ID>177</ID>
           <Description>"base_spaceRun+75 (default = 1.4323897e+22)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+75</Address>
         </CheatEntry>
@@ -1377,7 +1311,6 @@ unregistersymbol(base_spaceRun)
           <ID>178</ID>
           <Description>"base_spaceRun+76 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+76</Address>
         </CheatEntry>
@@ -1385,16 +1318,15 @@ unregistersymbol(base_spaceRun)
           <ID>179</ID>
           <Description>"base_spaceRun+77 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+77</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>180</ID>
-          <Description>"base_spaceRun+78 (default = 0)"</Description>
+          <Description>"base_spaceRun+78 (default = 100)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_spaceRun+78</Address>
         </CheatEntry>
         <CheatEntry>
@@ -1420,10 +1352,10 @@ unregistersymbol(base_spaceRun)
         </CheatEntry>
         <CheatEntry>
           <ID>184</ID>
-          <Description>"base_spaceRun+7C (default = 0)"</Description>
+          <Description>"base_spaceRun+7C (default = 90)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_spaceRun+7C</Address>
         </CheatEntry>
         <CheatEntry>
@@ -1452,14 +1384,13 @@ unregistersymbol(base_spaceRun)
           <Description>"base_spaceRun+80 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_spaceRun+80</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>189</ID>
           <Description>"base_spaceRun+81 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+81</Address>
         </CheatEntry>
@@ -1467,7 +1398,6 @@ unregistersymbol(base_spaceRun)
           <ID>190</ID>
           <Description>"base_spaceRun+82 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+82</Address>
         </CheatEntry>
@@ -1475,23 +1405,21 @@ unregistersymbol(base_spaceRun)
           <ID>191</ID>
           <Description>"base_spaceRun+83 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+83</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>192</ID>
-          <Description>"base_spaceRun+84 (default = 0)"</Description>
+          <Description>"base_spaceRun+84 (default = 1)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_spaceRun+84</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>193</ID>
           <Description>"base_spaceRun+85 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+85</Address>
         </CheatEntry>
@@ -1499,7 +1427,6 @@ unregistersymbol(base_spaceRun)
           <ID>194</ID>
           <Description>"base_spaceRun+86 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+86</Address>
         </CheatEntry>
@@ -1507,7 +1434,6 @@ unregistersymbol(base_spaceRun)
           <ID>195</ID>
           <Description>"base_spaceRun+87 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+87</Address>
         </CheatEntry>
@@ -1523,7 +1449,6 @@ unregistersymbol(base_spaceRun)
           <ID>197</ID>
           <Description>"base_spaceRun+89 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+89</Address>
         </CheatEntry>
@@ -1531,7 +1456,6 @@ unregistersymbol(base_spaceRun)
           <ID>198</ID>
           <Description>"base_spaceRun+8A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+8A</Address>
         </CheatEntry>
@@ -1539,7 +1463,6 @@ unregistersymbol(base_spaceRun)
           <ID>199</ID>
           <Description>"base_spaceRun+8B (default = 8.5900022e+9)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+8B</Address>
         </CheatEntry>
@@ -1611,7 +1534,6 @@ unregistersymbol(base_spaceRun)
           <ID>209</ID>
           <Description>"base_spaceRun+95 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+95</Address>
         </CheatEntry>
@@ -1619,7 +1541,6 @@ unregistersymbol(base_spaceRun)
           <ID>210</ID>
           <Description>"base_spaceRun+96 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+96</Address>
         </CheatEntry>
@@ -1627,7 +1548,6 @@ unregistersymbol(base_spaceRun)
           <ID>211</ID>
           <Description>"base_spaceRun+97 (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+97</Address>
         </CheatEntry>
@@ -1643,7 +1563,6 @@ unregistersymbol(base_spaceRun)
           <ID>213</ID>
           <Description>"base_spaceRun+99 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+99</Address>
         </CheatEntry>
@@ -1651,7 +1570,6 @@ unregistersymbol(base_spaceRun)
           <ID>214</ID>
           <Description>"base_spaceRun+9A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+9A</Address>
         </CheatEntry>
@@ -1659,7 +1577,6 @@ unregistersymbol(base_spaceRun)
           <ID>215</ID>
           <Description>"base_spaceRun+9B (default = -1.5845755e+29)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+9B</Address>
         </CheatEntry>
@@ -1675,7 +1592,6 @@ unregistersymbol(base_spaceRun)
           <ID>217</ID>
           <Description>"base_spaceRun+9D (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+9D</Address>
         </CheatEntry>
@@ -1683,7 +1599,6 @@ unregistersymbol(base_spaceRun)
           <ID>218</ID>
           <Description>"base_spaceRun+9E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+9E</Address>
         </CheatEntry>
@@ -1691,16 +1606,16 @@ unregistersymbol(base_spaceRun)
           <ID>219</ID>
           <Description>"base_spaceRun+9F (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+9F</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>220</ID>
-          <Description>"base_spaceRun+A0 (default = 0)"</Description>
+          <Description>"base_spaceRun+A0 (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_spaceRun+A0</Address>
         </CheatEntry>
         <CheatEntry>
@@ -1719,25 +1634,25 @@ unregistersymbol(base_spaceRun)
         </CheatEntry>
         <CheatEntry>
           <ID>223</ID>
-          <Description>"base_spaceRun+A3 (default = 0)"</Description>
+          <Description>"base_spaceRun+A3 (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_spaceRun+A3</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>224</ID>
-          <Description>"base_spaceRun+A4 (default = 0)"</Description>
+          <Description>"base_spaceRun+A4 (default = 4)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_spaceRun+A4</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>225</ID>
           <Description>"base_spaceRun+A5 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+A5</Address>
         </CheatEntry>
@@ -1745,7 +1660,6 @@ unregistersymbol(base_spaceRun)
           <ID>226</ID>
           <Description>"base_spaceRun+A6 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+A6</Address>
         </CheatEntry>
@@ -1753,23 +1667,21 @@ unregistersymbol(base_spaceRun)
           <ID>227</ID>
           <Description>"base_spaceRun+A7 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+A7</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>228</ID>
-          <Description>"base_spaceRun+A8 (default = 0)"</Description>
+          <Description>"base_spaceRun+A8 (default = 6)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_spaceRun+A8</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>229</ID>
           <Description>"base_spaceRun+A9 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+A9</Address>
         </CheatEntry>
@@ -1777,7 +1689,6 @@ unregistersymbol(base_spaceRun)
           <ID>230</ID>
           <Description>"base_spaceRun+AA (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+AA</Address>
         </CheatEntry>
@@ -1785,16 +1696,15 @@ unregistersymbol(base_spaceRun)
           <ID>231</ID>
           <Description>"base_spaceRun+AB (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_spaceRun+AB</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>232</ID>
-          <Description>"base_spaceRun+AC (default = 0)"</Description>
+          <Description>"base_spaceRun+AC (default = 3)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_spaceRun+AC</Address>
         </CheatEntry>
         <CheatEntry>
@@ -1820,10 +1730,10 @@ unregistersymbol(base_spaceRun)
         </CheatEntry>
         <CheatEntry>
           <ID>236</ID>
-          <Description>"base_spaceRun+B0 (default = 0)"</Description>
+          <Description>"base_spaceRun+B0 (default = 2)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_spaceRun+B0</Address>
         </CheatEntry>
         <CheatEntry>
@@ -1849,10 +1759,11 @@ unregistersymbol(base_spaceRun)
         </CheatEntry>
         <CheatEntry>
           <ID>240</ID>
-          <Description>"base_spaceRun+B4 (default = 0)"</Description>
+          <Description>"base_spaceRun+B4 (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_spaceRun+B4</Address>
         </CheatEntry>
         <CheatEntry>
