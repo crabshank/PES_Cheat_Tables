@@ -5,7 +5,7 @@
       <ID>0</ID>
       <Description>"pes15Test_o"</Description>
       <Options moHideChildren="1"/>
-	  <VariableType>Auto Assembler Script</VariableType>
+      <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_PES15test,9A 99 99 3E 3D 0A D7 3E 5C 8F)  // should be unique
 registersymbol(base_PES15test)
@@ -35,624 +35,557 @@ end
 unregistersymbol(base_PES15test)
 
 </AssemblerScript>
-	  <CheatEntries>
-	  <CheatEntry>
-			  <ID>1</ID>
-			  <Description>"base_PES15test-14 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-14</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>2</ID>
-			  <Description>"base_PES15test-13 (default = -1.3421773e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-13</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>3</ID>
-			  <Description>"base_PES15test-12 (default = -1.0747904e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-12</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>4</ID>
-			  <Description>"base_PES15test-11 (default = 1.0737459e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-11</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>5</ID>
-			  <Description>"base_PES15test-10 (default = 0.2)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-10</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>6</ID>
-			  <Description>"base_PES15test-F (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>7</ID>
-			  <Description>"base_PES15test-E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>8</ID>
-			  <Description>"base_PES15test-D (default = 5.5407162e+11)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>9</ID>
-			  <Description>"base_PES15test-C (default = 52.75098)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>10</ID>
-			  <Description>"base_PES15test-B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>11</ID>
-			  <Description>"base_PES15test-A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>12</ID>
-			  <Description>"base_PES15test-9 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-9</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>13</ID>
-			  <Description>"base_PES15test-8 (default = 2)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-8</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>14</ID>
-			  <Description>"base_PES15test-7 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-7</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>15</ID>
-			  <Description>"base_PES15test-6 (default = -0.0078278)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-6</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>16</ID>
-			  <Description>"base_PES15test-5 (default = -0.0000224)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-5</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>17</ID>
-			  <Description>"base_PES15test-4 (default = -5.7416992)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-4</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>18</ID>
-			  <Description>"base_PES15test-3 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-3</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>19</ID>
-			  <Description>"base_PES15test-2 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-2</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>20</ID>
-			  <Description>"base_PES15test-1 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test-1</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>21</ID>
-			  <Description>"base_PES15test (default = 0.3)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+0</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>22</ID>
-			  <Description>"base_PES15test+1 (default = 0.0465332)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+1</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>23</ID>
-			  <Description>"base_PES15test+2 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+2</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>24</ID>
-			  <Description>"base_PES15test+3 (default = -1.5199564e+14)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+3</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>25</ID>
-			  <Description>"base_PES15test+4 (default = 0.42)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+4</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>26</ID>
-			  <Description>"base_PES15test+5 (default = 2.1486673e+17)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+5</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>27</ID>
-			  <Description>"base_PES15test+6 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+6</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>28</ID>
-			  <Description>"base_PES15test+7 (default = -71.680161)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+7</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>29</ID>
-			  <Description>"base_PES15test+8 (default = 0.38)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+8</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>30</ID>
-			  <Description>"base_PES15test+9 (default = 0.0465723)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+9</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>31</ID>
-			  <Description>"base_PES15test+A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>32</ID>
-			  <Description>"base_PES15test+B (default = -1.5199564e+14)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>33</ID>
-			  <Description>"base_PES15test+C (default = 0.42)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>34</ID>
-			  <Description>"base_PES15test+D (default = 0.0465918)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>35</ID>
-			  <Description>"base_PES15test+E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>36</ID>
-			  <Description>"base_PES15test+F (default = -1.5199564e+14)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>37</ID>
-			  <Description>"base_PES15test+10 (default = 0.42)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+10</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>38</ID>
-			  <Description>"base_PES15test+11 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+11</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>39</ID>
-			  <Description>"base_PES15test+12 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+12</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>40</ID>
-			  <Description>"base_PES15test+13 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+13</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>41</ID>
-			  <Description>"base_PES15test+14 (default = 0.3)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+14</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>42</ID>
-			  <Description>"base_PES15test+15 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+15</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>43</ID>
-			  <Description>"base_PES15test+16 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+16</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>44</ID>
-			  <Description>"base_PES15test+17 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+17</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>45</ID>
-			  <Description>"base_PES15test+18 (default = 0.25)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+18</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>46</ID>
-			  <Description>"base_PES15test+19 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+19</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>47</ID>
-			  <Description>"base_PES15test+1A (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+1A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>48</ID>
-			  <Description>"base_PES15test+1B (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+1B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>49</ID>
-			  <Description>"base_PES15test+1C (default = 0.3)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+1C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>50</ID>
-			  <Description>"base_PES15test+1D (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+1D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>51</ID>
-			  <Description>"base_PES15test+1E (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+1E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>52</ID>
-			  <Description>"base_PES15test+1F (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+1F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>53</ID>
-			  <Description>"base_PES15test+20 (default = 0.3)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+20</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>54</ID>
-			  <Description>"base_PES15test+21 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+21</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>55</ID>
-			  <Description>"base_PES15test+22 (default = -128.24452)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+22</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>56</ID>
-			  <Description>"base_PES15test+23 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+23</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>57</ID>
-			  <Description>"base_PES15test+24 (default = 71.380859)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+24</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>58</ID>
-			  <Description>"base_PES15test+25 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+25</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>59</ID>
-			  <Description>"base_PES15test+26 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+26</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>60</ID>
-			  <Description>"base_PES15test+27 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+27</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>61</ID>
-			  <Description>"base_PES15test+28 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+28</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>62</ID>
-			  <Description>"base_PES15test+29 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+29</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>63</ID>
-			  <Description>"base_PES15test+2A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+2A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>64</ID>
-			  <Description>"base_PES15test+2B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+2B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>65</ID>
-			  <Description>"base_PES15test+2C (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+2C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>66</ID>
-			  <Description>"base_PES15test+2D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+2D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>67</ID>
-			  <Description>"base_PES15test+2E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+2E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>68</ID>
-			  <Description>"base_PES15test+2F (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+2F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>69</ID>
-			  <Description>"base_PES15test+30 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+30</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>70</ID>
-			  <Description>"base_PES15test+31 (default = 2.3611832e+21)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+31</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>71</ID>
-			  <Description>"base_PES15test+32 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+32</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>72</ID>
-			  <Description>"base_PES15test+33 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+33</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>73</ID>
-			  <Description>"base_PES15test+34 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+34</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>74</ID>
-			  <Description>"base_PES15test+35 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+35</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>75</ID>
-			  <Description>"base_PES15test+36 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+36</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>76</ID>
-			  <Description>"base_PES15test+37 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+37</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>77</ID>
-			  <Description>"base_PES15test+38 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_PES15test+38</Address>
-			</CheatEntry>
-			</CheatEntries>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"base_PES15test-14 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-14</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2</ID>
+          <Description>"base_PES15test-13 (default = -1.3421773e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-13</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3</ID>
+          <Description>"base_PES15test-12 (default = -1.0747904e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-12</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>4</ID>
+          <Description>"base_PES15test-11 (default = 1.0737459e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-11</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5</ID>
+          <Description>"base_PES15test-10 (default = 0.2)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-10</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>6</ID>
+          <Description>"base_PES15test-F (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>7</ID>
+          <Description>"base_PES15test-E (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>8</ID>
+          <Description>"base_PES15test-D (default = 5.5407162e+11)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>9</ID>
+          <Description>"base_PES15test-C (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_PES15test-C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>10</ID>
+          <Description>"base_PES15test-B (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_PES15test-B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>11</ID>
+          <Description>"base_PES15test-A (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>12</ID>
+          <Description>"base_PES15test-9 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>13</ID>
+          <Description>"base_PES15test-8 (default = 2)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>14</ID>
+          <Description>"base_PES15test-7 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>15</ID>
+          <Description>"base_PES15test-6 (default = -0.0078278)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>16</ID>
+          <Description>"base_PES15test-5 (default = -0.0000224)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>17</ID>
+          <Description>"base_PES15test-4 (default = -5.7416992)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>18</ID>
+          <Description>"base_PES15test-3 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>19</ID>
+          <Description>"base_PES15test-2 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>20</ID>
+          <Description>"base_PES15test-1 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test-1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>21</ID>
+          <Description>"base_PES15test (default = 0.3)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>22</ID>
+          <Description>"base_PES15test+1 (default = 0.0465332)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>23</ID>
+          <Description>"base_PES15test+2 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>24</ID>
+          <Description>"base_PES15test+3 (default = -1.5199564e+14)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>25</ID>
+          <Description>"base_PES15test+4 (default = 0.42)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>26</ID>
+          <Description>"base_PES15test+5 (default = 2.1486673e+17)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>27</ID>
+          <Description>"base_PES15test+6 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>28</ID>
+          <Description>"base_PES15test+7 (default = -71.680161)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>29</ID>
+          <Description>"base_PES15test+8 (default = 0.38)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>30</ID>
+          <Description>"base_PES15test+9 (default = 0.0465723)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>31</ID>
+          <Description>"base_PES15test+A (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32</ID>
+          <Description>"base_PES15test+B (default = -1.5199564e+14)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>33</ID>
+          <Description>"base_PES15test+C (default = 0.42)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>34</ID>
+          <Description>"base_PES15test+D (default = 0.0465918)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>35</ID>
+          <Description>"base_PES15test+E (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>36</ID>
+          <Description>"base_PES15test+F (default = -1.5199564e+14)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>37</ID>
+          <Description>"base_PES15test+10 (default = 0.42)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+10</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>38</ID>
+          <Description>"base_PES15test+11 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+11</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>39</ID>
+          <Description>"base_PES15test+12 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+12</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>40</ID>
+          <Description>"base_PES15test+13 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+13</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>41</ID>
+          <Description>"base_PES15test+14 (default = 0.3)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+14</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>42</ID>
+          <Description>"base_PES15test+15 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+15</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>43</ID>
+          <Description>"base_PES15test+16 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+16</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>44</ID>
+          <Description>"base_PES15test+17 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+17</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>45</ID>
+          <Description>"base_PES15test+18 (default = 0.25)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+18</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>46</ID>
+          <Description>"base_PES15test+19 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+19</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>47</ID>
+          <Description>"base_PES15test+1A (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+1A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>48</ID>
+          <Description>"base_PES15test+1B (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+1B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>49</ID>
+          <Description>"base_PES15test+1C (default = 0.3)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+1C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>50</ID>
+          <Description>"base_PES15test+1D (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+1D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>51</ID>
+          <Description>"base_PES15test+1E (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+1E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>52</ID>
+          <Description>"base_PES15test+1F (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+1F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>53</ID>
+          <Description>"base_PES15test+20 (default = 0.3)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+20</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>54</ID>
+          <Description>"base_PES15test+21 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+21</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>55</ID>
+          <Description>"base_PES15test+22 (default = -128.24452)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+22</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>56</ID>
+          <Description>"base_PES15test+23 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+23</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>57</ID>
+          <Description>"base_PES15test+24 (default = 00)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_PES15test+24</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>58</ID>
+          <Description>"base_PES15test+25 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+25</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>59</ID>
+          <Description>"base_PES15test+26 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+26</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>60</ID>
+          <Description>"base_PES15test+27 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+27</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>61</ID>
+          <Description>"base_PES15test+28 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+28</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>62</ID>
+          <Description>"base_PES15test+29 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+29</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>63</ID>
+          <Description>"base_PES15test+2A (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+2A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>64</ID>
+          <Description>"base_PES15test+2B (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+2B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>65</ID>
+          <Description>"base_PES15test+2C (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+2C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>66</ID>
+          <Description>"base_PES15test+2D (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+2D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>67</ID>
+          <Description>"base_PES15test+2E (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+2E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>68</ID>
+          <Description>"base_PES15test+2F (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+2F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>69</ID>
+          <Description>"base_PES15test+30 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+30</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>70</ID>
+          <Description>"base_PES15test+31 (default = 2.3611832e+21)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+31</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>71</ID>
+          <Description>"base_PES15test+32 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+32</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>72</ID>
+          <Description>"base_PES15test+33 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+33</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>73</ID>
+          <Description>"base_PES15test+34 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+34</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>74</ID>
+          <Description>"base_PES15test+35 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+35</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>75</ID>
+          <Description>"base_PES15test+36 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+36</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>76</ID>
+          <Description>"base_PES15test+37 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+37</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>77</ID>
+          <Description>"base_PES15test+38 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_PES15test+38</Address>
+        </CheatEntry>
+      </CheatEntries>
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>

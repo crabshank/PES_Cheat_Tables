@@ -1,0 +1,4 @@
+base_PES15test-C (default = 01) (#9) cmp [rax+38],sil
+base_PES15test-B (default = 01) (#10) cmp byte ptr [rax+39],00
+base_PES15test(-8 to -5) (default = 2) (#13) movss xmm1,[rax+3C]
+base_PES15test+24 (default = 00) (#57) cmp byte ptr [rdi+68],00
