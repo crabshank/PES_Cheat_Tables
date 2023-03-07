@@ -1,0 +1,4 @@
+base_block-2 (default = 01) (#5) cmp byte ptr [rax+08],00
+base_block+E (default = 01) (#21) cmp byte ptr [r14+18],00
+base_block (+16 to +19) (default = 0.2) (#29) mulss xmm0,[r14+20]
+base_block (+1B to +1A) (default = 1) (#34) mulss xmm0,[r14+24]
