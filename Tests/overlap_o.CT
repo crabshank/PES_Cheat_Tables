@@ -7,278 +7,298 @@
       <Options moHideChildren="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base,80 BF 00 00 A0 C0 00 00 90 C1 00 00 C8 C1)  // should be unique
-registersymbol(base)
+	  aobscan(base_overlap,80 BF 00 00 A0 C0 00 00 90 C1 00 00 C8 C1)  // should be unique
+registersymbol(base_overlap)
+
+{$lua}
+local al = getAddressList()
+local vars={}
+for i=1, al.Count-1 do --skip script
+    local ali=al.getMemoryRecord(i)
+    local ofs=string.match(ali.Description,'base_overlap(.%x+)%s*')
+    if ofs==nil then
+       ofs=string.match(ali.Description,'base_overlap%s*')
+       if ofs~=nil then
+          vars['+0']=ali
+       end
+    else
+     vars[ofs]=ali
+    end
+end
+
+--vars['+0'].Value=
+
+{$asm}
 
 [DISABLE]
 
-unregistersymbol(base)
+unregistersymbol(base_overlap)
 
 </AssemblerScript>
 	  <CheatEntries>
 	  <CheatEntry>
 			  <ID>1</ID>
-			  <Description>"base-E (default = 0)"</Description>
+			  <Description>"base_overlap-E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-E</Address>
+			  <Address>base_overlap-E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>2</ID>
-			  <Description>"base-D (default = 0)"</Description>
+			  <Description>"base_overlap-D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-D</Address>
+			  <Address>base_overlap-D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>3</ID>
-			  <Description>"base-C (default = 0)"</Description>
+			  <Description>"base_overlap-C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-C</Address>
+			  <Address>base_overlap-C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>4</ID>
-			  <Description>"base-B (default = 0)"</Description>
+			  <Description>"base_overlap-B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-B</Address>
+			  <Address>base_overlap-B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>5</ID>
-			  <Description>"base-A (default = 0)"</Description>
+			  <Description>"base_overlap-A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-A</Address>
+			  <Address>base_overlap-A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>6</ID>
-			  <Description>"base-9 (default = 0)"</Description>
+			  <Description>"base_overlap-9 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-9</Address>
+			  <Address>base_overlap-9</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>7</ID>
-			  <Description>"base-8 (default = 0)"</Description>
+			  <Description>"base_overlap-8 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-8</Address>
+			  <Address>base_overlap-8</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>8</ID>
-			  <Description>"base-7 (default = 0)"</Description>
+			  <Description>"base_overlap-7 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-7</Address>
+			  <Address>base_overlap-7</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>9</ID>
-			  <Description>"base-6 (default = 0)"</Description>
+			  <Description>"base_overlap-6 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-6</Address>
+			  <Address>base_overlap-6</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>10</ID>
-			  <Description>"base-5 (default = 0)"</Description>
+			  <Description>"base_overlap-5 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-5</Address>
+			  <Address>base_overlap-5</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>11</ID>
-			  <Description>"base-4 (default = 0)"</Description>
+			  <Description>"base_overlap-4 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-4</Address>
+			  <Address>base_overlap-4</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>12</ID>
-			  <Description>"base-3 (default = -0)"</Description>
+			  <Description>"base_overlap-3 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-3</Address>
+			  <Address>base_overlap-3</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>13</ID>
-			  <Description>"base-2 (default = -1)"</Description>
+			  <Description>"base_overlap-2 (default = -1)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-2</Address>
+			  <Address>base_overlap-2</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>14</ID>
-			  <Description>"base-1 (default = 0)"</Description>
+			  <Description>"base_overlap-1 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-1</Address>
+			  <Address>base_overlap-1</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>15</ID>
-			  <Description>"base (default = 0)"</Description>
+			  <Description>"base_overlap (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+0</Address>
+			  <Address>base_overlap+0</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>16</ID>
-			  <Description>"base+1 (default = -0)"</Description>
+			  <Description>"base_overlap+1 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1</Address>
+			  <Address>base_overlap+1</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>17</ID>
-			  <Description>"base+2 (default = -5)"</Description>
+			  <Description>"base_overlap+2 (default = -5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2</Address>
+			  <Address>base_overlap+2</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>18</ID>
-			  <Description>"base+3 (default = 0)"</Description>
+			  <Description>"base_overlap+3 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3</Address>
+			  <Address>base_overlap+3</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>19</ID>
-			  <Description>"base+4 (default = 0)"</Description>
+			  <Description>"base_overlap+4 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+4</Address>
+			  <Address>base_overlap+4</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>20</ID>
-			  <Description>"base+5 (default = -0)"</Description>
+			  <Description>"base_overlap+5 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+5</Address>
+			  <Address>base_overlap+5</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>21</ID>
-			  <Description>"base+6 (default = -18)"</Description>
+			  <Description>"base_overlap+6 (default = -18)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+6</Address>
+			  <Address>base_overlap+6</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>22</ID>
-			  <Description>"base+7 (default = 0)"</Description>
+			  <Description>"base_overlap+7 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+7</Address>
+			  <Address>base_overlap+7</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>23</ID>
-			  <Description>"base+8 (default = 0)"</Description>
+			  <Description>"base_overlap+8 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+8</Address>
+			  <Address>base_overlap+8</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>24</ID>
-			  <Description>"base+9 (default = -131075.02)"</Description>
+			  <Description>"base_overlap+9 (default = -131075.02)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+9</Address>
+			  <Address>base_overlap+9</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>25</ID>
-			  <Description>"base+A (default = -25)"</Description>
+			  <Description>"base_overlap+A (default = -25)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+A</Address>
+			  <Address>base_overlap+A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>26</ID>
-			  <Description>"base+B (default = 0)"</Description>
+			  <Description>"base_overlap+B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+B</Address>
+			  <Address>base_overlap+B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>27</ID>
-			  <Description>"base+C (default = 0)"</Description>
+			  <Description>"base_overlap+C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+C</Address>
+			  <Address>base_overlap+C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>28</ID>
-			  <Description>"base+D (default = 0)"</Description>
+			  <Description>"base_overlap+D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+D</Address>
+			  <Address>base_overlap+D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>29</ID>
-			  <Description>"base+E (default = 0)"</Description>
+			  <Description>"base_overlap+E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+E</Address>
+			  <Address>base_overlap+E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>30</ID>
-			  <Description>"base+F (default = 0)"</Description>
+			  <Description>"base_overlap+F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+F</Address>
+			  <Address>base_overlap+F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>31</ID>
-			  <Description>"base+10 (default = 0)"</Description>
+			  <Description>"base_overlap+10 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+10</Address>
+			  <Address>base_overlap+10</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>32</ID>
-			  <Description>"base+11 (default = 0)"</Description>
+			  <Description>"base_overlap+11 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+11</Address>
+			  <Address>base_overlap+11</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>33</ID>
-			  <Description>"base+12 (default = 0)"</Description>
+			  <Description>"base_overlap+12 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+12</Address>
+			  <Address>base_overlap+12</Address>
 			</CheatEntry>
 			</CheatEntries>
     </CheatEntry>

@@ -7,334 +7,354 @@
       <Options moHideChildren="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base,9E 12 FF 45 01 00)  // should be unique
-registersymbol(base)
+	  aobscan(base_feint,9E 12 FF 45 01 00)  // should be unique
+registersymbol(base_feint)
+
+{$lua}
+local al = getAddressList()
+local vars={}
+for i=1, al.Count-1 do --skip script
+    local ali=al.getMemoryRecord(i)
+    local ofs=string.match(ali.Description,'base_feint(.%x+)%s*')
+    if ofs==nil then
+       ofs=string.match(ali.Description,'base_feint%s*')
+       if ofs~=nil then
+          vars['+0']=ali
+       end
+    else
+     vars[ofs]=ali
+    end
+end
+
+--vars['+0'].Value=
+
+{$asm}
 
 [DISABLE]
 
-unregistersymbol(base)
+unregistersymbol(base_feint)
 
 </AssemblerScript>
 	  <CheatEntries>
 	  <CheatEntry>
 			  <ID>1</ID>
-			  <Description>"base (default = -98)"</Description>
+			  <Description>"base_feint (default = -98)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+0</Address>
+			  <Address>base_feint+0</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>2</ID>
-			  <Description>"base+1 (default = 18)"</Description>
+			  <Description>"base_feint+1 (default = 18)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+1</Address>
+			  <Address>base_feint+1</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>3</ID>
-			  <Description>"base+2 (default = -1)"</Description>
+			  <Description>"base_feint+2 (default = -1)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+2</Address>
+			  <Address>base_feint+2</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>4</ID>
-			  <Description>"base+3 (default = 69)"</Description>
+			  <Description>"base_feint+3 (default = 69)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+3</Address>
+			  <Address>base_feint+3</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>5</ID>
-			  <Description>"base+4 (default = 1)"</Description>
+			  <Description>"base_feint+4 (default = 1)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+4</Address>
+			  <Address>base_feint+4</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>6</ID>
-			  <Description>"base+5 (default = 0)"</Description>
+			  <Description>"base_feint+5 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+5</Address>
+			  <Address>base_feint+5</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>7</ID>
-			  <Description>"base+6 (default = 0)"</Description>
+			  <Description>"base_feint+6 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+6</Address>
+			  <Address>base_feint+6</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>8</ID>
-			  <Description>"base+7 (default = 0)"</Description>
+			  <Description>"base_feint+7 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+7</Address>
+			  <Address>base_feint+7</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>9</ID>
-			  <Description>"base+8 (default = 1)"</Description>
+			  <Description>"base_feint+8 (default = 1)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+8</Address>
+			  <Address>base_feint+8</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>10</ID>
-			  <Description>"base+9 (default = 0)"</Description>
+			  <Description>"base_feint+9 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+9</Address>
+			  <Address>base_feint+9</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>11</ID>
-			  <Description>"base+A (default = 0)"</Description>
+			  <Description>"base_feint+A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+A</Address>
+			  <Address>base_feint+A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>12</ID>
-			  <Description>"base+B (default = 0)"</Description>
+			  <Description>"base_feint+B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+B</Address>
+			  <Address>base_feint+B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>13</ID>
-			  <Description>"base+C (default = 0)"</Description>
+			  <Description>"base_feint+C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+C</Address>
+			  <Address>base_feint+C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>14</ID>
-			  <Description>"base+D (default = 0)"</Description>
+			  <Description>"base_feint+D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+D</Address>
+			  <Address>base_feint+D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>15</ID>
-			  <Description>"base+E (default = 0)"</Description>
+			  <Description>"base_feint+E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+E</Address>
+			  <Address>base_feint+E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>16</ID>
-			  <Description>"base+F (default = 0)"</Description>
+			  <Description>"base_feint+F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+F</Address>
+			  <Address>base_feint+F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>17</ID>
-			  <Description>"base+10 (default = 0)"</Description>
+			  <Description>"base_feint+10 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+10</Address>
+			  <Address>base_feint+10</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>18</ID>
-			  <Description>"base+11 (default = 0)"</Description>
+			  <Description>"base_feint+11 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+11</Address>
+			  <Address>base_feint+11</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>19</ID>
-			  <Description>"base+12 (default = 0)"</Description>
+			  <Description>"base_feint+12 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+12</Address>
+			  <Address>base_feint+12</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>20</ID>
-			  <Description>"base+13 (default = 0)"</Description>
+			  <Description>"base_feint+13 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+13</Address>
+			  <Address>base_feint+13</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>21</ID>
-			  <Description>"base+14 (default = 0)"</Description>
+			  <Description>"base_feint+14 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+14</Address>
+			  <Address>base_feint+14</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>22</ID>
-			  <Description>"base+15 (default = 0)"</Description>
+			  <Description>"base_feint+15 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+15</Address>
+			  <Address>base_feint+15</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>23</ID>
-			  <Description>"base+16 (default = 0)"</Description>
+			  <Description>"base_feint+16 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+16</Address>
+			  <Address>base_feint+16</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>24</ID>
-			  <Description>"base+17 (default = 0)"</Description>
+			  <Description>"base_feint+17 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+17</Address>
+			  <Address>base_feint+17</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>25</ID>
-			  <Description>"base+18 (default = 0)"</Description>
+			  <Description>"base_feint+18 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+18</Address>
+			  <Address>base_feint+18</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>26</ID>
-			  <Description>"base+19 (default = 0)"</Description>
+			  <Description>"base_feint+19 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+19</Address>
+			  <Address>base_feint+19</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>27</ID>
-			  <Description>"base+1A (default = 0)"</Description>
+			  <Description>"base_feint+1A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+1A</Address>
+			  <Address>base_feint+1A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>28</ID>
-			  <Description>"base+1B (default = 0)"</Description>
+			  <Description>"base_feint+1B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+1B</Address>
+			  <Address>base_feint+1B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>29</ID>
-			  <Description>"base+1C (default = 0)"</Description>
+			  <Description>"base_feint+1C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+1C</Address>
+			  <Address>base_feint+1C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>30</ID>
-			  <Description>"base+1D (default = 0)"</Description>
+			  <Description>"base_feint+1D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+1D</Address>
+			  <Address>base_feint+1D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>31</ID>
-			  <Description>"base+1E (default = 0)"</Description>
+			  <Description>"base_feint+1E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+1E</Address>
+			  <Address>base_feint+1E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>32</ID>
-			  <Description>"base+1F (default = 0)"</Description>
+			  <Description>"base_feint+1F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+1F</Address>
+			  <Address>base_feint+1F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>33</ID>
-			  <Description>"base+20 (default = 112)"</Description>
+			  <Description>"base_feint+20 (default = 112)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+20</Address>
+			  <Address>base_feint+20</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>34</ID>
-			  <Description>"base+21 (default = 0)"</Description>
+			  <Description>"base_feint+21 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+21</Address>
+			  <Address>base_feint+21</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>35</ID>
-			  <Description>"base+22 (default = 0)"</Description>
+			  <Description>"base_feint+22 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+22</Address>
+			  <Address>base_feint+22</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>36</ID>
-			  <Description>"base+23 (default = 0)"</Description>
+			  <Description>"base_feint+23 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+23</Address>
+			  <Address>base_feint+23</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>37</ID>
-			  <Description>"base+24 (default = 0)"</Description>
+			  <Description>"base_feint+24 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+24</Address>
+			  <Address>base_feint+24</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>38</ID>
-			  <Description>"base+25 (default = 0)"</Description>
+			  <Description>"base_feint+25 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+25</Address>
+			  <Address>base_feint+25</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>39</ID>
-			  <Description>"base+26 (default = 0)"</Description>
+			  <Description>"base_feint+26 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+26</Address>
+			  <Address>base_feint+26</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>40</ID>
-			  <Description>"base+27 (default = 0)"</Description>
+			  <Description>"base_feint+27 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+27</Address>
+			  <Address>base_feint+27</Address>
 			</CheatEntry>
 			</CheatEntries>
     </CheatEntry>

@@ -7,886 +7,906 @@
       <Options moHideChildren="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base,CD CC 4C 3F 01 00 00 00 CD CC 4C 3F 00 00 00 00 9A 99 99 3E)  // should be unique
-registersymbol(base)
+	  aobscan(base_pairAnime,CD CC 4C 3F 01 00 00 00 CD CC 4C 3F 00 00 00 00 9A 99 99 3E)  // should be unique
+registersymbol(base_pairAnime)
+
+{$lua}
+local al = getAddressList()
+local vars={}
+for i=1, al.Count-1 do --skip script
+    local ali=al.getMemoryRecord(i)
+    local ofs=string.match(ali.Description,'base_pairAnime(.%x+)%s*')
+    if ofs==nil then
+       ofs=string.match(ali.Description,'base_pairAnime%s*')
+       if ofs~=nil then
+          vars['+0']=ali
+       end
+    else
+     vars[ofs]=ali
+    end
+end
+
+--vars['+0'].Value=
+
+{$asm}
 
 [DISABLE]
 
-unregistersymbol(base)
+unregistersymbol(base_pairAnime)
 
 </AssemblerScript>
 	  <CheatEntries>
 	  <CheatEntry>
 			  <ID>1</ID>
-			  <Description>"base-4 (default = 0)"</Description>
+			  <Description>"base_pairAnime-4 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-4</Address>
+			  <Address>base_pairAnime-4</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>2</ID>
-			  <Description>"base-3 (default = -1.3421773e+8)"</Description>
+			  <Description>"base_pairAnime-3 (default = -1.3421773e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-3</Address>
+			  <Address>base_pairAnime-3</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>3</ID>
-			  <Description>"base-2 (default = -1.0747904e+8)"</Description>
+			  <Description>"base_pairAnime-2 (default = -1.0747904e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-2</Address>
+			  <Address>base_pairAnime-2</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>4</ID>
-			  <Description>"base-1 (default = 1.0737459e+8)"</Description>
+			  <Description>"base_pairAnime-1 (default = 1.0737459e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-1</Address>
+			  <Address>base_pairAnime-1</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>5</ID>
-			  <Description>"base (default = 0.8)"</Description>
+			  <Description>"base_pairAnime (default = 0.8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+0</Address>
+			  <Address>base_pairAnime+0</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>6</ID>
-			  <Description>"base+1 (default = 0)"</Description>
+			  <Description>"base_pairAnime+1 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1</Address>
+			  <Address>base_pairAnime+1</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>7</ID>
-			  <Description>"base+2 (default = 0)"</Description>
+			  <Description>"base_pairAnime+2 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2</Address>
+			  <Address>base_pairAnime+2</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>8</ID>
-			  <Description>"base+3 (default = 0)"</Description>
+			  <Description>"base_pairAnime+3 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3</Address>
+			  <Address>base_pairAnime+3</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>9</ID>
-			  <Description>"base+4 (default = 0)"</Description>
+			  <Description>"base_pairAnime+4 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+4</Address>
+			  <Address>base_pairAnime+4</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>10</ID>
-			  <Description>"base+5 (default = -1.3421773e+8)"</Description>
+			  <Description>"base_pairAnime+5 (default = -1.3421773e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+5</Address>
+			  <Address>base_pairAnime+5</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>11</ID>
-			  <Description>"base+6 (default = -1.0747904e+8)"</Description>
+			  <Description>"base_pairAnime+6 (default = -1.0747904e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+6</Address>
+			  <Address>base_pairAnime+6</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>12</ID>
-			  <Description>"base+7 (default = 1.0737459e+8)"</Description>
+			  <Description>"base_pairAnime+7 (default = 1.0737459e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+7</Address>
+			  <Address>base_pairAnime+7</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>13</ID>
-			  <Description>"base+8 (default = 0.8)"</Description>
+			  <Description>"base_pairAnime+8 (default = 0.8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+8</Address>
+			  <Address>base_pairAnime+8</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>14</ID>
-			  <Description>"base+9 (default = 0)"</Description>
+			  <Description>"base_pairAnime+9 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+9</Address>
+			  <Address>base_pairAnime+9</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>15</ID>
-			  <Description>"base+A (default = 0)"</Description>
+			  <Description>"base_pairAnime+A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+A</Address>
+			  <Address>base_pairAnime+A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>16</ID>
-			  <Description>"base+B (default = 0)"</Description>
+			  <Description>"base_pairAnime+B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+B</Address>
+			  <Address>base_pairAnime+B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>17</ID>
-			  <Description>"base+C (default = 0)"</Description>
+			  <Description>"base_pairAnime+C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+C</Address>
+			  <Address>base_pairAnime+C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>18</ID>
-			  <Description>"base+D (default = -0)"</Description>
+			  <Description>"base_pairAnime+D (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+D</Address>
+			  <Address>base_pairAnime+D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>19</ID>
-			  <Description>"base+E (default = -0)"</Description>
+			  <Description>"base_pairAnime+E (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+E</Address>
+			  <Address>base_pairAnime+E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>20</ID>
-			  <Description>"base+F (default = -0)"</Description>
+			  <Description>"base_pairAnime+F (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+F</Address>
+			  <Address>base_pairAnime+F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>21</ID>
-			  <Description>"base+10 (default = 0.3)"</Description>
+			  <Description>"base_pairAnime+10 (default = 0.3)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+10</Address>
+			  <Address>base_pairAnime+10</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>22</ID>
-			  <Description>"base+11 (default = 0)"</Description>
+			  <Description>"base_pairAnime+11 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+11</Address>
+			  <Address>base_pairAnime+11</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>23</ID>
-			  <Description>"base+12 (default = 4.0642311e+31)"</Description>
+			  <Description>"base_pairAnime+12 (default = 4.0642311e+31)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+12</Address>
+			  <Address>base_pairAnime+12</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>24</ID>
-			  <Description>"base+13 (default = 2.8131394e+20)"</Description>
+			  <Description>"base_pairAnime+13 (default = 2.8131394e+20)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+13</Address>
+			  <Address>base_pairAnime+13</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>25</ID>
-			  <Description>"base+14 (default = 1.7443591e+28)"</Description>
+			  <Description>"base_pairAnime+14 (default = 1.7443591e+28)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+14</Address>
+			  <Address>base_pairAnime+14</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>26</ID>
-			  <Description>"base+15 (default = 0)"</Description>
+			  <Description>"base_pairAnime+15 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+15</Address>
+			  <Address>base_pairAnime+15</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>27</ID>
-			  <Description>"base+16 (default = 0)"</Description>
+			  <Description>"base_pairAnime+16 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+16</Address>
+			  <Address>base_pairAnime+16</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>28</ID>
-			  <Description>"base+17 (default = 5.5460246e+31)"</Description>
+			  <Description>"base_pairAnime+17 (default = 5.5460246e+31)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+17</Address>
+			  <Address>base_pairAnime+17</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>29</ID>
-			  <Description>"base+18 (default = 7.2070276e+22)"</Description>
+			  <Description>"base_pairAnime+18 (default = 7.2070276e+22)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+18</Address>
+			  <Address>base_pairAnime+18</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>30</ID>
-			  <Description>"base+19 (default = 0)"</Description>
+			  <Description>"base_pairAnime+19 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+19</Address>
+			  <Address>base_pairAnime+19</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>31</ID>
-			  <Description>"base+1A (default = 0)"</Description>
+			  <Description>"base_pairAnime+1A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1A</Address>
+			  <Address>base_pairAnime+1A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>32</ID>
-			  <Description>"base+1B (default = 0)"</Description>
+			  <Description>"base_pairAnime+1B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1B</Address>
+			  <Address>base_pairAnime+1B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>33</ID>
-			  <Description>"base+1C (default = 0)"</Description>
+			  <Description>"base_pairAnime+1C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1C</Address>
+			  <Address>base_pairAnime+1C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>34</ID>
-			  <Description>"base+1D (default = 0)"</Description>
+			  <Description>"base_pairAnime+1D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1D</Address>
+			  <Address>base_pairAnime+1D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>35</ID>
-			  <Description>"base+1E (default = 0)"</Description>
+			  <Description>"base_pairAnime+1E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1E</Address>
+			  <Address>base_pairAnime+1E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>36</ID>
-			  <Description>"base+1F (default = 0)"</Description>
+			  <Description>"base_pairAnime+1F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1F</Address>
+			  <Address>base_pairAnime+1F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>37</ID>
-			  <Description>"base+20 (default = 0)"</Description>
+			  <Description>"base_pairAnime+20 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+20</Address>
+			  <Address>base_pairAnime+20</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>38</ID>
-			  <Description>"base+21 (default = 0)"</Description>
+			  <Description>"base_pairAnime+21 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+21</Address>
+			  <Address>base_pairAnime+21</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>39</ID>
-			  <Description>"base+22 (default = 0)"</Description>
+			  <Description>"base_pairAnime+22 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+22</Address>
+			  <Address>base_pairAnime+22</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>40</ID>
-			  <Description>"base+23 (default = -0)"</Description>
+			  <Description>"base_pairAnime+23 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+23</Address>
+			  <Address>base_pairAnime+23</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>41</ID>
-			  <Description>"base+24 (default = 5)"</Description>
+			  <Description>"base_pairAnime+24 (default = 5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+24</Address>
+			  <Address>base_pairAnime+24</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>42</ID>
-			  <Description>"base+25 (default = 0)"</Description>
+			  <Description>"base_pairAnime+25 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+25</Address>
+			  <Address>base_pairAnime+25</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>43</ID>
-			  <Description>"base+26 (default = 0)"</Description>
+			  <Description>"base_pairAnime+26 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+26</Address>
+			  <Address>base_pairAnime+26</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>44</ID>
-			  <Description>"base+27 (default = 0)"</Description>
+			  <Description>"base_pairAnime+27 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+27</Address>
+			  <Address>base_pairAnime+27</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>45</ID>
-			  <Description>"base+28 (default = 40)"</Description>
+			  <Description>"base_pairAnime+28 (default = 40)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+28</Address>
+			  <Address>base_pairAnime+28</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>46</ID>
-			  <Description>"base+29 (default = 0)"</Description>
+			  <Description>"base_pairAnime+29 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+29</Address>
+			  <Address>base_pairAnime+29</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>47</ID>
-			  <Description>"base+2A (default = 0)"</Description>
+			  <Description>"base_pairAnime+2A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2A</Address>
+			  <Address>base_pairAnime+2A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>48</ID>
-			  <Description>"base+2B (default = -1.5845757e+29)"</Description>
+			  <Description>"base_pairAnime+2B (default = -1.5845757e+29)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2B</Address>
+			  <Address>base_pairAnime+2B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>49</ID>
-			  <Description>"base+2C (default = 30)"</Description>
+			  <Description>"base_pairAnime+2C (default = 30)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2C</Address>
+			  <Address>base_pairAnime+2C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>50</ID>
-			  <Description>"base+2D (default = 0)"</Description>
+			  <Description>"base_pairAnime+2D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2D</Address>
+			  <Address>base_pairAnime+2D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>51</ID>
-			  <Description>"base+2E (default = 0)"</Description>
+			  <Description>"base_pairAnime+2E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2E</Address>
+			  <Address>base_pairAnime+2E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>52</ID>
-			  <Description>"base+2F (default = 1.5845755e+29)"</Description>
+			  <Description>"base_pairAnime+2F (default = 1.5845755e+29)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2F</Address>
+			  <Address>base_pairAnime+2F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>53</ID>
-			  <Description>"base+30 (default = 15)"</Description>
+			  <Description>"base_pairAnime+30 (default = 15)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+30</Address>
+			  <Address>base_pairAnime+30</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>54</ID>
-			  <Description>"base+31 (default = 0)"</Description>
+			  <Description>"base_pairAnime+31 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+31</Address>
+			  <Address>base_pairAnime+31</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>55</ID>
-			  <Description>"base+32 (default = 0)"</Description>
+			  <Description>"base_pairAnime+32 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+32</Address>
+			  <Address>base_pairAnime+32</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>56</ID>
-			  <Description>"base+33 (default = 5.2589754e+25)"</Description>
+			  <Description>"base_pairAnime+33 (default = 5.2589754e+25)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+33</Address>
+			  <Address>base_pairAnime+33</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>57</ID>
-			  <Description>"base+34 (default = 1.8553628e+31)"</Description>
+			  <Description>"base_pairAnime+34 (default = 1.8553628e+31)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+34</Address>
+			  <Address>base_pairAnime+34</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>58</ID>
-			  <Description>"base+35 (default = -0)"</Description>
+			  <Description>"base_pairAnime+35 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+35</Address>
+			  <Address>base_pairAnime+35</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>59</ID>
-			  <Description>"base+36 (default = -0)"</Description>
+			  <Description>"base_pairAnime+36 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+36</Address>
+			  <Address>base_pairAnime+36</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>60</ID>
-			  <Description>"base+37 (default = 0)"</Description>
+			  <Description>"base_pairAnime+37 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+37</Address>
+			  <Address>base_pairAnime+37</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>61</ID>
-			  <Description>"base+38 (default = 0.15)"</Description>
+			  <Description>"base_pairAnime+38 (default = 0.15)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+38</Address>
+			  <Address>base_pairAnime+38</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>62</ID>
-			  <Description>"base+39 (default = 0)"</Description>
+			  <Description>"base_pairAnime+39 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+39</Address>
+			  <Address>base_pairAnime+39</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>63</ID>
-			  <Description>"base+3A (default = 0)"</Description>
+			  <Description>"base_pairAnime+3A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3A</Address>
+			  <Address>base_pairAnime+3A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>64</ID>
-			  <Description>"base+3B (default = 3.9925068e+28)"</Description>
+			  <Description>"base_pairAnime+3B (default = 3.9925068e+28)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3B</Address>
+			  <Address>base_pairAnime+3B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>65</ID>
-			  <Description>"base+3C (default = 1.8492033e+28)"</Description>
+			  <Description>"base_pairAnime+3C (default = 1.8492033e+28)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3C</Address>
+			  <Address>base_pairAnime+3C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>66</ID>
-			  <Description>"base+3D (default = 0)"</Description>
+			  <Description>"base_pairAnime+3D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3D</Address>
+			  <Address>base_pairAnime+3D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>67</ID>
-			  <Description>"base+3E (default = 0)"</Description>
+			  <Description>"base_pairAnime+3E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3E</Address>
+			  <Address>base_pairAnime+3E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>68</ID>
-			  <Description>"base+3F (default = -0)"</Description>
+			  <Description>"base_pairAnime+3F (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3F</Address>
+			  <Address>base_pairAnime+3F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>69</ID>
-			  <Description>"base+40 (default = 5)"</Description>
+			  <Description>"base_pairAnime+40 (default = 5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+40</Address>
+			  <Address>base_pairAnime+40</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>70</ID>
-			  <Description>"base+41 (default = 0)"</Description>
+			  <Description>"base_pairAnime+41 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+41</Address>
+			  <Address>base_pairAnime+41</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>71</ID>
-			  <Description>"base+42 (default = 0)"</Description>
+			  <Description>"base_pairAnime+42 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+42</Address>
+			  <Address>base_pairAnime+42</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>72</ID>
-			  <Description>"base+43 (default = -0)"</Description>
+			  <Description>"base_pairAnime+43 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+43</Address>
+			  <Address>base_pairAnime+43</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>73</ID>
-			  <Description>"base+44 (default = 5)"</Description>
+			  <Description>"base_pairAnime+44 (default = 5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+44</Address>
+			  <Address>base_pairAnime+44</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>74</ID>
-			  <Description>"base+45 (default = 0)"</Description>
+			  <Description>"base_pairAnime+45 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+45</Address>
+			  <Address>base_pairAnime+45</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>75</ID>
-			  <Description>"base+46 (default = 0)"</Description>
+			  <Description>"base_pairAnime+46 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+46</Address>
+			  <Address>base_pairAnime+46</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>76</ID>
-			  <Description>"base+47 (default = -0)"</Description>
+			  <Description>"base_pairAnime+47 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+47</Address>
+			  <Address>base_pairAnime+47</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>77</ID>
-			  <Description>"base+48 (default = 0)"</Description>
+			  <Description>"base_pairAnime+48 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+48</Address>
+			  <Address>base_pairAnime+48</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>78</ID>
-			  <Description>"base+49 (default = 0)"</Description>
+			  <Description>"base_pairAnime+49 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+49</Address>
+			  <Address>base_pairAnime+49</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>79</ID>
-			  <Description>"base+4A (default = 0)"</Description>
+			  <Description>"base_pairAnime+4A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+4A</Address>
+			  <Address>base_pairAnime+4A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>80</ID>
-			  <Description>"base+4B (default = 0)"</Description>
+			  <Description>"base_pairAnime+4B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+4B</Address>
+			  <Address>base_pairAnime+4B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>81</ID>
-			  <Description>"base+4C (default = 0)"</Description>
+			  <Description>"base_pairAnime+4C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+4C</Address>
+			  <Address>base_pairAnime+4C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>82</ID>
-			  <Description>"base+4D (default = 0)"</Description>
+			  <Description>"base_pairAnime+4D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+4D</Address>
+			  <Address>base_pairAnime+4D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>83</ID>
-			  <Description>"base+4E (default = 0)"</Description>
+			  <Description>"base_pairAnime+4E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+4E</Address>
+			  <Address>base_pairAnime+4E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>84</ID>
-			  <Description>"base+4F (default = 0)"</Description>
+			  <Description>"base_pairAnime+4F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+4F</Address>
+			  <Address>base_pairAnime+4F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>85</ID>
-			  <Description>"base+50 (default = 0)"</Description>
+			  <Description>"base_pairAnime+50 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+50</Address>
+			  <Address>base_pairAnime+50</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>86</ID>
-			  <Description>"base+51 (default = 0)"</Description>
+			  <Description>"base_pairAnime+51 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+51</Address>
+			  <Address>base_pairAnime+51</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>87</ID>
-			  <Description>"base+52 (default = 0)"</Description>
+			  <Description>"base_pairAnime+52 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+52</Address>
+			  <Address>base_pairAnime+52</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>88</ID>
-			  <Description>"base+53 (default = 0)"</Description>
+			  <Description>"base_pairAnime+53 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+53</Address>
+			  <Address>base_pairAnime+53</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>89</ID>
-			  <Description>"base+54 (default = 0)"</Description>
+			  <Description>"base_pairAnime+54 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+54</Address>
+			  <Address>base_pairAnime+54</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>90</ID>
-			  <Description>"base+55 (default = 0)"</Description>
+			  <Description>"base_pairAnime+55 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+55</Address>
+			  <Address>base_pairAnime+55</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>91</ID>
-			  <Description>"base+56 (default = 0)"</Description>
+			  <Description>"base_pairAnime+56 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+56</Address>
+			  <Address>base_pairAnime+56</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>92</ID>
-			  <Description>"base+57 (default = 0)"</Description>
+			  <Description>"base_pairAnime+57 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+57</Address>
+			  <Address>base_pairAnime+57</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>93</ID>
-			  <Description>"base+58 (default = 0.5)"</Description>
+			  <Description>"base_pairAnime+58 (default = 0.5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+58</Address>
+			  <Address>base_pairAnime+58</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>94</ID>
-			  <Description>"base+59 (default = -2.0027802e+8)"</Description>
+			  <Description>"base_pairAnime+59 (default = -2.0027802e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+59</Address>
+			  <Address>base_pairAnime+59</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>95</ID>
-			  <Description>"base+5A (default = -1.0760806e+8)"</Description>
+			  <Description>"base_pairAnime+5A (default = -1.0760806e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+5A</Address>
+			  <Address>base_pairAnime+5A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>96</ID>
-			  <Description>"base+5B (default = 1.0737510e+8)"</Description>
+			  <Description>"base_pairAnime+5B (default = 1.0737510e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+5B</Address>
+			  <Address>base_pairAnime+5B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>97</ID>
-			  <Description>"base+5C (default = 0.8)"</Description>
+			  <Description>"base_pairAnime+5C (default = 0.8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+5C</Address>
+			  <Address>base_pairAnime+5C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>98</ID>
-			  <Description>"base+5D (default = -2.0059258e+8)"</Description>
+			  <Description>"base_pairAnime+5D (default = -2.0059258e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+5D</Address>
+			  <Address>base_pairAnime+5D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>99</ID>
-			  <Description>"base+5E (default = -1.0760867e+8)"</Description>
+			  <Description>"base_pairAnime+5E (default = -1.0760867e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+5E</Address>
+			  <Address>base_pairAnime+5E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>100</ID>
-			  <Description>"base+5F (default = 1.0737510e+8)"</Description>
+			  <Description>"base_pairAnime+5F (default = 1.0737510e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+5F</Address>
+			  <Address>base_pairAnime+5F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>101</ID>
-			  <Description>"base+60 (default = 0.2)"</Description>
+			  <Description>"base_pairAnime+60 (default = 0.2)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+60</Address>
+			  <Address>base_pairAnime+60</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>102</ID>
-			  <Description>"base+61 (default = 0)"</Description>
+			  <Description>"base_pairAnime+61 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+61</Address>
+			  <Address>base_pairAnime+61</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>103</ID>
-			  <Description>"base+62 (default = 0)"</Description>
+			  <Description>"base_pairAnime+62 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+62</Address>
+			  <Address>base_pairAnime+62</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>104</ID>
-			  <Description>"base+63 (default = -1.4411625e+17)"</Description>
+			  <Description>"base_pairAnime+63 (default = -1.4411625e+17)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+63</Address>
+			  <Address>base_pairAnime+63</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>105</ID>
-			  <Description>"base+64 (default = 110)"</Description>
+			  <Description>"base_pairAnime+64 (default = 110)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+64</Address>
+			  <Address>base_pairAnime+64</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>106</ID>
-			  <Description>"base+65 (default = 0)"</Description>
+			  <Description>"base_pairAnime+65 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+65</Address>
+			  <Address>base_pairAnime+65</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>107</ID>
-			  <Description>"base+66 (default = 4.0964500e+31)"</Description>
+			  <Description>"base_pairAnime+66 (default = 4.0964500e+31)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+66</Address>
+			  <Address>base_pairAnime+66</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>108</ID>
-			  <Description>"base+67 (default = 2.8131851e+20)"</Description>
+			  <Description>"base_pairAnime+67 (default = 2.8131851e+20)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+67</Address>
+			  <Address>base_pairAnime+67</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>109</ID>
-			  <Description>"base+68 (default = 0)"</Description>
+			  <Description>"base_pairAnime+68 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+68</Address>
+			  <Address>base_pairAnime+68</Address>
 			</CheatEntry>
 			</CheatEntries>
     </CheatEntry>

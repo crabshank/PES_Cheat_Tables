@@ -7,438 +7,458 @@
       <Options moHideChildren="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base,80 40 01 00 00 00 00 00 48 43 00 00 48 42)  // should be unique
-registersymbol(base)
+	  aobscan(base_spgCommon,80 40 01 00 00 00 00 00 48 43 00 00 48 42)  // should be unique
+registersymbol(base_spgCommon)
+
+{$lua}
+local al = getAddressList()
+local vars={}
+for i=1, al.Count-1 do --skip script
+    local ali=al.getMemoryRecord(i)
+    local ofs=string.match(ali.Description,'base_spgCommon(.%x+)%s*')
+    if ofs==nil then
+       ofs=string.match(ali.Description,'base_spgCommon%s*')
+       if ofs~=nil then
+          vars['+0']=ali
+       end
+    else
+     vars[ofs]=ali
+    end
+end
+
+--vars['+0'].Value=
+
+{$asm}
 
 [DISABLE]
 
-unregistersymbol(base)
+unregistersymbol(base_spgCommon)
 
 </AssemblerScript>
 	  <CheatEntries>
 	  <CheatEntry>
 			  <ID>1</ID>
-			  <Description>"base-1A (default = 0)"</Description>
+			  <Description>"base_spgCommon-1A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-1A</Address>
+			  <Address>base_spgCommon-1A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>2</ID>
-			  <Description>"base-19 (default = 0)"</Description>
+			  <Description>"base_spgCommon-19 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-19</Address>
+			  <Address>base_spgCommon-19</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>3</ID>
-			  <Description>"base-18 (default = 0)"</Description>
+			  <Description>"base_spgCommon-18 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-18</Address>
+			  <Address>base_spgCommon-18</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>4</ID>
-			  <Description>"base-17 (default = 0)"</Description>
+			  <Description>"base_spgCommon-17 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-17</Address>
+			  <Address>base_spgCommon-17</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>5</ID>
-			  <Description>"base-16 (default = 0)"</Description>
+			  <Description>"base_spgCommon-16 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-16</Address>
+			  <Address>base_spgCommon-16</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>6</ID>
-			  <Description>"base-15 (default = 0)"</Description>
+			  <Description>"base_spgCommon-15 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-15</Address>
+			  <Address>base_spgCommon-15</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>7</ID>
-			  <Description>"base-14 (default = 0)"</Description>
+			  <Description>"base_spgCommon-14 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-14</Address>
+			  <Address>base_spgCommon-14</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>8</ID>
-			  <Description>"base-13 (default = 0)"</Description>
+			  <Description>"base_spgCommon-13 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-13</Address>
+			  <Address>base_spgCommon-13</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>9</ID>
-			  <Description>"base-12 (default = 0)"</Description>
+			  <Description>"base_spgCommon-12 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-12</Address>
+			  <Address>base_spgCommon-12</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>10</ID>
-			  <Description>"base-11 (default = -2.4178516e+24)"</Description>
+			  <Description>"base_spgCommon-11 (default = -2.4178516e+24)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-11</Address>
+			  <Address>base_spgCommon-11</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>11</ID>
-			  <Description>"base-10 (default = -0)"</Description>
+			  <Description>"base_spgCommon-10 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-10</Address>
+			  <Address>base_spgCommon-10</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>12</ID>
-			  <Description>"base-F (default = -0.000001)"</Description>
+			  <Description>"base_spgCommon-F (default = -0.000001)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-F</Address>
+			  <Address>base_spgCommon-F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>13</ID>
-			  <Description>"base-E (default = 90.771301)"</Description>
+			  <Description>"base_spgCommon-E (default = 90.771301)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-E</Address>
+			  <Address>base_spgCommon-E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>14</ID>
-			  <Description>"base-D (default = 0)"</Description>
+			  <Description>"base_spgCommon-D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-D</Address>
+			  <Address>base_spgCommon-D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>15</ID>
-			  <Description>"base-C (default = 0)"</Description>
+			  <Description>"base_spgCommon-C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-C</Address>
+			  <Address>base_spgCommon-C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>16</ID>
-			  <Description>"base-B (default = 0)"</Description>
+			  <Description>"base_spgCommon-B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-B</Address>
+			  <Address>base_spgCommon-B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>17</ID>
-			  <Description>"base-A (default = 0)"</Description>
+			  <Description>"base_spgCommon-A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-A</Address>
+			  <Address>base_spgCommon-A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>18</ID>
-			  <Description>"base-9 (default = 0)"</Description>
+			  <Description>"base_spgCommon-9 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-9</Address>
+			  <Address>base_spgCommon-9</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>19</ID>
-			  <Description>"base-8 (default = -0)"</Description>
+			  <Description>"base_spgCommon-8 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-8</Address>
+			  <Address>base_spgCommon-8</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>20</ID>
-			  <Description>"base-7 (default = 0)"</Description>
+			  <Description>"base_spgCommon-7 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-7</Address>
+			  <Address>base_spgCommon-7</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>21</ID>
-			  <Description>"base-6 (default = 0)"</Description>
+			  <Description>"base_spgCommon-6 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-6</Address>
+			  <Address>base_spgCommon-6</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>22</ID>
-			  <Description>"base-5 (default = 0)"</Description>
+			  <Description>"base_spgCommon-5 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-5</Address>
+			  <Address>base_spgCommon-5</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>23</ID>
-			  <Description>"base-4 (default = 0)"</Description>
+			  <Description>"base_spgCommon-4 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-4</Address>
+			  <Address>base_spgCommon-4</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>24</ID>
-			  <Description>"base-3 (default = -0)"</Description>
+			  <Description>"base_spgCommon-3 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-3</Address>
+			  <Address>base_spgCommon-3</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>25</ID>
-			  <Description>"base-2 (default = 4)"</Description>
+			  <Description>"base_spgCommon-2 (default = 4)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-2</Address>
+			  <Address>base_spgCommon-2</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>26</ID>
-			  <Description>"base-1 (default = 0)"</Description>
+			  <Description>"base_spgCommon-1 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-1</Address>
+			  <Address>base_spgCommon-1</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>27</ID>
-			  <Description>"base (default = 0)"</Description>
+			  <Description>"base_spgCommon (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+0</Address>
+			  <Address>base_spgCommon+0</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>28</ID>
-			  <Description>"base+1 (default = 0)"</Description>
+			  <Description>"base_spgCommon+1 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1</Address>
+			  <Address>base_spgCommon+1</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>29</ID>
-			  <Description>"base+2 (default = 0)"</Description>
+			  <Description>"base_spgCommon+2 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2</Address>
+			  <Address>base_spgCommon+2</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>30</ID>
-			  <Description>"base+3 (default = 0)"</Description>
+			  <Description>"base_spgCommon+3 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3</Address>
+			  <Address>base_spgCommon+3</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>31</ID>
-			  <Description>"base+4 (default = 0)"</Description>
+			  <Description>"base_spgCommon+4 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+4</Address>
+			  <Address>base_spgCommon+4</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>32</ID>
-			  <Description>"base+5 (default = 131072)"</Description>
+			  <Description>"base_spgCommon+5 (default = 131072)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+5</Address>
+			  <Address>base_spgCommon+5</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>33</ID>
-			  <Description>"base+6 (default = 200)"</Description>
+			  <Description>"base_spgCommon+6 (default = 200)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+6</Address>
+			  <Address>base_spgCommon+6</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>34</ID>
-			  <Description>"base+7 (default = 0)"</Description>
+			  <Description>"base_spgCommon+7 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+7</Address>
+			  <Address>base_spgCommon+7</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>35</ID>
-			  <Description>"base+8 (default = 0)"</Description>
+			  <Description>"base_spgCommon+8 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+8</Address>
+			  <Address>base_spgCommon+8</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>36</ID>
-			  <Description>"base+9 (default = 131073.05)"</Description>
+			  <Description>"base_spgCommon+9 (default = 131073.05)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+9</Address>
+			  <Address>base_spgCommon+9</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>37</ID>
-			  <Description>"base+A (default = 50)"</Description>
+			  <Description>"base_spgCommon+A (default = 50)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+A</Address>
+			  <Address>base_spgCommon+A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>38</ID>
-			  <Description>"base+B (default = 0)"</Description>
+			  <Description>"base_spgCommon+B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+B</Address>
+			  <Address>base_spgCommon+B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>39</ID>
-			  <Description>"base+C (default = 0)"</Description>
+			  <Description>"base_spgCommon+C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+C</Address>
+			  <Address>base_spgCommon+C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>40</ID>
-			  <Description>"base+D (default = -131073.03)"</Description>
+			  <Description>"base_spgCommon+D (default = -131073.03)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+D</Address>
+			  <Address>base_spgCommon+D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>41</ID>
-			  <Description>"base+E (default = 25)"</Description>
+			  <Description>"base_spgCommon+E (default = 25)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+E</Address>
+			  <Address>base_spgCommon+E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>42</ID>
-			  <Description>"base+F (default = 0)"</Description>
+			  <Description>"base_spgCommon+F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+F</Address>
+			  <Address>base_spgCommon+F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>43</ID>
-			  <Description>"base+10 (default = 0)"</Description>
+			  <Description>"base_spgCommon+10 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+10</Address>
+			  <Address>base_spgCommon+10</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>44</ID>
-			  <Description>"base+11 (default = 0)"</Description>
+			  <Description>"base_spgCommon+11 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+11</Address>
+			  <Address>base_spgCommon+11</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>45</ID>
-			  <Description>"base+12 (default = 0)"</Description>
+			  <Description>"base_spgCommon+12 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+12</Address>
+			  <Address>base_spgCommon+12</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>46</ID>
-			  <Description>"base+13 (default = 0)"</Description>
+			  <Description>"base_spgCommon+13 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+13</Address>
+			  <Address>base_spgCommon+13</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>47</ID>
-			  <Description>"base+14 (default = 0)"</Description>
+			  <Description>"base_spgCommon+14 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+14</Address>
+			  <Address>base_spgCommon+14</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>48</ID>
-			  <Description>"base+15 (default = 0)"</Description>
+			  <Description>"base_spgCommon+15 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+15</Address>
+			  <Address>base_spgCommon+15</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>49</ID>
-			  <Description>"base+16 (default = 0)"</Description>
+			  <Description>"base_spgCommon+16 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+16</Address>
+			  <Address>base_spgCommon+16</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>50</ID>
-			  <Description>"base+17 (default = 0)"</Description>
+			  <Description>"base_spgCommon+17 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+17</Address>
+			  <Address>base_spgCommon+17</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>51</ID>
-			  <Description>"base+18 (default = 0)"</Description>
+			  <Description>"base_spgCommon+18 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+18</Address>
+			  <Address>base_spgCommon+18</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>52</ID>
-			  <Description>"base+19 (default = 0)"</Description>
+			  <Description>"base_spgCommon+19 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+19</Address>
+			  <Address>base_spgCommon+19</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>53</ID>
-			  <Description>"base+1A (default = 0)"</Description>
+			  <Description>"base_spgCommon+1A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1A</Address>
+			  <Address>base_spgCommon+1A</Address>
 			</CheatEntry>
 			</CheatEntries>
     </CheatEntry>

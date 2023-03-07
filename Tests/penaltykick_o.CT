@@ -7,622 +7,642 @@
       <Options moHideChildren="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base,CD CC 4C 3E 00 00 20 41 00 00 82 42 00 00 80 3F)  // should be unique
-registersymbol(base)
+	  aobscan(base_penaltyKick,CD CC 4C 3E 00 00 20 41 00 00 82 42 00 00 80 3F)  // should be unique
+registersymbol(base_penaltyKick)
+
+{$lua}
+local al = getAddressList()
+local vars={}
+for i=1, al.Count-1 do --skip script
+    local ali=al.getMemoryRecord(i)
+    local ofs=string.match(ali.Description,'base_penaltyKick(.%x+)%s*')
+    if ofs==nil then
+       ofs=string.match(ali.Description,'base_penaltyKick%s*')
+       if ofs~=nil then
+          vars['+0']=ali
+       end
+    else
+     vars[ofs]=ali
+    end
+end
+
+--vars['+0'].Value=
+
+{$asm}
 
 [DISABLE]
 
-unregistersymbol(base)
+unregistersymbol(base_penaltyKick)
 
 </AssemblerScript>
 	  <CheatEntries>
 	  <CheatEntry>
 			  <ID>1</ID>
-			  <Description>"base-10 (default = 0)"</Description>
+			  <Description>"base_penaltyKick-10 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-10</Address>
+			  <Address>base_penaltyKick-10</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>2</ID>
-			  <Description>"base-F (default = 0)"</Description>
+			  <Description>"base_penaltyKick-F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-F</Address>
+			  <Address>base_penaltyKick-F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>3</ID>
-			  <Description>"base-E (default = 0)"</Description>
+			  <Description>"base_penaltyKick-E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-E</Address>
+			  <Address>base_penaltyKick-E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>4</ID>
-			  <Description>"base-D (default = 131072)"</Description>
+			  <Description>"base_penaltyKick-D (default = 131072)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-D</Address>
+			  <Address>base_penaltyKick-D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>5</ID>
-			  <Description>"base-C (default = 50)"</Description>
+			  <Description>"base_penaltyKick-C (default = 50)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-C</Address>
+			  <Address>base_penaltyKick-C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>6</ID>
-			  <Description>"base-B (default = 0)"</Description>
+			  <Description>"base_penaltyKick-B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-B</Address>
+			  <Address>base_penaltyKick-B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>7</ID>
-			  <Description>"base-A (default = 0)"</Description>
+			  <Description>"base_penaltyKick-A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-A</Address>
+			  <Address>base_penaltyKick-A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>8</ID>
-			  <Description>"base-9 (default = -1.5845757e+29)"</Description>
+			  <Description>"base_penaltyKick-9 (default = -1.5845757e+29)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-9</Address>
+			  <Address>base_penaltyKick-9</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>9</ID>
-			  <Description>"base-8 (default = 30)"</Description>
+			  <Description>"base_penaltyKick-8 (default = 30)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-8</Address>
+			  <Address>base_penaltyKick-8</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>10</ID>
-			  <Description>"base-7 (default = 0)"</Description>
+			  <Description>"base_penaltyKick-7 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-7</Address>
+			  <Address>base_penaltyKick-7</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>11</ID>
-			  <Description>"base-6 (default = 0)"</Description>
+			  <Description>"base_penaltyKick-6 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-6</Address>
+			  <Address>base_penaltyKick-6</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>12</ID>
-			  <Description>"base-5 (default = -0)"</Description>
+			  <Description>"base_penaltyKick-5 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-5</Address>
+			  <Address>base_penaltyKick-5</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>13</ID>
-			  <Description>"base-4 (default = 1)"</Description>
+			  <Description>"base_penaltyKick-4 (default = 1)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-4</Address>
+			  <Address>base_penaltyKick-4</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>14</ID>
-			  <Description>"base-3 (default = -2.0080230e+8)"</Description>
+			  <Description>"base_penaltyKick-3 (default = -2.0080230e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-3</Address>
+			  <Address>base_penaltyKick-3</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>15</ID>
-			  <Description>"base-2 (default = -1.0760909e+8)"</Description>
+			  <Description>"base_penaltyKick-2 (default = -1.0760909e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-2</Address>
+			  <Address>base_penaltyKick-2</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>16</ID>
-			  <Description>"base-1 (default = 1.0737510e+8)"</Description>
+			  <Description>"base_penaltyKick-1 (default = 1.0737510e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-1</Address>
+			  <Address>base_penaltyKick-1</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>17</ID>
-			  <Description>"base (default = 0.2)"</Description>
+			  <Description>"base_penaltyKick (default = 0.2)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+0</Address>
+			  <Address>base_penaltyKick+0</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>18</ID>
-			  <Description>"base+1 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+1 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1</Address>
+			  <Address>base_penaltyKick+1</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>19</ID>
-			  <Description>"base+2 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+2 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2</Address>
+			  <Address>base_penaltyKick+2</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>20</ID>
-			  <Description>"base+3 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+3 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3</Address>
+			  <Address>base_penaltyKick+3</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>21</ID>
-			  <Description>"base+4 (default = 10)"</Description>
+			  <Description>"base_penaltyKick+4 (default = 10)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+4</Address>
+			  <Address>base_penaltyKick+4</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>22</ID>
-			  <Description>"base+5 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+5 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+5</Address>
+			  <Address>base_penaltyKick+5</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>23</ID>
-			  <Description>"base+6 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+6 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+6</Address>
+			  <Address>base_penaltyKick+6</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>24</ID>
-			  <Description>"base+7 (default = -0)"</Description>
+			  <Description>"base_penaltyKick+7 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+7</Address>
+			  <Address>base_penaltyKick+7</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>25</ID>
-			  <Description>"base+8 (default = 65)"</Description>
+			  <Description>"base_penaltyKick+8 (default = 65)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+8</Address>
+			  <Address>base_penaltyKick+8</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>26</ID>
-			  <Description>"base+9 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+9 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+9</Address>
+			  <Address>base_penaltyKick+9</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>27</ID>
-			  <Description>"base+A (default = 0)"</Description>
+			  <Description>"base_penaltyKick+A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+A</Address>
+			  <Address>base_penaltyKick+A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>28</ID>
-			  <Description>"base+B (default = -0)"</Description>
+			  <Description>"base_penaltyKick+B (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+B</Address>
+			  <Address>base_penaltyKick+B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>29</ID>
-			  <Description>"base+C (default = 1)"</Description>
+			  <Description>"base_penaltyKick+C (default = 1)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+C</Address>
+			  <Address>base_penaltyKick+C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>30</ID>
-			  <Description>"base+D (default = 0)"</Description>
+			  <Description>"base_penaltyKick+D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+D</Address>
+			  <Address>base_penaltyKick+D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>31</ID>
-			  <Description>"base+E (default = 0)"</Description>
+			  <Description>"base_penaltyKick+E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+E</Address>
+			  <Address>base_penaltyKick+E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>32</ID>
-			  <Description>"base+F (default = 2.000015)"</Description>
+			  <Description>"base_penaltyKick+F (default = 2.000015)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+F</Address>
+			  <Address>base_penaltyKick+F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>33</ID>
-			  <Description>"base+10 (default = 0.75)"</Description>
+			  <Description>"base_penaltyKick+10 (default = 0.75)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+10</Address>
+			  <Address>base_penaltyKick+10</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>34</ID>
-			  <Description>"base+11 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+11 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+11</Address>
+			  <Address>base_penaltyKick+11</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>35</ID>
-			  <Description>"base+12 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+12 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+12</Address>
+			  <Address>base_penaltyKick+12</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>36</ID>
-			  <Description>"base+13 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+13 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+13</Address>
+			  <Address>base_penaltyKick+13</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>37</ID>
-			  <Description>"base+14 (default = 10)"</Description>
+			  <Description>"base_penaltyKick+14 (default = 10)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+14</Address>
+			  <Address>base_penaltyKick+14</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>38</ID>
-			  <Description>"base+15 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+15 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+15</Address>
+			  <Address>base_penaltyKick+15</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>39</ID>
-			  <Description>"base+16 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+16 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+16</Address>
+			  <Address>base_penaltyKick+16</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>40</ID>
-			  <Description>"base+17 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+17 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+17</Address>
+			  <Address>base_penaltyKick+17</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>41</ID>
-			  <Description>"base+18 (default = 2)"</Description>
+			  <Description>"base_penaltyKick+18 (default = 2)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+18</Address>
+			  <Address>base_penaltyKick+18</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>42</ID>
-			  <Description>"base+19 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+19 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+19</Address>
+			  <Address>base_penaltyKick+19</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>43</ID>
-			  <Description>"base+1A (default = 0)"</Description>
+			  <Description>"base_penaltyKick+1A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1A</Address>
+			  <Address>base_penaltyKick+1A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>44</ID>
-			  <Description>"base+1B (default = 0)"</Description>
+			  <Description>"base_penaltyKick+1B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1B</Address>
+			  <Address>base_penaltyKick+1B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>45</ID>
-			  <Description>"base+1C (default = 2)"</Description>
+			  <Description>"base_penaltyKick+1C (default = 2)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1C</Address>
+			  <Address>base_penaltyKick+1C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>46</ID>
-			  <Description>"base+1D (default = 0)"</Description>
+			  <Description>"base_penaltyKick+1D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1D</Address>
+			  <Address>base_penaltyKick+1D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>47</ID>
-			  <Description>"base+1E (default = 0)"</Description>
+			  <Description>"base_penaltyKick+1E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1E</Address>
+			  <Address>base_penaltyKick+1E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>48</ID>
-			  <Description>"base+1F (default = 0)"</Description>
+			  <Description>"base_penaltyKick+1F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1F</Address>
+			  <Address>base_penaltyKick+1F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>49</ID>
-			  <Description>"base+20 (default = 2)"</Description>
+			  <Description>"base_penaltyKick+20 (default = 2)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+20</Address>
+			  <Address>base_penaltyKick+20</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>50</ID>
-			  <Description>"base+21 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+21 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+21</Address>
+			  <Address>base_penaltyKick+21</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>51</ID>
-			  <Description>"base+22 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+22 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+22</Address>
+			  <Address>base_penaltyKick+22</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>52</ID>
-			  <Description>"base+23 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+23 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+23</Address>
+			  <Address>base_penaltyKick+23</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>53</ID>
-			  <Description>"base+24 (default = 2)"</Description>
+			  <Description>"base_penaltyKick+24 (default = 2)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+24</Address>
+			  <Address>base_penaltyKick+24</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>54</ID>
-			  <Description>"base+25 (default = 1.4855280e+28)"</Description>
+			  <Description>"base_penaltyKick+25 (default = 1.4855280e+28)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+25</Address>
+			  <Address>base_penaltyKick+25</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>55</ID>
-			  <Description>"base+26 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+26 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+26</Address>
+			  <Address>base_penaltyKick+26</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>56</ID>
-			  <Description>"base+27 (default = 9.9368413e+27)"</Description>
+			  <Description>"base_penaltyKick+27 (default = 9.9368413e+27)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+27</Address>
+			  <Address>base_penaltyKick+27</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>57</ID>
-			  <Description>"base+28 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+28 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+28</Address>
+			  <Address>base_penaltyKick+28</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>58</ID>
-			  <Description>"base+29 (default = 8.6187704e+9)"</Description>
+			  <Description>"base_penaltyKick+29 (default = 8.6187704e+9)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+29</Address>
+			  <Address>base_penaltyKick+29</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>59</ID>
-			  <Description>"base+2A (default = 0)"</Description>
+			  <Description>"base_penaltyKick+2A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2A</Address>
+			  <Address>base_penaltyKick+2A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>60</ID>
-			  <Description>"base+2B (default = 0)"</Description>
+			  <Description>"base_penaltyKick+2B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2B</Address>
+			  <Address>base_penaltyKick+2B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>61</ID>
-			  <Description>"base+2C (default = 0)"</Description>
+			  <Description>"base_penaltyKick+2C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2C</Address>
+			  <Address>base_penaltyKick+2C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>62</ID>
-			  <Description>"base+2D (default = 0)"</Description>
+			  <Description>"base_penaltyKick+2D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2D</Address>
+			  <Address>base_penaltyKick+2D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>63</ID>
-			  <Description>"base+2E (default = 0)"</Description>
+			  <Description>"base_penaltyKick+2E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2E</Address>
+			  <Address>base_penaltyKick+2E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>64</ID>
-			  <Description>"base+2F (default = 0)"</Description>
+			  <Description>"base_penaltyKick+2F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2F</Address>
+			  <Address>base_penaltyKick+2F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>65</ID>
-			  <Description>"base+30 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+30 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+30</Address>
+			  <Address>base_penaltyKick+30</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>66</ID>
-			  <Description>"base+31 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+31 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+31</Address>
+			  <Address>base_penaltyKick+31</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>67</ID>
-			  <Description>"base+32 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+32 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+32</Address>
+			  <Address>base_penaltyKick+32</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>68</ID>
-			  <Description>"base+33 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+33 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+33</Address>
+			  <Address>base_penaltyKick+33</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>69</ID>
-			  <Description>"base+34 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+34 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+34</Address>
+			  <Address>base_penaltyKick+34</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>70</ID>
-			  <Description>"base+35 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+35 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+35</Address>
+			  <Address>base_penaltyKick+35</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>71</ID>
-			  <Description>"base+36 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+36 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+36</Address>
+			  <Address>base_penaltyKick+36</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>72</ID>
-			  <Description>"base+37 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+37 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+37</Address>
+			  <Address>base_penaltyKick+37</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>73</ID>
-			  <Description>"base+38 (default = 0)"</Description>
+			  <Description>"base_penaltyKick+38 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+38</Address>
+			  <Address>base_penaltyKick+38</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>74</ID>
-			  <Description>"base+39 (default = ❌)"</Description>
+			  <Description>"base_penaltyKick+39 (default = ❌)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+39</Address>
+			  <Address>base_penaltyKick+39</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>75</ID>
-			  <Description>"base+3A (default = ❌)"</Description>
+			  <Description>"base_penaltyKick+3A (default = ❌)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3A</Address>
+			  <Address>base_penaltyKick+3A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>76</ID>
-			  <Description>"base+3B (default = ❌)"</Description>
+			  <Description>"base_penaltyKick+3B (default = ❌)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3B</Address>
+			  <Address>base_penaltyKick+3B</Address>
 			</CheatEntry>
 			</CheatEntries>
     </CheatEntry>

@@ -7,206 +7,226 @@
       <Options moHideChildren="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base,F8 68 B5 42 01 00)  // should be unique
-registersymbol(base)
+	  aobscan(base_ballPlyShoot,F8 68 B5 42 01 00)  // should be unique
+registersymbol(base_ballPlyShoot)
+
+{$lua}
+local al = getAddressList()
+local vars={}
+for i=1, al.Count-1 do --skip script
+    local ali=al.getMemoryRecord(i)
+    local ofs=string.match(ali.Description,'base_ballPlyShoot(.%x+)%s*')
+    if ofs==nil then
+       ofs=string.match(ali.Description,'base_ballPlyShoot%s*')
+       if ofs~=nil then
+          vars['+0']=ali
+       end
+    else
+     vars[ofs]=ali
+    end
+end
+
+--vars['+0'].Value=
+
+{$asm}
 
 [DISABLE]
 
-unregistersymbol(base)
+unregistersymbol(base_ballPlyShoot)
 
 </AssemblerScript>
 	  <CheatEntries>
 	  <CheatEntry>
 			  <ID>1</ID>
-			  <Description>"base (default = 248)"</Description>
+			  <Description>"base_ballPlyShoot (default = 248)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+0</Address>
+			  <Address>base_ballPlyShoot+0</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>2</ID>
-			  <Description>"base+1 (default = 104)"</Description>
+			  <Description>"base_ballPlyShoot+1 (default = 104)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+1</Address>
+			  <Address>base_ballPlyShoot+1</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>3</ID>
-			  <Description>"base+2 (default = 181)"</Description>
+			  <Description>"base_ballPlyShoot+2 (default = 181)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+2</Address>
+			  <Address>base_ballPlyShoot+2</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>4</ID>
-			  <Description>"base+3 (default = 66)"</Description>
+			  <Description>"base_ballPlyShoot+3 (default = 66)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+3</Address>
+			  <Address>base_ballPlyShoot+3</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>5</ID>
-			  <Description>"base+4 (default = 1)"</Description>
+			  <Description>"base_ballPlyShoot+4 (default = 1)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+4</Address>
+			  <Address>base_ballPlyShoot+4</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>6</ID>
-			  <Description>"base+5 (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+5 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+5</Address>
+			  <Address>base_ballPlyShoot+5</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>7</ID>
-			  <Description>"base+6 (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+6 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+6</Address>
+			  <Address>base_ballPlyShoot+6</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>8</ID>
-			  <Description>"base+7 (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+7 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+7</Address>
+			  <Address>base_ballPlyShoot+7</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>9</ID>
-			  <Description>"base+8 (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+8 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+8</Address>
+			  <Address>base_ballPlyShoot+8</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>10</ID>
-			  <Description>"base+9 (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+9 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+9</Address>
+			  <Address>base_ballPlyShoot+9</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>11</ID>
-			  <Description>"base+A (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+A</Address>
+			  <Address>base_ballPlyShoot+A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>12</ID>
-			  <Description>"base+B (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+B</Address>
+			  <Address>base_ballPlyShoot+B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>13</ID>
-			  <Description>"base+C (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+C</Address>
+			  <Address>base_ballPlyShoot+C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>14</ID>
-			  <Description>"base+D (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+D</Address>
+			  <Address>base_ballPlyShoot+D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>15</ID>
-			  <Description>"base+E (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+E</Address>
+			  <Address>base_ballPlyShoot+E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>16</ID>
-			  <Description>"base+F (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+F</Address>
+			  <Address>base_ballPlyShoot+F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>17</ID>
-			  <Description>"base+10 (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+10 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+10</Address>
+			  <Address>base_ballPlyShoot+10</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>18</ID>
-			  <Description>"base+11 (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+11 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+11</Address>
+			  <Address>base_ballPlyShoot+11</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>19</ID>
-			  <Description>"base+12 (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+12 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+12</Address>
+			  <Address>base_ballPlyShoot+12</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>20</ID>
-			  <Description>"base+13 (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+13 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+13</Address>
+			  <Address>base_ballPlyShoot+13</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>21</ID>
-			  <Description>"base+14 (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+14 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+14</Address>
+			  <Address>base_ballPlyShoot+14</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>22</ID>
-			  <Description>"base+15 (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+15 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+15</Address>
+			  <Address>base_ballPlyShoot+15</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>23</ID>
-			  <Description>"base+16 (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+16 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+16</Address>
+			  <Address>base_ballPlyShoot+16</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>24</ID>
-			  <Description>"base+17 (default = 0)"</Description>
+			  <Description>"base_ballPlyShoot+17 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base+17</Address>
+			  <Address>base_ballPlyShoot+17</Address>
 			</CheatEntry>
 			</CheatEntries>
     </CheatEntry>

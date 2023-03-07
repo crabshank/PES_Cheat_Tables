@@ -7,22 +7,42 @@
       <Options moHideChildren="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base,35 30 2E 30 20 2A 20 53 74 61 74 73 50 6C 61 79 65 72 4F 77 6E 47 6F 61 6C 28 29 20 2B 20 20 34 30 2E 30 20 2A)  // should be unique
-registersymbol(base)
+	  aobscan(base_rating,35 30 2E 30 20 2A 20 53 74 61 74 73 50 6C 61 79 65 72 4F 77 6E 47 6F 61 6C 28 29 20 2B 20 20 34 30 2E 30 20 2A)  // should be unique
+registersymbol(base_rating)
+
+{$lua}
+local al = getAddressList()
+local vars={}
+for i=1, al.Count-1 do --skip script
+    local ali=al.getMemoryRecord(i)
+    local ofs=string.match(ali.Description,'base_rating(.%x+)%s*')
+    if ofs==nil then
+       ofs=string.match(ali.Description,'base_rating%s*')
+       if ofs~=nil then
+          vars['+0']=ali
+       end
+    else
+     vars[ofs]=ali
+    end
+end
+
+--vars['+0'].Value=
+
+{$asm}
 
 [DISABLE]
 
-unregistersymbol(base)
+unregistersymbol(base_rating)
 
 </AssemblerScript>
 	  <CheatEntries>
 	  <CheatEntry>
 			  <ID>1</ID>
-			  <Description>"base-A70"</Description>
+			  <Description>"base_rating-A70"</Description>
 			  <ShowAsHex>1</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base-A70</Address>
+			  <Address>base_rating-A70</Address>
 			</CheatEntry>
 			</CheatEntries>
     </CheatEntry>

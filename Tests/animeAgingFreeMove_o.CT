@@ -7,342 +7,362 @@
       <Options moHideChildren="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base,80 00 00 00 00 00 B4 41 10 00 00)  // should be unique
-registersymbol(base)
+	  aobscan(base_aafm,80 00 00 00 00 00 B4 41 10 00 00)  // should be unique
+registersymbol(base_aafm)
+
+{$lua}
+local al = getAddressList()
+local vars={}
+for i=1, al.Count-1 do --skip script
+    local ali=al.getMemoryRecord(i)
+    local ofs=string.match(ali.Description,'base_aafm(.%x+)%s*')
+    if ofs==nil then
+       ofs=string.match(ali.Description,'base_aafm%s*')
+       if ofs~=nil then
+          vars['+0']=ali
+       end
+    else
+     vars[ofs]=ali
+    end
+end
+
+--vars['+0'].Value=
+
+{$asm}
 
 [DISABLE]
 
-unregistersymbol(base)
+unregistersymbol(base_aafm)
 
 </AssemblerScript>
 	  <CheatEntries>
 	  <CheatEntry>
 			  <ID>1</ID>
-			  <Description>"base-8 (default = 1)"</Description>
+			  <Description>"base_aafm-8 (default = 1)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base-8</Address>
+			  <Address>base_aafm-8</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>2</ID>
-			  <Description>"base-7 (default = 16777216)"</Description>
+			  <Description>"base_aafm-7 (default = 16777216)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base-7</Address>
+			  <Address>base_aafm-7</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>3</ID>
-			  <Description>"base-6 (default = 65536)"</Description>
+			  <Description>"base_aafm-6 (default = 65536)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base-6</Address>
+			  <Address>base_aafm-6</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>4</ID>
-			  <Description>"base-5 (default = 2902458624)"</Description>
+			  <Description>"base_aafm-5 (default = 2902458624)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base-5</Address>
+			  <Address>base_aafm-5</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>5</ID>
-			  <Description>"base-4 (default = 11337729)"</Description>
+			  <Description>"base_aafm-4 (default = 11337729)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base-4</Address>
+			  <Address>base_aafm-4</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>6</ID>
-			  <Description>"base-3 (default = 2147527936)"</Description>
+			  <Description>"base_aafm-3 (default = 2147527936)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base-3</Address>
+			  <Address>base_aafm-3</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>7</ID>
-			  <Description>"base-2 (default = 8388781)"</Description>
+			  <Description>"base_aafm-2 (default = 8388781)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base-2</Address>
+			  <Address>base_aafm-2</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>8</ID>
-			  <Description>"base-1 (default = 32768)"</Description>
+			  <Description>"base_aafm-1 (default = 32768)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base-1</Address>
+			  <Address>base_aafm-1</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>9</ID>
-			  <Description>"base (default = 128)"</Description>
+			  <Description>"base_aafm (default = 128)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+0</Address>
+			  <Address>base_aafm+0</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>10</ID>
-			  <Description>"base+1 (default = 0)"</Description>
+			  <Description>"base_aafm+1 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+1</Address>
+			  <Address>base_aafm+1</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>11</ID>
-			  <Description>"base+2 (default = 0)"</Description>
+			  <Description>"base_aafm+2 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+2</Address>
+			  <Address>base_aafm+2</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>12</ID>
-			  <Description>"base+3 (default = 3019898880)"</Description>
+			  <Description>"base_aafm+3 (default = 3019898880)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+3</Address>
+			  <Address>base_aafm+3</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>13</ID>
-			  <Description>"base+4 (default = 1102315520)"</Description>
+			  <Description>"base_aafm+4 (default = 1102315520)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+4</Address>
+			  <Address>base_aafm+4</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>14</ID>
-			  <Description>"base+5 (default = 272741376)"</Description>
+			  <Description>"base_aafm+5 (default = 272741376)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+5</Address>
+			  <Address>base_aafm+5</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>15</ID>
-			  <Description>"base+6 (default = 1065396)"</Description>
+			  <Description>"base_aafm+6 (default = 1065396)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+6</Address>
+			  <Address>base_aafm+6</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>16</ID>
-			  <Description>"base+7 (default = 4161)"</Description>
+			  <Description>"base_aafm+7 (default = 4161)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+7</Address>
+			  <Address>base_aafm+7</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>17</ID>
-			  <Description>"base+8 (default = 16)"</Description>
+			  <Description>"base_aafm+8 (default = 16)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+8</Address>
+			  <Address>base_aafm+8</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>18</ID>
-			  <Description>"base+9 (default = 0)"</Description>
+			  <Description>"base_aafm+9 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+9</Address>
+			  <Address>base_aafm+9</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>19</ID>
-			  <Description>"base+A (default = 0)"</Description>
+			  <Description>"base_aafm+A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+A</Address>
+			  <Address>base_aafm+A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>20</ID>
-			  <Description>"base+B (default = 0)"</Description>
+			  <Description>"base_aafm+B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+B</Address>
+			  <Address>base_aafm+B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>21</ID>
-			  <Description>"base+C (default = 0)"</Description>
+			  <Description>"base_aafm+C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+C</Address>
+			  <Address>base_aafm+C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>22</ID>
-			  <Description>"base+D (default = 0)"</Description>
+			  <Description>"base_aafm+D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+D</Address>
+			  <Address>base_aafm+D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>23</ID>
-			  <Description>"base+E (default = 0)"</Description>
+			  <Description>"base_aafm+E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+E</Address>
+			  <Address>base_aafm+E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>24</ID>
-			  <Description>"base+F (default = 0)"</Description>
+			  <Description>"base_aafm+F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+F</Address>
+			  <Address>base_aafm+F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>25</ID>
-			  <Description>"base+10 (default = 0)"</Description>
+			  <Description>"base_aafm+10 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+10</Address>
+			  <Address>base_aafm+10</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>26</ID>
-			  <Description>"base+11 (default = 805306368)"</Description>
+			  <Description>"base_aafm+11 (default = 805306368)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+11</Address>
+			  <Address>base_aafm+11</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>27</ID>
-			  <Description>"base+12 (default = 3145728)"</Description>
+			  <Description>"base_aafm+12 (default = 3145728)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+12</Address>
+			  <Address>base_aafm+12</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>28</ID>
-			  <Description>"base+13 (default = 12288)"</Description>
+			  <Description>"base_aafm+13 (default = 12288)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+13</Address>
+			  <Address>base_aafm+13</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>29</ID>
-			  <Description>"base+14 (default = 48)"</Description>
+			  <Description>"base_aafm+14 (default = 48)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+14</Address>
+			  <Address>base_aafm+14</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>30</ID>
-			  <Description>"base+15 (default = 0)"</Description>
+			  <Description>"base_aafm+15 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+15</Address>
+			  <Address>base_aafm+15</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>31</ID>
-			  <Description>"base+16 (default = 0)"</Description>
+			  <Description>"base_aafm+16 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+16</Address>
+			  <Address>base_aafm+16</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>32</ID>
-			  <Description>"base+17 (default = 0)"</Description>
+			  <Description>"base_aafm+17 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+17</Address>
+			  <Address>base_aafm+17</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>33</ID>
-			  <Description>"base+18 (default = 0)"</Description>
+			  <Description>"base_aafm+18 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+18</Address>
+			  <Address>base_aafm+18</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>34</ID>
-			  <Description>"base+19 (default = 3808428032)"</Description>
+			  <Description>"base_aafm+19 (default = 3808428032)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+19</Address>
+			  <Address>base_aafm+19</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>35</ID>
-			  <Description>"base+1A (default = 65208320)"</Description>
+			  <Description>"base_aafm+1A (default = 65208320)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+1A</Address>
+			  <Address>base_aafm+1A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>36</ID>
-			  <Description>"base+1B (default = 254720)"</Description>
+			  <Description>"base_aafm+1B (default = 254720)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+1B</Address>
+			  <Address>base_aafm+1B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>37</ID>
-			  <Description>"base+1C (default = 995)"</Description>
+			  <Description>"base_aafm+1C (default = 995)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+1C</Address>
+			  <Address>base_aafm+1C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>38</ID>
-			  <Description>"base+1D (default = 3)"</Description>
+			  <Description>"base_aafm+1D (default = 3)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+1D</Address>
+			  <Address>base_aafm+1D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>39</ID>
-			  <Description>"base+1E (default = 0)"</Description>
+			  <Description>"base_aafm+1E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+1E</Address>
+			  <Address>base_aafm+1E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>40</ID>
-			  <Description>"base+1F (default = 0)"</Description>
+			  <Description>"base_aafm+1F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+1F</Address>
+			  <Address>base_aafm+1F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>41</ID>
-			  <Description>"base+20 (default = 0)"</Description>
+			  <Description>"base_aafm+20 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+20</Address>
+			  <Address>base_aafm+20</Address>
 			</CheatEntry>
 			</CheatEntries>
     </CheatEntry>

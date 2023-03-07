@@ -7,886 +7,906 @@
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base,00 00 50 41 00 00 00 00 00 00 A0 41 00 00 A0 40 00 00 A0 40 00 00 20 42)  // should be unique
-registersymbol(base)
+	  aobscan(base_diagRun,00 00 50 41 00 00 00 00 00 00 A0 41 00 00 A0 40 00 00 A0 40 00 00 20 42)  // should be unique
+registersymbol(base_diagRun)
+
+{$lua}
+local al = getAddressList()
+local vars={}
+for i=1, al.Count-1 do --skip script
+    local ali=al.getMemoryRecord(i)
+    local ofs=string.match(ali.Description,'base_diagRun(.%x+)%s*')
+    if ofs==nil then
+       ofs=string.match(ali.Description,'base_diagRun%s*')
+       if ofs~=nil then
+          vars['+0']=ali
+       end
+    else
+     vars[ofs]=ali
+    end
+end
+
+--vars['+0'].Value=
+
+{$asm}
 
 [DISABLE]
 
-unregistersymbol(base)
+unregistersymbol(base_diagRun)
 
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
           <ID>118</ID>
-          <Description>"base-28 (default = 0)"</Description>
+          <Description>"base_diagRun-28 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-28</Address>
+          <Address>base_diagRun-28</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>119</ID>
-          <Description>"base-27 (default = 0)"</Description>
+          <Description>"base_diagRun-27 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-27</Address>
+          <Address>base_diagRun-27</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>120</ID>
-          <Description>"base-26 (default = 0)"</Description>
+          <Description>"base_diagRun-26 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-26</Address>
+          <Address>base_diagRun-26</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>121</ID>
-          <Description>"base-25 (default = 0.0000001)"</Description>
+          <Description>"base_diagRun-25 (default = 0.0000001)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-25</Address>
+          <Address>base_diagRun-25</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>122</ID>
-          <Description>"base-24 (default = 45)"</Description>
+          <Description>"base_diagRun-24 (default = 45)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-24</Address>
+          <Address>base_diagRun-24</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>123</ID>
-          <Description>"base-23 (default = 0)"</Description>
+          <Description>"base_diagRun-23 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-23</Address>
+          <Address>base_diagRun-23</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>124</ID>
-          <Description>"base-22 (default = 0)"</Description>
+          <Description>"base_diagRun-22 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-22</Address>
+          <Address>base_diagRun-22</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>125</ID>
-          <Description>"base-21 (default = -0)"</Description>
+          <Description>"base_diagRun-21 (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-21</Address>
+          <Address>base_diagRun-21</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>126</ID>
-          <Description>"base-20 (default = 80)"</Description>
+          <Description>"base_diagRun-20 (default = 80)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-20</Address>
+          <Address>base_diagRun-20</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>127</ID>
-          <Description>"base-1F (default = 0)"</Description>
+          <Description>"base_diagRun-1F (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-1F</Address>
+          <Address>base_diagRun-1F</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>128</ID>
-          <Description>"base-1E (default = 0)"</Description>
+          <Description>"base_diagRun-1E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-1E</Address>
+          <Address>base_diagRun-1E</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>129</ID>
-          <Description>"base-1D (default = -0)"</Description>
+          <Description>"base_diagRun-1D (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-1D</Address>
+          <Address>base_diagRun-1D</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>130</ID>
-          <Description>"base-1C (default = 1)"</Description>
+          <Description>"base_diagRun-1C (default = 1)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-1C</Address>
+          <Address>base_diagRun-1C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>131</ID>
-          <Description>"base-1B (default = 0)"</Description>
+          <Description>"base_diagRun-1B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-1B</Address>
+          <Address>base_diagRun-1B</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>132</ID>
-          <Description>"base-1A (default = 0)"</Description>
+          <Description>"base_diagRun-1A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-1A</Address>
+          <Address>base_diagRun-1A</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>133</ID>
-          <Description>"base-19 (default = 1.5845752e+29)"</Description>
+          <Description>"base_diagRun-19 (default = 1.5845752e+29)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-19</Address>
+          <Address>base_diagRun-19</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>134</ID>
-          <Description>"base-18 (default = 15)"</Description>
+          <Description>"base_diagRun-18 (default = 15)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-18</Address>
+          <Address>base_diagRun-18</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>135</ID>
-          <Description>"base-17 (default = 0)"</Description>
+          <Description>"base_diagRun-17 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-17</Address>
+          <Address>base_diagRun-17</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>136</ID>
-          <Description>"base-16 (default = 0)"</Description>
+          <Description>"base_diagRun-16 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-16</Address>
+          <Address>base_diagRun-16</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>137</ID>
-          <Description>"base-15 (default = -2.0000155)"</Description>
+          <Description>"base_diagRun-15 (default = -2.0000155)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-15</Address>
+          <Address>base_diagRun-15</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>138</ID>
-          <Description>"base-14 (default = 6)"</Description>
+          <Description>"base_diagRun-14 (default = 6)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-14</Address>
+          <Address>base_diagRun-14</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>139</ID>
-          <Description>"base-13 (default = 0)"</Description>
+          <Description>"base_diagRun-13 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-13</Address>
+          <Address>base_diagRun-13</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>140</ID>
-          <Description>"base-12 (default = 0)"</Description>
+          <Description>"base_diagRun-12 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-12</Address>
+          <Address>base_diagRun-12</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>141</ID>
-          <Description>"base-11 (default = -0)"</Description>
+          <Description>"base_diagRun-11 (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-11</Address>
+          <Address>base_diagRun-11</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>142</ID>
-          <Description>"base-10 (default = 4)"</Description>
+          <Description>"base_diagRun-10 (default = 4)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-10</Address>
+          <Address>base_diagRun-10</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>143</ID>
-          <Description>"base-F (default = 0)"</Description>
+          <Description>"base_diagRun-F (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-F</Address>
+          <Address>base_diagRun-F</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>144</ID>
-          <Description>"base-E (default = 0)"</Description>
+          <Description>"base_diagRun-E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-E</Address>
+          <Address>base_diagRun-E</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>145</ID>
-          <Description>"base-D (default = -131073)"</Description>
+          <Description>"base_diagRun-D (default = -131073)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-D</Address>
+          <Address>base_diagRun-D</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>146</ID>
-          <Description>"base-C (default = 25)"</Description>
+          <Description>"base_diagRun-C (default = 25)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-C</Address>
+          <Address>base_diagRun-C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>147</ID>
-          <Description>"base-B (default = 0)"</Description>
+          <Description>"base_diagRun-B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-B</Address>
+          <Address>base_diagRun-B</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>148</ID>
-          <Description>"base-A (default = 0)"</Description>
+          <Description>"base_diagRun-A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-A</Address>
+          <Address>base_diagRun-A</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>149</ID>
-          <Description>"base-9 (default = 0)"</Description>
+          <Description>"base_diagRun-9 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-9</Address>
+          <Address>base_diagRun-9</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>150</ID>
-          <Description>"base-8 (default = 8)"</Description>
+          <Description>"base_diagRun-8 (default = 8)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base-8</Address>
+          <Address>base_diagRun-8</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>151</ID>
-          <Description>"base-7 (default = 0)"</Description>
+          <Description>"base_diagRun-7 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base-7</Address>
+          <Address>base_diagRun-7</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>152</ID>
-          <Description>"base-6 (default = 0)"</Description>
+          <Description>"base_diagRun-6 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base-6</Address>
+          <Address>base_diagRun-6</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>153</ID>
-          <Description>"base-5 (default = 1.5845755e+29)"</Description>
+          <Description>"base_diagRun-5 (default = 1.5845755e+29)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base-5</Address>
+          <Address>base_diagRun-5</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>154</ID>
-          <Description>"base-4 (default = 15)"</Description>
+          <Description>"base_diagRun-4 (default = 15)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-4</Address>
+          <Address>base_diagRun-4</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>155</ID>
-          <Description>"base-3 (default = 0)"</Description>
+          <Description>"base_diagRun-3 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-3</Address>
+          <Address>base_diagRun-3</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>156</ID>
-          <Description>"base-2 (default = 0)"</Description>
+          <Description>"base_diagRun-2 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-2</Address>
+          <Address>base_diagRun-2</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>157</ID>
-          <Description>"base-1 (default = 8.5900012e+9)"</Description>
+          <Description>"base_diagRun-1 (default = 8.5900012e+9)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base-1</Address>
+          <Address>base_diagRun-1</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>158</ID>
-          <Description>"base (default = 13)"</Description>
+          <Description>"base_diagRun (default = 13)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+0</Address>
+          <Address>base_diagRun+0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>159</ID>
-          <Description>"base+1 (default = 0)"</Description>
+          <Description>"base_diagRun+1 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+1</Address>
+          <Address>base_diagRun+1</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>160</ID>
-          <Description>"base+2 (default = 0)"</Description>
+          <Description>"base_diagRun+2 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+2</Address>
+          <Address>base_diagRun+2</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>161</ID>
-          <Description>"base+3 (default = 0)"</Description>
+          <Description>"base_diagRun+3 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+3</Address>
+          <Address>base_diagRun+3</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>162</ID>
-          <Description>"base+4 (default = 0)"</Description>
+          <Description>"base_diagRun+4 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+4</Address>
+          <Address>base_diagRun+4</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>163</ID>
-          <Description>"base+5 (default = 0)"</Description>
+          <Description>"base_diagRun+5 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+5</Address>
+          <Address>base_diagRun+5</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>164</ID>
-          <Description>"base+6 (default = 0)"</Description>
+          <Description>"base_diagRun+6 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+6</Address>
+          <Address>base_diagRun+6</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>165</ID>
-          <Description>"base+7 (default = -0)"</Description>
+          <Description>"base_diagRun+7 (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+7</Address>
+          <Address>base_diagRun+7</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>166</ID>
-          <Description>"base+8 (default = 20)"</Description>
+          <Description>"base_diagRun+8 (default = 20)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+8</Address>
+          <Address>base_diagRun+8</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>167</ID>
-          <Description>"base+9 (default = 0)"</Description>
+          <Description>"base_diagRun+9 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+9</Address>
+          <Address>base_diagRun+9</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>168</ID>
-          <Description>"base+A (default = 0)"</Description>
+          <Description>"base_diagRun+A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+A</Address>
+          <Address>base_diagRun+A</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>169</ID>
-          <Description>"base+B (default = -0)"</Description>
+          <Description>"base_diagRun+B (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+B</Address>
+          <Address>base_diagRun+B</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>170</ID>
-          <Description>"base+C (default = 5)"</Description>
+          <Description>"base_diagRun+C (default = 5)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+C</Address>
+          <Address>base_diagRun+C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>171</ID>
-          <Description>"base+D (default = 0)"</Description>
+          <Description>"base_diagRun+D (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+D</Address>
+          <Address>base_diagRun+D</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>172</ID>
-          <Description>"base+E (default = 0)"</Description>
+          <Description>"base_diagRun+E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+E</Address>
+          <Address>base_diagRun+E</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>173</ID>
-          <Description>"base+F (default = -0)"</Description>
+          <Description>"base_diagRun+F (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+F</Address>
+          <Address>base_diagRun+F</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>174</ID>
-          <Description>"base+10 (default = 5)"</Description>
+          <Description>"base_diagRun+10 (default = 5)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+10</Address>
+          <Address>base_diagRun+10</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>175</ID>
-          <Description>"base+11 (default = 0)"</Description>
+          <Description>"base_diagRun+11 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+11</Address>
+          <Address>base_diagRun+11</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>176</ID>
-          <Description>"base+12 (default = 0)"</Description>
+          <Description>"base_diagRun+12 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+12</Address>
+          <Address>base_diagRun+12</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>177</ID>
-          <Description>"base+13 (default = 0)"</Description>
+          <Description>"base_diagRun+13 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+13</Address>
+          <Address>base_diagRun+13</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>178</ID>
-          <Description>"base+14 (default = 40)"</Description>
+          <Description>"base_diagRun+14 (default = 40)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+14</Address>
+          <Address>base_diagRun+14</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>179</ID>
-          <Description>"base+15 (default = 0)"</Description>
+          <Description>"base_diagRun+15 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+15</Address>
+          <Address>base_diagRun+15</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>180</ID>
-          <Description>"base+16 (default = 0)"</Description>
+          <Description>"base_diagRun+16 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+16</Address>
+          <Address>base_diagRun+16</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>181</ID>
-          <Description>"base+17 (default = -0)"</Description>
+          <Description>"base_diagRun+17 (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+17</Address>
+          <Address>base_diagRun+17</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>182</ID>
-          <Description>"base+18 (default = 5)"</Description>
+          <Description>"base_diagRun+18 (default = 5)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+18</Address>
+          <Address>base_diagRun+18</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>183</ID>
-          <Description>"base+19 (default = 0)"</Description>
+          <Description>"base_diagRun+19 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+19</Address>
+          <Address>base_diagRun+19</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>184</ID>
-          <Description>"base+1A (default = 0)"</Description>
+          <Description>"base_diagRun+1A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+1A</Address>
+          <Address>base_diagRun+1A</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>185</ID>
-          <Description>"base+1B (default = 0)"</Description>
+          <Description>"base_diagRun+1B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+1B</Address>
+          <Address>base_diagRun+1B</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>186</ID>
-          <Description>"base+1C (default = 8)"</Description>
+          <Description>"base_diagRun+1C (default = 8)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+1C</Address>
+          <Address>base_diagRun+1C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>187</ID>
-          <Description>"base+1D (default = 0)"</Description>
+          <Description>"base_diagRun+1D (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+1D</Address>
+          <Address>base_diagRun+1D</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>188</ID>
-          <Description>"base+1E (default = 0)"</Description>
+          <Description>"base_diagRun+1E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+1E</Address>
+          <Address>base_diagRun+1E</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>189</ID>
-          <Description>"base+1F (default = 0)"</Description>
+          <Description>"base_diagRun+1F (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+1F</Address>
+          <Address>base_diagRun+1F</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>190</ID>
-          <Description>"base+20 (default = 2)"</Description>
+          <Description>"base_diagRun+20 (default = 2)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+20</Address>
+          <Address>base_diagRun+20</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>191</ID>
-          <Description>"base+21 (default = 0)"</Description>
+          <Description>"base_diagRun+21 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+21</Address>
+          <Address>base_diagRun+21</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>192</ID>
-          <Description>"base+22 (default = 0)"</Description>
+          <Description>"base_diagRun+22 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+22</Address>
+          <Address>base_diagRun+22</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>193</ID>
-          <Description>"base+23 (default = -0)"</Description>
+          <Description>"base_diagRun+23 (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+23</Address>
+          <Address>base_diagRun+23</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>194</ID>
-          <Description>"base+24 (default = 5)"</Description>
+          <Description>"base_diagRun+24 (default = 5)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+24</Address>
+          <Address>base_diagRun+24</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>195</ID>
-          <Description>"base+25 (default = 0)"</Description>
+          <Description>"base_diagRun+25 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+25</Address>
+          <Address>base_diagRun+25</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>196</ID>
-          <Description>"base+26 (default = 0)"</Description>
+          <Description>"base_diagRun+26 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+26</Address>
+          <Address>base_diagRun+26</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>197</ID>
-          <Description>"base+27 (default = 0)"</Description>
+          <Description>"base_diagRun+27 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+27</Address>
+          <Address>base_diagRun+27</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>198</ID>
-          <Description>"base+28 (default = 9)"</Description>
+          <Description>"base_diagRun+28 (default = 9)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+28</Address>
+          <Address>base_diagRun+28</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>199</ID>
-          <Description>"base+29 (default = 0.0117836)"</Description>
+          <Description>"base_diagRun+29 (default = 0.0117836)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+29</Address>
+          <Address>base_diagRun+29</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>200</ID>
-          <Description>"base+2A (default = 0)"</Description>
+          <Description>"base_diagRun+2A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+2A</Address>
+          <Address>base_diagRun+2A</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>201</ID>
-          <Description>"base+2B (default = 0)"</Description>
+          <Description>"base_diagRun+2B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
-          <Address>base+2B</Address>
+          <Address>base_diagRun+2B</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>202</ID>
-          <Description>"base+2C (default = 0)"</Description>
+          <Description>"base_diagRun+2C (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+2C</Address>
+          <Address>base_diagRun+2C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>203</ID>
-          <Description>"base+2D (default = 0)"</Description>
+          <Description>"base_diagRun+2D (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+2D</Address>
+          <Address>base_diagRun+2D</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>204</ID>
-          <Description>"base+2E (default = 0)"</Description>
+          <Description>"base_diagRun+2E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+2E</Address>
+          <Address>base_diagRun+2E</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>205</ID>
-          <Description>"base+2F (default = 0)"</Description>
+          <Description>"base_diagRun+2F (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+2F</Address>
+          <Address>base_diagRun+2F</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>206</ID>
-          <Description>"base+30 (default = 0)"</Description>
+          <Description>"base_diagRun+30 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+30</Address>
+          <Address>base_diagRun+30</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>207</ID>
-          <Description>"base+31 (default = 1.5845633e+29)"</Description>
+          <Description>"base_diagRun+31 (default = 1.5845633e+29)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+31</Address>
+          <Address>base_diagRun+31</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>208</ID>
-          <Description>"base+32 (default = 0)"</Description>
+          <Description>"base_diagRun+32 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+32</Address>
+          <Address>base_diagRun+32</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>209</ID>
-          <Description>"base+33 (default = 0)"</Description>
+          <Description>"base_diagRun+33 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+33</Address>
+          <Address>base_diagRun+33</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>210</ID>
-          <Description>"base+34 (default = 0)"</Description>
+          <Description>"base_diagRun+34 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+34</Address>
+          <Address>base_diagRun+34</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>211</ID>
-          <Description>"base+35 (default = 0)"</Description>
+          <Description>"base_diagRun+35 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+35</Address>
+          <Address>base_diagRun+35</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>212</ID>
-          <Description>"base+36 (default = 0)"</Description>
+          <Description>"base_diagRun+36 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+36</Address>
+          <Address>base_diagRun+36</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>213</ID>
-          <Description>"base+37 (default = 0)"</Description>
+          <Description>"base_diagRun+37 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+37</Address>
+          <Address>base_diagRun+37</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>214</ID>
-          <Description>"base+38 (default = 0)"</Description>
+          <Description>"base_diagRun+38 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+38</Address>
+          <Address>base_diagRun+38</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>215</ID>
-          <Description>"base+39 (default = 5.4975581e+11)"</Description>
+          <Description>"base_diagRun+39 (default = 5.4975581e+11)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+39</Address>
+          <Address>base_diagRun+39</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>216</ID>
-          <Description>"base+3A (default = 0)"</Description>
+          <Description>"base_diagRun+3A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+3A</Address>
+          <Address>base_diagRun+3A</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>217</ID>
-          <Description>"base+3B (default = 0)"</Description>
+          <Description>"base_diagRun+3B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+3B</Address>
+          <Address>base_diagRun+3B</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>218</ID>
-          <Description>"base+3C (default = 0)"</Description>
+          <Description>"base_diagRun+3C (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+3C</Address>
+          <Address>base_diagRun+3C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>219</ID>
-          <Description>"base+3D (default = 0)"</Description>
+          <Description>"base_diagRun+3D (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+3D</Address>
+          <Address>base_diagRun+3D</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>220</ID>
-          <Description>"base+3E (default = 0)"</Description>
+          <Description>"base_diagRun+3E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+3E</Address>
+          <Address>base_diagRun+3E</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>221</ID>
-          <Description>"base+3F (default = 0)"</Description>
+          <Description>"base_diagRun+3F (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+3F</Address>
+          <Address>base_diagRun+3F</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>222</ID>
-          <Description>"base+40 (default = 0)"</Description>
+          <Description>"base_diagRun+40 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+40</Address>
+          <Address>base_diagRun+40</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>223</ID>
-          <Description>"base+41 (default = 0)"</Description>
+          <Description>"base_diagRun+41 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+41</Address>
+          <Address>base_diagRun+41</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>224</ID>
-          <Description>"base+42 (default = 0)"</Description>
+          <Description>"base_diagRun+42 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+42</Address>
+          <Address>base_diagRun+42</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>225</ID>
-          <Description>"base+43 (default = 0)"</Description>
+          <Description>"base_diagRun+43 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+43</Address>
+          <Address>base_diagRun+43</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>226</ID>
-          <Description>"base+44 (default = 0)"</Description>
+          <Description>"base_diagRun+44 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+44</Address>
+          <Address>base_diagRun+44</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>227</ID>
-          <Description>"base+45 (default = 0)"</Description>
+          <Description>"base_diagRun+45 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+45</Address>
+          <Address>base_diagRun+45</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>228</ID>
-          <Description>"base+46 (default = 0)"</Description>
+          <Description>"base_diagRun+46 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+46</Address>
+          <Address>base_diagRun+46</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>229</ID>
-          <Description>"base+47 (default = 0)"</Description>
+          <Description>"base_diagRun+47 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+47</Address>
+          <Address>base_diagRun+47</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>230</ID>
-          <Description>"base+48 (default = 0)"</Description>
+          <Description>"base_diagRun+48 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+48</Address>
+          <Address>base_diagRun+48</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>231</ID>
-          <Description>"base+49 (default = 0)"</Description>
+          <Description>"base_diagRun+49 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+49</Address>
+          <Address>base_diagRun+49</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>232</ID>
-          <Description>"base+4A (default = 0)"</Description>
+          <Description>"base_diagRun+4A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+4A</Address>
+          <Address>base_diagRun+4A</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>233</ID>
-          <Description>"base+4B (default = 0)"</Description>
+          <Description>"base_diagRun+4B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+4B</Address>
+          <Address>base_diagRun+4B</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>234</ID>
-          <Description>"base+4C (default = 0)"</Description>
+          <Description>"base_diagRun+4C (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+4C</Address>
+          <Address>base_diagRun+4C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>235</ID>
-          <Description>"base+4D (default = 0)"</Description>
+          <Description>"base_diagRun+4D (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+4D</Address>
+          <Address>base_diagRun+4D</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>236</ID>
-          <Description>"base+4E (default = 0)"</Description>
+          <Description>"base_diagRun+4E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+4E</Address>
+          <Address>base_diagRun+4E</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>237</ID>
-          <Description>"base+4F (default = 0)"</Description>
+          <Description>"base_diagRun+4F (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+4F</Address>
+          <Address>base_diagRun+4F</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>238</ID>
-          <Description>"base+50 (default = 0)"</Description>
+          <Description>"base_diagRun+50 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Float</VariableType>
-          <Address>base+50</Address>
+          <Address>base_diagRun+50</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>

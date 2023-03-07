@@ -7,22 +7,42 @@
       <Options moHideChildren="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base,FF FF FF 00 00 C8 41 01 00 00 00 01)  // should be unique
-registersymbol(base)
+	  aobscan(base_mlss,FF FF FF 00 00 C8 41 01 00 00 00 01)  // should be unique
+registersymbol(base_mlss)
+
+{$lua}
+local al = getAddressList()
+local vars={}
+for i=1, al.Count-1 do --skip script
+    local ali=al.getMemoryRecord(i)
+    local ofs=string.match(ali.Description,'base_mlss(.%x+)%s*')
+    if ofs==nil then
+       ofs=string.match(ali.Description,'base_mlss%s*')
+       if ofs~=nil then
+          vars['+0']=ali
+       end
+    else
+     vars[ofs]=ali
+    end
+end
+
+--vars['+0'].Value=
+
+{$asm}
 
 [DISABLE]
 
-unregistersymbol(base)
+unregistersymbol(base_mlss)
 
 </AssemblerScript>
 	  <CheatEntries>
 	  <CheatEntry>
 			  <ID>1</ID>
-			  <Description>"base-135 (default = 208)"</Description>
+			  <Description>"base_mlss-135 (default = 208)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Byte</VariableType>
-			  <Address>base-135</Address>
+			  <Address>base_mlss-135</Address>
 			</CheatEntry>
 			</CheatEntries>
     </CheatEntry>

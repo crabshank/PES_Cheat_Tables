@@ -7,22 +7,42 @@
       <Options moHideChildren="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base,68 8B B5 42 01 00)  // should be unique
-registersymbol(base)
+	  aobscan(base_playStyle,68 8B B5 42 01 00)  // should be unique
+registersymbol(base_playStyle)
+
+{$lua}
+local al = getAddressList()
+local vars={}
+for i=1, al.Count-1 do --skip script
+    local ali=al.getMemoryRecord(i)
+    local ofs=string.match(ali.Description,'base_playStyle(.%x+)%s*')
+    if ofs==nil then
+       ofs=string.match(ali.Description,'base_playStyle%s*')
+       if ofs~=nil then
+          vars['+0']=ali
+       end
+    else
+     vars[ofs]=ali
+    end
+end
+
+--vars['+0'].Value=
+
+{$asm}
 
 [DISABLE]
 
-unregistersymbol(base)
+unregistersymbol(base_playStyle)
 
 </AssemblerScript>
 	  <CheatEntries>
 	  <CheatEntry>
 			  <ID>1</ID>
-			  <Description>"base+4 (default = 1)"</Description>
+			  <Description>"base_playStyle+4 (default = 1)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>1</ShowAsSigned>
 			  <VariableType>4Bytes</VariableType>
-			  <Address>base+4</Address>
+			  <Address>base_playStyle+4</Address>
 			</CheatEntry>
 			</CheatEntries>
     </CheatEntry>

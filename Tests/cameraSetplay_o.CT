@@ -7,686 +7,706 @@
       <Options moHideChildren="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base,02 00 00 00 00 00 00 3F 00 00 80 3E)  // should be unique
-registersymbol(base)
+	  aobscan(base_camSP,02 00 00 00 00 00 00 3F 00 00 80 3E)  // should be unique
+registersymbol(base_camSP)
+
+{$lua}
+local al = getAddressList()
+local vars={}
+for i=1, al.Count-1 do --skip script
+    local ali=al.getMemoryRecord(i)
+    local ofs=string.match(ali.Description,'base_camSP(.%x+)%s*')
+    if ofs==nil then
+       ofs=string.match(ali.Description,'base_camSP%s*')
+       if ofs~=nil then
+          vars['+0']=ali
+       end
+    else
+     vars[ofs]=ali
+    end
+end
+
+--vars['+0'].Value=
+
+{$asm}
 
 [DISABLE]
 
-unregistersymbol(base)
+unregistersymbol(base_camSP)
 
 </AssemblerScript>
 	  <CheatEntries>
 	  <CheatEntry>
 			  <ID>1</ID>
-			  <Description>"base-13 (default = 0)"</Description>
+			  <Description>"base_camSP-13 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-13</Address>
+			  <Address>base_camSP-13</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>2</ID>
-			  <Description>"base-12 (default = 0)"</Description>
+			  <Description>"base_camSP-12 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-12</Address>
+			  <Address>base_camSP-12</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>3</ID>
-			  <Description>"base-11 (default = 0)"</Description>
+			  <Description>"base_camSP-11 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-11</Address>
+			  <Address>base_camSP-11</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>4</ID>
-			  <Description>"base-10 (default = 0)"</Description>
+			  <Description>"base_camSP-10 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-10</Address>
+			  <Address>base_camSP-10</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>5</ID>
-			  <Description>"base-F (default = 0)"</Description>
+			  <Description>"base_camSP-F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-F</Address>
+			  <Address>base_camSP-F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>6</ID>
-			  <Description>"base-E (default = 0)"</Description>
+			  <Description>"base_camSP-E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-E</Address>
+			  <Address>base_camSP-E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>7</ID>
-			  <Description>"base-D (default = -0)"</Description>
+			  <Description>"base_camSP-D (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-D</Address>
+			  <Address>base_camSP-D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>8</ID>
-			  <Description>"base-C (default = 0)"</Description>
+			  <Description>"base_camSP-C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-C</Address>
+			  <Address>base_camSP-C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>9</ID>
-			  <Description>"base-B (default = -0)"</Description>
+			  <Description>"base_camSP-B (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-B</Address>
+			  <Address>base_camSP-B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>10</ID>
-			  <Description>"base-A (default = -71.50132)"</Description>
+			  <Description>"base_camSP-A (default = -71.50132)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-A</Address>
+			  <Address>base_camSP-A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>11</ID>
-			  <Description>"base-9 (default = -4.9326464e+32)"</Description>
+			  <Description>"base_camSP-9 (default = -4.9326464e+32)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-9</Address>
+			  <Address>base_camSP-9</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>12</ID>
-			  <Description>"base-8 (default = 0.03)"</Description>
+			  <Description>"base_camSP-8 (default = 0.03)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-8</Address>
+			  <Address>base_camSP-8</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>13</ID>
-			  <Description>"base-7 (default = -0)"</Description>
+			  <Description>"base_camSP-7 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-7</Address>
+			  <Address>base_camSP-7</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>14</ID>
-			  <Description>"base-6 (default = -71.619057)"</Description>
+			  <Description>"base_camSP-6 (default = -71.619057)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-6</Address>
+			  <Address>base_camSP-6</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>15</ID>
-			  <Description>"base-5 (default = -4.9326696e+32)"</Description>
+			  <Description>"base_camSP-5 (default = -4.9326696e+32)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-5</Address>
+			  <Address>base_camSP-5</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>16</ID>
-			  <Description>"base-4 (default = 0.03)"</Description>
+			  <Description>"base_camSP-4 (default = 0.03)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-4</Address>
+			  <Address>base_camSP-4</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>17</ID>
-			  <Description>"base-3 (default = 0)"</Description>
+			  <Description>"base_camSP-3 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-3</Address>
+			  <Address>base_camSP-3</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>18</ID>
-			  <Description>"base-2 (default = 0)"</Description>
+			  <Description>"base_camSP-2 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-2</Address>
+			  <Address>base_camSP-2</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>19</ID>
-			  <Description>"base-1 (default = 0)"</Description>
+			  <Description>"base_camSP-1 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base-1</Address>
+			  <Address>base_camSP-1</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>20</ID>
-			  <Description>"base (default = 0)"</Description>
+			  <Description>"base_camSP (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+0</Address>
+			  <Address>base_camSP+0</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>21</ID>
-			  <Description>"base+1 (default = 0)"</Description>
+			  <Description>"base_camSP+1 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1</Address>
+			  <Address>base_camSP+1</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>22</ID>
-			  <Description>"base+2 (default = 0)"</Description>
+			  <Description>"base_camSP+2 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2</Address>
+			  <Address>base_camSP+2</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>23</ID>
-			  <Description>"base+3 (default = 0)"</Description>
+			  <Description>"base_camSP+3 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3</Address>
+			  <Address>base_camSP+3</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>24</ID>
-			  <Description>"base+4 (default = 0.5)"</Description>
+			  <Description>"base_camSP+4 (default = 0.5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+4</Address>
+			  <Address>base_camSP+4</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>25</ID>
-			  <Description>"base+5 (default = 0)"</Description>
+			  <Description>"base_camSP+5 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+5</Address>
+			  <Address>base_camSP+5</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>26</ID>
-			  <Description>"base+6 (default = 0)"</Description>
+			  <Description>"base_camSP+6 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+6</Address>
+			  <Address>base_camSP+6</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>27</ID>
-			  <Description>"base+7 (default = -0)"</Description>
+			  <Description>"base_camSP+7 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+7</Address>
+			  <Address>base_camSP+7</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>28</ID>
-			  <Description>"base+8 (default = 0.25)"</Description>
+			  <Description>"base_camSP+8 (default = 0.25)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+8</Address>
+			  <Address>base_camSP+8</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>29</ID>
-			  <Description>"base+9 (default = 0)"</Description>
+			  <Description>"base_camSP+9 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+9</Address>
+			  <Address>base_camSP+9</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>30</ID>
-			  <Description>"base+A (default = 0)"</Description>
+			  <Description>"base_camSP+A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+A</Address>
+			  <Address>base_camSP+A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>31</ID>
-			  <Description>"base+B (default = -0)"</Description>
+			  <Description>"base_camSP+B (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+B</Address>
+			  <Address>base_camSP+B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>32</ID>
-			  <Description>"base+C (default = 0.25)"</Description>
+			  <Description>"base_camSP+C (default = 0.25)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+C</Address>
+			  <Address>base_camSP+C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>33</ID>
-			  <Description>"base+D (default = 0)"</Description>
+			  <Description>"base_camSP+D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+D</Address>
+			  <Address>base_camSP+D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>34</ID>
-			  <Description>"base+E (default = 0)"</Description>
+			  <Description>"base_camSP+E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+E</Address>
+			  <Address>base_camSP+E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>35</ID>
-			  <Description>"base+F (default = -0)"</Description>
+			  <Description>"base_camSP+F (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+F</Address>
+			  <Address>base_camSP+F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>36</ID>
-			  <Description>"base+10 (default = 0.25)"</Description>
+			  <Description>"base_camSP+10 (default = 0.25)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+10</Address>
+			  <Address>base_camSP+10</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>37</ID>
-			  <Description>"base+11 (default = 0)"</Description>
+			  <Description>"base_camSP+11 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+11</Address>
+			  <Address>base_camSP+11</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>38</ID>
-			  <Description>"base+12 (default = 0)"</Description>
+			  <Description>"base_camSP+12 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+12</Address>
+			  <Address>base_camSP+12</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>39</ID>
-			  <Description>"base+13 (default = -0)"</Description>
+			  <Description>"base_camSP+13 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+13</Address>
+			  <Address>base_camSP+13</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>40</ID>
-			  <Description>"base+14 (default = 1)"</Description>
+			  <Description>"base_camSP+14 (default = 1)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+14</Address>
+			  <Address>base_camSP+14</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>41</ID>
-			  <Description>"base+15 (default = 0)"</Description>
+			  <Description>"base_camSP+15 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+15</Address>
+			  <Address>base_camSP+15</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>42</ID>
-			  <Description>"base+16 (default = 0)"</Description>
+			  <Description>"base_camSP+16 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+16</Address>
+			  <Address>base_camSP+16</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>43</ID>
-			  <Description>"base+17 (default = 0)"</Description>
+			  <Description>"base_camSP+17 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+17</Address>
+			  <Address>base_camSP+17</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>44</ID>
-			  <Description>"base+18 (default = 0)"</Description>
+			  <Description>"base_camSP+18 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+18</Address>
+			  <Address>base_camSP+18</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>45</ID>
-			  <Description>"base+19 (default = 2)"</Description>
+			  <Description>"base_camSP+19 (default = 2)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+19</Address>
+			  <Address>base_camSP+19</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>46</ID>
-			  <Description>"base+1A (default = 0)"</Description>
+			  <Description>"base_camSP+1A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1A</Address>
+			  <Address>base_camSP+1A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>47</ID>
-			  <Description>"base+1B (default = 0)"</Description>
+			  <Description>"base_camSP+1B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1B</Address>
+			  <Address>base_camSP+1B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>48</ID>
-			  <Description>"base+1C (default = 0)"</Description>
+			  <Description>"base_camSP+1C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1C</Address>
+			  <Address>base_camSP+1C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>49</ID>
-			  <Description>"base+1D (default = 0)"</Description>
+			  <Description>"base_camSP+1D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1D</Address>
+			  <Address>base_camSP+1D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>50</ID>
-			  <Description>"base+1E (default = 0)"</Description>
+			  <Description>"base_camSP+1E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1E</Address>
+			  <Address>base_camSP+1E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>51</ID>
-			  <Description>"base+1F (default = 0)"</Description>
+			  <Description>"base_camSP+1F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+1F</Address>
+			  <Address>base_camSP+1F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>52</ID>
-			  <Description>"base+20 (default = 0)"</Description>
+			  <Description>"base_camSP+20 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+20</Address>
+			  <Address>base_camSP+20</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>53</ID>
-			  <Description>"base+21 (default = 0)"</Description>
+			  <Description>"base_camSP+21 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+21</Address>
+			  <Address>base_camSP+21</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>54</ID>
-			  <Description>"base+22 (default = 0)"</Description>
+			  <Description>"base_camSP+22 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+22</Address>
+			  <Address>base_camSP+22</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>55</ID>
-			  <Description>"base+23 (default = 0)"</Description>
+			  <Description>"base_camSP+23 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+23</Address>
+			  <Address>base_camSP+23</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>56</ID>
-			  <Description>"base+24 (default = 0)"</Description>
+			  <Description>"base_camSP+24 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+24</Address>
+			  <Address>base_camSP+24</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>57</ID>
-			  <Description>"base+25 (default = 0)"</Description>
+			  <Description>"base_camSP+25 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+25</Address>
+			  <Address>base_camSP+25</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>58</ID>
-			  <Description>"base+26 (default = 0)"</Description>
+			  <Description>"base_camSP+26 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+26</Address>
+			  <Address>base_camSP+26</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>59</ID>
-			  <Description>"base+27 (default = 0)"</Description>
+			  <Description>"base_camSP+27 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+27</Address>
+			  <Address>base_camSP+27</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>60</ID>
-			  <Description>"base+28 (default = 0)"</Description>
+			  <Description>"base_camSP+28 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+28</Address>
+			  <Address>base_camSP+28</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>61</ID>
-			  <Description>"base+29 (default = 0)"</Description>
+			  <Description>"base_camSP+29 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+29</Address>
+			  <Address>base_camSP+29</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>62</ID>
-			  <Description>"base+2A (default = 0)"</Description>
+			  <Description>"base_camSP+2A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2A</Address>
+			  <Address>base_camSP+2A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>63</ID>
-			  <Description>"base+2B (default = 0)"</Description>
+			  <Description>"base_camSP+2B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2B</Address>
+			  <Address>base_camSP+2B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>64</ID>
-			  <Description>"base+2C (default = 0)"</Description>
+			  <Description>"base_camSP+2C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2C</Address>
+			  <Address>base_camSP+2C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>65</ID>
-			  <Description>"base+2D (default = 0)"</Description>
+			  <Description>"base_camSP+2D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2D</Address>
+			  <Address>base_camSP+2D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>66</ID>
-			  <Description>"base+2E (default = 0)"</Description>
+			  <Description>"base_camSP+2E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2E</Address>
+			  <Address>base_camSP+2E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>67</ID>
-			  <Description>"base+2F (default = 0)"</Description>
+			  <Description>"base_camSP+2F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+2F</Address>
+			  <Address>base_camSP+2F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>68</ID>
-			  <Description>"base+30 (default = 0)"</Description>
+			  <Description>"base_camSP+30 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+30</Address>
+			  <Address>base_camSP+30</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>69</ID>
-			  <Description>"base+31 (default = 0)"</Description>
+			  <Description>"base_camSP+31 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+31</Address>
+			  <Address>base_camSP+31</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>70</ID>
-			  <Description>"base+32 (default = 0)"</Description>
+			  <Description>"base_camSP+32 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+32</Address>
+			  <Address>base_camSP+32</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>71</ID>
-			  <Description>"base+33 (default = 0)"</Description>
+			  <Description>"base_camSP+33 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+33</Address>
+			  <Address>base_camSP+33</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>72</ID>
-			  <Description>"base+34 (default = 0)"</Description>
+			  <Description>"base_camSP+34 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+34</Address>
+			  <Address>base_camSP+34</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>73</ID>
-			  <Description>"base+35 (default = 0)"</Description>
+			  <Description>"base_camSP+35 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+35</Address>
+			  <Address>base_camSP+35</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>74</ID>
-			  <Description>"base+36 (default = 0)"</Description>
+			  <Description>"base_camSP+36 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+36</Address>
+			  <Address>base_camSP+36</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>75</ID>
-			  <Description>"base+37 (default = 0)"</Description>
+			  <Description>"base_camSP+37 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+37</Address>
+			  <Address>base_camSP+37</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>76</ID>
-			  <Description>"base+38 (default = 0)"</Description>
+			  <Description>"base_camSP+38 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+38</Address>
+			  <Address>base_camSP+38</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>77</ID>
-			  <Description>"base+39 (default = 0)"</Description>
+			  <Description>"base_camSP+39 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+39</Address>
+			  <Address>base_camSP+39</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>78</ID>
-			  <Description>"base+3A (default = 0)"</Description>
+			  <Description>"base_camSP+3A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3A</Address>
+			  <Address>base_camSP+3A</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>79</ID>
-			  <Description>"base+3B (default = 0)"</Description>
+			  <Description>"base_camSP+3B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3B</Address>
+			  <Address>base_camSP+3B</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>80</ID>
-			  <Description>"base+3C (default = 0)"</Description>
+			  <Description>"base_camSP+3C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3C</Address>
+			  <Address>base_camSP+3C</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>81</ID>
-			  <Description>"base+3D (default = 0)"</Description>
+			  <Description>"base_camSP+3D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3D</Address>
+			  <Address>base_camSP+3D</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>82</ID>
-			  <Description>"base+3E (default = 0)"</Description>
+			  <Description>"base_camSP+3E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3E</Address>
+			  <Address>base_camSP+3E</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>83</ID>
-			  <Description>"base+3F (default = 0)"</Description>
+			  <Description>"base_camSP+3F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+3F</Address>
+			  <Address>base_camSP+3F</Address>
 			</CheatEntry>
 			<CheatEntry>
 			  <ID>84</ID>
-			  <Description>"base+40 (default = 0)"</Description>
+			  <Description>"base_camSP+40 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
-			  <Address>base+40</Address>
+			  <Address>base_camSP+40</Address>
 			</CheatEntry>
 			</CheatEntries>
     </CheatEntry>
