@@ -38,54 +38,6 @@ unregistersymbol(base_centering)
 	  <CheatEntries>
 	  <CheatEntry>
 			  <ID>1</ID>
-			  <Description>"base_centering-58 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_centering-58</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>2</ID>
-			  <Description>"base_centering-57 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_centering-57</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>3</ID>
-			  <Description>"base_centering-56 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_centering-56</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>4</ID>
-			  <Description>"base_centering-55 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_centering-55</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>5</ID>
-			  <Description>"base_centering-54 (default = 2)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_centering-54</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>6</ID>
-			  <Description>"base_centering-53 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_centering-53</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>7</ID>
 			  <Description>"base_centering-52 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -93,7 +45,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-52</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>8</ID>
+			  <ID>2</ID>
 			  <Description>"base_centering-51 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -101,7 +53,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-51</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>9</ID>
+			  <ID>3</ID>
 			  <Description>"base_centering-50 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -109,7 +61,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-50</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>10</ID>
+			  <ID>4</ID>
 			  <Description>"base_centering-4F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -117,15 +69,15 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-4F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>11</ID>
-			  <Description>"base_centering-4E (default = 0)"</Description>
+			  <ID>5</ID>
+			  <Description>"base_centering-4E (default = 2)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-4E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>12</ID>
+			  <ID>6</ID>
 			  <Description>"base_centering-4D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -133,7 +85,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-4D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>13</ID>
+			  <ID>7</ID>
 			  <Description>"base_centering-4C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -141,7 +93,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-4C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>14</ID>
+			  <ID>8</ID>
 			  <Description>"base_centering-4B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -149,7 +101,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-4B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>15</ID>
+			  <ID>9</ID>
 			  <Description>"base_centering-4A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -157,7 +109,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-4A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>16</ID>
+			  <ID>10</ID>
 			  <Description>"base_centering-49 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -165,15 +117,15 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-49</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>17</ID>
-			  <Description>"base_centering-48 (default = 2)"</Description>
+			  <ID>11</ID>
+			  <Description>"base_centering-48 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-48</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>18</ID>
+			  <ID>12</ID>
 			  <Description>"base_centering-47 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -181,7 +133,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-47</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>19</ID>
+			  <ID>13</ID>
 			  <Description>"base_centering-46 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -189,7 +141,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-46</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>20</ID>
+			  <ID>14</ID>
 			  <Description>"base_centering-45 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -197,7 +149,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-45</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>21</ID>
+			  <ID>15</ID>
 			  <Description>"base_centering-44 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -205,23 +157,23 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-44</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>22</ID>
-			  <Description>"base_centering-43 (default = -1.3421773e+8)"</Description>
+			  <ID>16</ID>
+			  <Description>"base_centering-43 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-43</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>23</ID>
-			  <Description>"base_centering-42 (default = -1.0747904e+8)"</Description>
+			  <ID>17</ID>
+			  <Description>"base_centering-42 (default = 2)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-42</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>24</ID>
+			  <ID>18</ID>
 			  <Description>"base_centering-41 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -229,15 +181,15 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-41</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>25</ID>
-			  <Description>"base_centering-40 (default = 0.55)"</Description>
+			  <ID>19</ID>
+			  <Description>"base_centering-40 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-40</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>26</ID>
+			  <ID>20</ID>
 			  <Description>"base_centering-3F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -245,7 +197,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-3F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>27</ID>
+			  <ID>21</ID>
 			  <Description>"base_centering-3E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -253,23 +205,23 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-3E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>28</ID>
-			  <Description>"base_centering-3D (default = -0)"</Description>
+			  <ID>22</ID>
+			  <Description>"base_centering-3D (default = -1.3421773e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-3D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>29</ID>
-			  <Description>"base_centering-3C (default = 0.25)"</Description>
+			  <ID>23</ID>
+			  <Description>"base_centering-3C (default = -1.0747904e+8)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-3C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>30</ID>
+			  <ID>24</ID>
 			  <Description>"base_centering-3B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -277,15 +229,15 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-3B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>31</ID>
-			  <Description>"base_centering-3A (default = 0)"</Description>
+			  <ID>25</ID>
+			  <Description>"base_centering-3A (default = 0.55)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-3A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>32</ID>
+			  <ID>26</ID>
 			  <Description>"base_centering-39 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -293,7 +245,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-39</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>33</ID>
+			  <ID>27</ID>
 			  <Description>"base_centering-38 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -301,23 +253,23 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-38</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>34</ID>
-			  <Description>"base_centering-37 (default = 0)"</Description>
+			  <ID>28</ID>
+			  <Description>"base_centering-37 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-37</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>35</ID>
-			  <Description>"base_centering-36 (default = 0)"</Description>
+			  <ID>29</ID>
+			  <Description>"base_centering-36 (default = 0.25)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-36</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>36</ID>
+			  <ID>30</ID>
 			  <Description>"base_centering-35 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -325,15 +277,15 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-35</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>37</ID>
-			  <Description>"base_centering-34 (default = 10)"</Description>
+			  <ID>31</ID>
+			  <Description>"base_centering-34 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-34</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>38</ID>
+			  <ID>32</ID>
 			  <Description>"base_centering-33 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -341,7 +293,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-33</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>39</ID>
+			  <ID>33</ID>
 			  <Description>"base_centering-32 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -349,23 +301,23 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-32</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>40</ID>
-			  <Description>"base_centering-31 (default = -0)"</Description>
+			  <ID>34</ID>
+			  <Description>"base_centering-31 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-31</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>41</ID>
-			  <Description>"base_centering-30 (default = -5)"</Description>
+			  <ID>35</ID>
+			  <Description>"base_centering-30 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-30</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>42</ID>
+			  <ID>36</ID>
 			  <Description>"base_centering-2F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -373,15 +325,15 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-2F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>43</ID>
-			  <Description>"base_centering-2E (default = 0)"</Description>
+			  <ID>37</ID>
+			  <Description>"base_centering-2E (default = 10)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-2E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>44</ID>
+			  <ID>38</ID>
 			  <Description>"base_centering-2D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -389,7 +341,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-2D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>45</ID>
+			  <ID>39</ID>
 			  <Description>"base_centering-2C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -397,23 +349,23 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-2C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>46</ID>
-			  <Description>"base_centering-2B (default = 0)"</Description>
+			  <ID>40</ID>
+			  <Description>"base_centering-2B (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-2B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>47</ID>
-			  <Description>"base_centering-2A (default = 0)"</Description>
+			  <ID>41</ID>
+			  <Description>"base_centering-2A (default = -5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-2A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>48</ID>
+			  <ID>42</ID>
 			  <Description>"base_centering-29 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -421,7 +373,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-29</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>49</ID>
+			  <ID>43</ID>
 			  <Description>"base_centering-28 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -429,7 +381,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-28</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>50</ID>
+			  <ID>44</ID>
 			  <Description>"base_centering-27 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -437,7 +389,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-27</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>51</ID>
+			  <ID>45</ID>
 			  <Description>"base_centering-26 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -445,7 +397,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-26</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>52</ID>
+			  <ID>46</ID>
 			  <Description>"base_centering-25 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -453,7 +405,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-25</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>53</ID>
+			  <ID>47</ID>
 			  <Description>"base_centering-24 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -461,7 +413,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-24</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>54</ID>
+			  <ID>48</ID>
 			  <Description>"base_centering-23 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -469,7 +421,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-23</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>55</ID>
+			  <ID>49</ID>
 			  <Description>"base_centering-22 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -477,7 +429,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-22</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>56</ID>
+			  <ID>50</ID>
 			  <Description>"base_centering-21 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -485,15 +437,15 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-21</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>57</ID>
-			  <Description>"base_centering-20 (default = 0.5)"</Description>
+			  <ID>51</ID>
+			  <Description>"base_centering-20 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-20</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>58</ID>
+			  <ID>52</ID>
 			  <Description>"base_centering-1F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -501,7 +453,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-1F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>59</ID>
+			  <ID>53</ID>
 			  <Description>"base_centering-1E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -509,23 +461,23 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-1E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>60</ID>
-			  <Description>"base_centering-1D (default = -0)"</Description>
+			  <ID>54</ID>
+			  <Description>"base_centering-1D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-1D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>61</ID>
-			  <Description>"base_centering-1C (default = 1)"</Description>
+			  <ID>55</ID>
+			  <Description>"base_centering-1C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-1C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>62</ID>
+			  <ID>56</ID>
 			  <Description>"base_centering-1B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -533,15 +485,15 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-1B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>63</ID>
-			  <Description>"base_centering-1A (default = 0)"</Description>
+			  <ID>57</ID>
+			  <Description>"base_centering-1A (default = 0.5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-1A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>64</ID>
+			  <ID>58</ID>
 			  <Description>"base_centering-19 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -549,7 +501,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-19</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>65</ID>
+			  <ID>59</ID>
 			  <Description>"base_centering-18 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -557,23 +509,23 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-18</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>66</ID>
-			  <Description>"base_centering-17 (default = 0)"</Description>
+			  <ID>60</ID>
+			  <Description>"base_centering-17 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-17</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>67</ID>
-			  <Description>"base_centering-16 (default = 0)"</Description>
+			  <ID>61</ID>
+			  <Description>"base_centering-16 (default = 1)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-16</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>68</ID>
+			  <ID>62</ID>
 			  <Description>"base_centering-15 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -581,7 +533,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-15</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>69</ID>
+			  <ID>63</ID>
 			  <Description>"base_centering-14 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -589,7 +541,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-14</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>70</ID>
+			  <ID>64</ID>
 			  <Description>"base_centering-13 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -597,7 +549,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-13</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>71</ID>
+			  <ID>65</ID>
 			  <Description>"base_centering-12 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -605,7 +557,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-12</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>72</ID>
+			  <ID>66</ID>
 			  <Description>"base_centering-11 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -613,15 +565,15 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-11</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>73</ID>
-			  <Description>"base_centering-10 (default = 35)"</Description>
+			  <ID>67</ID>
+			  <Description>"base_centering-10 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-10</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>74</ID>
+			  <ID>68</ID>
 			  <Description>"base_centering-F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -629,7 +581,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>75</ID>
+			  <ID>69</ID>
 			  <Description>"base_centering-E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -637,23 +589,23 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>76</ID>
-			  <Description>"base_centering-D (default = 0.0000001)"</Description>
+			  <ID>70</ID>
+			  <Description>"base_centering-D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>77</ID>
-			  <Description>"base_centering-C (default = 180)"</Description>
+			  <ID>71</ID>
+			  <Description>"base_centering-C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>78</ID>
+			  <ID>72</ID>
 			  <Description>"base_centering-B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -661,143 +613,143 @@ unregistersymbol(base_centering)
 			  <Address>base_centering-B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>79</ID>
-			  <Description>"base_centering-A (default = 0)"</Description>
+			  <ID>73</ID>
+			  <Description>"base_centering-A (default = 35)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>80</ID>
-			  <Description>"base_centering-9 (default = -0)"</Description>
+			  <ID>74</ID>
+			  <Description>"base_centering-9 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-9</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>81</ID>
-			  <Description>"base_centering-8 (default = 4.5)"</Description>
+			  <ID>75</ID>
+			  <Description>"base_centering-8 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-8</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>82</ID>
-			  <Description>"base_centering-7 (default = 0)"</Description>
+			  <ID>76</ID>
+			  <Description>"base_centering-7 (default = 0.0000001)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-7</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>83</ID>
-			  <Description>"base_centering-6 (default = 0)"</Description>
+			  <ID>77</ID>
+			  <Description>"base_centering-6 (default = 180)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-6</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>84</ID>
-			  <Description>"base_centering-5 (default = -0)"</Description>
+			  <ID>78</ID>
+			  <Description>"base_centering-5 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-5</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>85</ID>
-			  <Description>"base_centering-4 (default = 4)"</Description>
+			  <ID>79</ID>
+			  <Description>"base_centering-4 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-4</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>86</ID>
-			  <Description>"base_centering-3 (default = 0)"</Description>
+			  <ID>80</ID>
+			  <Description>"base_centering-3 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-3</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>87</ID>
-			  <Description>"base_centering-2 (default = 0)"</Description>
+			  <ID>81</ID>
+			  <Description>"base_centering-2 (default = 4.5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-2</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>88</ID>
-			  <Description>"base_centering-1 (default = -0.0004883)"</Description>
+			  <ID>82</ID>
+			  <Description>"base_centering-1 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering-1</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>89</ID>
-			  <Description>"base_centering (default = 93)"</Description>
+			  <ID>83</ID>
+			  <Description>"base_centering (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+0</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>90</ID>
-			  <Description>"base_centering+1 (default = 0)"</Description>
+			  <ID>84</ID>
+			  <Description>"base_centering+1 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+1</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>91</ID>
-			  <Description>"base_centering+2 (default = 0)"</Description>
+			  <ID>85</ID>
+			  <Description>"base_centering+2 (default = 4)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+2</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>92</ID>
-			  <Description>"base_centering+3 (default = -0)"</Description>
+			  <ID>86</ID>
+			  <Description>"base_centering+3 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+3</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>93</ID>
-			  <Description>"base_centering+4 (default = 89)"</Description>
+			  <ID>87</ID>
+			  <Description>"base_centering+4 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+4</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>94</ID>
-			  <Description>"base_centering+5 (default = 0)"</Description>
+			  <ID>88</ID>
+			  <Description>"base_centering+5 (default = -0.0004883)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+5</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>95</ID>
-			  <Description>"base_centering+6 (default = 0)"</Description>
+			  <ID>89</ID>
+			  <Description>"base_centering+6 (default = 93)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+6</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>96</ID>
+			  <ID>90</ID>
 			  <Description>"base_centering+7 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -805,7 +757,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+7</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>97</ID>
+			  <ID>91</ID>
 			  <Description>"base_centering+8 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -813,39 +765,39 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+8</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>98</ID>
-			  <Description>"base_centering+9 (default = 0)"</Description>
+			  <ID>92</ID>
+			  <Description>"base_centering+9 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+9</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>99</ID>
-			  <Description>"base_centering+A (default = 0)"</Description>
+			  <ID>93</ID>
+			  <Description>"base_centering+A (default = 89)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>100</ID>
-			  <Description>"base_centering+B (default = 1.0220744e+31)"</Description>
+			  <ID>94</ID>
+			  <Description>"base_centering+B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>101</ID>
-			  <Description>"base_centering+C (default = 4.4826311e+21)"</Description>
+			  <ID>95</ID>
+			  <Description>"base_centering+C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>102</ID>
+			  <ID>96</ID>
 			  <Description>"base_centering+D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -853,7 +805,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>103</ID>
+			  <ID>97</ID>
 			  <Description>"base_centering+E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -861,7 +813,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>104</ID>
+			  <ID>98</ID>
 			  <Description>"base_centering+F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -869,47 +821,47 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>105</ID>
-			  <Description>"base_centering+10 (default = 2)"</Description>
+			  <ID>99</ID>
+			  <Description>"base_centering+10 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+10</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>106</ID>
-			  <Description>"base_centering+11 (default = 0)"</Description>
+			  <ID>100</ID>
+			  <Description>"base_centering+11 (default = 2.6793066e+36)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+11</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>107</ID>
-			  <Description>"base_centering+12 (default = 0)"</Description>
+			  <ID>101</ID>
+			  <Description>"base_centering+12 (default = 252.00392)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+12</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>108</ID>
-			  <Description>"base_centering+13 (default = 8.5900001e+9)"</Description>
+			  <ID>102</ID>
+			  <Description>"base_centering+13 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+13</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>109</ID>
-			  <Description>"base_centering+14 (default = 13)"</Description>
+			  <ID>103</ID>
+			  <Description>"base_centering+14 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+14</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>110</ID>
+			  <ID>104</ID>
 			  <Description>"base_centering+15 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -917,79 +869,79 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+15</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>111</ID>
-			  <Description>"base_centering+16 (default = 0)"</Description>
+			  <ID>105</ID>
+			  <Description>"base_centering+16 (default = 2)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+16</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>112</ID>
-			  <Description>"base_centering+17 (default = -0)"</Description>
+			  <ID>106</ID>
+			  <Description>"base_centering+17 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+17</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>113</ID>
-			  <Description>"base_centering+18 (default = 1)"</Description>
+			  <ID>107</ID>
+			  <Description>"base_centering+18 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+18</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>114</ID>
-			  <Description>"base_centering+19 (default = 0)"</Description>
+			  <ID>108</ID>
+			  <Description>"base_centering+19 (default = 8.5900001e+9)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+19</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>115</ID>
-			  <Description>"base_centering+1A (default = 0)"</Description>
+			  <ID>109</ID>
+			  <Description>"base_centering+1A (default = 13)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+1A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>116</ID>
-			  <Description>"base_centering+1B (default = -0)"</Description>
+			  <ID>110</ID>
+			  <Description>"base_centering+1B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+1B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>117</ID>
-			  <Description>"base_centering+1C (default = 1)"</Description>
+			  <ID>111</ID>
+			  <Description>"base_centering+1C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+1C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>118</ID>
-			  <Description>"base_centering+1D (default = 0)"</Description>
+			  <ID>112</ID>
+			  <Description>"base_centering+1D (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+1D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>119</ID>
-			  <Description>"base_centering+1E (default = 0)"</Description>
+			  <ID>113</ID>
+			  <Description>"base_centering+1E (default = 1)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+1E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>120</ID>
+			  <ID>114</ID>
 			  <Description>"base_centering+1F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -997,31 +949,31 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+1F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>121</ID>
-			  <Description>"base_centering+20 (default = 0.5)"</Description>
+			  <ID>115</ID>
+			  <Description>"base_centering+20 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+20</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>122</ID>
-			  <Description>"base_centering+21 (default = 0)"</Description>
+			  <ID>116</ID>
+			  <Description>"base_centering+21 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+21</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>123</ID>
-			  <Description>"base_centering+22 (default = 0)"</Description>
+			  <ID>117</ID>
+			  <Description>"base_centering+22 (default = 1)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+22</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>124</ID>
+			  <ID>118</ID>
 			  <Description>"base_centering+23 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1029,7 +981,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+23</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>125</ID>
+			  <ID>119</ID>
 			  <Description>"base_centering+24 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1037,7 +989,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+24</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>126</ID>
+			  <ID>120</ID>
 			  <Description>"base_centering+25 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1045,15 +997,15 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+25</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>127</ID>
-			  <Description>"base_centering+26 (default = 0)"</Description>
+			  <ID>121</ID>
+			  <Description>"base_centering+26 (default = 0.5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+26</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>128</ID>
+			  <ID>122</ID>
 			  <Description>"base_centering+27 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1061,15 +1013,15 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+27</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>129</ID>
-			  <Description>"base_centering+28 (default = 40)"</Description>
+			  <ID>123</ID>
+			  <Description>"base_centering+28 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+28</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>130</ID>
+			  <ID>124</ID>
 			  <Description>"base_centering+29 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1077,7 +1029,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+29</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>131</ID>
+			  <ID>125</ID>
 			  <Description>"base_centering+2A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1085,23 +1037,23 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+2A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>132</ID>
-			  <Description>"base_centering+2B (default = -0)"</Description>
+			  <ID>126</ID>
+			  <Description>"base_centering+2B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+2B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>133</ID>
-			  <Description>"base_centering+2C (default = 5)"</Description>
+			  <ID>127</ID>
+			  <Description>"base_centering+2C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+2C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>134</ID>
+			  <ID>128</ID>
 			  <Description>"base_centering+2D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1109,15 +1061,15 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+2D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>135</ID>
-			  <Description>"base_centering+2E (default = 0)"</Description>
+			  <ID>129</ID>
+			  <Description>"base_centering+2E (default = 40)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+2E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>136</ID>
+			  <ID>130</ID>
 			  <Description>"base_centering+2F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1125,7 +1077,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+2F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>137</ID>
+			  <ID>131</ID>
 			  <Description>"base_centering+30 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1133,7 +1085,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+30</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>138</ID>
+			  <ID>132</ID>
 			  <Description>"base_centering+31 (default = -0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1141,15 +1093,15 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+31</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>139</ID>
-			  <Description>"base_centering+32 (default = 0)"</Description>
+			  <ID>133</ID>
+			  <Description>"base_centering+32 (default = 5)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+32</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>140</ID>
+			  <ID>134</ID>
 			  <Description>"base_centering+33 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1157,7 +1109,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+33</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>141</ID>
+			  <ID>135</ID>
 			  <Description>"base_centering+34 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1165,7 +1117,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+34</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>142</ID>
+			  <ID>136</ID>
 			  <Description>"base_centering+35 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1173,7 +1125,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+35</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>143</ID>
+			  <ID>137</ID>
 			  <Description>"base_centering+36 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1181,7 +1133,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+36</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>144</ID>
+			  <ID>138</ID>
 			  <Description>"base_centering+37 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1189,7 +1141,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+37</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>145</ID>
+			  <ID>139</ID>
 			  <Description>"base_centering+38 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1197,15 +1149,15 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+38</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>146</ID>
-			  <Description>"base_centering+39 (default = 5.4975581e+11)"</Description>
+			  <ID>140</ID>
+			  <Description>"base_centering+39 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+39</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>147</ID>
+			  <ID>141</ID>
 			  <Description>"base_centering+3A (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1213,7 +1165,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+3A</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>148</ID>
+			  <ID>142</ID>
 			  <Description>"base_centering+3B (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1221,7 +1173,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+3B</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>149</ID>
+			  <ID>143</ID>
 			  <Description>"base_centering+3C (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1229,7 +1181,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+3C</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>150</ID>
+			  <ID>144</ID>
 			  <Description>"base_centering+3D (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1237,7 +1189,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+3D</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>151</ID>
+			  <ID>145</ID>
 			  <Description>"base_centering+3E (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1245,7 +1197,7 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+3E</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>152</ID>
+			  <ID>146</ID>
 			  <Description>"base_centering+3F (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
@@ -1253,12 +1205,148 @@ unregistersymbol(base_centering)
 			  <Address>base_centering+3F</Address>
 			</CheatEntry>
 			<CheatEntry>
-			  <ID>153</ID>
+			  <ID>147</ID>
 			  <Description>"base_centering+40 (default = 0)"</Description>
 			  <ShowAsHex>0</ShowAsHex>
 			  <ShowAsSigned>0</ShowAsSigned>
 			  <VariableType>Float</VariableType>
 			  <Address>base_centering+40</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>148</ID>
+			  <Description>"base_centering+41 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+41</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>149</ID>
+			  <Description>"base_centering+42 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+42</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>150</ID>
+			  <Description>"base_centering+43 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+43</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>151</ID>
+			  <Description>"base_centering+44 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+44</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>152</ID>
+			  <Description>"base_centering+45 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+45</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>153</ID>
+			  <Description>"base_centering+46 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+46</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>154</ID>
+			  <Description>"base_centering+47 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+47</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>155</ID>
+			  <Description>"base_centering+48 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+48</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>156</ID>
+			  <Description>"base_centering+49 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+49</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>157</ID>
+			  <Description>"base_centering+4A (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+4A</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>158</ID>
+			  <Description>"base_centering+4B (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+4B</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>159</ID>
+			  <Description>"base_centering+4C (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+4C</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>160</ID>
+			  <Description>"base_centering+4D (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+4D</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>161</ID>
+			  <Description>"base_centering+4E (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+4E</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>162</ID>
+			  <Description>"base_centering+4F (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+4F</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>163</ID>
+			  <Description>"base_centering+50 (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+50</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>164</ID>
+			  <Description>"base_centering+51 (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_centering+51</Address>
 			</CheatEntry>
 			</CheatEntries>
     </CheatEntry>
