@@ -2,10 +2,10 @@
 <CheatTable CheatEngineTableVersion="42">
   <CheatEntries>
     <CheatEntry>
-      <ID>0</ID>
+      <ID>67</ID>
       <Description>"command_o"</Description>
       <Options moHideChildren="1"/>
-	  <VariableType>Auto Assembler Script</VariableType>
+      <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_command,20 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 80 BF)  // should be unique
 registersymbol(base_command)
@@ -15,9 +15,9 @@ local al = getAddressList()
 local vars={}
 for i=1, al.Count-1 do --skip script
     local ali=al.getMemoryRecord(i)
-    local ofs=string.match(ali.Description,'base_command(.%x+)%s*')
+    local ofs=string.match(ali.Description,'base_command_command(.%x+)%s*')
     if ofs==nil then
-       ofs=string.match(ali.Description,'base_command%s*')
+       ofs=string.match(ali.Description,'base_command_command%s*')
        if ofs~=nil then
           vars['+0']=ali
        end
@@ -35,536 +35,496 @@ end
 unregistersymbol(base_command)
 
 </AssemblerScript>
-	  <CheatEntries>
-	  <CheatEntry>
-			  <ID>1</ID>
-			  <Description>"base_command (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+0</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>2</ID>
-			  <Description>"base_command+1 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+1</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>3</ID>
-			  <Description>"base_command+2 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+2</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>4</ID>
-			  <Description>"base_command+3 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+3</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>5</ID>
-			  <Description>"base_command+4 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+4</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>6</ID>
-			  <Description>"base_command+5 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+5</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>7</ID>
-			  <Description>"base_command+6 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+6</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>8</ID>
-			  <Description>"base_command+7 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+7</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>9</ID>
-			  <Description>"base_command+8 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+8</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>10</ID>
-			  <Description>"base_command+9 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+9</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>11</ID>
-			  <Description>"base_command+A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>12</ID>
-			  <Description>"base_command+B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>13</ID>
-			  <Description>"base_command+C (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>14</ID>
-			  <Description>"base_command+D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>15</ID>
-			  <Description>"base_command+E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>16</ID>
-			  <Description>"base_command+F (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>17</ID>
-			  <Description>"base_command+10 (default = -1)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+10</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>18</ID>
-			  <Description>"base_command+11 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+11</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>19</ID>
-			  <Description>"base_command+12 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+12</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>20</ID>
-			  <Description>"base_command+13 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+13</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>21</ID>
-			  <Description>"base_command+14 (default = -1)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+14</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>22</ID>
-			  <Description>"base_command+15 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+15</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>23</ID>
-			  <Description>"base_command+16 (default = 8.3465158e+35)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+16</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>24</ID>
-			  <Description>"base_command+17 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+17</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>25</ID>
-			  <Description>"base_command+18 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+18</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>26</ID>
-			  <Description>"base_command+19 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+19</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>27</ID>
-			  <Description>"base_command+1A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+1A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>28</ID>
-			  <Description>"base_command+1B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+1B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>29</ID>
-			  <Description>"base_command+1C (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+1C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>30</ID>
-			  <Description>"base_command+1D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+1D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>31</ID>
-			  <Description>"base_command+1E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+1E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>32</ID>
-			  <Description>"base_command+1F (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+1F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>33</ID>
-			  <Description>"base_command+20 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+20</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>34</ID>
-			  <Description>"base_command+21 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+21</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>35</ID>
-			  <Description>"base_command+22 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+22</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>36</ID>
-			  <Description>"base_command+23 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+23</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>37</ID>
-			  <Description>"base_command+24 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+24</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>38</ID>
-			  <Description>"base_command+25 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+25</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>39</ID>
-			  <Description>"base_command+26 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+26</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>40</ID>
-			  <Description>"base_command+27 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+27</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>41</ID>
-			  <Description>"base_command+28 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+28</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>42</ID>
-			  <Description>"base_command+29 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+29</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>43</ID>
-			  <Description>"base_command+2A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+2A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>44</ID>
-			  <Description>"base_command+2B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+2B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>45</ID>
-			  <Description>"base_command+2C (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+2C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>46</ID>
-			  <Description>"base_command+2D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+2D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>47</ID>
-			  <Description>"base_command+2E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+2E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>48</ID>
-			  <Description>"base_command+2F (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+2F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>49</ID>
-			  <Description>"base_command+30 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+30</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>50</ID>
-			  <Description>"base_command+31 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+31</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>51</ID>
-			  <Description>"base_command+32 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+32</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>52</ID>
-			  <Description>"base_command+33 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+33</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>53</ID>
-			  <Description>"base_command+34 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+34</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>54</ID>
-			  <Description>"base_command+35 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+35</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>55</ID>
-			  <Description>"base_command+36 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+36</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>56</ID>
-			  <Description>"base_command+37 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+37</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>57</ID>
-			  <Description>"base_command+38 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+38</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>58</ID>
-			  <Description>"base_command+39 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+39</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>59</ID>
-			  <Description>"base_command+3A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+3A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>60</ID>
-			  <Description>"base_command+3B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+3B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>61</ID>
-			  <Description>"base_command+3C (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+3C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>62</ID>
-			  <Description>"base_command+3D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+3D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>63</ID>
-			  <Description>"base_command+3E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+3E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>64</ID>
-			  <Description>"base_command+3F (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+3F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>65</ID>
-			  <Description>"base_command+40 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+40</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>66</ID>
-			  <Description>"base_command+41 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_command+41</Address>
-			</CheatEntry>
-			</CheatEntries>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>68</ID>
+          <Description>"base_command (default = 32)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>base_command+0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>69</ID>
+          <Description>"base_command+1 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>70</ID>
+          <Description>"base_command+2 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>71</ID>
+          <Description>"base_command+3 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>72</ID>
+          <Description>"base_command+4 (default = 1)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>base_command+4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>73</ID>
+          <Description>"base_command+5 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>74</ID>
+          <Description>"base_command+6 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>75</ID>
+          <Description>"base_command+7 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>76</ID>
+          <Description>"base_command+8 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>77</ID>
+          <Description>"base_command+9 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>78</ID>
+          <Description>"base_command+A (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>79</ID>
+          <Description>"base_command+B (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>80</ID>
+          <Description>"base_command+C (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>base_command+C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>81</ID>
+          <Description>"base_command+D (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>82</ID>
+          <Description>"base_command+E (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>83</ID>
+          <Description>"base_command+F (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>84</ID>
+          <Description>"base_command+10 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+10</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>85</ID>
+          <Description>"base_command+11 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+11</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>86</ID>
+          <Description>"base_command+12 (default = -128)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+12</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>87</ID>
+          <Description>"base_command+13 (default = -65)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+13</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>88</ID>
+          <Description>"base_command+14 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+14</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>89</ID>
+          <Description>"base_command+15 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+15</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>90</ID>
+          <Description>"base_command+16 (default = -128)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+16</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>91</ID>
+          <Description>"base_command+17 (default = -65)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+17</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>92</ID>
+          <Description>"base_command+18 (default = 108)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+18</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>93</ID>
+          <Description>"base_command+19 (default = 101)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+19</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>94</ID>
+          <Description>"base_command+1A (default = 83)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+1A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>95</ID>
+          <Description>"base_command+1B (default = 112)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+1B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>96</ID>
+          <Description>"base_command+1C (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>base_command+1C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>97</ID>
+          <Description>"base_command+1D (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+1D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>98</ID>
+          <Description>"base_command+1E (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+1E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>99</ID>
+          <Description>"base_command+1F (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+1F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>100</ID>
+          <Description>"base_command+20 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>base_command+20</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>101</ID>
+          <Description>"base_command+21 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+21</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>102</ID>
+          <Description>"base_command+22 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+22</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>103</ID>
+          <Description>"base_command+23 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+23</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>104</ID>
+          <Description>"base_command+24 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+24</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>105</ID>
+          <Description>"base_command+25 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+25</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>106</ID>
+          <Description>"base_command+26 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+26</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>107</ID>
+          <Description>"base_command+27 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+27</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>108</ID>
+          <Description>"base_command+28 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+28</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>109</ID>
+          <Description>"base_command+29 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+29</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>110</ID>
+          <Description>"base_command+2A (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+2A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>111</ID>
+          <Description>"base_command+2B (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+2B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>112</ID>
+          <Description>"base_command+2C (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+2C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>113</ID>
+          <Description>"base_command+2D (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+2D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>114</ID>
+          <Description>"base_command+2E (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+2E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>115</ID>
+          <Description>"base_command+2F (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+2F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>116</ID>
+          <Description>"base_command+30 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+30</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>117</ID>
+          <Description>"base_command+31 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+31</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>118</ID>
+          <Description>"base_command+32 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+32</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>119</ID>
+          <Description>"base_command+33 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+33</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>120</ID>
+          <Description>"base_command+34 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+34</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>121</ID>
+          <Description>"base_command+35 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+35</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>122</ID>
+          <Description>"base_command+36 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+36</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>123</ID>
+          <Description>"base_command+37 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+37</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>124</ID>
+          <Description>"base_command+38 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+38</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>125</ID>
+          <Description>"base_command+39 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+39</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>126</ID>
+          <Description>"base_command+3A (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+3A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>127</ID>
+          <Description>"base_command+3B (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+3B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>128</ID>
+          <Description>"base_command+3C (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>base_command+3C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>129</ID>
+          <Description>"base_command+3D (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+3D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>130</ID>
+          <Description>"base_command+3E (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+3E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>131</ID>
+          <Description>"base_command+3F (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+3F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>132</ID>
+          <Description>"base_command+40 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+40</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>133</ID>
+          <Description>"base_command+41 (default = 0)"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_command+41</Address>
+        </CheatEntry>
+      </CheatEntries>
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
