@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="42">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"matchup_o"</Description>
+      <Options moHideChildren="1"/>
+	  <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+	  aobscan(base_matchup,AA 42 00 00 F0 41 00 00 DC 42 00 00 A0 40 01 00 B6 00 00 00 60 40)  // should be unique
+registersymbol(base_matchup)
+
+{$lua}
+local al = getAddressList()
+local vars={}
+for i=1, al.Count-1 do --skip script
+    local ali=al.getMemoryRecord(i)
+    local ofs=string.match(ali.Description,'base_matchup(.%x+)%s*')
+    if ofs==nil then
+       ofs=string.match(ali.Description,'base_matchup%s*')
+       if ofs~=nil then
+          vars['+0']=ali
+       end
+    else
+     vars[ofs]=ali
+    end
+end
+
+--vars['+0'].Value=
+
+{$asm}
+
+[DISABLE]
+
+unregistersymbol(base_matchup)
+
+</AssemblerScript>
+	  <CheatEntries>
+	  <CheatEntry>
+			  <ID>1</ID>
+			  <Description>"base_matchup-16 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-16</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>2</ID>
+			  <Description>"base_matchup-15 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-15</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>3</ID>
+			  <Description>"base_matchup-14 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-14</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>4</ID>
+			  <Description>"base_matchup-13 (default = -131072)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-13</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>5</ID>
+			  <Description>"base_matchup-12 (default = 25)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-12</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>6</ID>
+			  <Description>"base_matchup-11 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-11</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>7</ID>
+			  <Description>"base_matchup-10 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-10</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>8</ID>
+			  <Description>"base_matchup-F (default = 2.0000155)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-F</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>9</ID>
+			  <Description>"base_matchup-E (default = 3)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-E</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>10</ID>
+			  <Description>"base_matchup-D (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-D</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>11</ID>
+			  <Description>"base_matchup-C (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-C</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>12</ID>
+			  <Description>"base_matchup-B (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-B</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>13</ID>
+			  <Description>"base_matchup-A (default = 145)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-A</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>14</ID>
+			  <Description>"base_matchup-9 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-9</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>15</ID>
+			  <Description>"base_matchup-8 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-8</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>16</ID>
+			  <Description>"base_matchup-7 (default = -0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-7</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>17</ID>
+			  <Description>"base_matchup-6 (default = 70)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-6</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>18</ID>
+			  <Description>"base_matchup-5 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-5</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>19</ID>
+			  <Description>"base_matchup-4 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-4</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>20</ID>
+			  <Description>"base_matchup-3 (default = -0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-3</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>21</ID>
+			  <Description>"base_matchup-2 (default = 85)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-2</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>22</ID>
+			  <Description>"base_matchup-1 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup-1</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>23</ID>
+			  <Description>"base_matchup (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+0</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>24</ID>
+			  <Description>"base_matchup+1 (default = -1.5845757e+29)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+1</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>25</ID>
+			  <Description>"base_matchup+2 (default = 30)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+2</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>26</ID>
+			  <Description>"base_matchup+3 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+3</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>27</ID>
+			  <Description>"base_matchup+4 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+4</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>28</ID>
+			  <Description>"base_matchup+5 (default = -1.4411630e+17)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+5</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>29</ID>
+			  <Description>"base_matchup+6 (default = 110)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+6</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>30</ID>
+			  <Description>"base_matchup+7 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+7</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>31</ID>
+			  <Description>"base_matchup+8 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+8</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>32</ID>
+			  <Description>"base_matchup+9 (default = -0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+9</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>33</ID>
+			  <Description>"base_matchup+A (default = 5)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+A</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>34</ID>
+			  <Description>"base_matchup+B (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+B</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>35</ID>
+			  <Description>"base_matchup+C (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+C</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>36</ID>
+			  <Description>"base_matchup+D (default = -0.0000019)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+D</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>37</ID>
+			  <Description>"base_matchup+E (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+E</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>38</ID>
+			  <Description>"base_matchup+F (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+F</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>39</ID>
+			  <Description>"base_matchup+10 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+10</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>40</ID>
+			  <Description>"base_matchup+11 (default = 3.6893488e+19)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+11</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>41</ID>
+			  <Description>"base_matchup+12 (default = 3.5)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+12</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>42</ID>
+			  <Description>"base_matchup+13 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+13</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>43</ID>
+			  <Description>"base_matchup+14 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+14</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>44</ID>
+			  <Description>"base_matchup+15 (default = -0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+15</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>45</ID>
+			  <Description>"base_matchup+16 (default = 1)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+16</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>46</ID>
+			  <Description>"base_matchup+17 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+17</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>47</ID>
+			  <Description>"base_matchup+18 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+18</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>48</ID>
+			  <Description>"base_matchup+19 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+19</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>49</ID>
+			  <Description>"base_matchup+1A (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+1A</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>50</ID>
+			  <Description>"base_matchup+1B (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+1B</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>51</ID>
+			  <Description>"base_matchup+1C (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+1C</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>52</ID>
+			  <Description>"base_matchup+1D (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+1D</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>53</ID>
+			  <Description>"base_matchup+1E (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+1E</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>54</ID>
+			  <Description>"base_matchup+1F (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+1F</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>55</ID>
+			  <Description>"base_matchup+20 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+20</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>56</ID>
+			  <Description>"base_matchup+21 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+21</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>57</ID>
+			  <Description>"base_matchup+22 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+22</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>58</ID>
+			  <Description>"base_matchup+23 (default = -0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+23</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>59</ID>
+			  <Description>"base_matchup+24 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+24</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>60</ID>
+			  <Description>"base_matchup+25 (default = -0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+25</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>61</ID>
+			  <Description>"base_matchup+26 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+26</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>62</ID>
+			  <Description>"base_matchup+27 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+27</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>63</ID>
+			  <Description>"base_matchup+28 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+28</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>64</ID>
+			  <Description>"base_matchup+29 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+29</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>65</ID>
+			  <Description>"base_matchup+2A (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+2A</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>66</ID>
+			  <Description>"base_matchup+2B (default = -0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+2B</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>67</ID>
+			  <Description>"base_matchup+2C (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+2C</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>68</ID>
+			  <Description>"base_matchup+2D (default = -0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+2D</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>69</ID>
+			  <Description>"base_matchup+2E (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+2E</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>70</ID>
+			  <Description>"base_matchup+2F (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+2F</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>71</ID>
+			  <Description>"base_matchup+30 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+30</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>72</ID>
+			  <Description>"base_matchup+31 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+31</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>73</ID>
+			  <Description>"base_matchup+32 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+32</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>74</ID>
+			  <Description>"base_matchup+33 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+33</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>75</ID>
+			  <Description>"base_matchup+34 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+34</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>76</ID>
+			  <Description>"base_matchup+35 (default = -1.1040893e+25)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+35</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>77</ID>
+			  <Description>"base_matchup+36 (default = -0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+36</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>78</ID>
+			  <Description>"base_matchup+37 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+37</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>79</ID>
+			  <Description>"base_matchup+38 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+38</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>80</ID>
+			  <Description>"base_matchup+39 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+39</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>81</ID>
+			  <Description>"base_matchup+3A (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+3A</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>82</ID>
+			  <Description>"base_matchup+3B (default = 2.3611832e+21)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+3B</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>83</ID>
+			  <Description>"base_matchup+3C (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+3C</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>84</ID>
+			  <Description>"base_matchup+3D (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+3D</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>85</ID>
+			  <Description>"base_matchup+3E (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+3E</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>86</ID>
+			  <Description>"base_matchup+3F (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+3F</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>87</ID>
+			  <Description>"base_matchup+40 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+40</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>88</ID>
+			  <Description>"base_matchup+41 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+41</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>89</ID>
+			  <Description>"base_matchup+42 (default = 0)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+42</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>90</ID>
+			  <Description>"base_matchup+43 (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+43</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>91</ID>
+			  <Description>"base_matchup+44 (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+44</Address>
+			</CheatEntry>
+			<CheatEntry>
+			  <ID>92</ID>
+			  <Description>"base_matchup+45 (default = ❌)"</Description>
+			  <ShowAsHex>0</ShowAsHex>
+			  <ShowAsSigned>0</ShowAsSigned>
+			  <VariableType>Float</VariableType>
+			  <Address>base_matchup+45</Address>
+			</CheatEntry>
+			</CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
