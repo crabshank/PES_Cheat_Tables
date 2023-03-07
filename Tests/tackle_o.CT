@@ -244,7 +244,6 @@ unregistersymbol(base_tackle)
           <ID>30</ID>
           <Description>"base_tackle-3B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-3B</Address>
         </CheatEntry>
@@ -252,7 +251,6 @@ unregistersymbol(base_tackle)
           <ID>31</ID>
           <Description>"base_tackle-3A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-3A</Address>
         </CheatEntry>
@@ -260,7 +258,6 @@ unregistersymbol(base_tackle)
           <ID>32</ID>
           <Description>"base_tackle-39 (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-39</Address>
         </CheatEntry>
@@ -276,7 +273,6 @@ unregistersymbol(base_tackle)
           <ID>34</ID>
           <Description>"base_tackle-37 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-37</Address>
         </CheatEntry>
@@ -284,7 +280,6 @@ unregistersymbol(base_tackle)
           <ID>35</ID>
           <Description>"base_tackle-36 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-36</Address>
         </CheatEntry>
@@ -307,7 +302,6 @@ unregistersymbol(base_tackle)
           <ID>38</ID>
           <Description>"base_tackle-33 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-33</Address>
         </CheatEntry>
@@ -315,7 +309,6 @@ unregistersymbol(base_tackle)
           <ID>39</ID>
           <Description>"base_tackle-32 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-32</Address>
         </CheatEntry>
@@ -323,7 +316,6 @@ unregistersymbol(base_tackle)
           <ID>40</ID>
           <Description>"base_tackle-31 (default = -0.0000001)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-31</Address>
         </CheatEntry>
@@ -339,7 +331,6 @@ unregistersymbol(base_tackle)
           <ID>42</ID>
           <Description>"base_tackle-2F (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-2F</Address>
         </CheatEntry>
@@ -347,7 +338,6 @@ unregistersymbol(base_tackle)
           <ID>43</ID>
           <Description>"base_tackle-2E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-2E</Address>
         </CheatEntry>
@@ -355,7 +345,6 @@ unregistersymbol(base_tackle)
           <ID>44</ID>
           <Description>"base_tackle-2D (default = 0.0000001)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-2D</Address>
         </CheatEntry>
@@ -371,7 +360,6 @@ unregistersymbol(base_tackle)
           <ID>46</ID>
           <Description>"base_tackle-2B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-2B</Address>
         </CheatEntry>
@@ -379,7 +367,6 @@ unregistersymbol(base_tackle)
           <ID>47</ID>
           <Description>"base_tackle-2A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-2A</Address>
         </CheatEntry>
@@ -392,39 +379,45 @@ unregistersymbol(base_tackle)
         </CheatEntry>
         <CheatEntry>
           <ID>49</ID>
-          <Description>"base_tackle-28 (default = 0)"</Description>
+          <Description>"base_tackle-28 (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-28</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>50</ID>
-          <Description>"base_tackle-27 (default = 0)"</Description>
+          <Description>"base_tackle-27 (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-27</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>51</ID>
           <Description>"base_tackle-26 (default = 0)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-26</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>52</ID>
           <Description>"base_tackle-25 (default = 0)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-25</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>53</ID>
           <Description>"base_tackle-24 (default = 0)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-24</Address>
         </CheatEntry>
         <CheatEntry>
@@ -460,7 +453,6 @@ unregistersymbol(base_tackle)
           <ID>58</ID>
           <Description>"base_tackle-1F (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-1F</Address>
         </CheatEntry>
@@ -468,7 +460,6 @@ unregistersymbol(base_tackle)
           <ID>59</ID>
           <Description>"base_tackle-1E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-1E</Address>
         </CheatEntry>
@@ -476,7 +467,6 @@ unregistersymbol(base_tackle)
           <ID>60</ID>
           <Description>"base_tackle-1D (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-1D</Address>
         </CheatEntry>
@@ -485,31 +475,31 @@ unregistersymbol(base_tackle)
           <Description>"base_tackle-1C (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_tackle-1C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>62</ID>
           <Description>"base_tackle-1B (default = 0)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-1B</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>63</ID>
           <Description>"base_tackle-1A (default = 0)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-1A</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>64</ID>
           <Description>"base_tackle-19 (default = 0)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-19</Address>
         </CheatEntry>
         <CheatEntry>
@@ -542,10 +532,11 @@ unregistersymbol(base_tackle)
         </CheatEntry>
         <CheatEntry>
           <ID>69</ID>
-          <Description>"base_tackle-14 (default = 0)"</Description>
+          <Description>"base_tackle-14 (default = 02)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-14</Address>
         </CheatEntry>
         <CheatEntry>
@@ -553,7 +544,7 @@ unregistersymbol(base_tackle)
           <Description>"base_tackle-13 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-13</Address>
         </CheatEntry>
         <CheatEntry>
@@ -561,7 +552,7 @@ unregistersymbol(base_tackle)
           <Description>"base_tackle-12 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-12</Address>
         </CheatEntry>
         <CheatEntry>
@@ -569,15 +560,16 @@ unregistersymbol(base_tackle)
           <Description>"base_tackle-11 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-11</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>73</ID>
-          <Description>"base_tackle-10 (default = 0)"</Description>
+          <Description>"base_tackle-10 (default = 04)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-10</Address>
         </CheatEntry>
         <CheatEntry>
@@ -585,7 +577,7 @@ unregistersymbol(base_tackle)
           <Description>"base_tackle-F (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-F</Address>
         </CheatEntry>
         <CheatEntry>
@@ -593,7 +585,7 @@ unregistersymbol(base_tackle)
           <Description>"base_tackle-E (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-E</Address>
         </CheatEntry>
         <CheatEntry>
@@ -601,7 +593,7 @@ unregistersymbol(base_tackle)
           <Description>"base_tackle-D (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle-D</Address>
         </CheatEntry>
         <CheatEntry>
@@ -672,7 +664,6 @@ unregistersymbol(base_tackle)
           <ID>86</ID>
           <Description>"base_tackle-3 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-3</Address>
         </CheatEntry>
@@ -680,7 +671,6 @@ unregistersymbol(base_tackle)
           <ID>87</ID>
           <Description>"base_tackle-2 (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-2</Address>
         </CheatEntry>
@@ -688,7 +678,6 @@ unregistersymbol(base_tackle)
           <ID>88</ID>
           <Description>"base_tackle-1 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle-1</Address>
         </CheatEntry>
@@ -760,7 +749,6 @@ unregistersymbol(base_tackle)
           <ID>98</ID>
           <Description>"base_tackle+9 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle+9</Address>
         </CheatEntry>
@@ -768,7 +756,6 @@ unregistersymbol(base_tackle)
           <ID>99</ID>
           <Description>"base_tackle+A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle+A</Address>
         </CheatEntry>
@@ -776,7 +763,6 @@ unregistersymbol(base_tackle)
           <ID>100</ID>
           <Description>"base_tackle+B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle+B</Address>
         </CheatEntry>
@@ -840,13 +826,15 @@ unregistersymbol(base_tackle)
           <ID>109</ID>
           <Description>"base_tackle+14 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <Color>00FFFF</Color>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_tackle+14</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>110</ID>
           <Description>"base_tackle+15 (default = -1.3421773e+8)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle+15</Address>
         </CheatEntry>
@@ -854,6 +842,7 @@ unregistersymbol(base_tackle)
           <ID>111</ID>
           <Description>"base_tackle+16 (default = -1.0747904e+8)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle+16</Address>
         </CheatEntry>
@@ -861,6 +850,7 @@ unregistersymbol(base_tackle)
           <ID>112</ID>
           <Description>"base_tackle+17 (default = -1.0737459e+8)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle+17</Address>
         </CheatEntry>
@@ -894,9 +884,11 @@ unregistersymbol(base_tackle)
         </CheatEntry>
         <CheatEntry>
           <ID>117</ID>
-          <Description>"base_tackle+1C (default = 0)"</Description>
+          <Description>"base_tackle+1C (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>Float</VariableType>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
           <Address>base_tackle+1C</Address>
         </CheatEntry>
         <CheatEntry>
@@ -1044,7 +1036,6 @@ unregistersymbol(base_tackle)
           <ID>138</ID>
           <Description>"base_tackle+31 (default = -2.0027802e+8)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle+31</Address>
         </CheatEntry>
@@ -1052,7 +1043,6 @@ unregistersymbol(base_tackle)
           <ID>139</ID>
           <Description>"base_tackle+32 (default = -1.0760806e+8)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle+32</Address>
         </CheatEntry>
@@ -1060,7 +1050,6 @@ unregistersymbol(base_tackle)
           <ID>140</ID>
           <Description>"base_tackle+33 (default = -1.0737510e+8)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle+33</Address>
         </CheatEntry>
@@ -1133,7 +1122,6 @@ unregistersymbol(base_tackle)
           <ID>150</ID>
           <Description>"base_tackle+3D (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle+3D</Address>
         </CheatEntry>
@@ -1141,7 +1129,6 @@ unregistersymbol(base_tackle)
           <ID>151</ID>
           <Description>"base_tackle+3E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle+3E</Address>
         </CheatEntry>
@@ -1149,23 +1136,22 @@ unregistersymbol(base_tackle)
           <ID>152</ID>
           <Description>"base_tackle+3F (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle+3F</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>153</ID>
-          <Description>"base_tackle+40 (default = 0)"</Description>
+          <Description>"base_tackle+40 (default = 02)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_tackle+40</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>154</ID>
           <Description>"base_tackle+41 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle+41</Address>
         </CheatEntry>
@@ -1173,7 +1159,6 @@ unregistersymbol(base_tackle)
           <ID>155</ID>
           <Description>"base_tackle+42 (default = -0.0000001)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle+42</Address>
         </CheatEntry>
@@ -1181,7 +1166,6 @@ unregistersymbol(base_tackle)
           <ID>156</ID>
           <Description>"base_tackle+43 (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_tackle+43</Address>
         </CheatEntry>
@@ -1448,4 +1432,62 @@ unregistersymbol(base_tackle)
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
+  <DisassemblerComments>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F020</Address>
+      <Comment>〈load effective address〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F025</Address>
+      <Comment>〈push word or doubleword onto the stack〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F026</Address>
+      <Comment>〈push word or doubleword onto the stack〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F027</Address>
+      <Comment>〈push word or doubleword onto the stack〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F028</Address>
+      <Comment>〈compare two operands〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F02F</Address>
+      <Comment>〈jump short if not equal (ZF=0)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F031</Address>
+      <Comment>〈load effective address〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F038</Address>
+      <Comment>〈load effective address〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F03F</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F042</Address>
+      <Comment>〈add 00001000 to rax (sign extended)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F048</Address>
+      <Comment>〈compare two operands〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F04B</Address>
+      <Comment>〈jump short if not greater or equal (SF~=OF)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F04D</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F054</Address>
+      <Comment>〈pop a value from the stack〉 %s</Comment>
+    </DisassemblerComment>
+  </DisassemblerComments>
 </CheatTable>

@@ -1,9 +1,14 @@
-batchRW.attach_loop(4,500) ()
-
-Address list loop ended! 
-
-Looping through address list... 
-Read addresses: 
+base_tackle-35 (default = 0) (#36) movss xmm14,[rax+0C]
+base_tackle+17 (default = -1.0737459e+8) (#112) mov eax,[rax+58]
+base_tackle-27 (default = 0) (#50) cmp byte ptr [rbp+1D],00
+base_tackle+14 (default = 0) (#109) mov eax,[rax+58]
+base_tackle+15 (default = -1.3421773e+8) (#110) mov eax,[rax+58]
+base_tackle+16 (default = -1.0747904e+8) (#111) mov eax,[rax+58]
+base_tackle+1C (default = 0) (#117) cmp [rbp+60],r13l
+base_tackle+35 (default = 0) (#142) movss xmm0,[rax+78]
+base_tackle+36 (default = 0) (#143) movss xmm0,[rax+78]
+base_tackle+37 (default = 0) (#144) movss xmm0,[rax+78]
+base_tackle-29 (default = 0) (#48) movss xmm7,[rbp+18]
 base-D (default = -0) (#76) mov ecx,[rax+34]
 base-38 (default = 4) (#33) movss xmm14,[rax+0C]
 base-3B (default = 0) (#30) movss xmm0,[rax+08]
