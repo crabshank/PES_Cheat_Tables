@@ -1,0 +1,31 @@
+base_command (default = 32) (#1) mov eax,[rcx+rax+4C]
+base_command+1 (default = 0) (#2) mov eax,[rcx+rax+4C]
+base_command+2 (default = 0) (#3) mov eax,[rcx+rax+4C]
+base_command+3 (default = 0) (#4) mov eax,[rcx+rax+4C]
+
+base_command+4 (default = 1) (#5) mov ebp,[rdx+rcx+50]
+base_command+5 (default = 0) (#6) mov ebp,[rdx+rcx+50]
+base_command+6 (default = 0) (#7) mov ebp,[rdx+rcx+50]
+base_command+7 (default = 0) (#8) mov ebp,[rdx+rcx+50]
+
+base_command+C (default = 0) (#13) cmp [rcx+58],edx
+base_command+D (default = 0) (#14) cmp [rcx+58],edx
+base_command+E (default = 0) (#15) cmp [rcx+58],edx
+base_command+F (default = 0) (#16) cmp [rcx+58],edx
+
+base_command+1C (default = 0) (#29) mov rsi,[rax+r10*8]
+base_command+1D (default = 0) (#30) mov rcx,[rax]
+base_command+1E (default = 0) (#31) mov rax,[rdx]
+base_command+1F (default = 0) (#32) mov rsi,[rax+r10*8]
+
+base_command+20 (default = 0) (#33) mov rcx,[rax]
+base_command+21 (default = 0) (#34) mov rax,[rdx]
+base_command+22 (default = 0) (#35) mov rsi,[rax+r10*8]
+base_command+23 (default = 0) (#36) mov rsi,[rax+r10*8]
+
+base_command+3C (default = 0) (#61) mov rcx,[rax+20]
+base_command+3D (default = 0) (#62) mov rax,[rdx+20]
+base_command+3E (default = 0) (#63) mov rcx,[rax+20]
+base_command+3F (default = 0) (#64) mov rcx,[rax+20]
+base_command+40 (default = 0) (#65) mov rax,[rdx+20]
+base_command+41 (default = 0) (#66) mov rcx,[rax+20]
