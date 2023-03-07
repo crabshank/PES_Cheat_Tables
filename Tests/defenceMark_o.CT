@@ -4,7 +4,6 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"defenceMark_o"</Description>
-      <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_defenceMark,00 00 B4 41 03 00 00 00 00 00 A0 41 00 00 A0 40)  // should be unique
@@ -76,7 +75,6 @@ unregistersymbol(base_defenceMark)
           <ID>6</ID>
           <Description>"base_defenceMark+1 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+1</Address>
         </CheatEntry>
@@ -84,7 +82,6 @@ unregistersymbol(base_defenceMark)
           <ID>7</ID>
           <Description>"base_defenceMark+2 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+2</Address>
         </CheatEntry>
@@ -92,7 +89,6 @@ unregistersymbol(base_defenceMark)
           <ID>8</ID>
           <Description>"base_defenceMark+3 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+3</Address>
         </CheatEntry>
@@ -164,7 +160,6 @@ unregistersymbol(base_defenceMark)
           <ID>18</ID>
           <Description>"base_defenceMark+D (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+D</Address>
         </CheatEntry>
@@ -172,7 +167,6 @@ unregistersymbol(base_defenceMark)
           <ID>19</ID>
           <Description>"base_defenceMark+E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+E</Address>
         </CheatEntry>
@@ -180,7 +174,6 @@ unregistersymbol(base_defenceMark)
           <ID>20</ID>
           <Description>"base_defenceMark+F (default = 2.0000153)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+F</Address>
         </CheatEntry>
@@ -196,7 +189,6 @@ unregistersymbol(base_defenceMark)
           <ID>22</ID>
           <Description>"base_defenceMark+11 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+11</Address>
         </CheatEntry>
@@ -204,7 +196,6 @@ unregistersymbol(base_defenceMark)
           <ID>23</ID>
           <Description>"base_defenceMark+12 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+12</Address>
         </CheatEntry>
@@ -212,7 +203,6 @@ unregistersymbol(base_defenceMark)
           <ID>24</ID>
           <Description>"base_defenceMark+13 (default = 2.0000153)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+13</Address>
         </CheatEntry>
@@ -424,7 +414,6 @@ unregistersymbol(base_defenceMark)
           <ID>54</ID>
           <Description>"base_defenceMark+31 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+31</Address>
         </CheatEntry>
@@ -432,7 +421,6 @@ unregistersymbol(base_defenceMark)
           <ID>55</ID>
           <Description>"base_defenceMark+32 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+32</Address>
         </CheatEntry>
@@ -440,7 +428,6 @@ unregistersymbol(base_defenceMark)
           <ID>56</ID>
           <Description>"base_defenceMark+33 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+33</Address>
         </CheatEntry>
@@ -484,7 +471,6 @@ unregistersymbol(base_defenceMark)
           <ID>62</ID>
           <Description>"base_defenceMark+39 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+39</Address>
         </CheatEntry>
@@ -492,7 +478,6 @@ unregistersymbol(base_defenceMark)
           <ID>63</ID>
           <Description>"base_defenceMark+3A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+3A</Address>
         </CheatEntry>
@@ -500,7 +485,6 @@ unregistersymbol(base_defenceMark)
           <ID>64</ID>
           <Description>"base_defenceMark+3B (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+3B</Address>
         </CheatEntry>
@@ -646,17 +630,16 @@ unregistersymbol(base_defenceMark)
         </CheatEntry>
         <CheatEntry>
           <ID>85</ID>
-          <Description>"base_defenceMark+50 (default = 0)"</Description>
+          <Description>"base_defenceMark+50 (default = 2)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_defenceMark+50</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>86</ID>
           <Description>"base_defenceMark+51 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+51</Address>
         </CheatEntry>
@@ -664,7 +647,6 @@ unregistersymbol(base_defenceMark)
           <ID>87</ID>
           <Description>"base_defenceMark+52 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+52</Address>
         </CheatEntry>
@@ -672,7 +654,6 @@ unregistersymbol(base_defenceMark)
           <ID>88</ID>
           <Description>"base_defenceMark+53 (default = -131072)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+53</Address>
         </CheatEntry>
@@ -706,17 +687,16 @@ unregistersymbol(base_defenceMark)
         </CheatEntry>
         <CheatEntry>
           <ID>93</ID>
-          <Description>"base_defenceMark+58 (default = 0)"</Description>
+          <Description>"base_defenceMark+58 (default = 20)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_defenceMark+58</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>94</ID>
           <Description>"base_defenceMark+59 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+59</Address>
         </CheatEntry>
@@ -724,7 +704,6 @@ unregistersymbol(base_defenceMark)
           <ID>95</ID>
           <Description>"base_defenceMark+5A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+5A</Address>
         </CheatEntry>
@@ -732,23 +711,21 @@ unregistersymbol(base_defenceMark)
           <ID>96</ID>
           <Description>"base_defenceMark+5B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+5B</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>97</ID>
-          <Description>"base_defenceMark+5C (default = 0)"</Description>
+          <Description>"base_defenceMark+5C (default = 20)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_defenceMark+5C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>98</ID>
           <Description>"base_defenceMark+5D (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+5D</Address>
         </CheatEntry>
@@ -756,7 +733,6 @@ unregistersymbol(base_defenceMark)
           <ID>99</ID>
           <Description>"base_defenceMark+5E (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+5E</Address>
         </CheatEntry>
@@ -764,23 +740,21 @@ unregistersymbol(base_defenceMark)
           <ID>100</ID>
           <Description>"base_defenceMark+5F (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+5F</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>101</ID>
-          <Description>"base_defenceMark+60 (default = 0)"</Description>
+          <Description>"base_defenceMark+60 (default = 15)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_defenceMark+60</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>102</ID>
           <Description>"base_defenceMark+61 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+61</Address>
         </CheatEntry>
@@ -788,7 +762,6 @@ unregistersymbol(base_defenceMark)
           <ID>103</ID>
           <Description>"base_defenceMark+62 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+62</Address>
         </CheatEntry>
@@ -796,7 +769,6 @@ unregistersymbol(base_defenceMark)
           <ID>104</ID>
           <Description>"base_defenceMark+63 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+63</Address>
         </CheatEntry>
@@ -896,7 +868,6 @@ unregistersymbol(base_defenceMark)
           <ID>118</ID>
           <Description>"base_defenceMark+71 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+71</Address>
         </CheatEntry>
@@ -904,7 +875,6 @@ unregistersymbol(base_defenceMark)
           <ID>119</ID>
           <Description>"base_defenceMark+72 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+72</Address>
         </CheatEntry>
@@ -912,23 +882,21 @@ unregistersymbol(base_defenceMark)
           <ID>120</ID>
           <Description>"base_defenceMark+73 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+73</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>121</ID>
-          <Description>"base_defenceMark+74 (default = 0)"</Description>
+          <Description>"base_defenceMark+74 (default = 2)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_defenceMark+74</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>122</ID>
           <Description>"base_defenceMark+75 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+75</Address>
         </CheatEntry>
@@ -936,7 +904,6 @@ unregistersymbol(base_defenceMark)
           <ID>123</ID>
           <Description>"base_defenceMark+76 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+76</Address>
         </CheatEntry>
@@ -944,23 +911,21 @@ unregistersymbol(base_defenceMark)
           <ID>124</ID>
           <Description>"base_defenceMark+77 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+77</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>125</ID>
-          <Description>"base_defenceMark+78 (default = 0)"</Description>
+          <Description>"base_defenceMark+78 (default = 2)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_defenceMark+78</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>126</ID>
           <Description>"base_defenceMark+79 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+79</Address>
         </CheatEntry>
@@ -968,7 +933,6 @@ unregistersymbol(base_defenceMark)
           <ID>127</ID>
           <Description>"base_defenceMark+7A (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+7A</Address>
         </CheatEntry>
@@ -976,7 +940,6 @@ unregistersymbol(base_defenceMark)
           <ID>128</ID>
           <Description>"base_defenceMark+7B (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+7B</Address>
         </CheatEntry>
@@ -1320,6 +1283,7 @@ unregistersymbol(base_defenceMark)
           <ID>177</ID>
           <Description>"base_defenceMark+AC (default = 5)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+AC</Address>
         </CheatEntry>
@@ -1327,7 +1291,6 @@ unregistersymbol(base_defenceMark)
           <ID>178</ID>
           <Description>"base_defenceMark+AD (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+AD</Address>
         </CheatEntry>
@@ -1335,7 +1298,6 @@ unregistersymbol(base_defenceMark)
           <ID>179</ID>
           <Description>"base_defenceMark+AE (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+AE</Address>
         </CheatEntry>
@@ -1343,7 +1305,6 @@ unregistersymbol(base_defenceMark)
           <ID>180</ID>
           <Description>"base_defenceMark+AF (default = -3.6893770e+19)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+AF</Address>
         </CheatEntry>
@@ -1471,7 +1432,6 @@ unregistersymbol(base_defenceMark)
           <ID>198</ID>
           <Description>"base_defenceMark+C1 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+C1</Address>
         </CheatEntry>
@@ -1479,7 +1439,6 @@ unregistersymbol(base_defenceMark)
           <ID>199</ID>
           <Description>"base_defenceMark+C2 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+C2</Address>
         </CheatEntry>
@@ -1487,7 +1446,6 @@ unregistersymbol(base_defenceMark)
           <ID>200</ID>
           <Description>"base_defenceMark+C3 (default = -131073.03)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+C3</Address>
         </CheatEntry>
@@ -1531,7 +1489,6 @@ unregistersymbol(base_defenceMark)
           <ID>206</ID>
           <Description>"base_defenceMark+C9 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+C9</Address>
         </CheatEntry>
@@ -1539,7 +1496,6 @@ unregistersymbol(base_defenceMark)
           <ID>207</ID>
           <Description>"base_defenceMark+CA (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+CA</Address>
         </CheatEntry>
@@ -1547,23 +1503,21 @@ unregistersymbol(base_defenceMark)
           <ID>208</ID>
           <Description>"base_defenceMark+CB (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+CB</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>209</ID>
-          <Description>"base_defenceMark+CC (default = 0)"</Description>
+          <Description>"base_defenceMark+CC (default = 7)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_defenceMark+CC</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>210</ID>
           <Description>"base_defenceMark+CD (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+CD</Address>
         </CheatEntry>
@@ -1571,7 +1525,6 @@ unregistersymbol(base_defenceMark)
           <ID>211</ID>
           <Description>"base_defenceMark+CE (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+CE</Address>
         </CheatEntry>
@@ -1579,7 +1532,6 @@ unregistersymbol(base_defenceMark)
           <ID>212</ID>
           <Description>"base_defenceMark+CF (default = -0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+CF</Address>
         </CheatEntry>
@@ -1587,6 +1539,7 @@ unregistersymbol(base_defenceMark)
           <ID>213</ID>
           <Description>"base_defenceMark+D0 (default = 4)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+D0</Address>
         </CheatEntry>
@@ -1594,7 +1547,6 @@ unregistersymbol(base_defenceMark)
           <ID>214</ID>
           <Description>"base_defenceMark+D1 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+D1</Address>
         </CheatEntry>
@@ -1602,7 +1554,6 @@ unregistersymbol(base_defenceMark)
           <ID>215</ID>
           <Description>"base_defenceMark+D2 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+D2</Address>
         </CheatEntry>
@@ -1610,7 +1561,6 @@ unregistersymbol(base_defenceMark)
           <ID>216</ID>
           <Description>"base_defenceMark+D3 (default = 0)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <Color>00FFFF</Color>
           <VariableType>Float</VariableType>
           <Address>base_defenceMark+D3</Address>
         </CheatEntry>
@@ -1908,10 +1858,10 @@ unregistersymbol(base_defenceMark)
         </CheatEntry>
         <CheatEntry>
           <ID>257</ID>
-          <Description>"base_defenceMark+FC (default = 0)"</Description>
+          <Description>"base_defenceMark+FC (default = 10)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>4 Bytes</VariableType>
           <Address>base_defenceMark+FC</Address>
         </CheatEntry>
         <CheatEntry>
@@ -2084,10 +2034,11 @@ unregistersymbol(base_defenceMark)
         </CheatEntry>
         <CheatEntry>
           <ID>281</ID>
-          <Description>"base_defenceMark+114 (default = 0)"</Description>
+          <Description>"base_defenceMark+114 (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <Color>00FFFF</Color>
-          <VariableType>Float</VariableType>
+          <VariableType>Byte</VariableType>
           <Address>base_defenceMark+114</Address>
         </CheatEntry>
         <CheatEntry>
@@ -3046,4 +2997,4 @@ unregistersymbol(base_defenceMark)
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
- </CheatTable>
+</CheatTable>
