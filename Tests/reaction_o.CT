@@ -2,10 +2,10 @@
 <CheatTable CheatEngineTableVersion="42">
   <CheatEntries>
     <CheatEntry>
-      <ID>0</ID>
+      <ID>33</ID>
       <Description>"reaction_o"</Description>
       <Options moHideChildren="1"/>
-	  <VariableType>Auto Assembler Script</VariableType>
+      <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_reaction,F8 AE B5 42 01 00 00 00 01)  // should be unique
 registersymbol(base_reaction)
@@ -35,273 +35,300 @@ end
 unregistersymbol(base_reaction)
 
 </AssemblerScript>
-	  <CheatEntries>
-	  <CheatEntry>
-			  <ID>1</ID>
-			  <Description>"base_reaction (default = 248)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+0</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>2</ID>
-			  <Description>"base_reaction+1 (default = 174)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+1</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>3</ID>
-			  <Description>"base_reaction+2 (default = 181)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+2</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>4</ID>
-			  <Description>"base_reaction+3 (default = 66)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+3</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>5</ID>
-			  <Description>"base_reaction+4 (default = 1)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+4</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>6</ID>
-			  <Description>"base_reaction+5 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+5</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>7</ID>
-			  <Description>"base_reaction+6 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+6</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>8</ID>
-			  <Description>"base_reaction+7 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+7</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>9</ID>
-			  <Description>"base_reaction+8 (default = 1)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+8</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>10</ID>
-			  <Description>"base_reaction+9 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+9</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>11</ID>
-			  <Description>"base_reaction+A (default = 166)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>12</ID>
-			  <Description>"base_reaction+B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>13</ID>
-			  <Description>"base_reaction+C (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>14</ID>
-			  <Description>"base_reaction+D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>15</ID>
-			  <Description>"base_reaction+E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>16</ID>
-			  <Description>"base_reaction+F (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>17</ID>
-			  <Description>"base_reaction+10 (default = 32)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+10</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>18</ID>
-			  <Description>"base_reaction+11 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+11</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>19</ID>
-			  <Description>"base_reaction+12 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+12</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>20</ID>
-			  <Description>"base_reaction+13 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+13</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>21</ID>
-			  <Description>"base_reaction+14 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+14</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>22</ID>
-			  <Description>"base_reaction+15 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+15</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>23</ID>
-			  <Description>"base_reaction+16 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+16</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>24</ID>
-			  <Description>"base_reaction+17 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+17</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>25</ID>
-			  <Description>"base_reaction+18 (default = 35)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+18</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>26</ID>
-			  <Description>"base_reaction+19 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+19</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>27</ID>
-			  <Description>"base_reaction+1A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+1A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>28</ID>
-			  <Description>"base_reaction+1B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+1B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>29</ID>
-			  <Description>"base_reaction+1C (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+1C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>30</ID>
-			  <Description>"base_reaction+1D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+1D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>31</ID>
-			  <Description>"base_reaction+1E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+1E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>32</ID>
-			  <Description>"base_reaction+1F (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+1F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>33</ID>
-			  <Description>"base_reaction+20 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Byte</VariableType>
-			  <Address>base_reaction+20</Address>
-			</CheatEntry>
-			</CheatEntries>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>34</ID>
+          <Description>"base_reaction (default = 248)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>35</ID>
+          <Description>"base_reaction+1 (default = 174)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>36</ID>
+          <Description>"base_reaction+2 (default = 181)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>37</ID>
+          <Description>"base_reaction+3 (default = 66)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>38</ID>
+          <Description>"base_reaction+4 (default = 1)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>39</ID>
+          <Description>"base_reaction+5 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>40</ID>
+          <Description>"base_reaction+6 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>41</ID>
+          <Description>"base_reaction+7 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>42</ID>
+          <Description>"base_reaction+8 (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>43</ID>
+          <Description>"base_reaction+9 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>44</ID>
+          <Description>"base_reaction+A (default = 166)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>45</ID>
+          <Description>"base_reaction+B (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>46</ID>
+          <Description>"base_reaction+C (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>47</ID>
+          <Description>"base_reaction+D (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>48</ID>
+          <Description>"base_reaction+E (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>49</ID>
+          <Description>"base_reaction+F (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>50</ID>
+          <Description>"base_reaction+10 (default = 32)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+10</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>51</ID>
+          <Description>"base_reaction+11 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+11</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>52</ID>
+          <Description>"base_reaction+12 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+12</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>53</ID>
+          <Description>"base_reaction+13 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+13</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>54</ID>
+          <Description>"base_reaction+14 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+14</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>55</ID>
+          <Description>"base_reaction+15 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+15</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>56</ID>
+          <Description>"base_reaction+16 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+16</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>57</ID>
+          <Description>"base_reaction+17 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+17</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>58</ID>
+          <Description>"base_reaction+18 (default = 35)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+18</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>59</ID>
+          <Description>"base_reaction+19 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+19</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>60</ID>
+          <Description>"base_reaction+1A (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+1A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>61</ID>
+          <Description>"base_reaction+1B (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+1B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>62</ID>
+          <Description>"base_reaction+1C (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+1C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>63</ID>
+          <Description>"base_reaction+1D (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+1D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>64</ID>
+          <Description>"base_reaction+1E (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+1E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>65</ID>
+          <Description>"base_reaction+1F (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+1F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>66</ID>
+          <Description>"base_reaction+20 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_reaction+20</Address>
+        </CheatEntry>
+      </CheatEntries>
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
+  <DisassemblerComments>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F020</Address>
+      <Comment>〈load effective address〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F025</Address>
+      <Comment>〈push word or doubleword onto the stack〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F026</Address>
+      <Comment>〈push word or doubleword onto the stack〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F027</Address>
+      <Comment>〈push word or doubleword onto the stack〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F028</Address>
+      <Comment>〈compare two operands〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F02F</Address>
+      <Comment>〈jump short if not equal (ZF=0)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F031</Address>
+      <Comment>〈load effective address〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F038</Address>
+      <Comment>〈load effective address〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F03F</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F042</Address>
+      <Comment>〈add 00001000 to rax (sign extended)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F048</Address>
+      <Comment>〈compare two operands〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F04B</Address>
+      <Comment>〈jump short if not greater or equal (SF~=OF)〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F04D</Address>
+      <Comment>〈copy memory〉 %s</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"FL_2023.exe"+1B95F054</Address>
+      <Comment>〈pop a value from the stack〉 %s</Comment>
+    </DisassemblerComment>
+  </DisassemblerComments>
 </CheatTable>
