@@ -1,181 +1,170 @@
- base_trap-D8 (default = 0) (#217) cmp byte ptr [rsi+000000DC],00
-base_trap-CC (default = 0) (#229) cmp byte ptr [rax+000000E8],00
-base_trap-C8 (default = 0) (#233) movd xmm1,[rbx+000000EC]
-base_trap-C7 (default = -0) (#234) movd xmm1,[rbx+000000EC]
-base_trap-C6 (default = -0) (#235) movd xmm1,[rbx+000000EC]
-base_trap-C5 (default = -0) (#236) movd xmm1,[rbx+000000EC]
-base_trap-C1 (default = 0) (#240) comiss xmm0,[rbx+000000F0]
-base_trap-C0 (default = 0.5) (#241) movss xmm0,[rbx+000000F4]
-base_trap-BF (default = 0) (#242) movss xmm0,[rbx+000000F4]
-base_trap-BE (default = 0) (#243) movss xmm0,[rbx+000000F4]
-base_trap-BD (default = 0) (#244) movss xmm0,[rbx+000000F4]
-base_trap-BC (default = 10) (#245) movss xmm0,[rbx+000000F8]
-base_trap-BB (default = 0) (#246) movss xmm0,[rbx+000000F8]
-base_trap-BA (default = 0) (#247) movss xmm0,[rbx+000000F8]
-base_trap-B9 (default = -3.6893774e+19) (#248) movss xmm0,[rbx+000000F8]
-base_trap-8C (default = 0) (#293) cmp byte ptr [r12+00000128],00
-base_trap-88 (default = 0) (#297) movss xmm0,[rax+0000012C]
-base_trap-87 (default = 0) (#298) movss xmm0,[rax+0000012C]
-base_trap-86 (default = 0) (#299) movss xmm0,[rax+0000012C]
-base_trap-85 (default = 131072) (#300) movss xmm0,[rax+0000012C]
-base_trap-25 (default = -1.0737512e+8) (#396) movss xmm1,[rdi+10]
-base_trap-20 (default = 70) (#401) subss xmm1,[rdi+18]
-base_trap-1F (default = -0) (#402) addss xmm1,[rdi+18]
-base_trap-1E (default = -0) (#403) subss xmm1,[rdi+18]
-base_trap-1D (default = 0) (#404) subss xmm1,[rdi+18]
-base_trap-18 (default = 0) (#409) cmp byte ptr [rbx+0000019C],00
-base_trap-14 (default = 0) (#413) cmp byte ptr [rax+000001A0],00
-base_trap+9 (default = -1.9933429e+8) (#440) movss xmm7,[rax+000001BC]
-base_trap+A (default = -1.0760622e+8) (#441) movss xmm7,[rax+000001BC]
-base_trap+B (default = -1.0737509e+8) (#442) movss xmm7,[rax+000001BC]
-base_trap+34 (default = 0) (#482) mov rax,[rax+08]
-base_trap+35 (default = 0) (#483) mov rax,[rax+08]
-base_trap+36 (default = 0) (#484) mov rax,[rax+08]
-base_trap+37 (default = 0) (#485) mov rax,[rax+08]
-base_trap+3A (default = 0) (#488) mov rax,[rax+08]
-base_trap+3B (default = 0) (#489) mov rax,[rax+08]
-base_trap+54 (default = 0) (#514) cmp [rcx+08],dl
-base_trap+55 (default = 2.0000002) (#515) mov [rcx+09],al
-base_trap+58 (default = 0) (#518) mov eax,[rcx+0C]
-base_trap+59 (default = 0) (#519) mov eax,[rcx+0C]
-base_trap+5A (default = 0) (#520) mov eax,[rcx+0C]
-base_trap+5D (default = 0) (#523) mov [rcx+11],al
-base_trap+5C (default = 0) (#522) cmp [rcx+10],al
-base_trap+74 (default = 0) (#545) cmp [rcx+08],dl
-base_trap+78 (default = 0) (#549) mov eax,[rcx+0C]
-base_trap+79 (default = 0) (#550) mov eax,[rcx+0C]
-base_trap+7A (default = 0) (#551) mov eax,[rcx+0C]
-base_trap+7B (default = 0) (#552) mov eax,[rcx+0C]
-base_trap+7D (default = 0) (#554) mov [rcx+11],al
-base_trap+7C (default = 0) (#553) cmp [rcx+10],al
-base_trap+144 (default = 0) (#752) lock xadd [rcx],eax
-base_trap+14C (default = 0) (#760) add r9,[r14+10]
-base_trap+14D (default = 0) (#761) add r9,[r14+10]
-base_trap+14E (default = 0) (#762) add r9,[r14+10]
-base_trap+14F (default = 0) (#763) add r9,[r14+10]
+base_trap-1AC (default = 0) (#5) mov edx,[rbp+08]
+base_trap-1AB (default = 0) (#6) mov edx,[rbp+08]
+base_trap-1AA (default = 0) (#7) mov edx,[rbp+08]
+base_trap-1A9 (default = 0) (#8) mov edx,[rbp+08]
+
+base_trap-1A8 (default = 0) (#9) cmp byte ptr [rbp+0C],00
+
+base_trap-1A7 (default = 0) (#10) cmp byte ptr [rbp+0D],00
+
+base_trap-1A6 (default = 0) (#11) cmp byte ptr [rbp+0E],00
+
+base_trap-18C (default = 0) (#37) cmp byte ptr [rax+28],00
+
+base_trap-17C (default = 1) (#53) mulss xmm7,[rax+38]
+
+base_trap-175 (default = 0) (#60) mulss xmm1,[rax+3C]
 base_trap-174 (default = 0) (#61) movd xmm1,[rbx+40]
 base_trap-173 (default = 0) (#62) movd xmm1,[rbx+40]
 base_trap-172 (default = 0) (#63) movd xmm1,[rbx+40]
-base_trap-175 (default = 0) (#60) mulss xmm1,[rax+3C]
-base_trap-9D (default = 0) (#276) movd xmm1,[rbp+00000114]
-base_trap-9C (default = 0) (#277) movzx r8d,byte ptr [rbp+00000118]
-base_trap+4 (default = 0.25) (#435) movss xmm7,[rdi+000001B8]
-base_trap+5 (default = -0) (#436) movss xmm7,[rdi+000001B8]
-base_trap+8 (default = 0.15) (#439) movss xmm7,[rax+000001BC]
-base_trap+6 (default = -0) (#437) movss xmm7,[rdi+000001B8]
-base_trap+7 (default = 0) (#438) movss xmm7,[rdi+000001B8]
-base_trap+38 (default = 0) (#486) mov rax,[rax+08]
-base_trap+39 (default = 0) (#487) mov rax,[rax+08]
-base_trap+5B (default = 0) (#521) mov eax,[rcx+0C]
-base_trap+75 (default = 0) (#546) mov [rcx+09],al
-base_trap+145 (default = 0) (#753) lock xadd [rcx],eax
-base_trap+150 (default = 0) (#764) add r9,[r14+10]
-base_trap+151 (default = 2.3611832e+21) (#765) add r9,[r14+10]
-base_trap+152 (default = 0) (#766) add r9,[r14+10]
-base_trap+153 (default = 0) (#767) add r9,[r14+10]
-base_trap-35 (default = 1.0737512e+8) (#380) movss xmm1,[rdi]
-base_trap-30 (default = 50) (#385) subss xmm1,[rdi+08]
-base_trap-2F (default = -0) (#386) addss xmm1,[rdi+08]
-base_trap-2D (default = -0) (#388) subss xmm1,[rdi+08]
-base_trap (default = 0.15) (#431) addss xmm7,[rdi+000001B4]
-base_trap+1 (default = 0) (#432) addss xmm7,[rdi+000001B4]
-base_trap+146 (default = 0) (#754) lock xadd [rcx],eax
-base_trap-1AC (default = 0) (#5) mov edx,[rbp+08]
-base_trap-1A9 (default = 0) (#8) mov edx,[rbp+08]
 base_trap-171 (default = 0) (#64) movd xmm1,[rbx+40]
-base_trap+2 (default = 0) (#433) addss xmm7,[rdi+000001B4]
-base_trap+3 (default = -0) (#434) addss xmm7,[rdi+000001B4]
-base_trap+147 (default = 0) (#755) lock xadd [rcx],eax
-base_trap-C4 (default = 0.3) (#237) comiss xmm0,[rbx+000000F0]
-base_trap-C3 (default = 0) (#238) comiss xmm0,[rbx+000000F0]
-base_trap-C2 (default = 0) (#239) comiss xmm0,[rbx+000000F0]
-base_trap-A4 (default = 0) (#269) movd xmm1,[rbp+00000110]
-base_trap-A3 (default = 0) (#270) movd xmm1,[rbp+00000110]
-base_trap-A2 (default = 0) (#271) movd xmm1,[rbp+00000110]
-base_trap-A1 (default = 0) (#272) movd xmm1,[rbp+00000110]
-base_trap-A0 (default = 0) (#273) movd xmm1,[rbp+00000114]
-base_trap-9F (default = 9.2233720e+18) (#274) movd xmm1,[rbp+00000114]
-base_trap-98 (default = 0) (#281) movzx r9d,byte ptr [rbp+0000011C]
-base_trap-64 (default = 0) (#333) cmp byte ptr [rbx+00000150],00
-base_trap-A8 (default = 0) (#265) movzx ecx,byte ptr [rax+0000010C]
-base_trap-28 (default = 80) (#393) movss xmm1,[rdi+10]
-base_trap-27 (default = -2.0407910e+8) (#394) movss xmm1,[rdi+10]
-base_trap-26 (default = -1.0761549e+8) (#395) movss xmm1,[rdi+10]
-base_trap-5D (default = -0) (#340) movss xmm1,[rdi]
-base_trap-5C (default = 0.3) (#341) movss xmm1,[rdi+04]
-base_trap-5B (default = 0) (#342) movss xmm1,[rdi+04]
-base_trap+1A (default = 0) (#456) movd xmm0,[r14+000001CC]
-base_trap+10 (default = 0.5) (#447) addss xmm7,[rdi+000001C4]
-base_trap+11 (default = 0) (#448) addss xmm7,[rdi+000001C4]
-base_trap+12 (default = 2.6843363e+36) (#449) addss xmm7,[rdi+000001C4]
-base_trap+13 (default = -5.1112659e+33) (#450) addss xmm7,[rdi+000001C4]
-base_trap-CD (default = -0) (#228) movss xmm6,[rsi+000000E4]
-base_trap-9E (default = 0) (#275) movd xmm1,[rbp+00000114]
-base_trap-1AB (default = 0) (#6) mov edx,[rbp+08]
-base_trap-1AA (default = 0) (#7) mov edx,[rbp+08]
-base_trap-51 (default = 1.5845750e+29) (#352) subss xmm1,[rdi+0C]
-base_trap-40 (default = 0) (#369) cmp byte ptr [rbx+00000174],00
-base_trap+18 (default = 0) (#454) movd xmm0,[r14+000001CC]
-base_trap+19 (default = 0) (#455) movd xmm0,[r14+000001CC]
-base_trap+1B (default = 0) (#457) mov eax,[rax+000001CC]
-base_trap-58 (default = 45) (#345) subss xmm1,[rdi+08]
-base_trap-57 (default = -0) (#346) addss xmm1,[rdi+08]
-base_trap-59 (default = 0.0000001) (#344) movss xmm1,[rdi+04]
-base_trap-38 (default = 60) (#377) movss xmm1,[rdi]
-base_trap-37 (default = -2.0388250e+8) (#378) movss xmm1,[rdi]
-base_trap-36 (default = -1.0761510e+8) (#379) movss xmm1,[rdi]
-base_trap-2E (default = -0) (#387) subss xmm1,[rdi+08]
+
+base_trap-159 (default = 0) (#88) movss xmm0,[rbx+58]
+
+base_trap-138 (default = 0) (#121) cmp byte ptr [rax+7C],00
+
+base_trap-E0 (default = 0) (#209) cmp byte ptr [rax+000000D4],00
+
+base_trap-DF (default = 0) (#210) cmp byte ptr [rax+000000D5],00
+
+base_trap-DC (default = 0.5) (#213) mulss xmm0,[rsi+000000D8]
+
+ base_trap-D8 (default = 0) (#217) cmp byte ptr [rsi+000000DC],00
+
 base_trap-D0 (default = -1) (#225) movss xmm6,[rsi+000000E4]
 base_trap-CF (default = 0) (#226) movss xmm6,[rsi+000000E4]
+base_trap-CD (default = -0) (#228) movss xmm6,[rsi+000000E4]
+base_trap-CC (default = 0) (#229) cmp byte ptr [rax+000000E8],00
+
+base_trap-C8 (default = 0) (#233) movd xmm1,[rbx+000000EC]
+
+base_trap-C4 (default = 0.3) (#237) comiss xmm0,[rbx+000000F0]
+
+base_trap-C0 (default = 0.5) (#241) movss xmm0,[rbx+000000F4]
+
+base_trap-BC (default = 10) (#245) movss xmm0,[rbx+000000F8]
+
+base_trap-A8 (default = 0) (#265) movzx ecx,byte ptr [rax+0000010C]
+
+base_trap-A4 (default = 0) (#269) movd xmm1,[rbp+00000110]
+
+base_trap-A0 (default = 0) (#273) movd xmm1,[rbp+00000114]
+
+base_trap-9C (default = 0) (#277) movzx r8d,byte ptr [rbp+00000118]
+
+base_trap-98 (default = 0) (#281) movzx r9d,byte ptr [rbp+0000011C]
+
+base_trap-8C (default = 0) (#293) cmp byte ptr [r12+00000128],00
+
+base_trap-88 (default = 0) (#297) movss xmm0,[rax+0000012C]
+
+base_trap-71 (default = -1.0737512e+8) (#320) movss xmm1,[rdi+10]
+
+base_trap-6C (default = 50) (#325) subss xmm1,[rdi+18]
+
+base_trap-64 (default = 0) (#333) cmp byte ptr [rbx+00000150],00
+
 base_trap-60 (default = 50) (#337) movss xmm1,[rdi]
-base_trap-5F (default = -0) (#338) movss xmm1,[rdi]
+
+base_trap-5C (default = 0.3) (#341) movss xmm1,[rdi+04]
+
+base_trap-58 (default = 45) (#345) subss xmm1,[rdi+08]
+base_trap-57 (default = -0) (#346) addss xmm1,[rdi+08]
 base_trap-56 (default = -0) (#347) subss xmm1,[rdi+08]
 base_trap-55 (default = -0) (#348) addss xmm1,[rdi+08]
-base_trap-138 (default = 0) (#121) cmp byte ptr [rax+7C],00
-base_trap-18C (default = 0) (#37) cmp byte ptr [rax+28],00
-base_trap+52 (default = 0) (#512) mov rax,[rcx]
+
+base_trap-51 (default = 1.5845750e+29) (#352) subss xmm1,[rdi+0C]
+
 base_trap-50 (default = 60) (#353) movss xmm1,[rdi+10]
-base_trap-4F (default = -0) (#354) movss xmm1,[rdi+10]
-base_trap-4E (default = -0) (#355) movss xmm1,[rdi+10]
-base_trap-4D (default = -0) (#356) movss xmm1,[rdi+10]
+
+base_trap-4C (default = 0.3) (#357) movss xmm1,[rdi+14]
+
 base_trap-48 (default = 50) (#361) subss xmm1,[rdi+18]
 base_trap-47 (default = -0) (#362) addss xmm1,[rdi+18]
-base_trap-DF (default = 0) (#210) cmp byte ptr [rax+000000D5],00
-base_trap-1A8 (default = 0) (#9) cmp byte ptr [rbp+0C],00
-base_trap-1A7 (default = 0) (#10) cmp byte ptr [rbp+0D],00
-base_trap-1A6 (default = 0) (#11) cmp byte ptr [rbp+0E],00
-base_trap-17C (default = 1) (#53) mulss xmm7,[rax+38]
-base_trap-DC (default = 0.5) (#213) mulss xmm0,[rsi+000000D8]
+base_trap-46 (default = -0) (#363) subss xmm1,[rdi+18]
+base_trap-45 (default = -0) (#364) addss xmm1,[rdi+18]
+
+base_trap-44 (default = 0.3) (#365) subss xmm1,[rdi+1C]
+
+base_trap-40 (default = 0) (#369) cmp byte ptr [rbx+00000174],00
+
+base_trap-38 (default = 60) (#377) movss xmm1,[rdi]
+
+base_trap-34 (default = 0.2) (#381) movss xmm1,[rdi+04]
+
+base_trap-30 (default = 50) (#385) subss xmm1,[rdi+08]
+base_trap-2F (default = -0) (#386) addss xmm1,[rdi+08]
+base_trap-2E (default = -0) (#387) subss xmm1,[rdi+08]
+base_trap-2D (default = -0) (#388) subss xmm1,[rdi+08]
+
 base_trap-2C (default = 0.3) (#389) subss xmm1,[rdi+0C]
 base_trap-2B (default = 0) (#390) addss xmm1,[rdi+0C]
 base_trap-2A (default = 0) (#391) subss xmm1,[rdi+0C]
 base_trap-29 (default = -0) (#392) addss xmm1,[rdi+0C]
-base_trap+C (default = 0.4) (#443) addss xmm7,[rdi+000001C0]
-base_trap+D (default = 0) (#444) addss xmm7,[rdi+000001C0]
-base_trap+E (default = 0) (#445) addss xmm7,[rdi+000001C0]
-base_trap+F (default = 0) (#446) addss xmm7,[rdi+000001C0]
-base_trap-17B (default = 0) (#54) mulss xmm7,[rax+38]
-base_trap-4C (default = 0.3) (#357) movss xmm1,[rdi+14]
-base_trap-4B (default = 0) (#358) movss xmm1,[rdi+14]
-base_trap-4A (default = 0) (#359) movss xmm1,[rdi+14]
-base_trap-49 (default = 131072.97) (#360) movss xmm1,[rdi+14]
-base_trap-44 (default = 0.3) (#365) subss xmm1,[rdi+1C]
-base_trap-46 (default = -0) (#363) subss xmm1,[rdi+18]
-base_trap-45 (default = -0) (#364) addss xmm1,[rdi+18]
-base_trap-5E (default = -0) (#339) movss xmm1,[rdi]
-base_trap-159 (default = 0) (#88) movss xmm0,[rbx+58]
-base_trap-E0 (default = 0) (#209) cmp byte ptr [rax+000000D4],00
-base_trap-DB (default = 0) (#214) mulss xmm0,[rsi+000000D8]
-base_trap-D9 (default = 0) (#216) mulss xmm0,[rsi+000000D8]
-base_trap-34 (default = 0.2) (#381) movss xmm1,[rdi+04]
-base_trap-33 (default = 0) (#382) movss xmm1,[rdi+04]
-base_trap-31 (default = 131072.97) (#384) movss xmm1,[rdi+04]
-base_trap+1C (default = 0) (#458) mov eax,[r14+000001D0]
-base_trap-71 (default = -1.0737512e+8) (#320) movss xmm1,[rdi+10]
-base_trap-6C (default = 50) (#325) subss xmm1,[rdi+18]
-base_trap-6B (default = -2.0371866e+8) (#326) addss xmm1,[rdi+18]
-base_trap-6A (default = -1.0761478e+8) (#327) subss xmm1,[rdi+18]
-base_trap-69 (default = -1.0737512e+8) (#328) subss xmm1,[rdi+18]
+
+base_trap-28 (default = 80) (#393) movss xmm1,[rdi+10]
+
 base_trap-24 (default = 0.1) (#397) movss xmm1,[rdi+14]
-base_trap-23 (default = 0) (#398) movss xmm1,[rdi+14]
-base_trap-22 (default = 0) (#399) movss xmm1,[rdi+14]
+
+base_trap-20 (default = 70) (#401) subss xmm1,[rdi+18]
+base_trap-1F (default = -0) (#402) addss xmm1,[rdi+18]
+base_trap-1E (default = -0) (#403) subss xmm1,[rdi+18]
+base_trap-1D (default = 0) (#404) subss xmm1,[rdi+18]
+
+base_trap-18 (default = 0) (#409) cmp byte ptr [rbx+0000019C],00
+
+base_trap-14 (default = 0) (#413) cmp byte ptr [rax+000001A0],00
+
+base_trap (default = 0.15) (#431) addss xmm7,[rdi+000001B4]
+
+base_trap+4 (default = 0.25) (#435) movss xmm7,[rdi+000001B8]
+
+base_trap+8 (default = 0.15) (#439) movss xmm7,[rax+000001BC]
+
+base_trap+C (default = 0.4) (#443) addss xmm7,[rdi+000001C0]
+
+base_trap+10 (default = 0.5) (#447) addss xmm7,[rdi+000001C4]
+
+base_trap+17:
+base_trap+18 (default = 0) (#454) movd xmm0,[r14+000001CC]
+base_trap+19 (default = 0) (#455) movd xmm0,[r14+000001CC]
+base_trap+1A (default = 0) (#456) movd xmm0,[r14+000001CC]
+
+base_trap+1B (default = 0) (#457) mov eax,[rax+000001CC]
+base_trap+1C (default = 0) (#458) mov eax,[r14+000001D0]
+
+base_trap+34 (default = 0) (#482) mov rax,[rax+08]
+base_trap+35 (default = 0) (#483) mov rax,[rax+08]
+base_trap+36 (default = 0) (#484) mov rax,[rax+08]
+base_trap+37 (default = 0) (#485) mov rax,[rax+08]
+base_trap+38 (default = 0) (#486) mov rax,[rax+08]
+base_trap+39 (default = 0) (#487) mov rax,[rax+08]
+base_trap+3A (default = 0) (#488) mov rax,[rax+08]
+base_trap+3B (default = 0) (#489) mov rax,[rax+08]
+
+base_trap+52 (default = 0) (#512) mov rax,[rcx]
+
+base_trap+54 (default = 0) (#514) cmp [rcx+08],dl
+
+base_trap+55 (default = 2.0000002) (#515) mov [rcx+09],al
+
+base_trap+58 (default = 0) (#518) mov eax,[rcx+0C]
+
+base_trap+5C (default = 0) (#522) cmp [rcx+10],al
+
+base_trap+5D (default = 0) (#523) mov [rcx+11],al
+
+base_trap+74 (default = 0) (#545) cmp [rcx+08],dl
+
+base_trap+75 (default = 0) (#546) mov [rcx+09],al
+
+base_trap+78 (default = 0) (#549) mov eax,[rcx+0C]
+
+
+base_trap+7C (default = 0) (#553) cmp [rcx+10],al
+
+base_trap+7D (default = 0) (#554) mov [rcx+11],al
+
+base_trap+144 (default = 0) (#752) lock xadd [rcx],eax
+
+base_trap+14C (default = 0) (#760) add r9,[r14+10]
