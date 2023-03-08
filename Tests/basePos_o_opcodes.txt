@@ -1,0 +1,312 @@
+base_basePos-10 (default = 30) (#5) mulss xmm3,[rax+08]
+
+base_basePos-C (default = -10) (#9) movss xmm10,[r14+0C]
+
+base_basePos-8 (default = -4) (#13) mulss xmm0,[rbp+10]
+
+base_basePos-4 (default = 45) (#17) movss xmm6,[rax+14]
+
+base_basePos (default = -8.1000004) (#21) addss xmm7,[rbp+18]
+
+base_basePos+4 (default = -7) (#25) addss xmm7,[rbp+1C]
+
+base_basePos+8 (default = 10) (#29) mulss xmm0,[rbp+20]
+
+base_basePos+10 (default = 2) (#37) subss xmm7,[rax+28]
+
+base_basePos+18 (default = 4) (#45) divss xmm3,[rax+30]
+
+base_basePos+20 (default = -10) (#53) addss xmm8,[r14+38]
+
+base_basePos+28 (default = 0) (#61) cmp dword ptr [r14+40],00
+base_basePos+29 (default = 0) (#62) cmp dword ptr [r14+40],00
+base_basePos+2A (default = 0) (#63) cmp dword ptr [r14+40],00
+base_basePos+2B (default = 0) (#64) cmp dword ptr [r14+40],00
+
+base_basePos+2C (default = 0) (#65) cmp byte ptr [rax+44],00
+
+base_basePos+30 (default = 0) (#69) cmp dword ptr [r14+48],00
+base_basePos+31 (default = 0) (#70) cmp dword ptr [r14+48],00
+base_basePos+32 (default = 0) (#71) cmp dword ptr [r14+48],00
+base_basePos+33 (default = -3.6893488e+19) (#72) cmp dword ptr [r14+48],00
+
+base_basePos+34 (default = 7) (#73) movss xmm10,[rax+4C]
+
+base_basePos+38 (default = -0) (#77) cmp byte ptr [rax+50],00
+
+base_basePos+44 (default = ❌) (#89) cmp byte ptr [r14+5C],00
+
+base_basePos+48 (default = 0.23) (#93) mulss xmm3,[rax+60]
+
+base_basePos+4C (default = 7) (#97) mulss xmm6,[rax+64]
+
+base_basePos+54 (default = 0.5) (#105) mulss xmm7,[rbp+6C]
+
+base_basePos+60 (default = 4) (#117) subss xmm9,[r14+78]
+
+
+base_basePos+64 (default = 2.5) (#121) movss xmm3,[rcx+7C]
+
+
+base_basePos+74 (default = 7) (#137) mulss xmm1,[r14+0000008C]
+
+
+base_basePos+80 (default = 0) (#149) cmp dword ptr [rax+00000098],00
+
+base_basePos+81 (default = -0) (#150) cmp dword ptr [rax+00000098],00
+
+base_basePos+82 (default = -0) (#151) cmp dword ptr [rax+00000098],00
+
+base_basePos+83 (default = 0) (#152) cmp dword ptr [rax+00000098],00
+
+base_basePos+88 (default = 0) (#157) cmp dword ptr [rax+000000A0],00
+
+base_basePos+89 (default = 0) (#158) cmp dword ptr [rax+000000A0],00
+
+base_basePos+8A (default = 0) (#159) cmp dword ptr [rax+000000A0],00
+
+base_basePos+8B (default = -131072) (#160) cmp dword ptr [rax+000000A0],00
+
+base_basePos+8C (default = 25) (#161) movss xmm7,[rax+000000A4]
+
+base_basePos+90 (default = 23) (#165) addss xmm0,[r14+000000A8]
+
+base_basePos+94 (default = 1) (#169) subss xmm6,[rbp+000000AC]
+
+base_basePos+98 (default = 0.0000107) (#173) cmp byte ptr [rax+000000B0],00
+
+base_basePos+9C (default = 0.1) (#177) mulss xmm2,[rax+000000B4]
+
+base_basePos+A8 (default = 12) (#189) movss xmm1,[rax+000000C0]
+
+base_basePos+AC (default = 22) (#193) movss xmm8,[rax+000000C4]
+
+base_basePos+B0 (default = 15) (#197) movss xmm11,[rax+000000C8]
+
+base_basePos+B8 (default = 50) (#205) mulss xmm6,[rax+000000D0]
+
+base_basePos+BC (default = 45) (#209) movss xmm6,[rbp+000000D4]
+
+base_basePos+C0 (default = 42) (#213) movss xmm0,[rbp+000000D8]
+
+base_basePos+C4 (default = 10) (#217) movss xmm3,[rbp+000000DC]
+
+base_basePos+C8 (default = 10) (#221) mulss xmm1,[rbp+000000E0]
+
+base_basePos+E4 (default = 4) (#249) divss xmm3,[rax+000000FC]
+
+base_basePos+F0 (default = 0) (#261) cmp byte ptr [rax+00000108],00
+
+base_basePos+F2 (default = 0) (#263) cmp byte ptr [rdx+0000010A],00
+
+base_basePos+F4 (default = 20) (#265) movss xmm0,[rdx+0000010C]
+
+base_basePos+F8 (default = 12.5) (#269) movss xmm4,[rdx+00000110]
+
+base_basePos+FC (default = 30) (#273) movss xmm1,[rdx+00000114]
+
+base_basePos+100 (default = 5) (#277) movss xmm0,[rdx+00000118]
+
+base_basePos+104 (default = 10) (#281) movss xmm0,[rdx+0000011C]
+
+base_basePos+11E (default = 0) (#307) cmp byte ptr [rdx+00000136],00
+
+base_basePos+120 (default = 0.5) (#309) mov eax,[rbp+00000138]
+
+base_basePos+124 (default = 0) (#313) movzx eax,byte ptr [rbx+0000013C]
+
+base_basePos+134 (default = 8) (#329) addss xmm10,[rbp+0000014C]
+
+base_basePos+138 (default = -5) (#333) addss xmm11,[rbp+00000150]
+
+base_basePos+13C (default = 0.55) (#337) movss xmm9,[r8+00000154]
+
+base_basePos+140 (default = 0.2) (#341) movss xmm1,[r14+00000158]
+
+base_basePos+144 (default = 0.1) (#345) movss xmm1,[r14+0000015C]
+
+base_basePos+148 (default = 16) (#349) movss xmm7,[rax+00000160]
+
+base_basePos+14C (default = 20) (#353) movss xmm7,[rax+00000164]
+
+base_basePos+150 (default = 24) (#357) movss xmm7,[rax+00000168]
+
+base_basePos+154 (default = 6) (#361) movss xmm7,[rax+0000016C]
+
+base_basePos+164 (default = 58) (#377) movss xmm2,[rdx+0000017C]
+
+base_basePos+168 (default = 35) (#381) movss xmm3,[rdx+00000180]
+
+base_basePos+16C (default = 9) (#385) movss xmm6,[rbx+00000184]
+
+base_basePos+170 (default = 15) (#389) movss xmm6,[rbx+00000188]
+
+base_basePos+17C (default = 1) (#401) movss xmm1,[rsi+00000194]
+
+base_basePos+198 (default = 0.8) (#429) mov eax,[rsi+000001B0]
+
+base_basePos+19C (default = 0) (#433) mulss xmm1,[rax+000001B4]
+
+base_basePos+1AC (default = 12) (#449) mulss xmm1,[r14+000001C4]
+base_basePos+1AD (default = 0.0471802) (#450) mulss xmm1,[r14+000001C4]
+base_basePos+1AE (default = 0) (#451) movss xmm6,[rdx+000001C4]
+base_basePos+1AF (default = -1.5199569e+14) (#452) mulss xmm1,[r14+000001C4]
+
+base_basePos+1B0 (default = 0.42) (#453) mulss xmm7,[rdx+000001C8]
+
+base_basePos+1B8 (default = 20) (#461) mulss xmm6,[rax+000001D0]
+base_basePos+1B9 (default = 0) (#462) mulss xmm6,[rax+000001D0]
+base_basePos+1BA (default = 0) (#463) mulss xmm6,[rax+000001D0]
+base_basePos+1BD (default = 0) (#466) movss xmm5,[rax+000001D4]
+
+base_basePos+1BC (default = 36) (#465) movss xmm5,[rax+000001D4]
+
+base_basePos+1E8 (default = 45) (#509) movss xmm5,[rax+00000200]
+
+base_basePos+1F0 (default = 0) (#517) cmp byte ptr [rax+00000208],00
+
+base_basePos+1F4 (default = 50) (#521) comiss xmm6,[rax+0000020C]
+
+base_basePos+1F8 (default = 0) (#525) cmp dword ptr [rax+00000210],00
+
+base_basePos+1F9 (default = 0) (#526) cmp dword ptr [rax+00000210],00
+
+base_basePos+1FA (default = 0) (#527) cmp dword ptr [rax+00000210],00
+
+base_basePos+1FB (default = -0) (#528) cmp dword ptr [rax+00000210],00
+
+base_basePos+1FC (default = -18) (#529) movss xmm0,[r14+00000214]
+
+base_basePos+200 (default = 0.8) (#533) movss xmm0,[r8+00000218]
+
+base_basePos+204 (default = 35) (#537) movss xmm8,[rbp+0000021C]
+
+base_basePos+208 (default = 35) (#541) movss xmm8,[rbp+00000220]
+
+base_basePos+20C (default = 30) (#545) movss xmm0,[rbp+00000224]
+
+base_basePos+210 (default = 35) (#549) movss xmm6,[r14+00000228]
+
+base_basePos+214 (default = 13) (#553) movss xmm7,[rax+0000022C]
+
+base_basePos+218 (default = 13) (#557) movss xmm0,[rax+00000230]
+
+base_basePos+21C (default = 0) (#561) cmp dword ptr [r14+00000234],00
+
+base_basePos+21D (default = 0) (#562) cmp dword ptr [r14+00000234],00
+
+base_basePos+21E (default = 0) (#563) cmp dword ptr [r14+00000234],00
+
+base_basePos+21F (default = 131072) (#564) cmp dword ptr [r14+00000234],00
+
+base_basePos+224 (default = 0) (#569) movd xmm0,[r15+0000023C]
+
+base_basePos+228 (default = 0) (#573) mov edi,[r15+00000240]
+
+base_basePos+22C (default = 1) (#577) movss xmm1,[rax+00000244]
+
+base_basePos+230 (default = -6) (#581) movss xmm9,[rax+00000248]
+
+base_basePos+234 (default = 6) (#585) mulss xmm0,[r14+0000024C]
+
+base_basePos+238 (default = 30) (#589) subss xmm1,[rax+00000250]
+
+base_basePos+23C (default = 40) (#593) subss xmm1,[rax+00000254]
+
+base_basePos+240 (default = 95) (#597) movss xmm6,[rdx+00000258]
+
+base_basePos+248 (default = 0.2) (#605) movss xmm13,[rbp+00000260]
+
+base_basePos+24C (default = 0.4) (#609) mov eax,[rbp+00000264]
+
+base_basePos+254 (default = 10) (#617) movss xmm1,[rax+0000026C]
+
+base_basePos+260 (default = 9) (#629) movss xmm0,[rbp+00000278]
+
+base_basePos+264 (default = 6) (#633) movss xmm1,[rbp+0000027C]
+
+base_basePos+268 (default = 1.5) (#637) subss xmm6,[rsi+00000280]
+
+base_basePos+26C (default = 9) (#641) movss xmm0,[rax+00000284]
+
+base_basePos+270 (default = 2) (#645) movss xmm1,[rax+00000288]
+
+base_basePos+274 (default = 7) (#649) movss xmm1,[rax+0000028C]
+
+base_basePos+27C (default = 0) (#657) cmp byte ptr [rax+00000294],00
+
+base_basePos+288 (default = 0) (#669) cmp byte ptr [rax+000002A0],00
+
+base_basePos+28C (default = 0) (#673) subss xmm8,[rax+000002A4]
+
+base_basePos+290 (default = 0) (#677) cmp byte ptr [rax+000002A8],00
+
+base_basePos+2AC (default = 0) (#705) cmp dword ptr [rax+000002C4],00
+
+base_basePos+2AD (default = 0) (#706) cmp dword ptr [rax+000002C4],00
+
+base_basePos+2AE (default = 0) (#707) cmp dword ptr [rax+000002C4],00
+
+base_basePos+2AF (default = -0) (#708) cmp dword ptr [rax+000002C4],00
+
+base_basePos+2B4 (default = 0) (#713) cmp [rax+000002CC],r15l
+
+base_basePos+2B8 (default = 0.24) (#717) movss xmm7,[rsi+000002D0]
+
+base_basePos+2C3 (default = 0) (#728) comiss xmm0,[rsi+000002D8]
+
+base_basePos+2C8 (default = 0) (#733) cmp dword ptr [rax+000002E0],00
+
+base_basePos+2C9 (default = 0) (#734) cmp dword ptr [rax+000002E0],00
+
+base_basePos+2CA (default = 0) (#735) cmp dword ptr [rax+000002E0],00
+
+base_basePos+2CB (default = 1.5845633e+29) (#736) cmp dword ptr [rax+000002E0],00
+
+base_basePos+2CC (default = 60) (#737) movss xmm0,[rax+000002E4]
+
+base_basePos+2F0 (default = 0) (#773) cmp dword ptr [rbx+00000308],00
+
+base_basePos+2F1 (default = 0) (#774) cmp dword ptr [rbx+00000308],00
+
+base_basePos+2F2 (default = 0) (#775) cmp dword ptr [rbx+00000308],00
+
+base_basePos+2F3 (default = 0) (#776) cmp dword ptr [rbx+00000308],00
+
+base_basePos+2F4 (default = 0) (#777) cmp byte ptr [r14+0000030C],00
+
+base_basePos+2FC (default = 0) (#785) cmp dword ptr [rax+00000314],00
+
+base_basePos+2FD (default = -6.4903711e+32) (#786) cmp dword ptr [r14+00000314],00
+
+base_basePos+2FE (default = 0) (#787) cmp dword ptr [rax+00000314],00
+
+base_basePos+2FF (default = -1.9023310e+17) (#788) cmp dword ptr [rax+00000314],00
+
+base_basePos+300 (default = 0.43) (#789) movss xmm1,[rax+00000318]
+
+base_basePos+30C (default = 0) (#801) cmp dword ptr [rbx+00000324],00
+
+base_basePos+30D (default = 0) (#802) cmp dword ptr [rbx+00000324],00
+
+base_basePos+30E (default = 0) (#803) cmp dword ptr [rbx+00000324],00
+
+base_basePos+30F (default = 0) (#804) cmp dword ptr [rbx+00000324],00
+
+base_basePos+310 (default = 9) (#805) movss xmm2,[rax+00000328]
+
+base_basePos+32C (default = 50) (#833) movss xmm5,[rax+00000344]
+
+base_basePos+34C (default = 0) (#865) cmp byte ptr [r14+00000364],00
+
+base_basePos+369 (default = 0) (#894) mov rax,[rcx]
+base_basePos+36F (default = 0) (#900) mov rax,[rcx]
+
+base_basePos+370 (default = 0) (#901) cmp [rcx+08],dl
+base_basePos+371 (default = 0) (#902) mov [rcx+09],al
+
+base_basePos+374 (default = 0) (#905) mov eax,[rcx+0C]
+
+base_basePos+378 (default = 75.408813) (#909) cmp [rcx+10],al
+
+base_basePos+379 (default = 0) (#910) mov [rcx+11],al
