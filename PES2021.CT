@@ -34,6 +34,8 @@ scrpts[8].Active=true -- Angle hijack (stadium)
 scrpts[9].Active=true -- Cutscenes heights
 scrpts[10].Active=true -- Smoother anim
 scrpts[11].Active=true -- Game speed
+scrpts[12].Active=true -- Height
+scrpts[13].Active=true -- Weight
 
 [DISABLE]
 scrpts[1].Active=false -- Left arm
@@ -46,7 +48,9 @@ scrpts[7].Active=false -- Brodacst focus
 scrpts[8].Active=false -- Angle hijack (stadium)
 scrpts[9].Active=false -- Cutscenes heights
 scrpts[10].Active=false -- Smoother anim
-scrpts[11].Active=true -- Game speed
+scrpts[11].Active=false -- Game speed
+scrpts[12].Active=false -- Height
+scrpts[13].Active=false -- Weight
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -726,7 +730,7 @@ opcode_inj[script_ref]=nil
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>0</ID>
+          <ID>673</ID>
           <Description>"Animation change"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
@@ -1041,7 +1045,7 @@ opcode_inj[script_ref]=nil
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>7</ID>
+          <ID>674</ID>
           <Description>"Animation speed"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
@@ -1294,7 +1298,7 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>8</ID>
+              <ID>675</ID>
               <Description>"Acceleration"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
@@ -1728,6 +1732,191 @@ opcode_inj[script_ref]=nil
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_speed</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>688</ID>
+          <Description>"Height mod (Lower is taller)"</Description>
+          <Options moHideChildren="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+
+aobscanmodule(INJECT,PES2021.exe,0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D) // should be unique
+alloc(newmem,$1000,INJECT)
+
+label(code)
+label(return)
+
+alloc(hgt_mult, 4, INJECT)
+registersymbol(hgt_mult)
+hgt_mult:
+dd (float)1.063
+
+newmem:
+
+code:
+  comiss xmm4,xmm2
+  mulss xmm4, [hgt_mult]
+  jmp return
+
+INJECT:
+  jmp newmem
+return:
+  db EB 16
+  nop 2
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 0F 2F E2 76 18 F3 0F 5C CB
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>689</ID>
+              <Description>"Height mult"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>hgt_mult</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>687</ID>
+                  <Description>"Weights mod"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+--OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+local suffix='_wgt'
+vars.varis_1_n='mult'..suffix
+local wmult=1
+vars.varis_1_d='dd (float)'..wmult
+vars.varis_1_size=4
+local parts={{'xmm%d+',1,'x_reg'}}
+local module_names='PES2021.exe'
+
+--COMPULSORY
+local newmem_name='newmem'..suffix
+local newmem_size='$1000'
+local script_ref='Weights_mod' --  opcode_inj[vars.script_ref] stores vars
+local inj_name='INJECT'..suffix
+local pattern='^%s*movss%s*xmm%d+%s*,%s*%[[^%]]+%]'
+local aobs={'F3 0F 10 89 14 01 00 00 0F 28 C1 F3 0F 5C C2 0F 2F C3 73 03 0F 28 CA',22,24}
+local lookahead_n=32
+
+local inj_script=[[
+  define(${inj_name},${address_string})
+  registersymbol(${inj_name})
+  alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
+    registersymbol($%s{varis_1_n})
+	$%s{varis_1_n}:
+	$%s{varis_1_d}
+  label(code)
+  label(return)
+
+${newmem_name}:
+	code:
+    ${opcode}
+    mulss ${x_reg},[${varis_1_n}]
+	  jmp return
+
+ ${inj_name}:
+	  jmp ${newmem_name}
+${post_jmp}
+  return:
+
+]]
+
+[ENABLE]
+opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+
+[DISABLE]
+opcode_inj.disable(script_ref)
+opcode_inj[script_ref]=nil
+</AssemblerScript>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>690</ID>
+                      <Description>"Weight mult"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>mult_wgt</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>685</ID>
+          <Description>"Weight mod"</Description>
+          <Options moHideChildren="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+--OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+local suffix='_wgt'
+vars.varis_1_n='mult'..suffix
+local wmult=1
+vars.varis_1_d='dd (float)'..wmult
+vars.varis_1_size=4
+local parts={{'xmm%d+',1,'x_reg'}}
+local module_names='PES2021.exe'
+
+--COMPULSORY
+local newmem_name='newmem'..suffix
+local newmem_size='$1000'
+local script_ref='Weights_mod' --  opcode_inj[vars.script_ref] stores vars
+local inj_name='INJECT'..suffix
+local pattern='^%s*movss%s*xmm%d+%s*,%s*%[[^%]]+%]'
+local aobs={'F3 0F 10 89 14 01 00 00 0F 28 C1 F3 0F 5C C2 0F 2F C3 73 03 0F 28 CA',22,24}
+local lookahead_n=32
+
+local inj_script=[[
+  define(${inj_name},${address_string})
+  registersymbol(${inj_name})
+  alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
+    registersymbol($%s{varis_1_n})
+	$%s{varis_1_n}:
+	$%s{varis_1_d}
+  label(code)
+  label(return)
+
+${newmem_name}:
+	code:
+    ${opcode}
+    mulss ${x_reg},[${varis_1_n}]
+	  jmp return
+
+ ${inj_name}:
+	  jmp ${newmem_name}
+${post_jmp}
+  return:
+
+]]
+
+[ENABLE]
+opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+
+[DISABLE]
+opcode_inj.disable(script_ref)
+opcode_inj[script_ref]=nil
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>691</ID>
+              <Description>"Weight mult"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>mult_wgt</Address>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
