@@ -1782,74 +1782,7 @@ dealloc(newmem)
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>hgt_mult</Address>
-              <CheatEntries>
-                <CheatEntry>
-                  <ID>687</ID>
-                  <Description>"Weights mod"</Description>
-                  <VariableType>Auto Assembler Script</VariableType>
-                  <AssemblerScript>{$lua}
-if syntaxcheck then return end
-local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
-local suffix='_wgt'
-vars.varis_1_n='mult'..suffix
-local wmult=1
-vars.varis_1_d='dd (float)'..wmult
-vars.varis_1_size=4
-local parts={{'xmm%d+',1,'x_reg'}}
-local module_names='PES2021.exe'
 
---COMPULSORY
-local newmem_name='newmem'..suffix
-local newmem_size='$1000'
-local script_ref='Weights_mod' --  opcode_inj[vars.script_ref] stores vars
-local inj_name='INJECT'..suffix
-local pattern='^%s*movss%s*xmm%d+%s*,%s*%[[^%]]+%]'
-local aobs={'F3 0F 10 89 14 01 00 00 0F 28 C1 F3 0F 5C C2 0F 2F C3 73 03 0F 28 CA',22,24}
-local lookahead_n=32
-
-local inj_script=[[
-  define(${inj_name},${address_string})
-  registersymbol(${inj_name})
-  alloc(${newmem_name}, ${newmem_size}, ${inj_name})
-	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
-    registersymbol($%s{varis_1_n})
-	$%s{varis_1_n}:
-	$%s{varis_1_d}
-  label(code)
-  label(return)
-
-${newmem_name}:
-	code:
-    ${opcode}
-    mulss ${x_reg},[${varis_1_n}]
-	  jmp return
-
- ${inj_name}:
-	  jmp ${newmem_name}
-${post_jmp}
-  return:
-
-]]
-
-[ENABLE]
-opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
-
-[DISABLE]
-opcode_inj.disable(script_ref)
-opcode_inj[script_ref]=nil
-</AssemblerScript>
-                  <CheatEntries>
-                    <CheatEntry>
-                      <ID>690</ID>
-                      <Description>"Weight mult"</Description>
-                      <ShowAsSigned>0</ShowAsSigned>
-                      <VariableType>Float</VariableType>
-                      <Address>mult_wgt</Address>
-                    </CheatEntry>
-                  </CheatEntries>
-                </CheatEntry>
-              </CheatEntries>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
