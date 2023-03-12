@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CheatTable CheatEngineTableVersion="42">
+<CheatTable CheatEngineTableVersion="45">
   <CheatEntries>
     <CheatEntry>
       <ID>77</ID>
@@ -35,7 +35,7 @@ scrpts[9].Active=true -- Cutscenes heights
 scrpts[10].Active=true -- Smoother anim
 scrpts[11].Active=true -- Game speed
 scrpts[12].Active=true -- Height
-scrpts[13].Active=true -- Weight
+scrpts[13].Active=true -- Body Size
 
 [DISABLE]
 scrpts[1].Active=false -- Left arm
@@ -50,7 +50,7 @@ scrpts[9].Active=false -- Cutscenes heights
 scrpts[10].Active=false -- Smoother anim
 scrpts[11].Active=false -- Game speed
 scrpts[12].Active=false -- Height
-scrpts[13].Active=false -- Weight
+scrpts[13].Active=false -- Body size
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -1737,21 +1737,33 @@ opcode_inj[script_ref]=nil
         </CheatEntry>
         <CheatEntry>
           <ID>688</ID>
-          <Description>"Height mod (Lower is taller)"</Description>
+          <Description>"Height mod ("Height mult" lower is taller)"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>[ENABLE]
 
-aobscanmodule(INJECT,PES2021.exe,0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D) // should be unique
-alloc(newmem,$1000,INJECT)
+aobscanmodule(INJECT_hm,PES2021.exe,0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D) // should be unique
+alloc(newmem,$1000,INJECT_hm)
 
 label(code)
 label(return)
 
-alloc(hgt_mult, 4, INJECT)
+aobscanmodule(INJECT_hm2,PES2021.exe,F3 0F 10 4A 28 F3 0F 11 04 24 F3 0F 10 42 24 F3 0F 11 44 24 08) // should be unique
+alloc(newmem2,$1000,INJECT_hm2)
+
+label(code2)
+label(return2)
+
+alloc(hgt_mult, 4, INJECT_hm)
 registersymbol(hgt_mult)
 hgt_mult:
 dd (float)1.063
+
+alloc(inv_hgt_mult, 4, INJECT_hm2)
+registersymbol(inv_hgt_mult)
+inv_hgt_mult:
+db C8 41 79 3F
+//dd (float)
 
 newmem:
 
@@ -1760,20 +1772,39 @@ code:
   mulss xmm4, [hgt_mult]
   jmp return
 
-INJECT:
+INJECT_hm:
   jmp newmem
 return:
   db EB 16
   nop 2
-registersymbol(INJECT)
+registersymbol(INJECT_hm)
+
+newmem2:
+
+code2:
+  movss xmm1,[rdx+28]
+    mulss xmm1,[inv_hgt_mult]
+  jmp return2
+
+INJECT_hm2:
+  jmp newmem2
+return2:
+registersymbol(INJECT_hm2)
 
 [DISABLE]
 
-INJECT:
-  db 0F 2F E2 76 18 F3 0F 5C CB
+INJECT_hm:
+  db 0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D
 
-unregistersymbol(INJECT)
+unregistersymbol(INJECT_hm)
 dealloc(newmem)
+
+INJECT_hm2:
+  db F3 0F 10 4A 28 F3 0F 11 04 24 F3 0F 10 42 24 F3 0F 11 44 24 08
+
+unregistersymbol(INJECT_hm2)
+dealloc(newmem2)
+
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
@@ -1782,13 +1813,19 @@ dealloc(newmem)
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>hgt_mult</Address>
-
+            </CheatEntry>
+            <CheatEntry>
+              <ID>708</ID>
+              <Description>"Animation y mult"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>inv_hgt_mult</Address>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>685</ID>
-          <Description>"Weight mod"</Description>
+          <Description>"Body size"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>{$lua}
@@ -1846,7 +1883,7 @@ opcode_inj[script_ref]=nil
           <CheatEntries>
             <CheatEntry>
               <ID>691</ID>
-              <Description>"Weight mult"</Description>
+              <Description>"Size mult"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_wgt</Address>
