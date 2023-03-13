@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"selectorVision_o"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_selectorVision,02 00 00 00 03 00 00 00 04 00 00 00 04 00 00 00 04 00 00 00 00)  // should be unique

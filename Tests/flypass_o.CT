@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"flypass_o"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_flypass,00 00 70 42 00 00 20 41 00 00 70 41 00 00 A0 40 00 00 70)  // should be unique

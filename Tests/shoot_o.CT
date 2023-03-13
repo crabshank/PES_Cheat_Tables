@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"shoot_o"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_shoot,00 00 C8 42 00 00 D2 42 00 00 E6 42 00 00 F0 42 00 00)  // should be unique

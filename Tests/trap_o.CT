@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"trap_o"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_trap,9A 99 19 3E 00 00 80 3E 9A 99 19 3E CD CC CC 3E)  // should be unique

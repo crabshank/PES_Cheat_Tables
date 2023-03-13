@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"playStyle_o_PTR"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_playStyle,68 8B B5 42 01 00)  // should be unique

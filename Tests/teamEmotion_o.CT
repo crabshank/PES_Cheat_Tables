@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"teamEmotion_o"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_teamEmotion,32 00 00 00 28 00 00 00 14 00 00 00)  // should be unique

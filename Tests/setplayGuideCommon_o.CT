@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"setplayGuideCommon_o"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_spgCommon,80 40 01 00 00 00 00 00 48 43 00 00 48 42)  // should be unique

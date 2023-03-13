@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"feintCommand_o_PTR"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_feintCommand,58 6E B5 42 01 00 00 00 45 4E 45 4D 59 5F 41 4E 47 4C 45)  // should be unique

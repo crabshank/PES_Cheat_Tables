@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"pes15Test_o"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_PES15test,9A 99 99 3E 3D 0A D7 3E 5C 8F)  // should be unique

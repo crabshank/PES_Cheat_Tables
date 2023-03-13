@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"ballplayerClear_o"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_ballPlyC,18 DD B4 42 01 00)  // should be unique

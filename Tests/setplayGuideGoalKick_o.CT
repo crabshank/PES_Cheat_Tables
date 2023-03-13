@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"setplayGuideGoalKick_o"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_spgGoalKick,00 00 A0 40 00 00 A0 40 00 00 48 42 00 00 F0 41 00 00 00 00 00 00 98 41 00 00)  // should be unique

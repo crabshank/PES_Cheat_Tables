@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"grounderpass_o"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_grounderPass,F8 41 00 00 E0 41 00 00 E0 41 00 00 04 42 00 00 04 42 CD CC CC 3E)  // should be unique

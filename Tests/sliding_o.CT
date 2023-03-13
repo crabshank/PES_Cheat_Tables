@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"sliding_o"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_sliding,00 00 60 41 9A 99 99 3F 66 66 66 3F)  // should be unique

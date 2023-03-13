@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"tackle_o"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_tackle,00 80 1D 43 00 C0 28 43 00 00 D2 42 00 00 07 43)  // should be unique

@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"freekick_o"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_fk,58 48 B5 42 01 00)  // should be unique

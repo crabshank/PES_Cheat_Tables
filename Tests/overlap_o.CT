@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"overlap_o"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_overlap,80 BF 00 00 A0 C0 00 00 90 C1 00 00 C8 C1)  // should be unique

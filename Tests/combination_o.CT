@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"combination_o"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_combination,08 00 00 00 07 00 00 00 05 00 00 00 04 00 00 00 01 00 00 00 0A 00 00 00 00)  // should be unique

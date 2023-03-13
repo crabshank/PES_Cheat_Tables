@@ -4,6 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"defenceMark_o"</Description>
+	  <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_defenceMark,00 00 B4 41 03 00 00 00 00 00 A0 41 00 00 A0 40)  // should be unique

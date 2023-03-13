@@ -4,7 +4,7 @@
     <CheatEntry>
       <ID>0</ID>
       <Description>"rating_o_PTR"</Description>
-      <Options moHideChildren="1"/>
+      <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_rating,35 30 2E 30 20 2A 20 53 74 61 74 73 50 6C 61 79 65 72 4F 77 6E 47 6F 61 6C 28 29 20 2B 20 20 34 30 2E 30 20 2A)  // should be unique
