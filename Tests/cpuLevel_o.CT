@@ -7,7 +7,7 @@
       <Options moHideChildren="1"/>
 	  <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base_cpuLevel,00 00 AA 42 00 00 B4 42 00 00 BE 42 00 00 C8 42 00 00 C8 42 00 01 01 01)  // should be unique
+	  aobscan(base_cpuLevel,00 00 AA 42 00 00 B4 42 00 00 BE 42 00 00 C8 42 00 00 C8 42)  // should be unique
 registersymbol(base_cpuLevel)
 
 {$lua}
