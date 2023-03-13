@@ -1,0 +1,43 @@
+base_camIP-18 (default = -0.0000003) - 70BFE338 (#21)	{ 1408A25FC ( FL_2023.exe+8A25FC ):	41 80 7D 18 00  -  cmp byte ptr [r13+18],00 } 
+base_camIP-C (default = 0) - 70BFE344 (#33)	{ 1408A2649 ( FL_2023.exe+8A2649 ):	41 80 7D 24 00  -  cmp byte ptr [r13+24],00 } 
+base_camIP+8 (default = 0) - 70BFE358 (#53)	{ 1408A2D03 ( FL_2023.exe+8A2D03 ):	80 78 38 00  -  cmp byte ptr [rax+38],00 } 
+base_camIP+C (default = 25) - 70BFE35C (#57)	{ 1408A30B1 ( FL_2023.exe+8A30B1 ):	F3 0F10 50 3C   -  movss xmm2,[rax+3C] } 
+
+base_camIP+18 (default = 0) - 70BFE368 (#69)	{ 1408A2A76 ( FL_2023.exe+8A2A76 ):	45 0FB6 45 48   -  movzx r8d,byte ptr [r13+48] } 
+base_camIP+1C (default = 5) - 70BFE36C (#73)	{ 1408A1ED4 ( FL_2023.exe+8A1ED4 ):	F3 44 0F5C 73 4C   -  subss xmm14,[rbx+4C] } 
+
+base_camIP+20 (default = 10) - 70BFE370 (#77)	{ 1408A1ECE ( FL_2023.exe+8A1ECE ):	F3 44 0F5C 7B 50   -  subss xmm15,[rbx+50] } 
+
+base_camIP+30 (default = 0) - 70BFE380 (#93)	{ 1408A1F24 ( FL_2023.exe+8A1F24 ):	80 7B 60 00  -  cmp byte ptr [rbx+60],00 } 
+base_camIP+34 (default = 22) - 70BFE384 (#97)	{ 1408A1F3C ( FL_2023.exe+8A1F3C ):	F3 44 0F5C 5B 64   -  subss xmm11,[rbx+64] } 
+
+base_camIP+38 (default = 0.5) - 70BFE388 (#101)	{ 1408A1F51 ( FL_2023.exe+8A1F51 ):	F3 0F10 4B 68   -  movss xmm1,[rbx+68] } 
+
+base_camIP+3C (default = 3) - 70BFE38C (#105)	{ 1408A1F56 ( FL_2023.exe+8A1F56 ):	F3 0F10 53 6C   -  movss xmm2,[rbx+6C] } 
+
+base_camIP+44 (default = 0.42) - 70BFE394 (#113)	{ 1408A1F4B ( FL_2023.exe+8A1F4B ):	F3 44 0F5C 63 74   -  subss xmm12,[rbx+74] } 
+base_camIP+45 (default = 0) - 70BFE395 (#114)	{ 1408A1F7F ( FL_2023.exe+8A1F7F ):	F3 44 0F58 63 74   -  addss xmm12,[rbx+74] } 
+base_camIP+46 (default = 0) - 70BFE396 (#115)	{ 1408A1F4B ( FL_2023.exe+8A1F4B ):	F3 44 0F5C 63 74   -  subss xmm12,[rbx+74] } 
+base_camIP+47 (default = 512.00378) - 70BFE397 (#116)	{ 1408A1F7F ( FL_2023.exe+8A1F7F ):	F3 44 0F58 63 74   -  addss xmm12,[rbx+74] } 
+
+base_camIP+48 (default = 49) - 70BFE398 (#117)	{ 1408A1F5B ( FL_2023.exe+8A1F5B ):	F3 0F10 5B 78   -  movss xmm3,[rbx+78] } 
+
+base_camIP+4C (default = 41.009998) - 70BFE39C (#121)	{ 1408A1F60 ( FL_2023.exe+8A1F60 ):	F3 0F10 63 7C   -  movss xmm4,[rbx+7C] } 
+
+base_camIP+58 (default = 0) - 70BFE3A8 (#133)	{ 1408A1F2A ( FL_2023.exe+8A1F2A ):	80 BB 88000000 00  -  cmp byte ptr [rbx+00000088],00 } 
+
+base_camIP+6C (default = 0.5) - 70BFE3BC (#153)	{ 1408A200A ( FL_2023.exe+8A200A ):	F3 0F10 83 9C000000   -  movss xmm0,[rbx+0000009C] } 
+
+base_camIP+70 (default = 3) - 70BFE3C0 (#157)	{ 1408A2029 ( FL_2023.exe+8A2029 ):	F3 0F10 8B A0000000   -  movss xmm1,[rbx+000000A0] } 
+
+base_camIP+80 (default = 41.009998) - 70BFE3D0 (#173)	{ 1408A2063 ( FL_2023.exe+8A2063 ):	F3 0F10 8B B0000000   -  movss xmm1,[rbx+000000B0] } 
+
+base_camIP+D0 (default = -0) - 70BFE420 (#253)	{ 141A441C7 ( FL_2023.exe+1A441C7 ):	48 8B 01   -  mov rax,[rcx] } 
+
+base_camIP+D8 (default = 0) - 70BFE428 (#261)	{ 141A441A7 ( FL_2023.exe+1A441A7 ):	38 51 08   -  cmp [rcx+08],dl } 
+base_camIP+D9 (default = 0) - 70BFE429 (#262)	{ 141A4418B ( FL_2023.exe+1A4418B ):	88 41 09   -  mov [rcx+09],al } 
+
+base_camIP+DC (default = 0) - 70BFE42C (#265)	{ 141A44191 ( FL_2023.exe+1A44191 ):	8B 41 0C   -  mov eax,[rcx+0C] } 
+
+base_camIP+E0 (default = 0) - 70BFE430 (#269)	{ 141A441B0 ( FL_2023.exe+1A441B0 ):	38 41 10   -  cmp [rcx+10],al } 
+base_camIP+E1 (default = 0) - 70BFE431 (#270)	{ 141A4419D ( FL_2023.exe+1A4419D ):	88 41 11   -  mov [rcx+11],al } 

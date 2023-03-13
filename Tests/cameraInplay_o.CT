@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CheatTable CheatEngineTableVersion="42">
+<CheatTable CheatEngineTableVersion="45">
   <CheatEntries>
     <CheatEntry>
       <ID>0</ID>
       <Description>"cameraInplay_o"</Description>
       <Options moHideChildren="1" moManualExpandCollapse="1" moAllowManualCollapseAndExpand="1"/>
-	  <VariableType>Auto Assembler Script</VariableType>
+      <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 	  aobscan(base_camIP,C3 F5 A8 3E CD CC CC 3D 01)  // should be unique
 registersymbol(base_camIP)
@@ -35,2520 +35,2250 @@ end
 unregistersymbol(base_camIP)
 
 </AssemblerScript>
-	  <CheatEntries>
-	  <CheatEntry>
-			  <ID>1</ID>
-			  <Description>"base_camIP-2C (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-2C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>2</ID>
-			  <Description>"base_camIP-2B (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-2B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>3</ID>
-			  <Description>"base_camIP-2A (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-2A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>4</ID>
-			  <Description>"base_camIP-29 (default = -1.5211962e+30)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-29</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>5</ID>
-			  <Description>"base_camIP-28 (default = 30.200001)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-28</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>6</ID>
-			  <Description>"base_camIP-27 (default = -2.0336475e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-27</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>7</ID>
-			  <Description>"base_camIP-26 (default = -1.0761409e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-26</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>8</ID>
-			  <Description>"base_camIP-25 (default = -4.6117259e+17)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-25</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>9</ID>
-			  <Description>"base_camIP-24 (default = 110.4)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-24</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>10</ID>
-			  <Description>"base_camIP-23 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-23</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>11</ID>
-			  <Description>"base_camIP-22 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-22</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>12</ID>
-			  <Description>"base_camIP-21 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-21</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>13</ID>
-			  <Description>"base_camIP-20 (default = -16.574707)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-20</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>14</ID>
-			  <Description>"base_camIP-1F (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-1F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>15</ID>
-			  <Description>"base_camIP-1E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-1E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>16</ID>
-			  <Description>"base_camIP-1D (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-1D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>17</ID>
-			  <Description>"base_camIP-1C (default = 20.5)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-1C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>18</ID>
-			  <Description>"base_camIP-1B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-1B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>19</ID>
-			  <Description>"base_camIP-1A (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-1A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>20</ID>
-			  <Description>"base_camIP-19 (default = -0.0050049)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-19</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>21</ID>
-			  <Description>"base_camIP-18 (default = -0.0000003)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-18</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>22</ID>
-			  <Description>"base_camIP-17 (default = 4.2674366e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-17</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>23</ID>
-			  <Description>"base_camIP-16 (default = 2.7236954e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-16</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>24</ID>
-			  <Description>"base_camIP-15 (default = 2.7200971e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-15</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>25</ID>
-			  <Description>"base_camIP-14 (default = 0.9)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-14</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>26</ID>
-			  <Description>"base_camIP-13 (default = 2.2596523e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-13</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>27</ID>
-			  <Description>"base_camIP-12 (default = 2.7182845e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-12</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>28</ID>
-			  <Description>"base_camIP-11 (default = 2.7200760e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-11</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>29</ID>
-			  <Description>"base_camIP-10 (default = 0.9)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-10</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>30</ID>
-			  <Description>"base_camIP-F (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>31</ID>
-			  <Description>"base_camIP-E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>32</ID>
-			  <Description>"base_camIP-D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>33</ID>
-			  <Description>"base_camIP-C (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>34</ID>
-			  <Description>"base_camIP-B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>35</ID>
-			  <Description>"base_camIP-A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>36</ID>
-			  <Description>"base_camIP-9 (default = -3.6893488e+19)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-9</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>37</ID>
-			  <Description>"base_camIP-8 (default = 7)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-8</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>38</ID>
-			  <Description>"base_camIP-7 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-7</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>39</ID>
-			  <Description>"base_camIP-6 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-6</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>40</ID>
-			  <Description>"base_camIP-5 (default = -1.5845753e+29)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-5</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>41</ID>
-			  <Description>"base_camIP-4 (default = 30)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-4</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>42</ID>
-			  <Description>"base_camIP-3 (default = -193.9375)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-3</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>43</ID>
-			  <Description>"base_camIP-2 (default = -4.9503675e+32)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-2</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>44</ID>
-			  <Description>"base_camIP-1 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP-1</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>45</ID>
-			  <Description>"base_camIP (default = 0.33)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+0</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>46</ID>
-			  <Description>"base_camIP+1 (default = -1.9992149e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+1</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>47</ID>
-			  <Description>"base_camIP+2 (default = -1.0760736e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+2</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>48</ID>
-			  <Description>"base_camIP+3 (default = -1.0737509e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+3</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>49</ID>
-			  <Description>"base_camIP+4 (default = 0.1)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+4</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>50</ID>
-			  <Description>"base_camIP+5 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+5</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>51</ID>
-			  <Description>"base_camIP+6 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+6</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>52</ID>
-			  <Description>"base_camIP+7 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+7</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>53</ID>
-			  <Description>"base_camIP+8 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+8</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>54</ID>
-			  <Description>"base_camIP+9 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+9</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>55</ID>
-			  <Description>"base_camIP+A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>56</ID>
-			  <Description>"base_camIP+B (default = -131072)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>57</ID>
-			  <Description>"base_camIP+C (default = 25)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>58</ID>
-			  <Description>"base_camIP+D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>59</ID>
-			  <Description>"base_camIP+E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>60</ID>
-			  <Description>"base_camIP+F (default = -131073.02)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>61</ID>
-			  <Description>"base_camIP+10 (default = 25)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+10</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>62</ID>
-			  <Description>"base_camIP+11 (default = -2.0319437e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+11</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>63</ID>
-			  <Description>"base_camIP+12 (default = -1.0761376e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+12</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>64</ID>
-			  <Description>"base_camIP+13 (default = -1.0737511e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+13</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>65</ID>
-			  <Description>"base_camIP+14 (default = 0.4)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+14</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>66</ID>
-			  <Description>"base_camIP+15 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+15</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>67</ID>
-			  <Description>"base_camIP+16 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+16</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>68</ID>
-			  <Description>"base_camIP+17 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+17</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>69</ID>
-			  <Description>"base_camIP+18 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+18</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>70</ID>
-			  <Description>"base_camIP+19 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+19</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>71</ID>
-			  <Description>"base_camIP+1A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+1A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>72</ID>
-			  <Description>"base_camIP+1B (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+1B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>73</ID>
-			  <Description>"base_camIP+1C (default = 5)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+1C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>74</ID>
-			  <Description>"base_camIP+1D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+1D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>75</ID>
-			  <Description>"base_camIP+1E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+1E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>76</ID>
-			  <Description>"base_camIP+1F (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+1F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>77</ID>
-			  <Description>"base_camIP+20 (default = 10)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+20</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>78</ID>
-			  <Description>"base_camIP+21 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+21</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>79</ID>
-			  <Description>"base_camIP+22 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+22</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>80</ID>
-			  <Description>"base_camIP+23 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+23</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>81</ID>
-			  <Description>"base_camIP+24 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+24</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>82</ID>
-			  <Description>"base_camIP+25 (default = 1.5111573e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+25</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>83</ID>
-			  <Description>"base_camIP+26 (default = 2.7153607e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+26</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>84</ID>
-			  <Description>"base_camIP+27 (default = 2.7200646e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+27</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>85</ID>
-			  <Description>"base_camIP+28 (default = 0.9)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+28</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>86</ID>
-			  <Description>"base_camIP+29 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+29</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>87</ID>
-			  <Description>"base_camIP+2A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+2A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>88</ID>
-			  <Description>"base_camIP+2B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+2B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>89</ID>
-			  <Description>"base_camIP+2C (default = 0.7)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+2C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>90</ID>
-			  <Description>"base_camIP+2D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+2D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>91</ID>
-			  <Description>"base_camIP+2E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+2E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>92</ID>
-			  <Description>"base_camIP+2F (default = 0.0000026)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+2F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>93</ID>
-			  <Description>"base_camIP+30 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+30</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>94</ID>
-			  <Description>"base_camIP+31 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+31</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>95</ID>
-			  <Description>"base_camIP+32 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+32</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>96</ID>
-			  <Description>"base_camIP+33 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+33</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>97</ID>
-			  <Description>"base_camIP+34 (default = 22)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+34</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>98</ID>
-			  <Description>"base_camIP+35 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+35</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>99</ID>
-			  <Description>"base_camIP+36 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+36</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>100</ID>
-			  <Description>"base_camIP+37 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+37</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>101</ID>
-			  <Description>"base_camIP+38 (default = 0.5)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+38</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>102</ID>
-			  <Description>"base_camIP+39 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+39</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>103</ID>
-			  <Description>"base_camIP+3A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+3A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>104</ID>
-			  <Description>"base_camIP+3B (default = 2.000015)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+3B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>105</ID>
-			  <Description>"base_camIP+3C (default = 3)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+3C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>106</ID>
-			  <Description>"base_camIP+3D (default = 1.2901679e+10)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+3D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>107</ID>
-			  <Description>"base_camIP+3E (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+3E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>108</ID>
-			  <Description>"base_camIP+3F (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+3F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>109</ID>
-			  <Description>"base_camIP+40 (default = 1.3715)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+40</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>110</ID>
-			  <Description>"base_camIP+41 (default = 0.0467983)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+41</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>111</ID>
-			  <Description>"base_camIP+42 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+42</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>112</ID>
-			  <Description>"base_camIP+43 (default = -1.5199565e+14)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+43</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>113</ID>
-			  <Description>"base_camIP+44 (default = 0.42)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+44</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>114</ID>
-			  <Description>"base_camIP+45 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+45</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>115</ID>
-			  <Description>"base_camIP+46 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+46</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>116</ID>
-			  <Description>"base_camIP+47 (default = 512.00378)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+47</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>117</ID>
-			  <Description>"base_camIP+48 (default = 49)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+48</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>118</ID>
-			  <Description>"base_camIP+49 (default = 0.0474281)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+49</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>119</ID>
-			  <Description>"base_camIP+4A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+4A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>120</ID>
-			  <Description>"base_camIP+4B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+4B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>121</ID>
-			  <Description>"base_camIP+4C (default = 41.009998)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+4C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>122</ID>
-			  <Description>"base_camIP+4D (default = 0.0000007)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+4D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>123</ID>
-			  <Description>"base_camIP+4E (default = 3.2652604e+18)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+4E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>124</ID>
-			  <Description>"base_camIP+4F (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+4F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>125</ID>
-			  <Description>"base_camIP+50 (default = 21.921)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+50</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>126</ID>
-			  <Description>"base_camIP+51 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+51</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>127</ID>
-			  <Description>"base_camIP+52 (default = 6.3444713e+14)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+52</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>128</ID>
-			  <Description>"base_camIP+53 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+53</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>129</ID>
-			  <Description>"base_camIP+54 (default = -10.209)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+54</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>130</ID>
-			  <Description>"base_camIP+55 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+55</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>131</ID>
-			  <Description>"base_camIP+56 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+56</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>132</ID>
-			  <Description>"base_camIP+57 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+57</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>133</ID>
-			  <Description>"base_camIP+58 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+58</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>134</ID>
-			  <Description>"base_camIP+59 (default = 1.5191355e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+59</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>135</ID>
-			  <Description>"base_camIP+5A (default = 2.7153919e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+5A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>136</ID>
-			  <Description>"base_camIP+5B (default = 2.7200646e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+5B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>137</ID>
-			  <Description>"base_camIP+5C (default = 0.9)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+5C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>138</ID>
-			  <Description>"base_camIP+5D (default = -2.0069744e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+5D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>139</ID>
-			  <Description>"base_camIP+5E (default = -1.0760888e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+5E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>140</ID>
-			  <Description>"base_camIP+5F (default = 1.0737510e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+5F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>141</ID>
-			  <Description>"base_camIP+60 (default = 0.2)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+60</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>142</ID>
-			  <Description>"base_camIP+61 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+61</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>143</ID>
-			  <Description>"base_camIP+62 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+62</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>144</ID>
-			  <Description>"base_camIP+63 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+63</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>145</ID>
-			  <Description>"base_camIP+64 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+64</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>146</ID>
-			  <Description>"base_camIP+65 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+65</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>147</ID>
-			  <Description>"base_camIP+66 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+66</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>148</ID>
-			  <Description>"base_camIP+67 (default = -5.7836522e+27)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+67</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>149</ID>
-			  <Description>"base_camIP+68 (default = 29.698)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+68</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>150</ID>
-			  <Description>"base_camIP+69 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+69</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>151</ID>
-			  <Description>"base_camIP+6A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+6A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>152</ID>
-			  <Description>"base_camIP+6B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+6B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>153</ID>
-			  <Description>"base_camIP+6C (default = 0.5)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+6C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>154</ID>
-			  <Description>"base_camIP+6D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+6D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>155</ID>
-			  <Description>"base_camIP+6E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+6E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>156</ID>
-			  <Description>"base_camIP+6F (default = 2.000015)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+6F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>157</ID>
-			  <Description>"base_camIP+70 (default = 3)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+70</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>158</ID>
-			  <Description>"base_camIP+71 (default = -1.3211319e+13)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+71</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>159</ID>
-			  <Description>"base_camIP+72 (default = 3.4601949e+34)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+72</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>160</ID>
-			  <Description>"base_camIP+73 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+73</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>161</ID>
-			  <Description>"base_camIP+74 (default = 1.324)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+74</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>162</ID>
-			  <Description>"base_camIP+75 (default = -2.0097216e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+75</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>163</ID>
-			  <Description>"base_camIP+76 (default = -1.0760942e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+76</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>164</ID>
-			  <Description>"base_camIP+77 (default = -1.0737510e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+77</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>165</ID>
-			  <Description>"base_camIP+78 (default = 0.4)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+78</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>166</ID>
-			  <Description>"base_camIP+79 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+79</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>167</ID>
-			  <Description>"base_camIP+7A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+7A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>168</ID>
-			  <Description>"base_camIP+7B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+7B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>169</ID>
-			  <Description>"base_camIP+7C (default = 35.5)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+7C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>170</ID>
-			  <Description>"base_camIP+7D (default = 0.0473766)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+7D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>171</ID>
-			  <Description>"base_camIP+7E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+7E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>172</ID>
-			  <Description>"base_camIP+7F (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+7F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>173</ID>
-			  <Description>"base_camIP+80 (default = 41.009998)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+80</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>174</ID>
-			  <Description>"base_camIP+81 (default = 1.6128585e+37)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+81</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>175</ID>
-			  <Description>"base_camIP+82 (default = 0.9892905)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+82</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>176</ID>
-			  <Description>"base_camIP+83 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+83</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>177</ID>
-			  <Description>"base_camIP+84 (default = 21.406)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+84</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>178</ID>
-			  <Description>"base_camIP+85 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+85</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>179</ID>
-			  <Description>"base_camIP+86 (default = -7.8928518e+17)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+86</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>180</ID>
-			  <Description>"base_camIP+87 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+87</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>181</ID>
-			  <Description>"base_camIP+88 (default = 2.076)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+88</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>182</ID>
-			  <Description>"base_camIP+89 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+89</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>183</ID>
-			  <Description>"base_camIP+8A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+8A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>184</ID>
-			  <Description>"base_camIP+8B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+8B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>185</ID>
-			  <Description>"base_camIP+8C (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+8C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>186</ID>
-			  <Description>"base_camIP+8D (default = 1.5111573e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+8D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>187</ID>
-			  <Description>"base_camIP+8E (default = 2.7153607e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+8E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>188</ID>
-			  <Description>"base_camIP+8F (default = 2.7200646e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+8F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>189</ID>
-			  <Description>"base_camIP+90 (default = 0.9)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+90</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>190</ID>
-			  <Description>"base_camIP+91 (default = -2.0069744e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+91</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>191</ID>
-			  <Description>"base_camIP+92 (default = -1.0760888e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+92</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>192</ID>
-			  <Description>"base_camIP+93 (default = 1.0737510e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+93</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>193</ID>
-			  <Description>"base_camIP+94 (default = 0.2)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+94</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>194</ID>
-			  <Description>"base_camIP+95 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+95</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>195</ID>
-			  <Description>"base_camIP+96 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+96</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>196</ID>
-			  <Description>"base_camIP+97 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+97</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>197</ID>
-			  <Description>"base_camIP+98 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+98</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>198</ID>
-			  <Description>"base_camIP+99 (default = 1.5191355e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+99</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>199</ID>
-			  <Description>"base_camIP+9A (default = 2.7153919e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+9A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>200</ID>
-			  <Description>"base_camIP+9B (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+9B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>201</ID>
-			  <Description>"base_camIP+9C (default = 19.049999)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+9C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>202</ID>
-			  <Description>"base_camIP+9D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+9D</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>203</ID>
-			  <Description>"base_camIP+9E (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+9E</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>204</ID>
-			  <Description>"base_camIP+9F (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+9F</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>205</ID>
-			  <Description>"base_camIP+A0 (default = 0.5)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+A0</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>206</ID>
-			  <Description>"base_camIP+A1 (default = 2.0508469e+11)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+A1</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>207</ID>
-			  <Description>"base_camIP+A2 (default = -0.0000501)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+A2</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>208</ID>
-			  <Description>"base_camIP+A3 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+A3</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>209</ID>
-			  <Description>"base_camIP+A4 (default = 2.73)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+A4</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>210</ID>
-			  <Description>"base_camIP+A5 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+A5</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>211</ID>
-			  <Description>"base_camIP+A6 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+A6</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>212</ID>
-			  <Description>"base_camIP+A7 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+A7</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>213</ID>
-			  <Description>"base_camIP+A8 (default = 1.4)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+A8</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>214</ID>
-			  <Description>"base_camIP+A9 (default = -1.4484442e+25)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+A9</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>215</ID>
-			  <Description>"base_camIP+AA (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+AA</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>216</ID>
-			  <Description>"base_camIP+AB (default = -8.2650382e+29)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+AB</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>217</ID>
-			  <Description>"base_camIP+AC (default = 0.471)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+AC</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>218</ID>
-			  <Description>"base_camIP+AD (default = 2.2542451e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+AD</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>219</ID>
-			  <Description>"base_camIP+AE (default = 2.7182634e+23)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+AE</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>220</ID>
-			  <Description>"base_camIP+AF (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+AF</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>221</ID>
-			  <Description>"base_camIP+B0 (default = 33.099998)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+B0</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>222</ID>
-			  <Description>"base_camIP+B1 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+B1</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>223</ID>
-			  <Description>"base_camIP+B2 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+B2</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>224</ID>
-			  <Description>"base_camIP+B3 (default = 0.0046876)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+B3</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>225</ID>
-			  <Description>"base_camIP+B4 (default = 46.900002)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+B4</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>226</ID>
-			  <Description>"base_camIP+B5 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+B5</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>227</ID>
-			  <Description>"base_camIP+B6 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+B6</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>228</ID>
-			  <Description>"base_camIP+B7 (default = -5.9422116e+27)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+B7</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>229</ID>
-			  <Description>"base_camIP+B8 (default = 29.700001)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+B8</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>230</ID>
-			  <Description>"base_camIP+B9 (default = -2.0334837e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+B9</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>231</ID>
-			  <Description>"base_camIP+BA (default = -1.0761406e+8)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+BA</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>232</ID>
-			  <Description>"base_camIP+BB (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+BB</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>233</ID>
-			  <Description>"base_camIP+BC (default = -20.1)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+BC</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>234</ID>
-			  <Description>"base_camIP+BD (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+BD</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>235</ID>
-			  <Description>"base_camIP+BE (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+BE</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>236</ID>
-			  <Description>"base_camIP+BF (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+BF</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>237</ID>
-			  <Description>"base_camIP+C0 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+C0</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>238</ID>
-			  <Description>"base_camIP+C1 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+C1</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>239</ID>
-			  <Description>"base_camIP+C2 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+C2</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>240</ID>
-			  <Description>"base_camIP+C3 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+C3</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>241</ID>
-			  <Description>"base_camIP+C4 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+C4</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>242</ID>
-			  <Description>"base_camIP+C5 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+C5</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>243</ID>
-			  <Description>"base_camIP+C6 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+C6</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>244</ID>
-			  <Description>"base_camIP+C7 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+C7</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>245</ID>
-			  <Description>"base_camIP+C8 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+C8</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>246</ID>
-			  <Description>"base_camIP+C9 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+C9</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>247</ID>
-			  <Description>"base_camIP+CA (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+CA</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>248</ID>
-			  <Description>"base_camIP+CB (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+CB</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>249</ID>
-			  <Description>"base_camIP+CC (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+CC</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>250</ID>
-			  <Description>"base_camIP+CD (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+CD</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>251</ID>
-			  <Description>"base_camIP+CE (default = 4.2501298e+22)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+CE</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>252</ID>
-			  <Description>"base_camIP+CF (default = -0.8947754)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+CF</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>253</ID>
-			  <Description>"base_camIP+D0 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+D0</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>254</ID>
-			  <Description>"base_camIP+D1 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+D1</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>255</ID>
-			  <Description>"base_camIP+D2 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+D2</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>256</ID>
-			  <Description>"base_camIP+D3 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+D3</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>257</ID>
-			  <Description>"base_camIP+D4 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+D4</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>258</ID>
-			  <Description>"base_camIP+D5 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+D5</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>259</ID>
-			  <Description>"base_camIP+D6 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+D6</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>260</ID>
-			  <Description>"base_camIP+D7 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+D7</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>261</ID>
-			  <Description>"base_camIP+D8 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+D8</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>262</ID>
-			  <Description>"base_camIP+D9 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+D9</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>263</ID>
-			  <Description>"base_camIP+DA (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+DA</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>264</ID>
-			  <Description>"base_camIP+DB (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+DB</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>265</ID>
-			  <Description>"base_camIP+DC (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+DC</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>266</ID>
-			  <Description>"base_camIP+DD (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+DD</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>267</ID>
-			  <Description>"base_camIP+DE (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+DE</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>268</ID>
-			  <Description>"base_camIP+DF (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+DF</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>269</ID>
-			  <Description>"base_camIP+E0 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+E0</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>270</ID>
-			  <Description>"base_camIP+E1 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+E1</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>271</ID>
-			  <Description>"base_camIP+E2 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+E2</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>272</ID>
-			  <Description>"base_camIP+E3 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+E3</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>273</ID>
-			  <Description>"base_camIP+E4 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+E4</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>274</ID>
-			  <Description>"base_camIP+E5 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+E5</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>275</ID>
-			  <Description>"base_camIP+E6 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+E6</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>276</ID>
-			  <Description>"base_camIP+E7 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+E7</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>277</ID>
-			  <Description>"base_camIP+E8 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+E8</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>278</ID>
-			  <Description>"base_camIP+E9 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+E9</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>279</ID>
-			  <Description>"base_camIP+EA (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+EA</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>280</ID>
-			  <Description>"base_camIP+EB (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+EB</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>281</ID>
-			  <Description>"base_camIP+EC (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+EC</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>282</ID>
-			  <Description>"base_camIP+ED (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+ED</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>283</ID>
-			  <Description>"base_camIP+EE (default = -6.6408279e+20)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+EE</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>284</ID>
-			  <Description>"base_camIP+EF (default = 1.7661133)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+EF</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>285</ID>
-			  <Description>"base_camIP+F0 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+F0</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>286</ID>
-			  <Description>"base_camIP+F1 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+F1</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>287</ID>
-			  <Description>"base_camIP+F2 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+F2</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>288</ID>
-			  <Description>"base_camIP+F3 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+F3</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>289</ID>
-			  <Description>"base_camIP+F4 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+F4</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>290</ID>
-			  <Description>"base_camIP+F5 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+F5</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>291</ID>
-			  <Description>"base_camIP+F6 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+F6</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>292</ID>
-			  <Description>"base_camIP+F7 (default = -0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+F7</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>293</ID>
-			  <Description>"base_camIP+F8 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+F8</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>294</ID>
-			  <Description>"base_camIP+F9 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+F9</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>295</ID>
-			  <Description>"base_camIP+FA (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+FA</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>296</ID>
-			  <Description>"base_camIP+FB (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+FB</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>297</ID>
-			  <Description>"base_camIP+FC (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+FC</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>298</ID>
-			  <Description>"base_camIP+FD (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+FD</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>299</ID>
-			  <Description>"base_camIP+FE (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+FE</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>300</ID>
-			  <Description>"base_camIP+FF (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+FF</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>301</ID>
-			  <Description>"base_camIP+100 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+100</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>302</ID>
-			  <Description>"base_camIP+101 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+101</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>303</ID>
-			  <Description>"base_camIP+102 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+102</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>304</ID>
-			  <Description>"base_camIP+103 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+103</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>305</ID>
-			  <Description>"base_camIP+104 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+104</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>306</ID>
-			  <Description>"base_camIP+105 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+105</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>307</ID>
-			  <Description>"base_camIP+106 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+106</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>308</ID>
-			  <Description>"base_camIP+107 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+107</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>309</ID>
-			  <Description>"base_camIP+108 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+108</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>310</ID>
-			  <Description>"base_camIP+109 (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+109</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>311</ID>
-			  <Description>"base_camIP+10A (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+10A</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>312</ID>
-			  <Description>"base_camIP+10B (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+10B</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>313</ID>
-			  <Description>"base_camIP+10C (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+10C</Address>
-			</CheatEntry>
-			<CheatEntry>
-			  <ID>314</ID>
-			  <Description>"base_camIP+10D (default = 0)"</Description>
-			  <ShowAsHex>0</ShowAsHex>
-			  <ShowAsSigned>0</ShowAsSigned>
-			  <VariableType>Float</VariableType>
-			  <Address>base_camIP+10D</Address>
-			</CheatEntry>
-			</CheatEntries>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"base_camIP-2C (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-2C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2</ID>
+          <Description>"base_camIP-2B (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-2B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3</ID>
+          <Description>"base_camIP-2A (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-2A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>4</ID>
+          <Description>"base_camIP-29 (default = -1.5211962e+30)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-29</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5</ID>
+          <Description>"base_camIP-28 (default = 30.200001)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-28</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>6</ID>
+          <Description>"base_camIP-27 (default = -2.0336475e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-27</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>7</ID>
+          <Description>"base_camIP-26 (default = -1.0761409e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-26</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>8</ID>
+          <Description>"base_camIP-25 (default = -4.6117259e+17)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-25</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>9</ID>
+          <Description>"base_camIP-24 (default = 110.4)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-24</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>10</ID>
+          <Description>"base_camIP-23 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-23</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>11</ID>
+          <Description>"base_camIP-22 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-22</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>12</ID>
+          <Description>"base_camIP-21 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-21</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>13</ID>
+          <Description>"base_camIP-20 (default = -16.574707)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-20</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>14</ID>
+          <Description>"base_camIP-1F (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-1F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>15</ID>
+          <Description>"base_camIP-1E (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-1E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>16</ID>
+          <Description>"base_camIP-1D (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-1D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>17</ID>
+          <Description>"base_camIP-1C (default = 20.5)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-1C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>18</ID>
+          <Description>"base_camIP-1B (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-1B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>19</ID>
+          <Description>"base_camIP-1A (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-1A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>20</ID>
+          <Description>"base_camIP-19 (default = -0.0050049)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-19</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>21</ID>
+          <Description>"base_camIP-18 (default = 00)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP-18</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>22</ID>
+          <Description>"base_camIP-17 (default = 4.2674366e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-17</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>23</ID>
+          <Description>"base_camIP-16 (default = 2.7236954e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-16</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>24</ID>
+          <Description>"base_camIP-15 (default = 2.7200971e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-15</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>25</ID>
+          <Description>"base_camIP-14 (default = 0.9)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-14</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>26</ID>
+          <Description>"base_camIP-13 (default = 2.2596523e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-13</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>27</ID>
+          <Description>"base_camIP-12 (default = 2.7182845e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-12</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>28</ID>
+          <Description>"base_camIP-11 (default = 2.7200760e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-11</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>29</ID>
+          <Description>"base_camIP-10 (default = 0.9)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-10</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>30</ID>
+          <Description>"base_camIP-F (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>31</ID>
+          <Description>"base_camIP-E (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32</ID>
+          <Description>"base_camIP-D (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>33</ID>
+          <Description>"base_camIP-C (default = 00)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP-C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>34</ID>
+          <Description>"base_camIP-B (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>35</ID>
+          <Description>"base_camIP-A (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>36</ID>
+          <Description>"base_camIP-9 (default = -3.6893488e+19)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>37</ID>
+          <Description>"base_camIP-8 (default = 7)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>38</ID>
+          <Description>"base_camIP-7 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>39</ID>
+          <Description>"base_camIP-6 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>40</ID>
+          <Description>"base_camIP-5 (default = -1.5845753e+29)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>41</ID>
+          <Description>"base_camIP-4 (default = 30)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>42</ID>
+          <Description>"base_camIP-3 (default = -193.9375)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>43</ID>
+          <Description>"base_camIP-2 (default = -4.9503675e+32)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>44</ID>
+          <Description>"base_camIP-1 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP-1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>45</ID>
+          <Description>"base_camIP (default = 0.33)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>46</ID>
+          <Description>"base_camIP+1 (default = -1.9992149e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>47</ID>
+          <Description>"base_camIP+2 (default = -1.0760736e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>48</ID>
+          <Description>"base_camIP+3 (default = -1.0737509e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>49</ID>
+          <Description>"base_camIP+4 (default = 0.1)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>50</ID>
+          <Description>"base_camIP+5 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>51</ID>
+          <Description>"base_camIP+6 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>52</ID>
+          <Description>"base_camIP+7 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>53</ID>
+          <Description>"base_camIP+8 (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP+8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>54</ID>
+          <Description>"base_camIP+9 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>55</ID>
+          <Description>"base_camIP+A (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>56</ID>
+          <Description>"base_camIP+B (default = -131072.02)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>57</ID>
+          <Description>"base_camIP+C (default = 25)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>58</ID>
+          <Description>"base_camIP+D (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>59</ID>
+          <Description>"base_camIP+E (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>60</ID>
+          <Description>"base_camIP+F (default = -131073.02)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>61</ID>
+          <Description>"base_camIP+10 (default = 25)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+10</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>62</ID>
+          <Description>"base_camIP+11 (default = -2.0319437e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+11</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>63</ID>
+          <Description>"base_camIP+12 (default = -1.0761376e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+12</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>64</ID>
+          <Description>"base_camIP+13 (default = -1.0737511e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+13</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>65</ID>
+          <Description>"base_camIP+14 (default = 0.4)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+14</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>66</ID>
+          <Description>"base_camIP+15 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+15</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>67</ID>
+          <Description>"base_camIP+16 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+16</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>68</ID>
+          <Description>"base_camIP+17 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+17</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>69</ID>
+          <Description>"base_camIP+18 (default = 00)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP+18</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>70</ID>
+          <Description>"base_camIP+19 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+19</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>71</ID>
+          <Description>"base_camIP+1A (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+1A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>72</ID>
+          <Description>"base_camIP+1B (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+1B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>73</ID>
+          <Description>"base_camIP+1C (default = 5)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+1C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>74</ID>
+          <Description>"base_camIP+1D (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+1D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>75</ID>
+          <Description>"base_camIP+1E (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+1E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>76</ID>
+          <Description>"base_camIP+1F (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+1F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>77</ID>
+          <Description>"base_camIP+20 (default = 10)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+20</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>78</ID>
+          <Description>"base_camIP+21 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+21</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>79</ID>
+          <Description>"base_camIP+22 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+22</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>80</ID>
+          <Description>"base_camIP+23 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+23</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>81</ID>
+          <Description>"base_camIP+24 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+24</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>82</ID>
+          <Description>"base_camIP+25 (default = 1.5111573e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+25</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>83</ID>
+          <Description>"base_camIP+26 (default = 2.7153607e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+26</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>84</ID>
+          <Description>"base_camIP+27 (default = 2.7200646e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+27</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>85</ID>
+          <Description>"base_camIP+28 (default = 0.9)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+28</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>86</ID>
+          <Description>"base_camIP+29 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+29</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>87</ID>
+          <Description>"base_camIP+2A (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+2A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>88</ID>
+          <Description>"base_camIP+2B (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+2B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>89</ID>
+          <Description>"base_camIP+2C (default = 0.7)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+2C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>90</ID>
+          <Description>"base_camIP+2D (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+2D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>91</ID>
+          <Description>"base_camIP+2E (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+2E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>92</ID>
+          <Description>"base_camIP+2F (default = 0.0000026)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+2F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>93</ID>
+          <Description>"base_camIP+30 (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP+30</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>94</ID>
+          <Description>"base_camIP+31 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+31</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>95</ID>
+          <Description>"base_camIP+32 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+32</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>96</ID>
+          <Description>"base_camIP+33 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+33</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>97</ID>
+          <Description>"base_camIP+34 (default = 22)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+34</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>98</ID>
+          <Description>"base_camIP+35 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+35</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>99</ID>
+          <Description>"base_camIP+36 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+36</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>100</ID>
+          <Description>"base_camIP+37 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+37</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>101</ID>
+          <Description>"base_camIP+38 (default = 0.5)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+38</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>102</ID>
+          <Description>"base_camIP+39 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+39</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>103</ID>
+          <Description>"base_camIP+3A (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+3A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>104</ID>
+          <Description>"base_camIP+3B (default = 2.000015)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+3B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>105</ID>
+          <Description>"base_camIP+3C (default = 3)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+3C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>106</ID>
+          <Description>"base_camIP+3D (default = 1.2901679e+10)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+3D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>107</ID>
+          <Description>"base_camIP+3E (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+3E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>108</ID>
+          <Description>"base_camIP+3F (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+3F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>109</ID>
+          <Description>"base_camIP+40 (default = 1.3715)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+40</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>110</ID>
+          <Description>"base_camIP+41 (default = 0.0467983)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+41</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>111</ID>
+          <Description>"base_camIP+42 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+42</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>112</ID>
+          <Description>"base_camIP+43 (default = -1.5199565e+14)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+43</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>113</ID>
+          <Description>"base_camIP+44 (default = 0.42)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+44</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>114</ID>
+          <Description>"base_camIP+45 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+45</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>115</ID>
+          <Description>"base_camIP+46 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+46</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>116</ID>
+          <Description>"base_camIP+47 (default = 512.00378)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+47</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>117</ID>
+          <Description>"base_camIP+48 (default = 49)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+48</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>118</ID>
+          <Description>"base_camIP+49 (default = 0.0474281)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+49</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>119</ID>
+          <Description>"base_camIP+4A (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+4A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>120</ID>
+          <Description>"base_camIP+4B (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+4B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>121</ID>
+          <Description>"base_camIP+4C (default = 41.009998)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+4C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>122</ID>
+          <Description>"base_camIP+4D (default = 0.0000007)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+4D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>123</ID>
+          <Description>"base_camIP+4E (default = 3.2652604e+18)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+4E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>124</ID>
+          <Description>"base_camIP+4F (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+4F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>125</ID>
+          <Description>"base_camIP+50 (default = 21.921)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+50</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>126</ID>
+          <Description>"base_camIP+51 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+51</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>127</ID>
+          <Description>"base_camIP+52 (default = 6.3444713e+14)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+52</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>128</ID>
+          <Description>"base_camIP+53 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+53</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>129</ID>
+          <Description>"base_camIP+54 (default = -10.209)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+54</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>130</ID>
+          <Description>"base_camIP+55 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+55</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>131</ID>
+          <Description>"base_camIP+56 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+56</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>132</ID>
+          <Description>"base_camIP+57 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+57</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>133</ID>
+          <Description>"base_camIP+58 (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP+58</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>134</ID>
+          <Description>"base_camIP+59 (default = 1.5191355e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+59</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>135</ID>
+          <Description>"base_camIP+5A (default = 2.7153919e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+5A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>136</ID>
+          <Description>"base_camIP+5B (default = 2.7200646e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+5B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>137</ID>
+          <Description>"base_camIP+5C (default = 0.9)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+5C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>138</ID>
+          <Description>"base_camIP+5D (default = -2.0069744e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+5D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>139</ID>
+          <Description>"base_camIP+5E (default = -1.0760888e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+5E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>140</ID>
+          <Description>"base_camIP+5F (default = 1.0737510e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+5F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>141</ID>
+          <Description>"base_camIP+60 (default = 0.2)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+60</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>142</ID>
+          <Description>"base_camIP+61 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+61</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>143</ID>
+          <Description>"base_camIP+62 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+62</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>144</ID>
+          <Description>"base_camIP+63 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+63</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>145</ID>
+          <Description>"base_camIP+64 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+64</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>146</ID>
+          <Description>"base_camIP+65 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+65</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>147</ID>
+          <Description>"base_camIP+66 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+66</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>148</ID>
+          <Description>"base_camIP+67 (default = -5.7836522e+27)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+67</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>149</ID>
+          <Description>"base_camIP+68 (default = 29.698)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+68</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>150</ID>
+          <Description>"base_camIP+69 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+69</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>151</ID>
+          <Description>"base_camIP+6A (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+6A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>152</ID>
+          <Description>"base_camIP+6B (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+6B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>153</ID>
+          <Description>"base_camIP+6C (default = 0.5)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+6C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>154</ID>
+          <Description>"base_camIP+6D (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+6D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>155</ID>
+          <Description>"base_camIP+6E (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+6E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>156</ID>
+          <Description>"base_camIP+6F (default = 2.000015)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+6F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>157</ID>
+          <Description>"base_camIP+70 (default = 3)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+70</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>158</ID>
+          <Description>"base_camIP+71 (default = -1.3211319e+13)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+71</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>159</ID>
+          <Description>"base_camIP+72 (default = 3.4601949e+34)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+72</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>160</ID>
+          <Description>"base_camIP+73 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+73</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>161</ID>
+          <Description>"base_camIP+74 (default = 1.324)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+74</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>162</ID>
+          <Description>"base_camIP+75 (default = -2.0097216e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+75</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>163</ID>
+          <Description>"base_camIP+76 (default = -1.0760942e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+76</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>164</ID>
+          <Description>"base_camIP+77 (default = -1.0737510e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+77</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>165</ID>
+          <Description>"base_camIP+78 (default = 0.4)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+78</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>166</ID>
+          <Description>"base_camIP+79 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+79</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>167</ID>
+          <Description>"base_camIP+7A (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+7A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>168</ID>
+          <Description>"base_camIP+7B (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+7B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>169</ID>
+          <Description>"base_camIP+7C (default = 35.5)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+7C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>170</ID>
+          <Description>"base_camIP+7D (default = 0.0473766)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+7D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>171</ID>
+          <Description>"base_camIP+7E (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+7E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>172</ID>
+          <Description>"base_camIP+7F (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+7F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>173</ID>
+          <Description>"base_camIP+80 (default = 41.009998)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+80</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>174</ID>
+          <Description>"base_camIP+81 (default = 1.6128585e+37)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+81</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>175</ID>
+          <Description>"base_camIP+82 (default = 0.9892905)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+82</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>176</ID>
+          <Description>"base_camIP+83 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+83</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>177</ID>
+          <Description>"base_camIP+84 (default = 21.406)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+84</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>178</ID>
+          <Description>"base_camIP+85 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+85</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>179</ID>
+          <Description>"base_camIP+86 (default = -7.8928518e+17)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+86</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>180</ID>
+          <Description>"base_camIP+87 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+87</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>181</ID>
+          <Description>"base_camIP+88 (default = 2.076)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+88</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>182</ID>
+          <Description>"base_camIP+89 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+89</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>183</ID>
+          <Description>"base_camIP+8A (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+8A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>184</ID>
+          <Description>"base_camIP+8B (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+8B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>185</ID>
+          <Description>"base_camIP+8C (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+8C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>186</ID>
+          <Description>"base_camIP+8D (default = 1.5111573e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+8D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>187</ID>
+          <Description>"base_camIP+8E (default = 2.7153607e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+8E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>188</ID>
+          <Description>"base_camIP+8F (default = 2.7200646e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+8F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>189</ID>
+          <Description>"base_camIP+90 (default = 0.9)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+90</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>190</ID>
+          <Description>"base_camIP+91 (default = -2.0069744e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+91</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>191</ID>
+          <Description>"base_camIP+92 (default = -1.0760888e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+92</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>192</ID>
+          <Description>"base_camIP+93 (default = 1.0737510e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+93</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>193</ID>
+          <Description>"base_camIP+94 (default = 0.2)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+94</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>194</ID>
+          <Description>"base_camIP+95 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+95</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>195</ID>
+          <Description>"base_camIP+96 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+96</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>196</ID>
+          <Description>"base_camIP+97 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+97</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>197</ID>
+          <Description>"base_camIP+98 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+98</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>198</ID>
+          <Description>"base_camIP+99 (default = 1.5191355e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+99</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>199</ID>
+          <Description>"base_camIP+9A (default = 2.7153919e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+9A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>200</ID>
+          <Description>"base_camIP+9B (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+9B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>201</ID>
+          <Description>"base_camIP+9C (default = 19.049999)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+9C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>202</ID>
+          <Description>"base_camIP+9D (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+9D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>203</ID>
+          <Description>"base_camIP+9E (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+9E</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>204</ID>
+          <Description>"base_camIP+9F (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+9F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>205</ID>
+          <Description>"base_camIP+A0 (default = 0.5)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+A0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>206</ID>
+          <Description>"base_camIP+A1 (default = 2.0508469e+11)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+A1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>207</ID>
+          <Description>"base_camIP+A2 (default = -0.0000501)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+A2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>208</ID>
+          <Description>"base_camIP+A3 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+A3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>209</ID>
+          <Description>"base_camIP+A4 (default = 2.73)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+A4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>210</ID>
+          <Description>"base_camIP+A5 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+A5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>211</ID>
+          <Description>"base_camIP+A6 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+A6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>212</ID>
+          <Description>"base_camIP+A7 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+A7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>213</ID>
+          <Description>"base_camIP+A8 (default = 1.4)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+A8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>214</ID>
+          <Description>"base_camIP+A9 (default = -1.4484442e+25)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+A9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>215</ID>
+          <Description>"base_camIP+AA (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+AA</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>216</ID>
+          <Description>"base_camIP+AB (default = -8.2650382e+29)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+AB</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>217</ID>
+          <Description>"base_camIP+AC (default = 0.471)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+AC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>218</ID>
+          <Description>"base_camIP+AD (default = 2.2542451e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+AD</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>219</ID>
+          <Description>"base_camIP+AE (default = 2.7182634e+23)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+AE</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>220</ID>
+          <Description>"base_camIP+AF (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+AF</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>221</ID>
+          <Description>"base_camIP+B0 (default = 33.099998)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+B0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>222</ID>
+          <Description>"base_camIP+B1 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+B1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>223</ID>
+          <Description>"base_camIP+B2 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+B2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>224</ID>
+          <Description>"base_camIP+B3 (default = 0.0046876)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+B3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>225</ID>
+          <Description>"base_camIP+B4 (default = 46.900002)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+B4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>226</ID>
+          <Description>"base_camIP+B5 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+B5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>227</ID>
+          <Description>"base_camIP+B6 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+B6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>228</ID>
+          <Description>"base_camIP+B7 (default = -5.9422116e+27)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+B7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>229</ID>
+          <Description>"base_camIP+B8 (default = 29.700001)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+B8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>230</ID>
+          <Description>"base_camIP+B9 (default = -2.0334837e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+B9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>231</ID>
+          <Description>"base_camIP+BA (default = -1.0761406e+8)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+BA</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>232</ID>
+          <Description>"base_camIP+BB (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+BB</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>233</ID>
+          <Description>"base_camIP+BC (default = -20.1)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+BC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>234</ID>
+          <Description>"base_camIP+BD (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+BD</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>235</ID>
+          <Description>"base_camIP+BE (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+BE</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>236</ID>
+          <Description>"base_camIP+BF (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+BF</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>237</ID>
+          <Description>"base_camIP+C0 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+C0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>238</ID>
+          <Description>"base_camIP+C1 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+C1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>239</ID>
+          <Description>"base_camIP+C2 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+C2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>240</ID>
+          <Description>"base_camIP+C3 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+C3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>241</ID>
+          <Description>"base_camIP+C4 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+C4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>242</ID>
+          <Description>"base_camIP+C5 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+C5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>243</ID>
+          <Description>"base_camIP+C6 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+C6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>244</ID>
+          <Description>"base_camIP+C7 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+C7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>245</ID>
+          <Description>"base_camIP+C8 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+C8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>246</ID>
+          <Description>"base_camIP+C9 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+C9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>247</ID>
+          <Description>"base_camIP+CA (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+CA</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>248</ID>
+          <Description>"base_camIP+CB (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+CB</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>249</ID>
+          <Description>"base_camIP+CC (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+CC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>250</ID>
+          <Description>"base_camIP+CD (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+CD</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>251</ID>
+          <Description>"base_camIP+CE (default = 4.2501298e+22)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+CE</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>252</ID>
+          <Description>"base_camIP+CF (default = -0.8947754)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+CF</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>253</ID>
+          <Description>"base_camIP+D0 (default = -0)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>8 Bytes</VariableType>
+          <Address>base_camIP+D0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>254</ID>
+          <Description>"base_camIP+D1 (default = 0)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP+D1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>255</ID>
+          <Description>"base_camIP+D2 (default = 0)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP+D2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>256</ID>
+          <Description>"base_camIP+D3 (default = 0)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP+D3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>257</ID>
+          <Description>"base_camIP+D4 (default = 0)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP+D4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>258</ID>
+          <Description>"base_camIP+D5 (default = 0)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP+D5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>259</ID>
+          <Description>"base_camIP+D6 (default = 0)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP+D6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>260</ID>
+          <Description>"base_camIP+D7 (default = -0)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP+D7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>261</ID>
+          <Description>"base_camIP+D8 (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP+D8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>262</ID>
+          <Description>"base_camIP+D9 (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP+D9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>263</ID>
+          <Description>"base_camIP+DA (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+DA</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>264</ID>
+          <Description>"base_camIP+DB (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+DB</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>265</ID>
+          <Description>"base_camIP+DC (default = 1)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>base_camIP+DC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>266</ID>
+          <Description>"base_camIP+DD (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+DD</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>267</ID>
+          <Description>"base_camIP+DE (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+DE</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>268</ID>
+          <Description>"base_camIP+DF (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+DF</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>269</ID>
+          <Description>"base_camIP+E0 (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP+E0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>270</ID>
+          <Description>"base_camIP+E1 (default = 01)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>00FFFF</Color>
+          <VariableType>Byte</VariableType>
+          <Address>base_camIP+E1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>271</ID>
+          <Description>"base_camIP+E2 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+E2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>272</ID>
+          <Description>"base_camIP+E3 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+E3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>273</ID>
+          <Description>"base_camIP+E4 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+E4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>274</ID>
+          <Description>"base_camIP+E5 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+E5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>275</ID>
+          <Description>"base_camIP+E6 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+E6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>276</ID>
+          <Description>"base_camIP+E7 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+E7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>277</ID>
+          <Description>"base_camIP+E8 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+E8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>278</ID>
+          <Description>"base_camIP+E9 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+E9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>279</ID>
+          <Description>"base_camIP+EA (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+EA</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>280</ID>
+          <Description>"base_camIP+EB (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+EB</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>281</ID>
+          <Description>"base_camIP+EC (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+EC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>282</ID>
+          <Description>"base_camIP+ED (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+ED</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>283</ID>
+          <Description>"base_camIP+EE (default = -6.6408279e+20)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+EE</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>284</ID>
+          <Description>"base_camIP+EF (default = 1.7661133)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+EF</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>285</ID>
+          <Description>"base_camIP+F0 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+F0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>286</ID>
+          <Description>"base_camIP+F1 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+F1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>287</ID>
+          <Description>"base_camIP+F2 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+F2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>288</ID>
+          <Description>"base_camIP+F3 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+F3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>289</ID>
+          <Description>"base_camIP+F4 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+F4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>290</ID>
+          <Description>"base_camIP+F5 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+F5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>291</ID>
+          <Description>"base_camIP+F6 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+F6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>292</ID>
+          <Description>"base_camIP+F7 (default = -0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+F7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>293</ID>
+          <Description>"base_camIP+F8 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+F8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>294</ID>
+          <Description>"base_camIP+F9 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+F9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>295</ID>
+          <Description>"base_camIP+FA (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+FA</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>296</ID>
+          <Description>"base_camIP+FB (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+FB</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>297</ID>
+          <Description>"base_camIP+FC (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+FC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>298</ID>
+          <Description>"base_camIP+FD (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+FD</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>299</ID>
+          <Description>"base_camIP+FE (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+FE</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>300</ID>
+          <Description>"base_camIP+FF (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+FF</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>301</ID>
+          <Description>"base_camIP+100 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+100</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>302</ID>
+          <Description>"base_camIP+101 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+101</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>303</ID>
+          <Description>"base_camIP+102 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+102</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>304</ID>
+          <Description>"base_camIP+103 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+103</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>305</ID>
+          <Description>"base_camIP+104 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+104</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>306</ID>
+          <Description>"base_camIP+105 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+105</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>307</ID>
+          <Description>"base_camIP+106 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+106</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>308</ID>
+          <Description>"base_camIP+107 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+107</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>309</ID>
+          <Description>"base_camIP+108 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+108</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>310</ID>
+          <Description>"base_camIP+109 (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+109</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>311</ID>
+          <Description>"base_camIP+10A (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+10A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>312</ID>
+          <Description>"base_camIP+10B (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+10B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>313</ID>
+          <Description>"base_camIP+10C (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+10C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>314</ID>
+          <Description>"base_camIP+10D (default = 0)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>base_camIP+10D</Address>
+        </CheatEntry>
+      </CheatEntries>
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
