@@ -1,0 +1,43 @@
+base_camIP-18 (default = -0.0000003) (#21) cmp byte ptr [r13+18],00
+base_camIP-C (default = 0) (#33) cmp byte ptr [r13+24],00
+base_camIP+8 (default = 0) (#53) cmp byte ptr [rax+38],00
+base_camIP+C (default = 25) (#57) movss xmm2,[rax+3C]
+
+base_camIP+18 (default = 0) (#69) movzx r8d,byte ptr [r13+48]
+base_camIP+1C (default = 5) (#73) subss xmm14,[rbx+4C]
+
+base_camIP+20 (default = 10) (#77) subss xmm15,[rbx+50]
+
+base_camIP+30 (default = 0) (#93) cmp byte ptr [rbx+60],00
+base_camIP+34 (default = 22) (#97) subss xmm11,[rbx+64]
+
+base_camIP+38 (default = 0.5) (#101) movss xmm1,[rbx+68]
+
+base_camIP+3C (default = 3) (#105) movss xmm2,[rbx+6C]
+
+base_camIP+44 (default = 0.42) (#113) subss xmm12,[rbx+74]
+base_camIP+45 (default = 0) (#114) addss xmm12,[rbx+74]
+base_camIP+46 (default = 0) (#115) subss xmm12,[rbx+74]
+base_camIP+47 (default = 512.00378) (#116) addss xmm12,[rbx+74]
+
+base_camIP+48 (default = 49) (#117) movss xmm3,[rbx+78]
+
+base_camIP+4C (default = 41.009998) (#121) movss xmm4,[rbx+7C]
+
+base_camIP+58 (default = 0) (#133) cmp byte ptr [rbx+00000088],00
+
+base_camIP+6C (default = 0.5) (#153) movss xmm0,[rbx+0000009C]
+
+base_camIP+70 (default = 3) (#157) movss xmm1,[rbx+000000A0]
+
+base_camIP+80 (default = 41.009998) (#173) movss xmm1,[rbx+000000B0]
+
+base_camIP+D0 (default = -0) (#253) mov rax,[rcx]
+
+base_camIP+D8 (default = 0) (#261) cmp [rcx+08],dl
+base_camIP+D9 (default = 0) (#262) mov [rcx+09],al
+
+base_camIP+DC (default = 0) (#265) mov eax,[rcx+0C]
+
+base_camIP+E0 (default = 0) (#269) cmp [rcx+10],al
+base_camIP+E1 (default = 0) (#270) mov [rcx+11],al
