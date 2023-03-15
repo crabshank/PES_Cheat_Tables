@@ -2,7 +2,7 @@
 <CheatTable CheatEngineTableVersion="45">
   <CheatEntries>
     <CheatEntry>
-      <ID>77</ID>
+      <ID>640</ID>
       <Description>"BATCH ENABLE"</Description>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{$lua}
@@ -36,6 +36,7 @@ scrpts[10].Active=true -- Smoother anim
 scrpts[11].Active=true -- Game speed
 scrpts[12].Active=true -- Height
 scrpts[13].Active=true -- Body Size
+scrpts[14].Active=true -- Camera (Uses 15 and 16 too)
 
 [DISABLE]
 scrpts[1].Active=false -- Left arm
@@ -51,10 +52,11 @@ scrpts[10].Active=false -- Smoother anim
 scrpts[11].Active=false -- Game speed
 scrpts[12].Active=false -- Height
 scrpts[13].Active=false -- Body size
+scrpts[14].Active=true -- Camera (Uses 15 and 16 too)
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
-          <ID>57</ID>
+          <ID>641</ID>
           <Description>"Left arm"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
@@ -246,14 +248,14 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>60</ID>
+              <ID>642</ID>
               <Description>"Left arm mean"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_la</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>68</ID>
+              <ID>643</ID>
               <Description>"Left arm range"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
@@ -262,7 +264,7 @@ opcode_inj[script_ref]=nil
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>39</ID>
+          <ID>644</ID>
           <Description>"Twist (left) + Right arm"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
@@ -496,28 +498,28 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>44</ID>
+              <ID>645</ID>
               <Description>"Right arm mean"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_ra</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>67</ID>
+              <ID>646</ID>
               <Description>"Right arm"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_ra+4</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>66</ID>
+              <ID>647</ID>
               <Description>"Twist (left) mean"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_ra+8</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>45</ID>
+              <ID>648</ID>
               <Description>"Twist (left) range"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
@@ -526,7 +528,7 @@ opcode_inj[script_ref]=nil
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>47</ID>
+          <ID>649</ID>
           <Description>"Legs dist from body"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
@@ -714,14 +716,14 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>48</ID>
+              <ID>650</ID>
               <Description>"Distance mean"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_d</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>62</ID>
+              <ID>651</ID>
               <Description>"Distance range"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
@@ -1001,42 +1003,42 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>1</ID>
+              <ID>674</ID>
               <Description>"Arms in/out average"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_1</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>6</ID>
+              <ID>675</ID>
               <Description>"Arms in/out range"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_1+4</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>32</ID>
+              <ID>676</ID>
               <Description>"Arm distance from body average"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_1+8</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>65</ID>
+              <ID>677</ID>
               <Description>"Arm distance from body range"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_1+C</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>64</ID>
+              <ID>678</ID>
               <Description>"Lean average"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_1+10</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>63</ID>
+              <ID>679</ID>
               <Description>"Lean range"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
@@ -1045,7 +1047,7 @@ opcode_inj[script_ref]=nil
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>674</ID>
+          <ID>680</ID>
           <Description>"Animation speed"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
@@ -1222,14 +1224,14 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>31</ID>
+              <ID>681</ID>
               <Description>"Speed mean"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_5</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>61</ID>
+              <ID>682</ID>
               <Description>"Speed range"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
@@ -1238,7 +1240,7 @@ opcode_inj[script_ref]=nil
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>21</ID>
+          <ID>683</ID>
           <Description>"Pre-kick rush onto ball"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
@@ -1298,7 +1300,7 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>675</ID>
+              <ID>684</ID>
               <Description>"Acceleration"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
@@ -1307,7 +1309,7 @@ opcode_inj[script_ref]=nil
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>69</ID>
+          <ID>685</ID>
           <Description>"Broadcast focus"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
@@ -1422,7 +1424,7 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>70</ID>
+              <ID>686</ID>
               <Description>"Focus"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
@@ -1431,7 +1433,7 @@ opcode_inj[script_ref]=nil
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>74</ID>
+          <ID>687</ID>
           <Description>"Angle hijack (Stadium)"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
@@ -1561,7 +1563,7 @@ dealloc(newmem_3)
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>72</ID>
+              <ID>688</ID>
               <Description>"Angle mult"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
@@ -1570,7 +1572,7 @@ dealloc(newmem_3)
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>75</ID>
+          <ID>689</ID>
           <Description>"Cutscene heights fix"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>{$lua}
@@ -1619,7 +1621,7 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>76</ID>
+          <ID>690</ID>
           <Description>"Smoother animation experiment"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
@@ -1667,7 +1669,7 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>79</ID>
+          <ID>691</ID>
           <Description>"Game speed (Lower is faster [1/x])"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
@@ -1727,7 +1729,7 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>80</ID>
+              <ID>692</ID>
               <Description>"Speed"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
@@ -1736,7 +1738,7 @@ opcode_inj[script_ref]=nil
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>688</ID>
+          <ID>693</ID>
           <Description>"Height mod ("Height mult" lower is taller)"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
@@ -1808,7 +1810,7 @@ dealloc(newmem2)
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>689</ID>
+              <ID>694</ID>
               <Description>"Height mult"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
@@ -1824,7 +1826,7 @@ dealloc(newmem2)
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>685</ID>
+          <ID>709</ID>
           <Description>"Body size"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
@@ -1882,7 +1884,7 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>691</ID>
+              <ID>710</ID>
               <Description>"Size mult"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
@@ -1890,8 +1892,265 @@ opcode_inj[script_ref]=nil
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
+        <CheatEntry>
+          <ID>715</ID>
+          <Description>"Camera mod"</Description>
+          <Options moHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+
+[DISABLE]
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>720</ID>
+              <Description>"Variables"</Description>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>718</ID>
+                  <Description>"Zoom"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>cam_zoom</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>716</ID>
+                  <Description>"Height"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>cam_hgt</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>717</ID>
+                  <Description>"Z"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>cam_z</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>719</ID>
+              <Description>"Scripts"</Description>
+             <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1" moAllowManualCollapseAndExpand="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>714</ID>
+                  <Description>"Height, z, zoom"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+        aobscanmodule(INJECT_camMod5,PES2021.exe,F3 44 0F 11 4D 87 44) // should be unique
+        alloc(cam_z, 8, INJECT_camMod5)
+        registersymbol(cam_z)
+cam_z:
+dd (float)-5 //CHANGE THIS ONE!
+dd (float)0.01
+
+         aobscanmodule(INJECT_camMod3,PES2021.exe,F3 41 0F 11 45 10 F3 0F 59 D4) // should be unique
+         alloc(cam_hgt, 4, INJECT_camMod3)
+         registersymbol(cam_hgt)
+cam_hgt:
+dd (float)1.56 //CHANGE THIS ONE!
+
+          aobscanmodule(INJECT_camMod4,PES2021.exe,F3 0F 11 46 30 E8 0D 00 00 00) // should be unique
+          alloc(cam_zoom, 4, INJECT_camMod4)
+          registersymbol(cam_zoom)
+cam_zoom:
+dd (float)1.25 //CHANGE THIS ONE!
+
+alloc(newmem5,$1000,INJECT_camMod5)
+
+label(code5)
+label(return5)
+
+newmem5:
+
+code5:
+mulss xmm9,[cam_z]
+mulss xmm9,[cam_z+4]
+  movss [rbp-79],xmm9
+  jmp return5
+
+INJECT_camMod5:
+  jmp newmem5
+  nop
+return5:
+registersymbol(INJECT_camMod5)
+
+alloc(newmem3,$1000,INJECT_camMod3)
+
+label(code3)
+label(return3)
+
+newmem3:
+
+code3:
+  mulss xmm0,[cam_hgt]
+  movss [r13+10],xmm0
+  jmp return3
+
+INJECT_camMod3:
+  jmp newmem3
+  nop
+return3:
+registersymbol(INJECT_camMod3)
+
+
+alloc(newmem4,$1000,INJECT_camMod4)
+label(code4)
+label(return4)
+
+
+newmem4:
+
+code4:
+      mulss xmm0,[cam_zoom]
+  movss [rsi+30],xmm0
+  jmp return4
+
+INJECT_camMod4:
+  jmp newmem4
+return4:
+registersymbol(INJECT_camMod4)
+
+[DISABLE]
+
+INJECT_camMod5:
+  db F3 44 0F 11 4D 87
+
+unregistersymbol(INJECT_camMod5)
+dealloc(newmem5)
+
+INJECT_camMod3:
+  db F3 41 0F 11 45 10
+
+unregistersymbol(INJECT_camMod3)
+dealloc(newmem3)
+
+INJECT_camMod4:
+  db F3 0F 11 46 30 E8 0D 00 00 00
+
+unregistersymbol(INJECT_camMod4)
+dealloc(newmem4)
+
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>711</ID>
+                  <Description>"NOPs"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+--OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+local suffix='_camMod'
+
+local module_names='PES2021.exe'
+local parts={{'xmm%d',1,'xreg'}}
+vars.post={}
+
+vars.post[1]=function() --get opcode sizes
+ local zk=vars['lookaheads']
+ local z=zk['offsets']
+ local zl=#z
+ local t={nil}
+ for i=2,zl-1 do --skip opcode
+     local c=z[i]
+     local cn=z[i+1]
+     table.insert(t,cn-c)
+ end
+ vars['opc_sizes']=t
+ return vars --IMPORTANT!
+end
+
+-- token functions (below) run after ['post'] functions
+vars['nop_if']=function()
+ local z=vars['opc_sizes']
+ local pc=vars['lookaheads']['opcodes']
+ local pz=#pc
+   local ptrn=vars['xreg']..'%s*,'
+   local out={}
+
+ for i=2, pz-1 do
+   local ps=z[i]
+   local p=pc[i]
+
+   if string.find(p,ptrn)~=nil then
+      local t={}
+      for j=1,ps do
+          table.insert(t,'nop')
+      end
+      table.insert(out,table.concat(t,'\n'))
+   else
+       table.insert(out,p)
+   end
+ end
+local jmpa=vars['address_dec']+vars['lookaheads']['offsets'][pz]
+ return table.concat(out,'\n')..'\njmp '..string.format('%X',jmpa)
+
+
+end
+
+
+--COMPULSORY
+local newmem_name='newmem'..suffix
+local newmem_size='$1000'
+local script_ref='Camera_mod' --  opcode_inj[vars.script_ref] stores vars
+local inj_name='INJECT'..suffix
+local pattern='^%s*divss%s+xmm%d%s*,%s*%[%s*[^%+]+%s*%+%s*%d+%s*%]'
+local aobs={'F3 0F 5E 55 78 0F 28 C1 F3 0F 59 CC',0,1}
+local lookahead_n=100
+
+local inj_script=[[
+	define(${inj_name},${address_string})
+    registersymbol(${inj_name})
+    alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+
+	label(code)
+	//label(return)
+
+    ${newmem_name}:
+	code:
+    ${opcode}
+    ${nop_if}()
+
+
+ ${inj_name}:
+	  jmp ${newmem_name}
+
+]]
+
+local vars2={}
+local script_ref2='Camera_mod2' --  opcode_inj[vars.script_ref] stores vars
+local inj_name2='INJECT'..suffix..'2'
+local pattern2='^%s*subss%s+xmm%d%s*,%s*xmm%d'
+local aobs2={'F3 0F 5C C3 F3 41 0F 5E CA',0,1}
+
+
+[ENABLE]
+
+opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+opcode_inj.nop(script_ref2,inj_name2,vars2,pattern2,aobs2,module_names)
+
+
+[DISABLE]
+
+opcode_inj.disable(script_ref)
+opcode_inj[script_ref]=nil
+
+opcode_inj.disable_nop(script_ref2)
+opcode_inj[script_ref2]=nil
+
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
-  <UserdefinedSymbols/>
+ <UserdefinedSymbols/>
 </CheatTable>
