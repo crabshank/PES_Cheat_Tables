@@ -2121,7 +2121,6 @@ local inj_script=[[
 
  ${inj_name}:
 	  jmp ${newmem_name}
-      ${post_jmp}
 ]]
 
 local vars2={}
