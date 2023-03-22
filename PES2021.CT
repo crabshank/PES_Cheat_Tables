@@ -37,6 +37,7 @@ scrpts[11].Active=true -- Game speed
 scrpts[12].Active=true -- Height
 scrpts[13].Active=true -- Body Size
 scrpts[14].Active=true -- Camera (Uses 15 and 16 too)
+scrpts[17].Active=true -- Difficulty fix
 
 [DISABLE]
 scrpts[1].Active=false -- Left arm
@@ -52,7 +53,8 @@ scrpts[10].Active=false -- Smoother anim
 scrpts[11].Active=false -- Game speed
 scrpts[12].Active=false -- Height
 scrpts[13].Active=false -- Body size
-scrpts[14].Active=true -- Camera (Uses 15 and 16 too)
+scrpts[14].Active=false -- Camera (Uses 15 and 16 too)
+scrpts[17].Active=false -- Difficulty fix
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -1933,7 +1935,7 @@ opcode_inj[script_ref]=nil
             <CheatEntry>
               <ID>719</ID>
               <Description>"Scripts"</Description>
-             <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1" moAllowManualCollapseAndExpand="1"/>
+              <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1" moAllowManualCollapseAndExpand="1"/>
               <GroupHeader>1</GroupHeader>
               <CheatEntries>
                 <CheatEntry>
@@ -2119,7 +2121,7 @@ local inj_script=[[
 
  ${inj_name}:
 	  jmp ${newmem_name}
-
+      ${post_jmp}
 ]]
 
 local vars2={}
@@ -2149,8 +2151,85 @@ opcode_inj[script_ref2]=nil
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
+        <CheatEntry>
+          <ID>725</ID>
+          <Description>"Fix difficulty experiment"</Description>
+          <Options moHideChildren="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+
+--Credit to Twiggy for his work on this, which helped me make this mod
+
+local vars={}
+--OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+local suffix='_diffMod'
+
+vars.varis_1_n='set_diff'..suffix
+local set_diff=6 --between 1 and 6 (Superstar)
+vars.varis_1_d='dd '..set_diff
+vars.varis_1_size=4
+
+local module_names='PES2021.exe'
+local parts={}
+
+--COMPULSORY
+local newmem_name='newmem'..suffix
+local newmem_size='$1000'
+local script_ref='Difficulty_mod' --  opcode_inj[vars.script_ref] stores vars
+local inj_name='INJECT'..suffix
+local pattern='^%s*test%s+ecx%s*,%s*ecx'
+local aobs={'0F 48 C8 49 8B C0',10,11}
+local lookahead_n=20
+
+local inj_script=[[
+	define(${inj_name},${address_string})
+    registersymbol(${inj_name})
+    alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+
+    alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
+  registersymbol(${varis_1_n})
+  ${varis_1_n}:
+  ${varis_1_d}
+
+	label(code)
+	label(return)
+
+    ${newmem_name}:
+	code:
+    mov ecx,[${varis_1_n}]
+    ${opcode}
+    ${overwritten}
+    jmp return
+
+ ${inj_name}:
+	  jmp ${newmem_name}
+          ${post_jmp}
+          return:
+
+]]
+
+[ENABLE]
+
+opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+
+[DISABLE]
+
+opcode_inj.disable(script_ref)
+opcode_inj[script_ref]=nil
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>726</ID>
+              <Description>"Set difficulty level [0-7; Recommended: 1 - 6 (Superstar)]"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>set_diff_diffMod</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
- <UserdefinedSymbols/>
+  <UserdefinedSymbols/>
 </CheatTable>
