@@ -1935,110 +1935,9 @@ opcode_inj[script_ref]=nil
             <CheatEntry>
               <ID>719</ID>
               <Description>"Scripts"</Description>
-              <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1" moAllowManualCollapseAndExpand="1"/>
+              <Options moAlwaysHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1" moAllowManualCollapseAndExpand="1"/>
               <GroupHeader>1</GroupHeader>
               <CheatEntries>
-                <CheatEntry>
-                  <ID>714</ID>
-                  <Description>"Height, z, zoom"</Description>
-                  <VariableType>Auto Assembler Script</VariableType>
-                  <AssemblerScript>[ENABLE]
-        aobscanmodule(INJECT_camMod5,PES2021.exe,F3 44 0F 11 4D 87 44) // should be unique
-        alloc(cam_z, 8, INJECT_camMod5)
-        registersymbol(cam_z)
-cam_z:
-dd (float)-5 //CHANGE THIS ONE!
-dd (float)0.01
-
-         aobscanmodule(INJECT_camMod3,PES2021.exe,F3 41 0F 11 45 10 F3 0F 59 D4) // should be unique
-         alloc(cam_hgt, 4, INJECT_camMod3)
-         registersymbol(cam_hgt)
-cam_hgt:
-dd (float)1.56 //CHANGE THIS ONE!
-
-          aobscanmodule(INJECT_camMod4,PES2021.exe,F3 0F 11 46 30 E8 0D 00 00 00) // should be unique
-          alloc(cam_zoom, 4, INJECT_camMod4)
-          registersymbol(cam_zoom)
-cam_zoom:
-dd (float)1.25 //CHANGE THIS ONE!
-
-alloc(newmem5,$1000,INJECT_camMod5)
-
-label(code5)
-label(return5)
-
-newmem5:
-
-code5:
-mulss xmm9,[cam_z]
-mulss xmm9,[cam_z+4]
-  movss [rbp-79],xmm9
-  jmp return5
-
-INJECT_camMod5:
-  jmp newmem5
-  nop
-return5:
-registersymbol(INJECT_camMod5)
-
-alloc(newmem3,$1000,INJECT_camMod3)
-
-label(code3)
-label(return3)
-
-newmem3:
-
-code3:
-  mulss xmm0,[cam_hgt]
-  movss [r13+10],xmm0
-  jmp return3
-
-INJECT_camMod3:
-  jmp newmem3
-  nop
-return3:
-registersymbol(INJECT_camMod3)
-
-
-alloc(newmem4,$1000,INJECT_camMod4)
-label(code4)
-label(return4)
-
-
-newmem4:
-
-code4:
-      mulss xmm0,[cam_zoom]
-  movss [rsi+30],xmm0
-  jmp return4
-
-INJECT_camMod4:
-  jmp newmem4
-return4:
-registersymbol(INJECT_camMod4)
-
-[DISABLE]
-
-INJECT_camMod5:
-  db F3 44 0F 11 4D 87
-
-unregistersymbol(INJECT_camMod5)
-dealloc(newmem5)
-
-INJECT_camMod3:
-  db F3 41 0F 11 45 10
-
-unregistersymbol(INJECT_camMod3)
-dealloc(newmem3)
-
-INJECT_camMod4:
-  db F3 0F 11 46 30 E8 0D 00 00 00
-
-unregistersymbol(INJECT_camMod4)
-dealloc(newmem4)
-
-</AssemblerScript>
-                </CheatEntry>
                 <CheatEntry>
                   <ID>711</ID>
                   <Description>"NOPs"</Description>
@@ -2143,6 +2042,107 @@ opcode_inj[script_ref]=nil
 
 opcode_inj.disable_nop(script_ref2)
 opcode_inj[script_ref2]=nil
+
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>714</ID>
+                  <Description>"Height, z, zoom"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+        aobscanmodule(INJECT_camMod5,PES2021.exe,F3 44 0F 11 4D 87 44) // should be unique
+        alloc(cam_z, 8, INJECT_camMod5)
+        registersymbol(cam_z)
+cam_z:
+dd (float)-5 //CHANGE THIS ONE!
+dd (float)0.01
+
+         aobscanmodule(INJECT_camMod3,PES2021.exe,F3 41 0F 11 45 10 F3 0F 59 D4) // should be unique
+         alloc(cam_hgt, 4, INJECT_camMod3)
+         registersymbol(cam_hgt)
+cam_hgt:
+dd (float)1.56 //CHANGE THIS ONE!
+
+        aobscanmodule(INJECT_camMod4,PES2021.exe,F3 0F 11 46 30 E8 0D 00 00 00) // should be unique
+          alloc(cam_zoom, 4, INJECT_camMod4)
+          registersymbol(cam_zoom)
+cam_zoom:
+dd (float)1.25 //CHANGE THIS ONE!
+
+alloc(newmem5,$1000,INJECT_camMod5)
+
+label(code5)
+label(return5)
+
+newmem5:
+
+code5:
+mulss xmm9,[cam_z]
+mulss xmm9,[cam_z+4]
+  movss [rbp-79],xmm9
+  jmp return5
+
+INJECT_camMod5:
+  jmp newmem5
+  nop
+return5:
+registersymbol(INJECT_camMod5)
+
+alloc(newmem3,$1000,INJECT_camMod3)
+
+label(code3)
+label(return3)
+
+newmem3:
+
+code3:
+  mulss xmm0,[cam_hgt]
+  movss [r13+10],xmm0
+  jmp return3
+
+INJECT_camMod3:
+  jmp newmem3
+  nop
+return3:
+registersymbol(INJECT_camMod3)
+
+
+alloc(newmem4,$1000,INJECT_camMod4)
+label(code4)
+label(return4)
+
+
+newmem4:
+
+code4:
+      mulss xmm0,[cam_zoom]
+  movss [rsi+30],xmm0
+  jmp return4
+
+INJECT_camMod4:
+  jmp newmem4
+return4:
+registersymbol(INJECT_camMod4)
+
+[DISABLE]
+
+INJECT_camMod3:
+  db F3 41 0F 11 45 10
+
+unregistersymbol(INJECT_camMod3)
+dealloc(newmem3)
+
+INJECT_camMod5:
+  db F3 44 0F 11 4D 87
+
+unregistersymbol(INJECT_camMod5)
+dealloc(newmem5)
+
+INJECT_camMod4:
+  db F3 0F 11 46 30 E8 0D 00 00 00
+
+unregistersymbol(INJECT_camMod4)
+dealloc(newmem4)
 
 </AssemblerScript>
                 </CheatEntry>
