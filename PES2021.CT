@@ -511,7 +511,7 @@ opcode_inj[script_ref]=nil
             </CheatEntry>
             <CheatEntry>
               <ID>678</ID>
-              <Description>"Right arm"</Description>
+              <Description>"Right arm range"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_ra+4</Address>
