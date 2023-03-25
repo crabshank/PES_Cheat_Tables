@@ -224,7 +224,7 @@ define(${inj_name},${address_string})
     ${stack_pop}(20)
 
     ${pop_xmm}(0)
-	$%s{opcode}  //loads 4 x floats into $%s{x_reg}
+	$%s{instruction}  //loads 4 x floats into $%s{x_reg}
 	mulps ${x_reg},${xmm~4}
 
     ${pop_xmm}(5)
@@ -482,7 +482,7 @@ ${stack_push}(18)
     pop rax
     pop rbx
     pop rcx
-      ${opcode}
+      ${instruction}
       mulps ${x_reg},${xmm~6}
       ${pop_xmm}(6)
       ${overwritten}
@@ -692,7 +692,7 @@ local inj_script=[[
     addss  ${xmm~4},  ${xmm~3} //FINAL MULT in x~4 !
 
     ${pop_xmm}(0)
-	$%s{opcode}  //loads 4 x floats into $%s{x_reg}
+	$%s{instruction}  //loads 4 x floats into $%s{x_reg}
 	mulps ${x_reg},${xmm~4}
 
     ${pop_xmm}(5)
@@ -986,7 +986,7 @@ ${stack_push}(18)
     pop rax
     pop rbx
     pop rcx
-      //${opcode}
+      //${instruction}
       ${pop_xmm}(6)
 	      ${pop_xmm}(7)
 	      ${pop_xmm}(9)
@@ -1209,7 +1209,7 @@ local inj_script=[[
     pop rax
     pop rbx
     pop rcx
-    ${opcode}
+    ${instruction}
 
     ${overwritten}
     jmp return
@@ -1286,7 +1286,7 @@ local inj_script=[[
 	$%s{newmem_name}:
 	code:
 	  mulss $%s{x_reg},[$%s{varis_1_n}]
-	  $%s{opcode}
+	  $%s{instruction}
       $%s{overwritten}
 	  jmp return
 
@@ -1406,7 +1406,7 @@ local inj_script=[[
         movss [rsp+C], ${xmm~1} //adj focus
         movups ${xmm~1}, [rsp]
 
-	  ${opcode}
+	  ${instruction}
       mulps ${x_reg},${xmm~1}
       ${stack_pop}(20)
       ${pop_xmm}(1)
@@ -1519,7 +1519,7 @@ local inj_script=[[
 	$%s{newmem_name}:
 	code:
 	  mulss $%s{x_reg},[$%s{varis_1_n}]
-	  $%s{opcode}
+	  $%s{instruction}
       $%s{overwritten}
 	  jmp return
 
@@ -1714,7 +1714,7 @@ local inj_script=[[
 
 	$%s{newmem_name}:
 	code:
-    ${opcode}
+    ${instruction}
 	  mulss ${x_reg},[${varis_1_n}]
       ${overwritten}
 	  jmp return
@@ -1869,7 +1869,7 @@ local inj_script=[[
 
 ${newmem_name}:
 	code:
-    ${opcode}
+    ${instruction}
     mulss ${x_reg},[${varis_1_n}]
 	  jmp return
 
@@ -1955,12 +1955,12 @@ local module_names='PES2021.exe'
 local parts={{'xmm%d',1,'xreg'}}
 vars.post={}
 
-vars.post[1]=function() --get opcode sizes
+vars.post[1]=function() --get instruction sizes
  local zk=vars['lookaheads']
  local z=zk['offsets']
  local zl=#z
  local t={nil}
- for i=2,zl-1 do --skip opcode
+ for i=2,zl-1 do --skip instruction
      local c=z[i]
      local cn=z[i+1]
      table.insert(t,cn-c)
@@ -1972,7 +1972,7 @@ end
 -- token functions (below) run after ['post'] functions
 vars['nop_if']=function()
  local z=vars['opc_sizes']
- local pc=vars['lookaheads']['opcodes']
+ local pc=vars['lookaheads']['instructions']
  local pz=#pc
    local ptrn=vars['xreg']..'%s*,'
    local out={}
@@ -2017,7 +2017,7 @@ local inj_script=[[
 
     ${newmem_name}:
 	code:
-    ${opcode}
+    ${instruction}
     ${nop_if}()
 
 
@@ -2200,7 +2200,7 @@ local inj_script=[[
     ${newmem_name}:
 	code:
     mov ecx,[${varis_1_n}]
-    ${opcode}
+    ${instruction}
     ${overwritten}
     jmp return
 
@@ -2274,7 +2274,7 @@ local inj_script=[[
 
     ${newmem_name}:
 	code:
-    ${opcode}
+    ${instruction}
     mulss ${x_reg},[${varis_1_n}]
     ${overwritten}
     jmp return
@@ -2312,7 +2312,7 @@ local inj_script2=[[
 
     ${newmem_name}:
 	code:
-    //${opcode}
+    //${instruction}
     jmp ${addr}
     ${overwritten}
     jmp return
