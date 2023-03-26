@@ -2170,7 +2170,7 @@ local vars={}
 local suffix='_diffMod'
 
 vars.varis_1_n='set_diff'..suffix
-local set_diff=6 --between 1 and 6 (Superstar)
+local set_diff=7 --between 0 and 7; 6 -> Superstar
 vars.varis_1_d='dd '..set_diff
 vars.varis_1_size=4
 
@@ -2225,7 +2225,7 @@ opcode_inj[script_ref]=nil
           <CheatEntries>
             <CheatEntry>
               <ID>726</ID>
-              <Description>"Set difficulty level [0-7; Recommended: 1 - 6 (Superstar)]"</Description>
+              <Description>"Set difficulty level [0-7; 6 -> Superstar]"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>set_diff_diffMod</Address>
