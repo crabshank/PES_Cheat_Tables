@@ -2225,7 +2225,7 @@ opcode_inj[script_ref]=nil
           <CheatEntries>
             <CheatEntry>
               <ID>726</ID>
-              <Description>"Set difficulty level [0-7; 6 (Superstar)]"</Description>
+              <Description>"Set difficulty level [0-7; 5 (Superstar)]"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>set_diff_diffMod</Address>
