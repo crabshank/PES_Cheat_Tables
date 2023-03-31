@@ -1658,13 +1658,13 @@ local inj_script=[[
 $%s{newmem_name}:
 	code:
 jmp ${jb_address}
-      //$%s{overwritten}
-	  //jmp return
+      ${overwritten}
+	  jmp return
 
  ${inj_name}:
 	  jmp ${newmem_name}
-  //${post_jmp}
-  //return:
+  ${post_jmp}
+  return:
 ]]
 
 [ENABLE]
