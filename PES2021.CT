@@ -31,8 +31,8 @@ end
 --scrpts[6].Active=true -- Pre-kick rush
 --scrpts[7].Active=true -- Broadcast focus
 --scrpts[8].Active=true -- Angle hijack (stadium)
---scrpts[9].Active=true -- Cutscenes heights
---scrpts[10].Active=true -- Smoother anim
+--scrpts[9].Active=true -- Smoother anim
+--scrpts[10].Active=true -- Cutscenes heights
 --scrpts[11].Active=true -- Game speed
 --scrpts[12].Active=true -- Height
 --scrpts[13].Active=true -- Body Size
@@ -50,8 +50,8 @@ end
 --scrpts[6].Active=false -- Pre-kick rush
 --scrpts[7].Active=false -- Broadcast focus
 --scrpts[8].Active=false -- Angle hijack (stadium)
---scrpts[9].Active=false -- Cutscenes heights
---scrpts[10].Active=false -- Smoother anim
+--scrpts[9].Active=false -- Smoother anim
+--scrpts[10].Active=false -- Cutscenes heights
 --scrpts[11].Active=false -- Game speed
 --scrpts[12].Active=false -- Height
 --scrpts[13].Active=false -- Body size
