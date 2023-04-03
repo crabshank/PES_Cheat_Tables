@@ -32,15 +32,14 @@ end
 --scrpts[7].Active=true -- Broadcast focus
 --scrpts[8].Active=true -- Angle hijack (stadium)
 --scrpts[9].Active=true -- Smoother anim
---scrpts[10].Active=true -- Cutscenes heights
---scrpts[11].Active=true -- Game speed
---scrpts[12].Active=true -- Height
---scrpts[13].Active=true -- Body Size
---scrpts[14].Active=true -- Camera mod (Uses 15 and 16 too)
---scrpts[17].Active=true -- Difficulty fix
---scrpts[18].Active=true -- Additional time
---scrpts[19].Active=true -- New broadcast camera (Uses 20 and 21 too)
---scrpts[22].Active=true -- Random game speed
+--scrpts[10].Active=true -- Game speed
+--scrpts[11].Active=true -- Height
+--scrpts[12].Active=true -- Body Size
+--scrpts[13].Active=true -- Camera mod (Uses 14 and 15 too)
+--scrpts[16].Active=true -- Difficulty fix
+--scrpts[17].Active=true -- Additional time
+--scrpts[18].Active=true -- New broadcast camera (Uses 20 and 21 too)
+--scrpts[21].Active=true -- Random game speed
 
 [DISABLE]
 --scrpts[1].Active=false -- Left arm
@@ -52,14 +51,15 @@ end
 --scrpts[7].Active=false -- Broadcast focus
 --scrpts[8].Active=false -- Angle hijack (stadium)
 --scrpts[9].Active=false -- Smoother anim
---scrpts[10].Active=false -- Cutscenes heights
---scrpts[11].Active=false -- Game speed
---scrpts[12].Active=false -- Height
---scrpts[13].Active=false -- Body size
---scrpts[14].Active=false -- Camera mod (Uses 15 and 16 too)
---scrpts[17].Active=false -- Difficulty fix
---scrpts[18].Active=false -- Additional time
---scrpts[22].Active=false -- Random game speed
+--scrpts[9].Active=false -- Smoother anim
+--scrpts[10].Active=false -- Game speed
+--scrpts[11].Active=false -- Height
+--scrpts[12].Active=false -- Body Size
+--scrpts[13].Active=false -- Camera mod (Uses 14 and 15 too)
+--scrpts[16].Active=false -- Difficulty fix
+--scrpts[17].Active=false -- Additional time
+--scrpts[18].Active=false -- New broadcast camera (Uses 20 and 21 too)
+--scrpts[21].Active=false -- Random game speed
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
