@@ -65,7 +65,7 @@ unregistersymbol(mult_1)
 [ENABLE]
 
 local aobs=AOBScan('74 0C FF C1 48 83 C0 30 3B CA', "", 0)
-if aobs~=nil and aobs.Count&gt;0 then
+if aobs~=nil and aobs.Count>0 then
 local aob_count=aobs.Count
 	for i=0,aob_count-1 do
         if i==0 then
@@ -78,10 +78,10 @@ end
 aobs.destroy()
 
 local aobs=AOBScan('76 12 F3 0F 10 0B F3 0F 58 D6 0F C6 C9 00', "", 0)
-if aobs~=nil and aobs.Count&gt;0 then
+if aobs~=nil and aobs.Count>0 then
 local aob_count=aobs.Count
 	for i=0,aob_count-1 do
-        if i&gt;=1 then
+        if i>=1 then
 		local res=tonumber(aobs[i],16)
 		writeBytes(res,0x90,0x90)
 		registerSymbol('j_chg_CSH_j2_'..i,res)
@@ -92,7 +92,7 @@ aobs.destroy()
 
 --CANNOT BE DISABLED ONCE ENABLED; COMMENT OUT TO ALLOW DYNAMIC CHECKING OF THE TWO ABOVE!
 local aobs=AOBScan('F3 0F 5C C3 0F 2F C5 72 05 0F 28 D1 EB 03 0F 28 D3', "", 0)
-if aobs~=nil and aobs.Count&gt;0 then
+if aobs~=nil and aobs.Count>0 then
 local aob_count=aobs.Count
 	for i=0, aob_count-1 do
 		local res=tonumber(aobs[i],16)
