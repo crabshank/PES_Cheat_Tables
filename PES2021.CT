@@ -1715,6 +1715,13 @@ opcode_inj[script_ref]=nil
                   <Address>hgt_mult</Address>
                 </CheatEntry>
                 <CheatEntry>
+                  <ID>882</ID>
+                  <Description>"Height above turf"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>hgt_mult+4</Address>
+                </CheatEntry>
+                <CheatEntry>
                   <ID>866</ID>
                   <Description>"Animation y mult"</Description>
                   <ShowAsSigned>0</ShowAsSigned>
@@ -1730,12 +1737,12 @@ opcode_inj[script_ref]=nil
               <GroupHeader>1</GroupHeader>
               <CheatEntries>
                 <CheatEntry>
-                  <ID>867</ID>
-                  <Description>"Height mod ("Height mult" lower is taller)"</Description>
+                  <ID>871</ID>
+                  <Description>"Height mod og"</Description>
                   <VariableType>Auto Assembler Script</VariableType>
                   <AssemblerScript>[ENABLE]
 
-aobscanmodule(INJECT_hm,PES2021.exe,72 1D 0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D) // should be unique
+aobscanmodule(INJECT_hm,PES2021.exe,0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D) // should be unique
 alloc(newmem,$1000,INJECT_hm)
 
 label(code)
@@ -1751,27 +1758,37 @@ alloc(hgt_mult, 8, INJECT_hm)
 registersymbol(hgt_mult)
 hgt_mult:
 dd (float)1.063
-db 39 8E 63 3E // 1/4.5
+dd (float)3.5
 
 alloc(inv_hgt_mult, 4, INJECT_hm2)
 registersymbol(inv_hgt_mult)
 inv_hgt_mult:
 db C8 41 79 3F
+//dd (float)
 
 newmem:
 
 code:
   comiss xmm4,xmm2
+  sub rsp,20
+  movdqu [rsp],xmm15
+  movdqu [rsp],xmm14
+  movss xmm15,xmm4
   mulss xmm4, [hgt_mult]
-  divss xmm1,xmm4
-  mulss xmm1, [hgt_mult]
-  movaps xmm0, xmm1
-  ret
+  movss xmm14,xmm4
+  subss xmm14,xmm15
+  subss xmm14,[hgt_mult+4]
+  subss xmm4,xmm14
+  addss xmm3,xmm14
+  movdqu xmm15,[rsp]
+  movdqu xmm14,[rsp]
+  add rsp,20
+
+  jmp return
 
 INJECT_hm:
   jmp newmem
 return:
-  nop 4
 registersymbol(INJECT_hm)
 
 newmem2:
@@ -1789,16 +1806,14 @@ registersymbol(INJECT_hm2)
 [DISABLE]
 
 INJECT_hm:
-  db 72 1D 0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D
+  db 0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D
 
-unregistersymbol(hgt_mult)
 unregistersymbol(INJECT_hm)
 dealloc(newmem)
 
 INJECT_hm2:
   db F3 0F 10 4A 28 F3 0F 11 04 24 F3 0F 10 42 24 F3 0F 11 44 24 08
 
-unregistersymbol(inv_hgt_mult)
 unregistersymbol(INJECT_hm2)
 dealloc(newmem2)
 
@@ -2998,7 +3013,7 @@ opcode_inj[script_ref2]=nil
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>871</ID>
+          <ID>889</ID>
           <Description>"Twist right, left arm (-ve mean)"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
@@ -3207,5 +3222,4 @@ opcode_inj[script_ref]=nil
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
-  <UserdefinedSymbols/>
 </CheatTable>
