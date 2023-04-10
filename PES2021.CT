@@ -33,13 +33,13 @@ end
 --scrpts[8].Active=true -- Angle hijack (stadium)
 --scrpts[9].Active=true -- Smoother anim
 --scrpts[10].Active=true -- Game speed
---scrpts[11].Active=true -- Height
---scrpts[12].Active=true -- Body Size
---scrpts[13].Active=true -- Camera mod (Uses 14 and 15 too)
---scrpts[16].Active=true -- Difficulty fix
---scrpts[17].Active=true -- Additional time
---scrpts[18].Active=true -- New broadcast camera (Uses 20 and 21 too)
---scrpts[21].Active=true -- Random game speed
+--scrpts[11].Active=true -- Height (Uses 12 and 13 too)
+--scrpts[14].Active=true -- Body Size
+--scrpts[15].Active=true -- Camera mod (Uses 16 and 17 too)
+--scrpts[18].Active=true -- Difficulty fix
+--scrpts[19].Active=true -- Additional time
+--scrpts[20].Active=true -- New broadcast camera (Uses 21 and 22 too)
+--scrpts[23].Active=true -- Random game speed
 
 [DISABLE]
 --scrpts[1].Active=false -- Left arm
@@ -51,15 +51,14 @@ end
 --scrpts[7].Active=false -- Broadcast focus
 --scrpts[8].Active=false -- Angle hijack (stadium)
 --scrpts[9].Active=false -- Smoother anim
---scrpts[9].Active=false -- Smoother anim
 --scrpts[10].Active=false -- Game speed
---scrpts[11].Active=false -- Height
---scrpts[12].Active=false -- Body Size
---scrpts[13].Active=false -- Camera mod (Uses 14 and 15 too)
---scrpts[16].Active=false -- Difficulty fix
---scrpts[17].Active=false -- Additional time
---scrpts[18].Active=false -- New broadcast camera (Uses 20 and 21 too)
---scrpts[21].Active=false -- Random game speed
+--scrpts[11].Active=false -- Height (Uses 12 and 13 too)
+--scrpts[14].Active=false -- Body Size
+--scrpts[15].Active=false -- Camera mod (Uses 16 and 17 too)
+--scrpts[18].Active=false -- Difficulty fix
+--scrpts[19].Active=false -- Additional time
+--scrpts[20].Active=false -- New broadcast camera (Uses 21 and 22 too)
+--scrpts[23].Active=false -- Random game speed
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -1696,13 +1695,45 @@ opcode_inj[script_ref]=nil
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>791</ID>
-          <Description>"Height mod ("Height mult" lower is taller)"</Description>
-          <Options moHideChildren="1"/>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>[ENABLE]
+          <ID>868</ID>
+          <Description>"Height mod"</Description>
+          <Options moHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>870</ID>
+              <Description>"Variables"</Description>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>865</ID>
+                  <Description>"Height mult"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>hgt_mult</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>866</ID>
+                  <Description>"Animation y mult"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>inv_hgt_mult</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>869</ID>
+              <Description>"Scripts"</Description>
+              <Options moAlwaysHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>867</ID>
+                  <Description>"Height mod ("Height mult" lower is taller)"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
 
-aobscanmodule(INJECT_hm,PES2021.exe,0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D) // should be unique
+aobscanmodule(INJECT_hm,PES2021.exe,72 1D 0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D) // should be unique
 alloc(newmem,$1000,INJECT_hm)
 
 label(code)
@@ -1714,29 +1745,31 @@ alloc(newmem2,$1000,INJECT_hm2)
 label(code2)
 label(return2)
 
-alloc(hgt_mult, 4, INJECT_hm)
+alloc(hgt_mult, 8, INJECT_hm)
 registersymbol(hgt_mult)
 hgt_mult:
 dd (float)1.063
+db 39 8E 63 3E // 1/4.5
 
 alloc(inv_hgt_mult, 4, INJECT_hm2)
 registersymbol(inv_hgt_mult)
 inv_hgt_mult:
 db C8 41 79 3F
-//dd (float)
 
 newmem:
 
 code:
   comiss xmm4,xmm2
   mulss xmm4, [hgt_mult]
-  jmp return
+  divss xmm1,xmm4
+  mulss xmm1, [hgt_mult]
+  movaps xmm0, xmm1
+  ret
 
 INJECT_hm:
   jmp newmem
 return:
-  db EB 16
-  nop 2
+  nop 4
 registersymbol(INJECT_hm)
 
 newmem2:
@@ -1754,7 +1787,7 @@ registersymbol(INJECT_hm2)
 [DISABLE]
 
 INJECT_hm:
-  db 0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D
+  db 72 1D 0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D
 
 unregistersymbol(hgt_mult)
 unregistersymbol(INJECT_hm)
@@ -1768,20 +1801,138 @@ unregistersymbol(INJECT_hm2)
 dealloc(newmem2)
 
 </AssemblerScript>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>792</ID>
-              <Description>"Height mult"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>hgt_mult</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>793</ID>
-              <Description>"Animation y mult"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>inv_hgt_mult</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>828</ID>
+                  <Description>"Cutscenes height fix attempt"</Description>
+                  <Options moHideChildren="1"/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>{$lua}
+
+local function alloc(name,size,module_name)
+  local scrp=''
+  if module_name==nil or module_name=='' then
+      scrp=string.format('alloc(%s,%d)\nregistersymbol(%s)',name,size,name)
+  else
+      scrp=string.format('alloc(%s,%d,%s)\nregistersymbol(%s)',name,size,module_name,name)
+  end
+  autoAssemble(scrp)
+  return getAddress(name)
+end
+
+local function dealloc(name)
+  local scrp=string.format('dealloc(%s)\nunregistersymbol(%s)',name,name)
+  autoAssemble(scrp)
+end
+
+[ENABLE]
+
+local aobs=AOBScan('74 0C FF C1 48 83 C0 30 3B CA', "", 0)
+if aobs~=nil and aobs.Count&gt;0 then
+local aob_count=aobs.Count
+local c=0
+	for i=0,aob_count-1 do
+        if i==0 then
+		local res=tonumber(aobs[i],16)
+		writeBytes(res,0xEB)
+		registerSymbol('j_chg_CSH_j1_'..c,res)
+        c=c+1
+        end
+	end
+end
+aobs.destroy()
+
+local aobs=AOBScan('76 12 F3 0F 10 0B F3 0F 58 D6 0F C6 C9 00', "", 0)
+if aobs~=nil and aobs.Count&gt;0 then
+local aob_count=aobs.Count
+c=0
+	for i=0,aob_count-1 do
+        if i&gt;=1 then
+		local res=tonumber(aobs[i],16)
+		writeBytes(res,0x90,0x90)
+		registerSymbol('j_chg_CSH_j2_'..c,res)
+        c=c+1
+        end
+	end
+end
+aobs.destroy()
+
+local aobs=AOBScan('F3 0F 5C C3 0F 2F C5 72 05 0F 28 D1 EB 03 0F 28 D3', "", 0)
+if aobs~=nil and aobs.Count&gt;0 then
+local aob_count=aobs.Count
+	for i=0, aob_count-1 do
+		local res=tonumber(aobs[i],16)
+        local ogb=readBytes(res,33,true)
+        local an='OG_j_chg_CSH_j3_'..i
+        local ogba=alloc(an,32,'PES2021.exe')
+        writeBytes(an,ogb)
+        writeBytes(res+7,0x90,0x90,0x90,0x90,0x90)
+		writeBytes(res+25,0xF3,0x0F,0x10,0xE1,0x90,0x90,0x90,0x90)
+		registerSymbol('j_chg_CSH_j3_'..i,res)
+        registerSymbol(an,ogba)
+	end
+end
+aobs.destroy()
+
+
+[DISABLE]
+
+local function unreg()
+  local c=0
+  while true do
+      local sn='j_chg_CSH_j1_'..c
+	  local sa=getAddress(sn)
+	  if sa~=nil then
+		  writeBytes(sa,0x74)
+		  unregisterSymbol(sn)
+		  c=c+1
+	  else
+		  break
+	  end
+  end
+end
+
+local b, r = pcall(unreg)
+
+local function unreg2()
+  local c=0
+  while true do
+      local sn='j_chg_CSH_j2_'..c
+	  local sa=getAddress(sn)
+	  if sa~=nil then
+		  writeBytes(sa,0x76,0x12)
+		  unregisterSymbol(sn)
+		  c=c+1
+	  else
+		  break
+	  end
+  end
+end
+
+b, r = pcall(unreg2)
+
+local function unreg3()
+  local c=0
+  while true do
+      local sn='j_chg_CSH_j3_'..c
+      local sn2='OG_j_chg_CSH_j3_'..c
+	  local sa=getAddress(sn)
+      local sa2=getAddress(sn2)
+	  if sa~=nil then
+          local ogb=readBytes(sa2,33,true)
+		  writeBytes(sa,ogb)
+		  unregisterSymbol(sn)
+          unregisterSymbol(sn2)
+		  c=c+1
+	  else
+		  break
+	  end
+  end
+end
+b, r = pcall(unreg3)
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
@@ -2847,5 +2998,4 @@ opcode_inj[script_ref2]=nil
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
-  <UserdefinedSymbols/>
 </CheatTable>
