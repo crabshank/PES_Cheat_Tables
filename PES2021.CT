@@ -41,6 +41,7 @@ end
 --scrpts[18].Active=true -- Additional time
 --scrpts[19].Active=true -- New broadcast camera (Uses 20 and 21 too)
 --scrpts[22].Active=true -- Twist right
+--scrpts[23].Active=true -- Dribble
 
 [DISABLE]
 --scrpts[1].Active=false -- Left arm
@@ -60,7 +61,8 @@ end
 --scrpts[17].Active=false -- Difficulty fix
 --scrpts[18].Active=false -- Additional time
 --scrpts[19].Active=false -- New broadcast camera (Uses 20 and 21 too)
---scrpts[22].Active=true -- Twist right
+--scrpts[22].Active=false -- Twist right
+--scrpts[23].Active=false -- Dribble
 
 </AssemblerScript>
       <CheatEntries>
@@ -2881,6 +2883,92 @@ opcode_inj[script_ref]=nil
               <Address>mult_twrla+4</Address>
             </CheatEntry>
           </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>890</ID>
+          <Description>"Dribble increase experiment"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+--OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+local suffix='_drbMod'
+
+local module_names='PES2021.exe'
+local parts={}
+vars.post={}
+
+vars.post[1]=function() --get instruction sizes
+ local zk=vars['lookaheads']
+ local z=zk['offsets']
+ local zl=#z
+ local t={nil}
+ for i=2,zl-1 do --skip instruction
+     local c=z[i]
+     local cn=z[i+1]
+     table.insert(t,cn-c)
+ end
+ vars['opc_sizes']=t
+ return vars --IMPORTANT!
+end
+
+-- token functions (below) run after ['post'] functions
+vars['get_rem']=function()
+ local z=vars['opc_sizes']
+ local pc=vars['lookaheads']['instructions']
+ local pz=#pc
+   local ptrn='^%s*call%s+%x+'
+   local ptrn2='^%s*jmp%s+%x+'
+   local out={}
+local c=2
+ for i=2, pz-1 do
+   local ps=z[i]
+   local p=pc[i]
+
+   if string.find(p,ptrn2)~=nil then --if jmp
+          break
+   elseif string.find(p,ptrn)==nil then
+       table.insert(out,p)
+   end
+   c=c+1
+ end
+local jmpa=vars['address_dec']+vars['lookaheads']['offsets'][c]
+ return table.concat(out,'\n')..'\njmp '..string.format('%X',jmpa)
+end
+
+--COMPULSORY
+local newmem_name='newmem'..suffix
+local newmem_size='$1000'
+local script_ref='Dribble_mod' --  opcode_inj[vars.script_ref] stores vars
+local inj_name='INJECT'..suffix
+local pattern='^%s*jne%s+%x+'
+local aobs={'48 8B 03 4C 8B C7 49 8B D6 48 8B CB FF 50 38 84 C0',16,18}
+local lookahead_n=20
+
+local inj_script=[[
+	define(${inj_name},${address_string})
+    registersymbol(${inj_name})
+    alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+
+	label(code)
+	//label(return)
+
+    ${newmem_name}:
+	code:
+    ${get_rem}()
+
+ ${inj_name}:
+	  jmp ${newmem_name}
+      ${post_jmp}
+]]
+
+[ENABLE]
+opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+
+[DISABLE]
+opcode_inj.disable(script_ref)
+opcode_inj[script_ref]=nil
+</AssemblerScript>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
