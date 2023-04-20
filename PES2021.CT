@@ -1645,7 +1645,6 @@ local module_names='PES2021.exe'
 vars.post={}
 
 vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that are not 'x_reg'
-                        print(vars['x_reg'])
  local lki=vars['lookaheads']['instructions']
  local c=0
  for i=2, #lki do
