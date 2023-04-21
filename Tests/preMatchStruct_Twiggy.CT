@@ -7,7 +7,7 @@
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-	  aobscan(base_preMatch,FF FF FF FF 03 00 00 00 37 00 00 00 00 00 00 00 02 00 00 00 0A 01)  // should be unique
+	  aobscan(base_preMatch,FF FF FF FF 03 00 00 00 37)  // should be unique
 registersymbol(base_preMatch)
 
 {$lua}
