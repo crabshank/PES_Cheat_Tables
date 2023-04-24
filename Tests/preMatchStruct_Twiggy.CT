@@ -5,12 +5,9 @@ local aob_count=aob.Count
 
 local res
 local fnd=false
-if aob_count>1 then
-	res=aob[1]
+if aob_count>0 then
+	res=aob[aob_count-1]
     fnd=true
-elseif aob_count>0 then
-       res=aob[0]
-       fnd=true
 end
    if fnd==true then
 	local dec_res=tonumber(res,16)
