@@ -2884,65 +2884,49 @@ opcode_inj[script_ref]=nil
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>890</ID>
-          <Description>"Dribble increase experiment"</Description>
+          <ID>1112</ID>
+          <Description>"Physical dribble experiment"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
+local suffix='_drbPhys'
 --OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
-local suffix='_drbMod'
-
-local module_names='PES2021.exe'
 local parts={}
-vars.post={}
 
-vars.post[1]=function() --get instruction sizes
- local zk=vars['lookaheads']
- local z=zk['offsets']
- local zl=#z
- local t={nil}
- for i=2,zl-1 do --skip instruction
-     local c=z[i]
-     local cn=z[i+1]
-     table.insert(t,cn-c)
- end
- vars['opc_sizes']=t
- return vars --IMPORTANT!
-end
-
--- token functions (below) run after ['post'] functions
 vars['get_rem']=function()
- local z=vars['opc_sizes']
- local pc=vars['lookaheads']['instructions']
- local pz=#pc
-   local ptrn='^%s*call%s+%x+'
-   local ptrn2='^%s*jmp%s+%x+'
-   local out={}
-local c=2
- for i=2, pz-1 do
-   local ps=z[i]
-   local p=pc[i]
+ local lk=vars['lookaheads']
+ local z=lk['sizes']
+ local pc=lk['instructions']
+ local f=lk['offsets']
 
-   if string.find(p,ptrn2)~=nil then --if jmp
-          break
-   elseif string.find(p,ptrn)==nil then
+ local pz=#pc
+ local ptrn={'^%s*ja%s+%x+','^%s*or%s+byte ptr%s+%[[^%]]+%]%s*,%s*.+'}
+
+ local out={}
+ for i=1, pz-1 do
+     local ps=z[i]
+     local p=pc[i]
+     if string.find(p,ptrn[2])~=nil then -- if or
        table.insert(out,p)
-   end
-   c=c+1
+       local ofsx=string.format('%X',(vars['address_dec']+f[i+2]))
+       table.insert(out,'mov al,00\njmp '..ofsx)
+       break
+     else
+         table.insert(out,p)
+     end
  end
-local jmpa=vars['address_dec']+vars['lookaheads']['offsets'][c]
- return table.concat(out,'\n')..'\njmp '..string.format('%X',jmpa)
+ return table.concat(out,'\n')
 end
 
 --COMPULSORY
 local newmem_name='newmem'..suffix
 local newmem_size='$1000'
-local script_ref='Dribble_mod' --  opcode_inj[vars.script_ref] stores vars
+local script_ref='phsycical_dribble_mod' --  opcode_inj[vars.script_ref] stores vars
 local inj_name='INJECT'..suffix
-local pattern='^%s*jne%s+%x+'
-local aobs={'48 8B 03 4C 8B C7 49 8B D6 48 8B CB FF 50 38 84 C0',16,18}
-local lookahead_n=20
+local pattern='^%s*ja%s+%x+'
+local aobs={'77 25 89 8F 74 0E 00 00',0,0}
+local lookahead_n=30
 
 local inj_script=[[
 	define(${inj_name},${address_string})
@@ -2972,5 +2956,4 @@ opcode_inj[script_ref]=nil
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
-<UserdefinedSymbols/>
 </CheatTable>
