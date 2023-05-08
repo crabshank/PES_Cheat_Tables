@@ -32,17 +32,17 @@ end
 --scrpts[7].Active=true -- Broadcast focus
 --scrpts[8].Active=true -- Angle hijack (stadium)
 --scrpts[9].Active=true -- Smoother anim
---scrpts[10].Active=true -- Cutscenes heights
+--scrpts[10].Active=true -- Heights
 --scrpts[11].Active=true -- Game speed
---scrpts[12].Active=true -- Height
---scrpts[13].Active=true -- Body Size
---scrpts[14].Active=true -- Camera mod (Uses 15 and 16 too)
---scrpts[17].Active=true -- Difficulty fix
---scrpts[18].Active=true -- Additional time
---scrpts[19].Active=true -- New broadcast camera (Uses 20 and 21 too)
---scrpts[22].Active=true -- Twist right
---scrpts[23].Active=true -- Dribble
---scrpts[24].Active=true -- Random run angle
+--scrpts[12].Active=true -- Body Size
+--scrpts[13].Active=true -- Camera mod (Uses 14 and 15 too)
+--scrpts[16].Active=true -- Difficulty fix
+--scrpts[17].Active=true -- Additional time
+--scrpts[18].Active=true -- New broadcast camera (Uses 19 and 20 too)
+--scrpts[21].Active=true -- Twist right
+--scrpts[22].Active=true -- Dribble
+--scrpts[23].Active=true -- Random run angle
+--scrpts[24].Active=true -- Stamina
 
 [DISABLE]
 --scrpts[1].Active=false -- Left arm
@@ -54,18 +54,17 @@ end
 --scrpts[7].Active=false -- Broadcast focus
 --scrpts[8].Active=false -- Angle hijack (stadium)
 --scrpts[9].Active=false -- Smoother anim
---scrpts[10].Active=false -- Cutscenes heights
+--scrpts[10].Active=false -- Heights
 --scrpts[11].Active=false -- Game speed
---scrpts[12].Active=false -- Height
---scrpts[13].Active=false -- Body size
---scrpts[14].Active=false -- Camera mod (Uses 15 and 16 too)
---scrpts[17].Active=false -- Difficulty fix
---scrpts[18].Active=false -- Additional time
---scrpts[19].Active=false -- New broadcast camera (Uses 20 and 21 too)
---scrpts[22].Active=false -- Twist right
---scrpts[23].Active=false -- Dribble
---scrpts[24].Active=true -- Random run angle
-
+--scrpts[12].Active=false -- Body Size
+--scrpts[13].Active=false -- Camera mod (Uses 14 and 15 too)
+--scrpts[16].Active=false -- Difficulty fix
+--scrpts[17].Active=false -- Additional time
+--scrpts[18].Active=false -- New broadcast camera (Uses 19 and 20 too)
+--scrpts[21].Active=false -- Twist right
+--scrpts[22].Active=false -- Dribble
+--scrpts[23].Active=false -- Random run angle
+--scrpts[24].Active=false -- Stamina
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -1633,14 +1632,39 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>695</ID>
-          <Description>"Cutscene heights fix"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>{$lua}
+          <ID>1122</ID>
+          <Description>"Height mod + Cutscene heights fix"</Description>
+          <Options moHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>701</ID>
+              <Description>"Height mult"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>hgt_mult</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1125</ID>
+              <Description>"Scripts"</Description>
+              <Options moAlwaysHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>695</ID>
+                  <Description>"Heights mod"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
 --OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
 local suffix='_chg'
+
+vars.varis_1_n='hgt_mult'
+local hmd=0.97366
+vars.varis_1_d='dd (float)'..hmd
+vars.varis_1_size=4
+
 local parts={{'.+',1,'x_reg'}}
 local module_names='PES2021.exe'
 
@@ -1677,13 +1701,17 @@ local inj_script=[[
   define(${inj_name},${address_string})
   registersymbol(${inj_name})
   alloc(${newmem_name}, ${newmem_size}, ${inj_name})
-
+	alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
+    registersymbol(${varis_1_n})
+	${varis_1_n}:
+	${varis_1_d}
   label(code)
   label(return)
 
 ${newmem_name}:
 	code:
     ${og_instruction}
+    mulss xmm1,[${varis_1_n}]
     divss ${x_reg},[${defH}]
 mulss ${x_reg},xmm1
       ${overwritten}
@@ -1702,24 +1730,108 @@ opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pa
 opcode_inj.disable(script_ref)
 opcode_inj[script_ref]=nil
 </AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1123</ID>
+                  <Description>"Animation y"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+
+aobscanmodule(INJECT_hm2,PES2021.exe,F3 0F 10 4A 28 F3 0F 11 04 24 F3 0F 10 42 24 F3 0F 11 44 24 08) // should be unique
+alloc(newmem2,$1000,INJECT_hm2)
+
+label(code2)
+label(return2)
+
+newmem2:
+
+code2:
+  movss xmm1,[rdx+28]
+    mulss xmm1,[hgt_mult]
+  jmp return2
+
+INJECT_hm2:
+  jmp newmem2
+return2:
+registersymbol(INJECT_hm2)
+
+[DISABLE]
+
+INJECT_hm2:
+  db F3 0F 10 4A 28 F3 0F 11 04 24 F3 0F 10 42 24 F3 0F 11 44 24 08
+
+unregistersymbol(INJECT_hm2)
+dealloc(newmem2)
+
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>698</ID>
-          <Description>"Game speed (Lower is faster [1/x])"</Description>
+          <ID>697</ID>
+          <Description>"Game speed (Lower mean is faster [1/x])"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_speed'
 vars.varis_1_n='mult'..suffix
 
-local spd=1
+local spd=1 -- mean
+
 vars.varis_1_d='dd (float)'..spd
-vars.varis_1_size=4
-local parts={{'xmm%d+',1,'x_reg'}}
+vars.varis_1_size=8   --(u +0, r +4, 0.5 +8, 1+C)
+
+vars.varis_2_n='og_game_spd_func'
+vars.varis_2_size=16
+
+local parts={{'xmm%d+',1,'x_reg'},{'%d+',1,'xreg_n'}}
 local module_names='PES2021.exe'
+
+vars.post={}
+
+vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that are not 'x_reg'
+ local xn=tonumber(vars.xreg_n)
+ local c=1
+ for i=0,15 do
+  if xn~=i then
+   vars['xmm~'..c]='xmm'..i
+   c=c+1
+  end
+ end
+ return vars --IMPORTANT!
+end
+
+-- token functions (below) run after ['post'] functions
+vars['push_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
+    local s='sub rsp,10\nmovdqu [rsp], '
+    if n=='0' then
+		return s .. vars['x_reg']
+	else
+		return s .. vars['xmm~'..n]
+	end
+end
+
+vars['pop_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
+    local s=',[rsp]\nadd rsp,10'
+    if n=='0' then
+		return 'movdqu '..vars['x_reg'] .. s
+	else
+		return 'movdqu '..vars['xmm~'..n] .. s
+	end
+end
+
+vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
+		return 'sub rsp, ' .. n
+end
+
+vars['stack_pop']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
+		return 'add rsp, ' .. n
+end
 
 --COMPULSORY
 local newmem_name='newmem'..suffix
@@ -1731,21 +1843,64 @@ local aobs={'44 88 49 10 44 89 41 14 89 51 18',-127,-123}
 local lookahead_n=32
 
 local inj_script=[[
-	define($%s{inj_name},$%s{address_string})
-    registersymbol($%s{inj_name})
-    alloc($%s{newmem_name}, $%s{newmem_size}, $%s{inj_name})
-	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
-    registersymbol($%s{varis_1_n})
-	$%s{varis_1_n}:
-	$%s{varis_1_d}
+	define(${inj_name},${address_string})
+    registersymbol(${inj_name})
+    alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+	alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
+    	alloc(${varis_2_n}, $%d{varis_2_size}, ${inj_name})
+    registersymbol(${varis_1_n})
+        registersymbol(${varis_2_n})
+	${varis_1_n}:
+	${varis_1_d}
 
 	label(code)
 	label(return)
 
-	$%s{newmem_name}:
-	code:
-    ${og_instruction}
-	  mulss ${x_reg},[${varis_1_n}]
+    ${varis_2_n}: //ORIGINAL FUNCTION!
+      ${og_instruction}
+      ret
+
+  ${newmem_name}:
+  code:
+
+    ${og_instruction} // loads number into ${x_reg}
+    mulss ${x_reg}, [${varis_1_n}]
+      ${overwritten}
+	  jmp return
+
+	${inj_name}:
+	  jmp ${newmem_name}
+	  ${post_jmp}
+	return:
+]]
+
+
+local vars2={}
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
+local suffix2='_speed2'
+
+local parts2={}
+
+--COMPULSORY
+local newmem_name2='newmem'..suffix2
+local newmem_size2='$1000'
+local script_ref2='Game_speed_clocks' --  opcode_inj[vars.script_ref] stores vars
+local inj_name2='INJECT'..suffix2
+local pattern2='^%s*call%s+.+'
+local aobs2={'48 8B F9 0F 29 7C 24 20 F3 0F 10 7A 58',13,14}
+local lookahead_n2=32
+
+local inj_script2=[[
+	define(${inj_name},${address_string})
+    registersymbol(${inj_name})
+    alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+
+	label(code)
+	label(return)
+
+  ${newmem_name}:
+  code:
+      call og_game_spd_func
       ${overwritten}
 	  jmp return
 
@@ -1757,106 +1912,22 @@ local inj_script=[[
 
 [ENABLE]
 opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+opcode_inj.inject(script_ref2,inj_name2,newmem_name2,newmem_size2,vars2,inj_script2,pattern2,aobs2,lookahead_n2,parts2,module_names)
 
 [DISABLE]
 opcode_inj.disable(script_ref)
 opcode_inj[script_ref]=nil
+
+opcode_inj.disable(script_ref2)
+opcode_inj[script_ref2]=nil
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>699</ID>
+              <ID>1127</ID>
               <Description>"Speed"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_speed</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>700</ID>
-          <Description>"Height mod ("Height mult" lower is taller)"</Description>
-          <Options moHideChildren="1"/>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>[ENABLE]
-
-aobscanmodule(INJECT_hm,PES2021.exe,0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D) // should be unique
-alloc(newmem,$1000,INJECT_hm)
-
-label(code)
-label(return)
-
-aobscanmodule(INJECT_hm2,PES2021.exe,F3 0F 10 4A 28 F3 0F 11 04 24 F3 0F 10 42 24 F3 0F 11 44 24 08) // should be unique
-alloc(newmem2,$1000,INJECT_hm2)
-
-label(code2)
-label(return2)
-
-alloc(hgt_mult, 4, INJECT_hm)
-registersymbol(hgt_mult)
-hgt_mult:
-dd (float)1.063
-
-alloc(inv_hgt_mult, 4, INJECT_hm2)
-registersymbol(inv_hgt_mult)
-inv_hgt_mult:
-db C8 41 79 3F
-//dd (float)
-
-newmem:
-
-code:
-  comiss xmm4,xmm2
-  mulss xmm4, [hgt_mult]
-  jmp return
-
-INJECT_hm:
-  jmp newmem
-return:
-  db EB 16
-  nop 2
-registersymbol(INJECT_hm)
-
-newmem2:
-
-code2:
-  movss xmm1,[rdx+28]
-    mulss xmm1,[inv_hgt_mult]
-  jmp return2
-
-INJECT_hm2:
-  jmp newmem2
-return2:
-registersymbol(INJECT_hm2)
-
-[DISABLE]
-
-INJECT_hm:
-  db 0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D
-
-unregistersymbol(INJECT_hm)
-dealloc(newmem)
-
-INJECT_hm2:
-  db F3 0F 10 4A 28 F3 0F 11 04 24 F3 0F 10 42 24 F3 0F 11 44 24 08
-
-unregistersymbol(INJECT_hm2)
-dealloc(newmem2)
-
-</AssemblerScript>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>701</ID>
-              <Description>"Height mult"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>hgt_mult</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>708</ID>
-              <Description>"Animation y mult"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>inv_hgt_mult</Address>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
@@ -2967,7 +3038,7 @@ local vars={}
 local suffix='_randRunAngles'
 vars.varis_1_n='range'..suffix
 
-local r1=22.5 -- range
+local r1=45 -- range
 
 vars.varis_1_d='dd (float)'..r1
 vars.varis_1_size=4
@@ -3162,8 +3233,95 @@ opcode_inj[script_ref]=nil
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
+        <CheatEntry>
+          <ID>1120</ID>
+          <Description>"Stamina mod"</Description>
+          <Options moHideChildren="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+--OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+local suffix='_stm'
+vars.varis_1_n='mult'..suffix
+local fct=0.85
+vars.varis_1_d='dd (float)'..fct..'\ndd (float)0.01\ndd (float)100'
+vars.varis_1_size=12
+local parts={}
+local module_names='PES2021.exe'
+
+--COMPULSORY
+local newmem_name='newmem'..suffix
+local newmem_size='$1000'
+local script_ref='Stamina_mod' --  opcode_inj[vars.script_ref] stores vars
+local inj_name='INJECT'..suffix
+local pattern='^%s*idiv%s+%[[^%]]+%]'
+local aobs={'F7 7D 18 48 83 C4 30 5D C3',0,1}
+local lookahead_n=32
+
+local inj_script=[[
+  define(${inj_name},${address_string})
+  registersymbol(${inj_name})
+  alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+	alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
+    registersymbol(${varis_1_n})
+	$%s{varis_1_n}:
+	$%s{varis_1_d}
+  label(code)
+  label(return)
+
+${newmem_name}:
+	code:
+    ${og_instruction}
+      push ebx
+      push edx
+      xor edx,edx
+            sub rsp,20
+      movdqu [rsp+10],xmm1
+      movdqu [rsp],xmm0
+      movzx ebx,al
+      cvtsi2ss xmm0, ebx //int to float
+      mulss xmm0,[${varis_1_n}+4]
+      movss xmm1,[${varis_1_n}]
+      call ucrtbase.powf
+      mulss xmm0,[${varis_1_n}+8]
+      cvtss2si ebx, xmm0 //float to int
+      mov al,bl
+      movdqu xmm0,[rsp]
+      movdqu xmm1,[rsp+10]
+              add rsp,20
+      pop edx
+      pop ebx
+      add rsp,30
+	  jmp return
+
+ ${inj_name}:
+	  jmp ${newmem_name}
+${post_jmp}
+  return:
+
+]]
+
+[ENABLE]
+opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+
+[DISABLE]
+opcode_inj.disable(script_ref)
+opcode_inj[script_ref]=nil
+
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>1121</ID>
+              <Description>"Factor"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>mult_stm</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
-<UserdefinedSymbols/>
+  <UserdefinedSymbols/>
 </CheatTable>
