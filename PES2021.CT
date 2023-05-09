@@ -32,17 +32,17 @@ end
 --scrpts[7].Active=true -- Broadcast focus
 --scrpts[8].Active=true -- Angle hijack (stadium)
 --scrpts[9].Active=true -- Smoother anim
---scrpts[10].Active=true -- Heights
---scrpts[11].Active=true -- Game speed
---scrpts[12].Active=true -- Body Size
---scrpts[13].Active=true -- Camera mod (Uses 14 and 15 too)
---scrpts[16].Active=true -- Difficulty fix
---scrpts[17].Active=true -- Additional time
---scrpts[18].Active=true -- New broadcast camera (Uses 19 and 20 too)
---scrpts[21].Active=true -- Twist right
---scrpts[22].Active=true -- Dribble
---scrpts[23].Active=true -- Random run angle
---scrpts[24].Active=true -- Stamina
+--scrpts[10].Active=true -- Heights  (Uses 11 and 12 too)
+--scrpts[13].Active=true -- Game speed
+--scrpts[14].Active=true -- Body Size
+--scrpts[15].Active=true -- Camera mod (Uses 16 and 17 too)
+--scrpts[18].Active=true -- Difficulty fix
+--scrpts[19].Active=true -- Additional time
+--scrpts[20].Active=true -- New broadcast camera (Uses 21 and 22 too)
+--scrpts[23].Active=true -- Twist right
+--scrpts[24].Active=true -- Dribble
+--scrpts[25].Active=true -- Random run angle
+--scrpts[26].Active=true -- Stamina
 
 [DISABLE]
 --scrpts[1].Active=false -- Left arm
@@ -54,17 +54,17 @@ end
 --scrpts[7].Active=false -- Broadcast focus
 --scrpts[8].Active=false -- Angle hijack (stadium)
 --scrpts[9].Active=false -- Smoother anim
---scrpts[10].Active=false -- Heights
---scrpts[11].Active=false -- Game speed
---scrpts[12].Active=false -- Body Size
---scrpts[13].Active=false -- Camera mod (Uses 14 and 15 too)
---scrpts[16].Active=false -- Difficulty fix
---scrpts[17].Active=false -- Additional time
---scrpts[18].Active=false -- New broadcast camera (Uses 19 and 20 too)
---scrpts[21].Active=false -- Twist right
---scrpts[22].Active=false -- Dribble
---scrpts[23].Active=false -- Random run angle
---scrpts[24].Active=false -- Stamina
+--scrpts[10].Active=false -- Heights  (Uses 11 and 12 too)
+--scrpts[13].Active=false -- Game speed
+--scrpts[14].Active=false -- Body Size
+--scrpts[15].Active=false -- Camera mod (Uses 16 and 17 too)
+--scrpts[18].Active=false -- Difficulty fix
+--scrpts[19].Active=false -- Additional time
+--scrpts[20].Active=false -- New broadcast camera (Uses 21 and 22 too)
+--scrpts[23].Active=false -- Twist right
+--scrpts[24].Active=false -- Dribble
+--scrpts[25].Active=false -- Random run angle
+--scrpts[26].Active=false -- Stamina
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -1632,10 +1632,14 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>1122</ID>
-          <Description>"Height mod + Cutscene heights fix"</Description>
+          <ID>1128</ID>
+          <Description>"Height + cutscenes heights mod "</Description>
           <Options moHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
-          <GroupHeader>1</GroupHeader>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+
+[DISABLE]
+</AssemblerScript>
           <CheatEntries>
             <CheatEntry>
               <ID>701</ID>
@@ -1647,7 +1651,7 @@ opcode_inj[script_ref]=nil
             <CheatEntry>
               <ID>1125</ID>
               <Description>"Scripts"</Description>
-              <Options moAlwaysHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <Options moAlwaysHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1" moAllowManualCollapseAndExpand="1"/>
               <GroupHeader>1</GroupHeader>
               <CheatEntries>
                 <CheatEntry>
