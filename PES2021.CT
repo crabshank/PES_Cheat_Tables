@@ -32,17 +32,18 @@ end
 --scrpts[7].Active=true -- Broadcast focus
 --scrpts[8].Active=true -- Angle hijack (stadium)
 --scrpts[9].Active=true -- Smoother anim
---scrpts[10].Active=true -- Heights  (Uses 11 and 12 too)
---scrpts[13].Active=true -- Game speed
---scrpts[14].Active=true -- Body Size
---scrpts[15].Active=true -- Camera mod (Uses 16 and 17 too)
---scrpts[18].Active=true -- Difficulty fix
---scrpts[19].Active=true -- Additional time
---scrpts[20].Active=true -- New broadcast camera (Uses 21 and 22 too)
---scrpts[23].Active=true -- Twist right
---scrpts[24].Active=true -- Dribble
---scrpts[25].Active=true -- Random run angle
---scrpts[26].Active=true -- Stamina
+--scrpts[10].Active=true --  Cutscenes heights
+--scrpts[11].Active=true -- Game speed
+--scrpts[12].Active=true -- Height mod
+--scrpts[13].Active=true -- Body Size
+--scrpts[14].Active=true -- Camera mod (Uses 15 and 16 too)
+--scrpts[17].Active=true -- Difficulty fix
+--scrpts[18].Active=true -- Additional time
+--scrpts[19].Active=true -- New broadcast camera (Uses 20 and 21 too)
+--scrpts[22].Active=true -- Twist right
+--scrpts[23].Active=true -- Dribble
+--scrpts[24].Active=true -- Random run angle
+--scrpts[25].Active=true -- Stamina
 
 [DISABLE]
 --scrpts[1].Active=false -- Left arm
@@ -54,17 +55,18 @@ end
 --scrpts[7].Active=false -- Broadcast focus
 --scrpts[8].Active=false -- Angle hijack (stadium)
 --scrpts[9].Active=false -- Smoother anim
---scrpts[10].Active=false -- Heights  (Uses 11 and 12 too)
---scrpts[13].Active=false -- Game speed
---scrpts[14].Active=false -- Body Size
---scrpts[15].Active=false -- Camera mod (Uses 16 and 17 too)
---scrpts[18].Active=false -- Difficulty fix
---scrpts[19].Active=false -- Additional time
---scrpts[20].Active=false -- New broadcast camera (Uses 21 and 22 too)
---scrpts[23].Active=false -- Twist right
---scrpts[24].Active=false -- Dribble
---scrpts[25].Active=false -- Random run angle
---scrpts[26].Active=false -- Stamina
+--scrpts[10].Active=false --  Cutscenes heights
+--scrpts[11].Active=false -- Game speed
+--scrpts[12].Active=false -- Height mod
+--scrpts[13].Active=false -- Body Size
+--scrpts[14].Active=false -- Camera mod (Uses 15 and 16 too)
+--scrpts[17].Active=false -- Difficulty fix
+--scrpts[18].Active=false -- Additional time
+--scrpts[19].Active=false -- New broadcast camera (Uses 20 and 21 too)
+--scrpts[22].Active=false -- Twist right
+--scrpts[23].Active=false -- Dribble
+--scrpts[24].Active=false -- Random run angle
+--scrpts[25].Active=false -- Stamina
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -1632,43 +1634,14 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>1128</ID>
-          <Description>"Height + cutscenes heights mod "</Description>
-          <Options moHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <ID>1158</ID>
+          <Description>"Cutscene heights fix"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>[ENABLE]
-
-[DISABLE]
-</AssemblerScript>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>701</ID>
-              <Description>"Height mult"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>hgt_mult</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>1125</ID>
-              <Description>"Scripts"</Description>
-              <Options moAlwaysHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1" moAllowManualCollapseAndExpand="1"/>
-              <GroupHeader>1</GroupHeader>
-              <CheatEntries>
-                <CheatEntry>
-                  <ID>695</ID>
-                  <Description>"Heights mod"</Description>
-                  <VariableType>Auto Assembler Script</VariableType>
-                  <AssemblerScript>{$lua}
+          <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
 --OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
 local suffix='_chg'
-
-vars.varis_1_n='hgt_mult'
-local hmd=0.97366
-vars.varis_1_d='dd (float)'..hmd
-vars.varis_1_size=4
-
 local parts={{'.+',1,'x_reg'}}
 local module_names='PES2021.exe'
 
@@ -1705,17 +1678,13 @@ local inj_script=[[
   define(${inj_name},${address_string})
   registersymbol(${inj_name})
   alloc(${newmem_name}, ${newmem_size}, ${inj_name})
-	alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
-    registersymbol(${varis_1_n})
-	${varis_1_n}:
-	${varis_1_d}
+
   label(code)
   label(return)
 
 ${newmem_name}:
 	code:
     ${og_instruction}
-    mulss xmm1,[${varis_1_n}]
     divss ${x_reg},[${defH}]
 mulss ${x_reg},xmm1
       ${overwritten}
@@ -1734,44 +1703,6 @@ opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pa
 opcode_inj.disable(script_ref)
 opcode_inj[script_ref]=nil
 </AssemblerScript>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>1123</ID>
-                  <Description>"Animation y"</Description>
-                  <VariableType>Auto Assembler Script</VariableType>
-                  <AssemblerScript>[ENABLE]
-
-aobscanmodule(INJECT_hm2,PES2021.exe,F3 0F 10 4A 28 F3 0F 11 04 24 F3 0F 10 42 24 F3 0F 11 44 24 08) // should be unique
-alloc(newmem2,$1000,INJECT_hm2)
-
-label(code2)
-label(return2)
-
-newmem2:
-
-code2:
-  movss xmm1,[rdx+28]
-    mulss xmm1,[hgt_mult]
-  jmp return2
-
-INJECT_hm2:
-  jmp newmem2
-return2:
-registersymbol(INJECT_hm2)
-
-[DISABLE]
-
-INJECT_hm2:
-  db F3 0F 10 4A 28 F3 0F 11 04 24 F3 0F 10 42 24 F3 0F 11 44 24 08
-
-unregistersymbol(INJECT_hm2)
-dealloc(newmem2)
-
-</AssemblerScript>
-                </CheatEntry>
-              </CheatEntries>
-            </CheatEntry>
-          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>697</ID>
@@ -1932,6 +1863,94 @@ opcode_inj[script_ref2]=nil
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_speed</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>700</ID>
+          <Description>"Height mod ("Height mult" lower is taller)"</Description>
+          <Options moHideChildren="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+
+aobscanmodule(INJECT_hm,PES2021.exe,0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D) // should be unique
+alloc(newmem,$1000,INJECT_hm)
+
+label(code)
+label(return)
+
+aobscanmodule(INJECT_hm2,PES2021.exe,F3 0F 10 4A 28 F3 0F 11 04 24 F3 0F 10 42 24 F3 0F 11 44 24 08) // should be unique
+alloc(newmem2,$1000,INJECT_hm2)
+
+label(code2)
+label(return2)
+
+alloc(hgt_mult, 4, INJECT_hm)
+registersymbol(hgt_mult)
+hgt_mult:
+dd (float)1.063
+
+alloc(inv_hgt_mult, 4, INJECT_hm2)
+registersymbol(inv_hgt_mult)
+inv_hgt_mult:
+db C8 41 79 3F
+//dd (float)
+
+newmem:
+
+code:
+  comiss xmm4,xmm2
+  mulss xmm4, [hgt_mult]
+  jmp return
+
+INJECT_hm:
+  jmp newmem
+return:
+  db EB 16
+  nop 2
+registersymbol(INJECT_hm)
+
+newmem2:
+
+code2:
+  movss xmm1,[rdx+28]
+    mulss xmm1,[inv_hgt_mult]
+  jmp return2
+
+INJECT_hm2:
+  jmp newmem2
+return2:
+registersymbol(INJECT_hm2)
+
+[DISABLE]
+
+INJECT_hm:
+  db 0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D
+
+unregistersymbol(INJECT_hm)
+dealloc(newmem)
+
+INJECT_hm2:
+  db F3 0F 10 4A 28 F3 0F 11 04 24 F3 0F 10 42 24 F3 0F 11 44 24 08
+
+unregistersymbol(INJECT_hm2)
+dealloc(newmem2)
+
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>1159</ID>
+              <Description>"Height mult"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>hgt_mult</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>708</ID>
+              <Description>"Animation y mult"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>inv_hgt_mult</Address>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
