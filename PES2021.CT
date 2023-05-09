@@ -3254,6 +3254,25 @@ vars.varis_1_size=12
 local parts={}
 local module_names='PES2021.exe'
 
+vars.post={}
+
+vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that are not 'x_reg'
+ local pwf='powf'
+ local ubp='ucrtbase.powf'
+
+ local b,r=pcall(function ()
+      getAddress(ubp)
+      end
+)
+
+if b==true then -- SUCCESS (NO ERROR)!
+   pwf=ubp
+end
+
+ vars['pow_f']=pwf
+ return vars --IMPORTANT!
+end
+
 --COMPULSORY
 local newmem_name='newmem'..suffix
 local newmem_size='$1000'
@@ -3287,7 +3306,7 @@ ${newmem_name}:
       cvtsi2ss xmm0, ebx //int to float
       mulss xmm0,[${varis_1_n}+4]
       movss xmm1,[${varis_1_n}]
-      call ucrtbase.powf
+      call ${pow_f}
       mulss xmm0,[${varis_1_n}+8]
       cvtss2si ebx, xmm0 //float to int
       mov al,bl
