@@ -45,26 +45,26 @@ end
 --scrpts[24].Active=true -- Stamina
 
 [DISABLE]
---scrpts[1].Active=true -- Left arm
---scrpts[2].Active=true -- Twist
---scrpts[3].Active=true -- Legs dist
---scrpts[4].Active=true -- Animation change
---scrpts[5].Active=true -- Animation speed
---scrpts[6].Active=true -- Pre-kick rush
---scrpts[7].Active=true -- Broadcast focus
---scrpts[8].Active=true -- Angle hijack (stadium)
---scrpts[9].Active=true -- Smoother anim
---scrpts[10].Active=true -- Game speed
---scrpts[11].Active=true -- Height mod
---scrpts[12].Active=true -- Body Size
---scrpts[13].Active=true -- Camera mod (Uses 14 and 15 too)
---scrpts[16].Active=true -- Difficulty fix
---scrpts[17].Active=true -- Additional time
---scrpts[18].Active=true -- New broadcast camera (Uses 19 and 20 too)
---scrpts[21].Active=true -- Twist right
---scrpts[22].Active=true -- Dribble
---scrpts[23].Active=true -- Random run angle
---scrpts[24].Active=true -- Stamina
+--scrpts[1].Active=false -- Left arm
+--scrpts[2].Active=false -- Twist
+--scrpts[3].Active=false -- Legs dist
+--scrpts[4].Active=false -- Animation change
+--scrpts[5].Active=false -- Animation speed
+--scrpts[6].Active=false -- Pre-kick rush
+--scrpts[7].Active=false -- Broadcast focus
+--scrpts[8].Active=false -- Angle hijack (stadium)
+--scrpts[9].Active=false -- Smoother anim
+--scrpts[10].Active=false -- Game speed
+--scrpts[11].Active=false -- Height mod
+--scrpts[12].Active=false -- Body Size
+--scrpts[13].Active=false -- Camera mod (Uses 14 and 15 too)
+--scrpts[16].Active=false -- Difficulty fix
+--scrpts[17].Active=false -- Additional time
+--scrpts[18].Active=false -- New broadcast camera (Uses 19 and 20 too)
+--scrpts[21].Active=false -- Twist right
+--scrpts[22].Active=false -- Dribble
+--scrpts[23].Active=false -- Random run angle
+--scrpts[24].Active=false -- Stamina
 
 </AssemblerScript>
       <CheatEntries>
