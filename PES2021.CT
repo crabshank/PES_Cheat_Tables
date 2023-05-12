@@ -32,41 +32,40 @@ end
 --scrpts[7].Active=true -- Broadcast focus
 --scrpts[8].Active=true -- Angle hijack (stadium)
 --scrpts[9].Active=true -- Smoother anim
---scrpts[10].Active=true --  Cutscenes heights
---scrpts[11].Active=true -- Game speed
---scrpts[12].Active=true -- Height mod
---scrpts[13].Active=true -- Body Size
---scrpts[14].Active=true -- Camera mod (Uses 15 and 16 too)
---scrpts[17].Active=true -- Difficulty fix
---scrpts[18].Active=true -- Additional time
---scrpts[19].Active=true -- New broadcast camera (Uses 20 and 21 too)
---scrpts[22].Active=true -- Twist right
---scrpts[23].Active=true -- Dribble
---scrpts[24].Active=true -- Random run angle
---scrpts[25].Active=true -- Stamina
+--scrpts[10].Active=true -- Game speed
+--scrpts[11].Active=true -- Height mod
+--scrpts[12].Active=true -- Body Size
+--scrpts[13].Active=true -- Camera mod (Uses 14 and 15 too)
+--scrpts[16].Active=true -- Difficulty fix
+--scrpts[17].Active=true -- Additional time
+--scrpts[18].Active=true -- New broadcast camera (Uses 19 and 20 too)
+--scrpts[21].Active=true -- Twist right
+--scrpts[22].Active=true -- Dribble
+--scrpts[23].Active=true -- Random run angle
+--scrpts[24].Active=true -- Stamina
 
 [DISABLE]
---scrpts[1].Active=false -- Left arm
---scrpts[2].Active=false -- Twist
---scrpts[3].Active=false -- Legs dist
---scrpts[4].Active=false -- Animation change
---scrpts[5].Active=false -- Animation speed
---scrpts[6].Active=false -- Pre-kick rush
---scrpts[7].Active=false -- Broadcast focus
---scrpts[8].Active=false -- Angle hijack (stadium)
---scrpts[9].Active=false -- Smoother anim
---scrpts[10].Active=false --  Cutscenes heights
---scrpts[11].Active=false -- Game speed
---scrpts[12].Active=false -- Height mod
---scrpts[13].Active=false -- Body Size
---scrpts[14].Active=false -- Camera mod (Uses 15 and 16 too)
---scrpts[17].Active=false -- Difficulty fix
---scrpts[18].Active=false -- Additional time
---scrpts[19].Active=false -- New broadcast camera (Uses 20 and 21 too)
---scrpts[22].Active=false -- Twist right
---scrpts[23].Active=false -- Dribble
---scrpts[24].Active=false -- Random run angle
---scrpts[25].Active=false -- Stamina
+--scrpts[1].Active=true -- Left arm
+--scrpts[2].Active=true -- Twist
+--scrpts[3].Active=true -- Legs dist
+--scrpts[4].Active=true -- Animation change
+--scrpts[5].Active=true -- Animation speed
+--scrpts[6].Active=true -- Pre-kick rush
+--scrpts[7].Active=true -- Broadcast focus
+--scrpts[8].Active=true -- Angle hijack (stadium)
+--scrpts[9].Active=true -- Smoother anim
+--scrpts[10].Active=true -- Game speed
+--scrpts[11].Active=true -- Height mod
+--scrpts[12].Active=true -- Body Size
+--scrpts[13].Active=true -- Camera mod (Uses 14 and 15 too)
+--scrpts[16].Active=true -- Difficulty fix
+--scrpts[17].Active=true -- Additional time
+--scrpts[18].Active=true -- New broadcast camera (Uses 19 and 20 too)
+--scrpts[21].Active=true -- Twist right
+--scrpts[22].Active=true -- Dribble
+--scrpts[23].Active=true -- Random run angle
+--scrpts[24].Active=true -- Stamina
+
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -1634,77 +1633,6 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>1158</ID>
-          <Description>"Cutscene heights fix"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>{$lua}
-if syntaxcheck then return end
-local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
-local suffix='_chg'
-local parts={{'.+',1,'x_reg'}}
-local module_names='PES2021.exe'
-
-vars.post={}
-
-vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that are not 'x_reg'
- local lki=vars['lookaheads']['instructions']
- local c=0
- for i=2, #lki do
-     local li=lki[i]
-     local m=string.match(li,'^%s*movss%s+.+%s*,%[%s*([^%]]+)%s*%]')
-     if m~=nil then
-        c=c+1
-        if c==2 then
-           vars['defH']=m
-           break
-        end
-     end
- end
- return vars --IMPORTANT!
-end
-
-
---COMPULSORY
-local newmem_name='newmem'..suffix
-local newmem_size='$1000'
-local script_ref='Cutscenes_height' --  opcode_inj[vars.script_ref] stores vars
-local inj_name='INJECT'..suffix
-local pattern='^%s*movss%s+.+%s*,%[%s*[^%]]+%s*%]'
-local aobs={'0F 2F C5 72 05 0F 28 D1 EB 03',-15,-13}
-local lookahead_n=50
-
-local inj_script=[[
-  define(${inj_name},${address_string})
-  registersymbol(${inj_name})
-  alloc(${newmem_name}, ${newmem_size}, ${inj_name})
-
-  label(code)
-  label(return)
-
-${newmem_name}:
-	code:
-    ${og_instruction}
-    divss ${x_reg},[${defH}]
-mulss ${x_reg},xmm1
-      ${overwritten}
-	  jmp return
-
- ${inj_name}:
-	  jmp ${newmem_name}
-  ${post_jmp}
-  return:
-]]
-
-[ENABLE]
-opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
-
-[DISABLE]
-opcode_inj.disable(script_ref)
-opcode_inj[script_ref]=nil
-</AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
           <ID>697</ID>
           <Description>"Game speed (Lower mean is faster [1/x])"</Description>
           <Options moHideChildren="1"/>
@@ -2077,26 +2005,12 @@ local suffix='_camMod'
 
 local module_names='PES2021.exe'
 local parts={{'xmm%d',1,'xreg'}}
-vars.post={}
-
-vars.post[1]=function() --get instruction sizes
- local zk=vars['lookaheads']
- local z=zk['offsets']
- local zl=#z
- local t={nil}
- for i=2,zl-1 do --skip instruction
-     local c=z[i]
-     local cn=z[i+1]
-     table.insert(t,cn-c)
- end
- vars['opc_sizes']=t
- return vars --IMPORTANT!
-end
 
 -- token functions (below) run after ['post'] functions
 vars['nop_if']=function()
- local z=vars['opc_sizes']
- local pc=vars['lookaheads']['instructions']
+local lk=vars['lookaheads']
+local z=lk['sizes']
+local pc=lk['instructions']
  local pz=#pc
    local ptrn=vars['xreg']..'%s*,'
    local out={}
@@ -2570,26 +2484,12 @@ local suffix='_camMod'
 
 local module_names='PES2021.exe'
 local parts={{'xmm%d',1,'xreg'}}
-vars.post={}
-
-vars.post[1]=function() --get instruction sizes
- local zk=vars['lookaheads']
- local z=zk['offsets']
- local zl=#z
- local t={nil}
- for i=2,zl-1 do --skip instruction
-     local c=z[i]
-     local cn=z[i+1]
-     table.insert(t,cn-c)
- end
- vars['opc_sizes']=t
- return vars --IMPORTANT!
-end
 
 -- token functions (below) run after ['post'] functions
 vars['nop_if']=function()
- local z=vars['opc_sizes']
- local pc=vars['lookaheads']['instructions']
+local lk=vars['lookaheads']
+local z=lk['sizes']
+local pc=lk['instructions']
  local pz=#pc
    local ptrn=vars['xreg']..'%s*,'
    local out={}
@@ -2637,7 +2537,6 @@ local inj_script=[[
     ${og_instruction}
     ${nop_if}()
 
-
  ${inj_name}:
 	  jmp ${newmem_name}
 ]]
@@ -2680,28 +2579,12 @@ vars.varis_1_n='mults'..suffix
 vars.varis_1_d='dd (float)'..v11..'\ndd (float)'..v12..'\ndd (float)'..v13..'\ndd (float)'..v14..'\ndd (float)'..v21..'\ndd (float)'..v22..'\ndd (float)'..v23..'\ndd (float)'..v24
 vars.varis_1_size=32
 
-
-vars.post={}
-
-vars.post[1]=function() --get instruction sizes
- local zk=vars['lookaheads']
- local z=zk['offsets']
- local zl=#z
- local t={nil}
- for i=2,zl-1 do --skip instruction
-     local c=z[i]
-     local cn=z[i+1]
-     table.insert(t,cn-c)
- end
- vars['opc_sizes']=t
- return vars --IMPORTANT!
-end
-
 -- token functions (below) run after ['post'] functions
 
 vars['get_rest']=function()
- local z=vars['opc_sizes']
- local pc=vars['lookaheads']['instructions']
+local lk=vars['lookaheads']
+local z=lk['sizes']
+local pc=lk['instructions']
  local pz=#pc
    local ptrn='^%s*movups%s+xmm%d+%s*,%s*%[[^%]]+%]'
    local out={}
