@@ -43,7 +43,6 @@ end
 --scrpts[22].Active=true -- Dribble
 --scrpts[23].Active=true -- Random run angle
 --scrpts[24].Active=true -- Stamina
---scrpts[25].Active=true -- Gameplay experiment
 
 [DISABLE]
 --scrpts[1].Active=false -- Left arm
@@ -66,8 +65,6 @@ end
 --scrpts[22].Active=false -- Dribble
 --scrpts[23].Active=false -- Random run angle
 --scrpts[24].Active=false -- Stamina
---scrpts[25].Active=false -- Gameplay experiment
-
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -2946,10 +2943,12 @@ local vars={}
 local suffix='_randRunAngles'
 vars.varis_1_n='range'..suffix
 
-local r1=45 -- range
+local lerp=0.8 -- [0,1] range
+local r1=0.1 -- random range (+/-)
 
-vars.varis_1_d='dd (float)'..r1
-vars.varis_1_size=4
+
+vars.varis_1_d='dd (float)'..lerp..'\ndd (float)'..r1..'\ndd (float)90\ndd (float)180\ndd (float)270\ndd (float)0'
+vars.varis_1_size=16
 
 local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
 local module_names='PES2021.exe'
@@ -3014,9 +3013,8 @@ local inj_script=[[
   ${varis_1_d}
 
   label(code)
-  label(code_1)
-  label(code_2)
-  label(code_3)
+  label(code2)
+  label(code3)
   label(return)
 
   ${newmem_name}:
@@ -3039,6 +3037,7 @@ local inj_script=[[
     ${push_xmm}(3)
     ${push_xmm}(4)
     ${push_xmm}(5)
+    ${push_xmm}(6)
     ${push_xmm}(0)
 
     cvtsi2ss ${x_reg}, rcx
@@ -3055,7 +3054,7 @@ local inj_script=[[
     cvtss2si ecx, ${x_reg}  //b as int
     cvtsi2ss  ${xmm~5}, ecx // b
 
-    ${stack_push}(18)
+    ${stack_push}(10)
         mov [rsp], C0000000 //-2
         mov [rsp+4], 3F800000 //1
         mov [rsp+8], 40000000 //2
@@ -3064,6 +3063,7 @@ local inj_script=[[
         movss ${xmm~1},  [rsp+C] //sqHalf
         movss ${xmm~2}, [rsp] //-2
         movss ${xmm~3}, [rsp+4] //1
+        movss ${xmm~6}, [rsp+4] //1
         movss ${xmm~4}, [rsp+8] //2
 
         mulss ${xmm~4}, ${xmm~5} //x~4=b*2
@@ -3081,31 +3081,36 @@ local inj_script=[[
     movss  ${xmm~4},  [${varis_1_n}]
      movss  ${xmm~3},  ${xmm~4}
     mulss  ${xmm~4},  ${xmm~1} //mul by adj_x
-    addss  ${xmm~4},  ${xmm~4}
+    addss  ${xmm~4},  ${xmm~4} //2*x~4, for +/-
     subss ${xmm~4},${xmm~3} //FINAL OFFSET in x~4 !
 
-    movss ${xmm~3},[rsp+24]
-    addss ${xmm~3},${xmm~4}
+    movss ${xmm~3},[${varis_1_n}+4]
+    addss ${xmm~3},${xmm~4}  //Final uncorrected lerp in x~3 || lerp+[-range,+range]
+    maxss ${xmm~3},[${varis_1_n}+1C] //0.0
+    minss ${xmm~3},${xmm~6} //x~3 now within bounds
+    ${stack_pop}(10)
 
-        mov [rsp+10], 43B40000 //360
-        movss ${xmm~2}, [rsp+10]
-        mov [rsp+14], 00000000 //0
-        movss ${xmm~1}, [rsp+14]
-    ${stack_pop}(18)
+    movss ${xmm~2},[rsp+C] //move og angle
 
-    comiss ${xmm~3},${xmm~2}
-           ja code_1//&gt;360
-    comiss ${xmm~3},${xmm~1}
-           jb code_2//&lt;0
-    jmp code_3
-    code_1:
-     subss ${xmm~3},${xmm~2}
-     jmp code_3
-    code_2:
-     addss ${xmm~3},${xmm~2}
-    code_3:
-    movss [rsp+C],${xmm~3}
+    movss ${xmm~5},[${varis_1_n}+C] //180
+    comiss ${xmm~2},${xmm~5}
+    ja code2
+          movss ${xmm~1},[${varis_1_n}+8] //90
+          jmp code3
+
+    code2:
+        movss ${xmm~1},[${varis_1_n}+10] //270
+        //jmp code3
+
+
+    code3:
+     subss ${xmm~6},${xmm~3} //x~6 = 1-lrp //lerp(angle,90/270,lrp)  (1 - t)*a + t*b
+     mulss ${xmm~6},${xmm~2} //x~6=(1-lrp)*angle
+     mulss ${xmm~1},${xmm~3} //x~1=(90/270)*lrp
+     addss ${xmm~6},${xmm~1} //[(1-lrp)*angle]+[(90/270)*lrp]
+    movss [rsp+C],${xmm~6} //NEW ANGLE!
     ${pop_xmm}(0)
+    ${pop_xmm}(6)
     ${pop_xmm}(5)
     ${pop_xmm}(4)
     ${pop_xmm}(3)
@@ -3133,11 +3138,18 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>1119</ID>
-              <Description>"Offset [Angle-Offset, Angle+Offset]"</Description>
+              <ID>1164</ID>
+              <Description>"Lerp (0-1)"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>range_randRunAngles</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1119</ID>
+              <Description>"Random range (lerp: [lerp-range, lerp+range])"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>range_randRunAngles+4</Address>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
@@ -3247,102 +3259,8 @@ opcode_inj[script_ref]=nil
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
-        <CheatEntry>
-          <ID>1160</ID>
-          <Description>"Gameplay experiment"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>{$lua}
-if syntaxcheck then return end
-
-local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
-local suffix='_gpExp'
-
-local module_names='PES2021.exe'
-local parts={}
-
-vars['rpl']=function()
- local lk=vars['lookaheads']
- local z=lk['sizes']
- local pc=lk['instructions']
- local f=lk['offsets']
-
- local pz=#pc
- local ptrn={'^%s*jne%s+%x+','^%s*ja%s+%x+'}
-
- local out={}
- local c={1,0}
- for i=1, pz do
-     local ps=z[i]
-     local p=pc[i]
-     local ptc=ptrn[c[1]]
-     if string.find(p,ptc)~=nil then -- if match
-        if c[1]==1 then --jne
-           local prt=string.match(p,'^%s*jne%s+(%x+)')
-           table.insert(out,'je '..prt)
-           c[1]=2
-        elseif c[1]==2 then --ja
-           c[1]=1
-           for k=1, ps do
-               table.insert(out,'nop')
-           end
-        end
-        c[2]=c[2]+1
-     else -- no match
-       table.insert(out,p)
-     end
-
-     if c[2]==3 then
-        local adr=string.format('%X',(vars.address_dec+f[i+1]))
-        table.insert(out,'jmp '..adr)
-        break
-     end
-
- end
- return table.concat(out,'\n')
-end
-
---COMPULSORY
-local newmem_name='newmem'..suffix
-local newmem_size='$1000'
-local script_ref='gp_expermiment' --  opcode_inj[vars.script_ref] stores vars
-local inj_name='INJECT'..suffix
-local pattern='^%s*imul%s+[^,]+,%s*[^,]+,%s*%x+'
-local aobs={'48 6B D0 74 80 7C 32 06 00 75 4A',0,0}
-local lookahead_n=32
-
-local inj_script=[[
-	define(${inj_name},${address_string})
-    registersymbol(${inj_name})
-    alloc(${newmem_name}, ${newmem_size}, ${inj_name})
-
-	label(code)
-	label(return)
-
-    ${newmem_name}:
-	code:
-     ${rpl}()
-
-
- ${inj_name}:
-	  jmp ${newmem_name}
-          ${post_jmp}
-          return:
-]]
-
-[ENABLE]
-
-opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
-
-[DISABLE]
-
-opcode_inj.disable(script_ref)
-opcode_inj[script_ref]=nil
-
-</AssemblerScript>
-        </CheatEntry>
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
-<UserdefinedSymbols/>
+  <UserdefinedSymbols/>
 </CheatTable>
