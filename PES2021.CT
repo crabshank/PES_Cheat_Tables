@@ -75,7 +75,7 @@ end
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_la'
 vars.varis_1_n='mult'..suffix
 
@@ -102,22 +102,44 @@ vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that 
 end
 
 -- token functions (below) run after ['post'] functions
-vars['push_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s='sub rsp,10\nmovdqu [rsp], '
-    if n=='0' then
-		return s .. vars['x_reg']
-	else
-		return s .. vars['xmm~'..n]
-	end
+vars['push_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local t={}
+  local p=string.format('sub rsp, %X',s)
+  table.insert(t,p)
+  local args = {...}
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+	     r=vars['x_reg']
+      end
+      p=string.format('movdqu [rsp+%X],%s',s,r)
+      table.insert(t,p)
+  end
+  return table.concat(t,'\n')
 end
 
-vars['pop_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s=',[rsp]\nadd rsp,10'
-    if n=='0' then
-		return 'movdqu '..vars['x_reg'] .. s
-	else
-		return 'movdqu '..vars['xmm~'..n] .. s
-	end
+vars['pop_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local s_og=s
+  local t={}
+  local args = {...}
+  local p=''
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+      	r=vars['x_reg']
+      end
+      p=string.format('movdqu %s,[rsp+%X]',r,s)
+      table.insert(t,p)
+  end
+  p=string.format('add rsp, %X',s_og)
+  table.insert(t,p)
+  return table.concat(t,'\n')
 end
 
 vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
@@ -164,11 +186,7 @@ define(${inj_name},${address_string})
     imul rcx,rbx
     imul rcx,rax
     shr rcx,20 //ecx has the number
- ${push_xmm}(1)
-    ${push_xmm}(2)
-    ${push_xmm}(3)
-    ${push_xmm}(4)
-    ${push_xmm}(5)
+ ${push_xmm}(1,2,3,4,5)
     ${push_xmm}(0)
 
     cvtsi2ss ${x_reg}, rcx
@@ -231,23 +249,19 @@ define(${inj_name},${address_string})
     ${stack_pop}(20)
 
     ${pop_xmm}(0)
-	$%s{og_instruction}  //loads 4 x floats into $%s{x_reg}
+	${og_instruction}  //loads 4 x floats into ${x_reg}
 	mulps ${x_reg},${xmm~4}
 
-    ${pop_xmm}(5)
-    ${pop_xmm}(4)
-    ${pop_xmm}(3)
-    ${pop_xmm}(2)
-    ${pop_xmm}(1)
+    ${pop_xmm}(1,2,3,4,5)
     pop rax
     pop rbx
     pop rcx
-      $%s{overwritten}
+      ${overwritten}
 	  jmp return
 
-	$%s{inj_name}:
-	  jmp $%s{newmem_name}
-	  $%s{post_jmp}
+	${inj_name}:
+	  jmp ${newmem_name}
+	  ${post_jmp}
       return:
 ]]
 
@@ -283,7 +297,7 @@ opcode_inj[script_ref]=nil
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_ra'
 vars.varis_1_n='mult'..suffix
 
@@ -311,22 +325,44 @@ vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that 
 end
 
 -- token functions (below) run after ['post'] functions
-vars['push_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s='sub rsp,10\nmovdqu [rsp], '
-    if n=='0' then
-		return s .. vars['x_reg']
-	else
-		return s .. vars['xmm~'..n]
-	end
+vars['push_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local t={}
+  local p=string.format('sub rsp, %X',s)
+  table.insert(t,p)
+  local args = {...}
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+	     r=vars['x_reg']
+      end
+      p=string.format('movdqu [rsp+%X],%s',s,r)
+      table.insert(t,p)
+  end
+  return table.concat(t,'\n')
 end
 
-vars['pop_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s=',[rsp]\nadd rsp,10'
-    if n=='0' then
-		return 'movdqu '..vars['x_reg'] .. s
-	else
-		return 'movdqu '..vars['xmm~'..n] .. s
-	end
+vars['pop_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local s_og=s
+  local t={}
+  local args = {...}
+  local p=''
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+      	r=vars['x_reg']
+      end
+      p=string.format('movdqu %s,[rsp+%X]',r,s)
+      table.insert(t,p)
+  end
+  p=string.format('add rsp, %X',s_og)
+  table.insert(t,p)
+  return table.concat(t,'\n')
 end
 
 vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
@@ -364,14 +400,7 @@ local inj_script=[[
     push rcx
     push rbx
     push rax
-    ${push_xmm}(8)
-    ${push_xmm}(7)
-    ${push_xmm}(4)
-    ${push_xmm}(1)
-    ${push_xmm}(2)
-    ${push_xmm}(3)
-    ${push_xmm}(5)
-    ${push_xmm}(0)
+    ${push_xmm}(8,7,4,1,2,3,5,0)
 
 ${stack_push}(18)
     mov rax,[7FFE0014] //Windows internal clock
@@ -478,14 +507,7 @@ ${stack_push}(18)
         movups ${xmm~6}, [rsp] ////(1,r,r,1)
     ${stack_pop}(18)
 
-    ${pop_xmm}(0)
-    ${pop_xmm}(5)
-    ${pop_xmm}(3)
-    ${pop_xmm}(2)
-    ${pop_xmm}(1)
-    ${pop_xmm}(4)
-    ${pop_xmm}(7)
-    ${pop_xmm}(8)
+    ${pop_xmm}(8,7,4,1,2,3,5,0)
     pop rax
     pop rbx
     pop rcx
@@ -547,7 +569,7 @@ opcode_inj[script_ref]=nil
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_d'
 
 vars.varis_1_n='mult'..suffix
@@ -578,22 +600,44 @@ vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that 
 end
 
 -- token functions (below) run after ['post'] functions
-vars['push_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s='sub rsp,10\nmovdqu [rsp], '
-    if n=='0' then
-		return s .. vars['x_reg']
-	else
-		return s .. vars['xmm~'..n]
-	end
+vars['push_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local t={}
+  local p=string.format('sub rsp, %X',s)
+  table.insert(t,p)
+  local args = {...}
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+	     r=vars['x_reg']
+      end
+      p=string.format('movdqu [rsp+%X],%s',s,r)
+      table.insert(t,p)
+  end
+  return table.concat(t,'\n')
 end
 
-vars['pop_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s=',[rsp]\nadd rsp,10'
-    if n=='0' then
-		return 'movdqu '..vars['x_reg'] .. s
-	else
-		return 'movdqu '..vars['xmm~'..n] .. s
-	end
+vars['pop_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local s_og=s
+  local t={}
+  local args = {...}
+  local p=''
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+      	r=vars['x_reg']
+      end
+      p=string.format('movdqu %s,[rsp+%X]',r,s)
+      table.insert(t,p)
+  end
+  p=string.format('add rsp, %X',s_og)
+  table.insert(t,p)
+  return table.concat(t,'\n')
 end
 
 vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
@@ -640,12 +684,9 @@ local inj_script=[[
     imul rcx,rbx
     imul rcx,rax
     shr rcx,20 //ecx has the number
- ${push_xmm}(1)
-    ${push_xmm}(2)
-    ${push_xmm}(3)
-    ${push_xmm}(4)
-    ${push_xmm}(5)
+    ${push_xmm}(1,2,3,4,5)
     ${push_xmm}(0)
+
 
     cvtsi2ss ${x_reg}, rcx
     cvtss2sd ${x_reg}, ${x_reg}
@@ -699,23 +740,19 @@ local inj_script=[[
     addss  ${xmm~4},  ${xmm~3} //FINAL MULT in x~4 !
 
     ${pop_xmm}(0)
-	$%s{og_instruction}  //loads 4 x floats into $%s{x_reg}
+	${og_instruction}  //loads 4 x floats into ${x_reg}
 	mulps ${x_reg},${xmm~4}
 
-    ${pop_xmm}(5)
-    ${pop_xmm}(4)
-    ${pop_xmm}(3)
-    ${pop_xmm}(2)
-    ${pop_xmm}(1)
+    ${pop_xmm}(1,2,3,4,5)
     pop rax
     pop rbx
     pop rcx
-      $%s{overwritten}
+      ${overwritten}
 	  jmp return
 
-	$%s{inj_name}:
-	  jmp $%s{newmem_name}
-	  $%s{post_jmp}
+	${inj_name}:
+	  jmp ${newmem_name}
+	  ${post_jmp}
 	return:
 ]]
 
@@ -751,7 +788,7 @@ opcode_inj[script_ref]=nil
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_anim'
 vars.varis_1_n='mult_1'
 
@@ -781,22 +818,44 @@ vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that 
 end
 
 -- token functions (below) run after ['post'] functions
-vars['push_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s='sub rsp,10\nmovdqu [rsp], '
-    if n=='0' then
-		return s .. vars['x_reg']
-	else
-		return s .. vars['xmm~'..n]
-	end
+vars['push_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local t={}
+  local p=string.format('sub rsp, %X',s)
+  table.insert(t,p)
+  local args = {...}
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+	     r=vars['x_reg']
+      end
+      p=string.format('movdqu [rsp+%X],%s',s,r)
+      table.insert(t,p)
+  end
+  return table.concat(t,'\n')
 end
 
-vars['pop_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s=',[rsp]\nadd rsp,10'
-    if n=='0' then
-		return 'movdqu '..vars['x_reg'] .. s
-	else
-		return 'movdqu '..vars['xmm~'..n] .. s
-	end
+vars['pop_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local s_og=s
+  local t={}
+  local args = {...}
+  local p=''
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+      	r=vars['x_reg']
+      end
+      p=string.format('movdqu %s,[rsp+%X]',r,s)
+      table.insert(t,p)
+  end
+  p=string.format('add rsp, %X',s_og)
+  table.insert(t,p)
+  return table.concat(t,'\n')
 end
 
 vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
@@ -830,19 +889,13 @@ define(${inj_name},${address_string})
 
 	${newmem_name}:
 	code:
-	    ${push_xmm}(9) //-10
-		    movaps ${xmm~9},[${localAddress}+10]
-	    ${push_xmm}(7)
-${push_xmm}(6)
+    ${push_xmm}(9,7,6)
+		    movaps ${xmm~9},[${localAddress}+30]
     push rcx
     push rbx
     push rax
-	    ${push_xmm}(8)
-    ${push_xmm}(4)
-    ${push_xmm}(1)
-    ${push_xmm}(2)
-    ${push_xmm}(3)
-    ${push_xmm}(5)
+    ${push_xmm}(8,4,1,2,3,5)
+
     ${push_xmm}(0)
 
 ${stack_push}(18)
@@ -984,19 +1037,12 @@ ${stack_push}(18)
     ${pop_xmm}(0)
     mulps ${xmm~9},${xmm~6}
     movups ${x_reg},${xmm~9}
-    ${pop_xmm}(5)
-    ${pop_xmm}(3)
-    ${pop_xmm}(2)
-    ${pop_xmm}(1)
-    ${pop_xmm}(4)
-    ${pop_xmm}(8)
+    ${pop_xmm}(8,4,1,2,3,5)
     pop rax
     pop rbx
     pop rcx
       //${og_instruction}
-      ${pop_xmm}(6)
-	      ${pop_xmm}(7)
-	      ${pop_xmm}(9)
+      ${pop_xmm}(9,7,6)
       ${overwritten}
 	  jmp return
 
@@ -1066,7 +1112,7 @@ opcode_inj[script_ref]=nil
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_5'
 vars.varis_1_n='mult'..suffix
 
@@ -1093,22 +1139,44 @@ vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that 
 end
 
 -- token functions (below) run after ['post'] functions
-vars['push_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s='sub rsp,10\nmovdqu [rsp], '
-    if n=='0' then
-		return s .. vars['x_reg']
-	else
-		return s .. vars['xmm~'..n]
-	end
+vars['push_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local t={}
+  local p=string.format('sub rsp, %X',s)
+  table.insert(t,p)
+  local args = {...}
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+	     r=vars['x_reg']
+      end
+      p=string.format('movdqu [rsp+%X],%s',s,r)
+      table.insert(t,p)
+  end
+  return table.concat(t,'\n')
 end
 
-vars['pop_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s=',[rsp]\nadd rsp,10'
-    if n=='0' then
-		return 'movdqu '..vars['x_reg'] .. s
-	else
-		return 'movdqu '..vars['xmm~'..n] .. s
-	end
+vars['pop_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local s_og=s
+  local t={}
+  local args = {...}
+  local p=''
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+      	r=vars['x_reg']
+      end
+      p=string.format('movdqu %s,[rsp+%X]',r,s)
+      table.insert(t,p)
+  end
+  p=string.format('add rsp, %X',s_og)
+  table.insert(t,p)
+  return table.concat(t,'\n')
 end
 
 vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
@@ -1155,12 +1223,9 @@ local inj_script=[[
     imul rcx,rbx
     imul rcx,rax
     shr rcx,20 //ecx has the number
- ${push_xmm}(1)
-    ${push_xmm}(2)
-    ${push_xmm}(3)
-    ${push_xmm}(4)
-    ${push_xmm}(5)
+    ${push_xmm}(1,2,3,4,5)
     ${push_xmm}(0)
+
 
     cvtsi2ss ${x_reg}, rcx
     cvtss2sd ${x_reg}, ${x_reg}
@@ -1208,11 +1273,7 @@ local inj_script=[[
 
     ${pop_xmm}(0)
 	mulss ${x_reg},${xmm~4}
-    ${pop_xmm}(5)
-    ${pop_xmm}(4)
-    ${pop_xmm}(3)
-    ${pop_xmm}(2)
-    ${pop_xmm}(1)
+    ${pop_xmm}(1,2,3,4,5)
     pop rax
     pop rbx
     pop rcx
@@ -1259,7 +1320,7 @@ opcode_inj[script_ref]=nil
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_2'
 vars.varis_1_n='mult'..suffix
 
@@ -1279,27 +1340,27 @@ local aobs={'F3 41 0F 11 5C 24 0C 48',-10,20}
 local lookahead_n=32
 
 local inj_script=[[
-	define($%s{inj_name},$%s{address_string})
-    registersymbol($%s{inj_name})
-    alloc($%s{newmem_name}, $%s{newmem_size}, $%s{inj_name})
-	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
-    registersymbol($%s{varis_1_n})
-	$%s{varis_1_n}:
-	$%s{varis_1_d}
+	define(${inj_name},${address_string})
+    registersymbol(${inj_name})
+    alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+	alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
+    registersymbol(${varis_1_n})
+	${varis_1_n}:
+	${varis_1_d}
 
 	label(code)
 	label(return)
 
-	$%s{newmem_name}:
+	${newmem_name}:
 	code:
-	  mulss $%s{x_reg},[$%s{varis_1_n}]
-	  $%s{og_instruction}
-      $%s{overwritten}
+	  mulss ${x_reg},[${varis_1_n}]
+	  ${og_instruction}
+      ${overwritten}
 	  jmp return
 
-	$%s{inj_name}:
-	  jmp $%s{newmem_name}
-	  $%s{post_jmp}
+	${inj_name}:
+	  jmp ${newmem_name}
+	  ${post_jmp}
 	return:
 ]]
 
@@ -1328,7 +1389,7 @@ opcode_inj[script_ref]=nil
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_bcc'
 vars.varis_1_n='mult'..suffix
 
@@ -1352,22 +1413,44 @@ vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that 
 end
 
 -- token functions (below) run after ['post'] functions
-vars['push_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s='sub rsp,10\nmovdqu [rsp], '
-    if n=='0' then
-		return s .. vars['x_reg']
-	else
-		return s .. vars['xmm~'..n]
-	end
+vars['push_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local t={}
+  local p=string.format('sub rsp, %X',s)
+  table.insert(t,p)
+  local args = {...}
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+	     r=vars['x_reg']
+      end
+      p=string.format('movdqu [rsp+%X],%s',s,r)
+      table.insert(t,p)
+  end
+  return table.concat(t,'\n')
 end
 
-vars['pop_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s=',[rsp]\nadd rsp,10'
-    if n=='0' then
-		return 'movdqu '..vars['x_reg'] .. s
-	else
-		return 'movdqu '..vars['xmm~'..n] .. s
-	end
+vars['pop_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local s_og=s
+  local t={}
+  local args = {...}
+  local p=''
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+      	r=vars['x_reg']
+      end
+      p=string.format('movdqu %s,[rsp+%X]',r,s)
+      table.insert(t,p)
+  end
+  p=string.format('add rsp, %X',s_og)
+  table.insert(t,p)
+  return table.concat(t,'\n')
 end
 
 vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
@@ -1389,18 +1472,18 @@ local aobs={'48 6B C8 58 8B 43 08 42 0F 10',6,8}
 local lookahead_n=64
 
 local inj_script=[[
-	define($%s{inj_name},$%s{address_string})
-    registersymbol($%s{inj_name})
-    alloc($%s{newmem_name}, $%s{newmem_size}, $%s{inj_name})
-	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
-    registersymbol($%s{varis_1_n})
-	$%s{varis_1_n}:
-	$%s{varis_1_d}
+	define(${inj_name},${address_string})
+    registersymbol(${inj_name})
+    alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+	alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
+    registersymbol(${varis_1_n})
+	${varis_1_n}:
+	${varis_1_d}
 
 	label(code)
 	label(return)
 
-	$%s{newmem_name}:
+	${newmem_name}:
 	code:
     ${push_xmm}(1)
     ${stack_push}(20)
@@ -1421,9 +1504,9 @@ local inj_script=[[
 	  jmp return
 
 
-	$%s{inj_name}:
-	  jmp $%s{newmem_name}
-	  $%s{post_jmp}
+	${inj_name}:
+	  jmp ${newmem_name}
+	  ${post_jmp}
 	return:
 ]]
 
@@ -1452,7 +1535,7 @@ opcode_inj[script_ref]=nil
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_camAngle'
 vars.varis_1_n='mult'..suffix
 
@@ -1475,33 +1558,6 @@ vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that 
  return vars --IMPORTANT!
 end
 
--- token functions (below) run after ['post'] functions
-vars['push_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s='sub rsp,10\nmovdqu [rsp], '
-    if n=='0' then
-		return s .. vars['x_reg']
-	else
-		return s .. vars['xmm~'..n]
-	end
-end
-
-vars['pop_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s=',[rsp]\nadd rsp,10'
-    if n=='0' then
-		return 'movdqu '..vars['x_reg'] .. s
-	else
-		return 'movdqu '..vars['xmm~'..n] .. s
-	end
-end
-
-vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-		return 'sub rsp, ' .. n
-end
-
-vars['stack_pop']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-		return 'add rsp, ' .. n
-end
-
 --COMPULSORY
 local newmem_name='newmem'..suffix
 local newmem_size='$1000'
@@ -1512,27 +1568,27 @@ local aobs={'40 10 F3 0F 11 48 14',0,4}
 local lookahead_n=32
 
 local inj_script=[[
-	define($%s{inj_name},$%s{address_string})
-    registersymbol($%s{inj_name})
-    alloc($%s{newmem_name}, $%s{newmem_size}, $%s{inj_name})
-	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
-    registersymbol($%s{varis_1_n})
-	$%s{varis_1_n}:
-	$%s{varis_1_d}
+	define(${inj_name},${address_string})
+    registersymbol(${inj_name})
+    alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+	alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
+    registersymbol(${varis_1_n})
+	${varis_1_n}:
+	${varis_1_d}
 
 	label(code)
 	label(return)
 
-	$%s{newmem_name}:
+	${newmem_name}:
 	code:
-	  mulss $%s{x_reg},[$%s{varis_1_n}]
-	  $%s{og_instruction}
-      $%s{overwritten}
+	  mulss ${x_reg},[${varis_1_n}]
+	  ${og_instruction}
+      ${overwritten}
 	  jmp return
 
-	$%s{inj_name}:
-	  jmp $%s{newmem_name}
-	  $%s{post_jmp}
+	${inj_name}:
+	  jmp ${newmem_name}
+	  ${post_jmp}
 	return:
 ]]
 
@@ -1591,7 +1647,7 @@ dealloc(newmem_3)
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_sma'
 local parts={{'.+',1,'jne_address'}}
 --COMPULSORY
@@ -1612,11 +1668,11 @@ define(${inj_name},${address_string})
 	label(code)
 //label(return)
 
-	$%s{newmem_name}:
+	${newmem_name}:
 	code:
     jmp ${jne_address}
 
-	$%s{inj_name}:
+	${inj_name}:
 	  jmp ${newmem_name}
 	  ${post_jmp}
 	//return:
@@ -1666,33 +1722,6 @@ vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that 
   end
  end
  return vars --IMPORTANT!
-end
-
--- token functions (below) run after ['post'] functions
-vars['push_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s='sub rsp,10\nmovdqu [rsp], '
-    if n=='0' then
-		return s .. vars['x_reg']
-	else
-		return s .. vars['xmm~'..n]
-	end
-end
-
-vars['pop_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s=',[rsp]\nadd rsp,10'
-    if n=='0' then
-		return 'movdqu '..vars['x_reg'] .. s
-	else
-		return 'movdqu '..vars['xmm~'..n] .. s
-	end
-end
-
-vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-		return 'sub rsp, ' .. n
-end
-
-vars['stack_pop']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-		return 'add rsp, ' .. n
 end
 
 --COMPULSORY
@@ -1889,7 +1918,7 @@ dealloc(newmem2)
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_wgt'
 vars.varis_1_n='mult'..suffix
 local wmult=1
@@ -1911,10 +1940,10 @@ local inj_script=[[
   define(${inj_name},${address_string})
   registersymbol(${inj_name})
   alloc(${newmem_name}, ${newmem_size}, ${inj_name})
-	alloc($%s{varis_1_n}, $%d{varis_1_size}, $%s{inj_name})
-    registersymbol($%s{varis_1_n})
-	$%s{varis_1_n}:
-	$%s{varis_1_d}
+	alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
+    registersymbol(${varis_1_n})
+	${varis_1_n}:
+	${varis_1_d}
   label(code)
   label(return)
 
@@ -1999,7 +2028,7 @@ opcode_inj[script_ref]=nil
                   <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_camMod'
 
 local module_names='PES2021.exe'
@@ -2201,7 +2230,7 @@ if syntaxcheck then return end
 --Credit to Twiggy for his work on this, which helped me make this mod
 
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_diffMod'
 
 vars.varis_1_n='set_diff'..suffix
@@ -2276,7 +2305,7 @@ opcode_inj[script_ref]=nil
 if syntaxcheck then return end
 
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_additionalTimeMod'
 
 vars.varis_1_n='set_diff'..suffix
@@ -2325,7 +2354,7 @@ local inj_script=[[
 
 
 local vars2={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix2='_additionalTimeMod2'
 
 local parts2={{'.+',1,'addr'}}
@@ -2478,7 +2507,7 @@ opcode_inj[script_ref2]=nil
                   <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_camMod'
 
 local module_names='PES2021.exe'
@@ -2509,10 +2538,7 @@ local pc=lk['instructions']
  end
 local jmpa=vars['address_dec']+vars['lookaheads']['offsets'][pz]
  return table.concat(out,'\n')..'\njmp '..string.format('%X',jmpa)
-
-
 end
-
 
 --COMPULSORY
 local newmem_name='newmem'..suffix
@@ -2539,7 +2565,6 @@ local inj_script=[[
  ${inj_name}:
 	  jmp ${newmem_name}
 ]]
-
 
 [ENABLE]
 
@@ -2662,7 +2687,7 @@ opcode_inj[script_ref]=nil
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_twrla'
 vars.varis_1_n='mult'..suffix
 
@@ -2689,22 +2714,44 @@ vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that 
 end
 
 -- token functions (below) run after ['post'] functions
-vars['push_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s='sub rsp,10\nmovdqu [rsp], '
-    if n=='0' then
-		return s .. vars['x_reg']
-	else
-		return s .. vars['xmm~'..n]
-	end
+vars['push_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local t={}
+  local p=string.format('sub rsp, %X',s)
+  table.insert(t,p)
+  local args = {...}
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+	     r=vars['x_reg']
+      end
+      p=string.format('movdqu [rsp+%X],%s',s,r)
+      table.insert(t,p)
+  end
+  return table.concat(t,'\n')
 end
 
-vars['pop_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s=',[rsp]\nadd rsp,10'
-    if n=='0' then
-		return 'movdqu '..vars['x_reg'] .. s
-	else
-		return 'movdqu '..vars['xmm~'..n] .. s
-	end
+vars['pop_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local s_og=s
+  local t={}
+  local args = {...}
+  local p=''
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+      	r=vars['x_reg']
+      end
+      p=string.format('movdqu %s,[rsp+%X]',r,s)
+      table.insert(t,p)
+  end
+  p=string.format('add rsp, %X',s_og)
+  table.insert(t,p)
+  return table.concat(t,'\n')
 end
 
 vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
@@ -2751,11 +2798,7 @@ local inj_script=[[
     imul rcx,rbx
     imul rcx,rax
     shr rcx,20 //ecx has the number
- ${push_xmm}(1)
-    ${push_xmm}(2)
-    ${push_xmm}(3)
-    ${push_xmm}(4)
-    ${push_xmm}(5)
+    ${push_xmm}(1,2,3,4,5)
     ${push_xmm}(0)
 
     cvtsi2ss ${x_reg}, rcx
@@ -2810,7 +2853,7 @@ local inj_script=[[
     addss  ${xmm~4},  ${xmm~3} //FINAL MULT in x~4 !
 
     ${pop_xmm}(0)
-	${og_instruction}  //loads 4 x floats into $%s{x_reg}
+	${og_instruction}  //loads 4 x floats into ${x_reg}
 
   ${stack_push}(10)
     pslldq ${xmm~4},4 //(~,r,1,1)
@@ -2820,18 +2863,14 @@ local inj_script=[[
 	mulps ${x_reg},${xmm~4}
   ${stack_pop}(10)
 
-    ${pop_xmm}(5)
-    ${pop_xmm}(4)
-    ${pop_xmm}(3)
-    ${pop_xmm}(2)
-    ${pop_xmm}(1)
+    ${pop_xmm}(1,2,3,4,5)
     pop rax
     pop rbx
     pop rcx
       ${overwritten}
 	  jmp return
 
-	$%s{inj_name}:
+	${inj_name}:
 	  jmp ${newmem_name}
 	  ${post_jmp}
 	return:
@@ -2869,7 +2908,7 @@ opcode_inj[script_ref]=nil
 if syntaxcheck then return end
 local vars={}
 local suffix='_drbPhys'
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local parts={}
 
 vars['get_rem']=function()
@@ -2939,7 +2978,7 @@ opcode_inj[script_ref]=nil
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_randRunAngles'
 vars.varis_1_n='range'..suffix
 
@@ -2967,22 +3006,44 @@ vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that 
 end
 
 -- token functions (below) run after ['post'] functions
-vars['push_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s='sub rsp,10\nmovdqu [rsp], '
-    if n=='0' then
-		return s .. vars['x_reg']
-	else
-		return s .. vars['xmm~'..n]
-	end
+vars['push_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local t={}
+  local p=string.format('sub rsp, %X',s)
+  table.insert(t,p)
+  local args = {...}
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+	     r=vars['x_reg']
+      end
+      p=string.format('movdqu [rsp+%X],%s',s,r)
+      table.insert(t,p)
+  end
+  return table.concat(t,'\n')
 end
 
-vars['pop_xmm']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-    local s=',[rsp]\nadd rsp,10'
-    if n=='0' then
-		return 'movdqu '..vars['x_reg'] .. s
-	else
-		return 'movdqu '..vars['xmm~'..n] .. s
-	end
+vars['pop_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local s_og=s
+  local t={}
+  local args = {...}
+  local p=''
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars['xmm~'..v]
+      if v=='0' then
+      	r=vars['x_reg']
+      end
+      p=string.format('movdqu %s,[rsp+%X]',r,s)
+      table.insert(t,p)
+  end
+  p=string.format('add rsp, %X',s_og)
+  table.insert(t,p)
+  return table.concat(t,'\n')
 end
 
 vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
@@ -3032,13 +3093,7 @@ local inj_script=[[
     imul rcx,rbx
     imul rcx,rax
     shr rcx,20 //ecx has the number
- ${push_xmm}(1)
-    ${push_xmm}(2)
-    ${push_xmm}(3)
-    ${push_xmm}(4)
-    ${push_xmm}(5)
-    ${push_xmm}(6)
-    ${push_xmm}(0)
+    ${push_xmm}(1,2,3,4,5,6,0)
 
     cvtsi2ss ${x_reg}, rcx
     cvtss2sd ${x_reg}, ${x_reg}
@@ -3109,13 +3164,8 @@ local inj_script=[[
      mulss ${xmm~1},${xmm~3} //x~1=(90/270)*lrp
      addss ${xmm~6},${xmm~1} //[(1-lrp)*angle]+[(90/270)*lrp]
     movss [rsp+C],${xmm~6} //NEW ANGLE!
-    ${pop_xmm}(0)
-    ${pop_xmm}(6)
-    ${pop_xmm}(5)
-    ${pop_xmm}(4)
-    ${pop_xmm}(3)
-    ${pop_xmm}(2)
-    ${pop_xmm}(1)
+    ${pop_xmm}(1,2,3,4,5,6,0)
+
     pop rax
     pop rbx
     pop rcx
@@ -3161,7 +3211,7 @@ opcode_inj[script_ref]=nil
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '$%s{...}' notation)
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_stm'
 vars.varis_1_n='mult'..suffix
 local fct=0.85
@@ -3204,8 +3254,8 @@ local inj_script=[[
   alloc(${newmem_name}, ${newmem_size}, ${inj_name})
 	alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
     registersymbol(${varis_1_n})
-	$%s{varis_1_n}:
-	$%s{varis_1_d}
+	${varis_1_n}:
+	${varis_1_d}
   label(code)
   label(return)
 
