@@ -33,16 +33,16 @@ end
 --scrpts[8].Active=true -- Angle hijack (stadium)
 --scrpts[9].Active=true -- Smoother anim
 --scrpts[10].Active=true -- Game speed
---scrpts[11].Active=true -- Height mod
---scrpts[12].Active=true -- Body Size
---scrpts[13].Active=true -- Camera mod (Uses 14 and 15 too)
---scrpts[16].Active=true -- Difficulty fix
---scrpts[17].Active=true -- Additional time
---scrpts[18].Active=true -- New broadcast camera (Uses 19 and 20 too)
---scrpts[21].Active=true -- Twist right
---scrpts[22].Active=true -- Dribble
---scrpts[23].Active=true -- Random run angle
---scrpts[24].Active=true -- Stamina
+--scrpts[11].Active=true -- Height mod (Uses 12 and 13 too)
+--scrpts[14].Active=true -- Body Size
+--scrpts[15].Active=true -- Camera mod (Uses 16 and 17 too)
+--scrpts[18].Active=true -- Difficulty fix
+--scrpts[19].Active=true -- Additional time
+--scrpts[20].Active=true -- New broadcast camera (Uses 21 and 22 too)
+--scrpts[23].Active=true -- Twist right
+--scrpts[24].Active=true -- Dribble
+--scrpts[25].Active=true -- Random run angle
+--scrpts[26].Active=true -- Stamina
 
 [DISABLE]
 --scrpts[1].Active=false -- Left arm
@@ -55,16 +55,16 @@ end
 --scrpts[8].Active=false -- Angle hijack (stadium)
 --scrpts[9].Active=false -- Smoother anim
 --scrpts[10].Active=false -- Game speed
---scrpts[11].Active=false -- Height mod
---scrpts[12].Active=false -- Body Size
---scrpts[13].Active=false -- Camera mod (Uses 14 and 15 too)
---scrpts[16].Active=false -- Difficulty fix
---scrpts[17].Active=false -- Additional time
---scrpts[18].Active=false -- New broadcast camera (Uses 19 and 20 too)
---scrpts[21].Active=false -- Twist right
---scrpts[22].Active=false -- Dribble
---scrpts[23].Active=false -- Random run angle
---scrpts[24].Active=false -- Stamina
+--scrpts[11].Active=false -- Height mod (Uses 12 and 13 too)
+--scrpts[14].Active=false -- Body Size
+--scrpts[15].Active=false -- Camera mod (Uses 16 and 17 too)
+--scrpts[18].Active=false -- Difficulty fix
+--scrpts[19].Active=false -- Additional time
+--scrpts[20].Active=false -- New broadcast camera (Uses 21 and 22 too)
+--scrpts[23].Active=false -- Twist right
+--scrpts[24].Active=false -- Dribble
+--scrpts[25].Active=false -- Random run angle
+--scrpts[26].Active=false -- Stamina
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -1823,90 +1823,137 @@ opcode_inj[script_ref2]=nil
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>700</ID>
-          <Description>"Height mod ("Height mult" lower is taller)"</Description>
-          <Options moHideChildren="1"/>
+          <ID>1172</ID>
+          <Description>"Height mod"</Description>
+          <Options moHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>[ENABLE]
 
-aobscanmodule(INJECT_hm,PES2021.exe,0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D) // should be unique
-alloc(newmem,$1000,INJECT_hm)
-
-label(code)
-label(return)
-
-aobscanmodule(INJECT_hm2,PES2021.exe,F3 0F 10 4A 28 F3 0F 11 04 24 F3 0F 10 42 24 F3 0F 11 44 24 08) // should be unique
-alloc(newmem2,$1000,INJECT_hm2)
-
-label(code2)
-label(return2)
-
-alloc(hgt_mult, 4, INJECT_hm)
-registersymbol(hgt_mult)
-hgt_mult:
-dd (float)1.063
-
-alloc(inv_hgt_mult, 4, INJECT_hm2)
-registersymbol(inv_hgt_mult)
-inv_hgt_mult:
-db C8 41 79 3F
-//dd (float)
-
-newmem:
-
-code:
-  comiss xmm4,xmm2
-  mulss xmm4, [hgt_mult]
-  jmp return
-
-INJECT_hm:
-  jmp newmem
-return:
-  db EB 16
-  nop 2
-registersymbol(INJECT_hm)
-
-newmem2:
-
-code2:
-  movss xmm1,[rdx+28]
-    mulss xmm1,[inv_hgt_mult]
-  jmp return2
-
-INJECT_hm2:
-  jmp newmem2
-return2:
-registersymbol(INJECT_hm2)
-
 [DISABLE]
-
-INJECT_hm:
-  db 0F 2F E2 76 18 F3 0F 5C CB F3 0F 5E 0D
-
-unregistersymbol(INJECT_hm)
-dealloc(newmem)
-
-INJECT_hm2:
-  db F3 0F 10 4A 28 F3 0F 11 04 24 F3 0F 10 42 24 F3 0F 11 44 24 08
-
-unregistersymbol(INJECT_hm2)
-dealloc(newmem2)
-
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>1159</ID>
+              <ID>1169</ID>
               <Description>"Height mult"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>hgt_mult</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>708</ID>
-              <Description>"Animation y mult"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>inv_hgt_mult</Address>
+              <ID>1171</ID>
+              <Description>"Scripts"</Description>
+              <Options moAlwaysHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1167</ID>
+                  <Description>"New heights 1"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+
+aobscanmodule(INJECT_hm,PES2021.exe,49 03 D1 FF E2 0F B6 01 41 89 00 B0 01) // should be unique
+alloc(newmem,$1000,INJECT_hm)
+
+label(code)
+
+alloc(hgt_mult, 4, INJECT_hm)
+registersymbol(hgt_mult)
+hgt_mult:
+db C8 41 79 3F
+//dd (float)
+
+alloc(og_height_addr, 8, INJECT_hm)
+registersymbol(og_height_addr)
+
+newmem:
+
+code:
+  mov [og_height_addr],rcx //store og height address
+  movzx eax,byte ptr [rcx] // permanent height
+    sub rsp,10
+    movdqu [rsp],xmm0
+  cvtsi2ss xmm0, eax //int to float
+  mulss xmm0,[hgt_mult]
+  cvtss2si eax, xmm0 //float to int
+    movdqu xmm0,[rsp]
+    add rsp,10
+  mov [r8],eax
+  mov al,01
+  ret
+
+INJECT_hm+5:
+  jmp newmem
+  nop 3
+
+registersymbol(INJECT_hm)
+
+[DISABLE]
+
+INJECT_hm:
+  db 49 03 D1 FF E2 0F B6 01 41 89 00 B0 01
+
+unregistersymbol(INJECT_hm)
+dealloc(newmem)
+unregistersymbol(hgt_mult)
+dealloc(hgt_mult)
+unregistersymbol(og_height_addr)
+dealloc(og_height_addr)
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1168</ID>
+                  <Description>"New heights 2"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>{$lua}
+if syntaxcheck then return end
+local vars={}
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
+local suffix='_hm2'
+
+local parts={{'[^,]+',1,'reg'}}
+local module_names='PES2021.exe'
+
+--COMPULSORY
+local newmem_name='newmem'..suffix
+local newmem_size='$1000'
+local script_ref='Height_mod_text' --  opcode_inj[vars.script_ref] stores vars
+local inj_name='INJECT'..suffix
+local pattern='^%s*movzx%s+[^,]+%s*,%s*.+'
+local aobs={'48 83 C4 20 5B C3 33 C9 C7 44 24 30 00 00 00 00',36,36}
+local lookahead_n=32
+
+local inj_script=[[
+	define(${inj_name},${address_string})
+    registersymbol(${inj_name})
+     alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+
+	label(code)
+	label(return)
+
+	${newmem_name}:
+	code:
+     push rcx
+        mov rcx,[og_height_addr]
+        movzx ${reg},byte ptr [rcx]
+         pop rcx
+      ${overwritten}
+	  jmp return
+
+	${inj_name}:
+	  jmp ${newmem_name}
+	  ${post_jmp}
+	return:
+]]
+
+[ENABLE]
+opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+
+[DISABLE]
+opcode_inj.disable(script_ref)
+opcode_inj[script_ref]=nil
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
