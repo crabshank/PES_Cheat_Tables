@@ -43,7 +43,7 @@ end
 --scrpts[24].Active=true -- Dribble
 --scrpts[25].Active=true -- Random run angle
 --scrpts[26].Active=true -- Stamina
---scrpts[27].Active=true -- Speed experiment
+--scrpts[27].Active=true -- Speed experiment (Uses 28-31 too)
 
 [DISABLE]
 --scrpts[1].Active=false -- Left arm
@@ -66,7 +66,7 @@ end
 --scrpts[24].Active=false -- Dribble
 --scrpts[25].Active=false -- Random run angle
 --scrpts[26].Active=false -- Stamina
---scrpts[27].Active=false -- Speed experiment
+--scrpts[27].Active=false -- Speed experiment (Uses 28-31 too)
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
