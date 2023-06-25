@@ -2244,6 +2244,15 @@ registersymbol(INJECT_camMod4)
 
 [DISABLE]
 
+dealloc(cam_z)
+unregistersymbol(cam_z)
+
+dealloc(cam_hgt)
+unregistersymbol(cam_hgt)
+
+dealloc(cam_zoom)
+unregistersymbol(cam_zoom)
+
 INJECT_camMod3:
   db F3 41 0F 11 45 10
 
@@ -3588,4 +3597,4 @@ dealloc(INJECT_speed_rewrite_factors)
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
- </CheatTable>
+</CheatTable>
