@@ -3449,6 +3449,13 @@ opcode_inj[script_ref]=nil
               <Address>INJECT_speed_rewrite_factors+C</Address>
             </CheatEntry>
             <CheatEntry>
+              <ID>1337</ID>
+              <Description>"Stamina power (int)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>INJECT_speed_rewrite_factors+14</Address>
+            </CheatEntry>
+            <CheatEntry>
               <ID>7</ID>
               <Description>"Scripts"</Description>
               <Options moAlwaysHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
@@ -3572,7 +3579,7 @@ aobscanmodule(INJECT_speed_rewrite,PES2021.exe,C0 0F 2F C8 72 05 0F 28 C2) // sh
 alloc(newmem,$1000,INJECT_speed_rewrite)
 registersymbol(INJECT_speed_rewrite)
 
-alloc(INJECT_speed_rewrite_factors, 20, INJECT_speed_rewrite)
+alloc(INJECT_speed_rewrite_factors, 24, INJECT_speed_rewrite)
 registersymbol(INJECT_speed_rewrite_factors)
 INJECT_speed_rewrite_factors:
 dd (float)0.01
@@ -3580,9 +3587,12 @@ dd (float)100
 dd (float)5 //Default factor
 dd (float)0.7 //Minimum Speed
 dd (float)1
+dd 4 //Stamina power (int)
 
 label(code)
 label(code2)
+label(code_post_loop)
+label(code_loop)
 label(return)
 
 newmem:
@@ -3599,6 +3609,15 @@ jne code2
   movzx eax,byte ptr[stamina_info_speed_get_stamina]
   cvtsi2ss xmm0, eax //int to float
   mulss xmm0,[INJECT_speed_rewrite_factors] //stamina/100
+  mov esi,[INJECT_speed_rewrite_factors+14] //Stamina power
+  cmp esi,1
+  jle code_post_loop
+  code_loop:
+    mulss xmm0,xmm0
+    dec esi
+    cmp esi,0
+    jg code_loop
+  code_post_loop:
   mulss xmm7,xmm0 //x7=x7*x0 || Adj_speed= Adj_attribute * Stamina
   movss  xmm2,[INJECT_speed_rewrite_factors+10] // x2=1
   movss  xmm8,[INJECT_speed_rewrite_factors+C] // x8=min
