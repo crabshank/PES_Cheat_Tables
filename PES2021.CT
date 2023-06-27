@@ -40,10 +40,10 @@ end
 --scrpts[19].Active=true -- Additional time
 --scrpts[20].Active=true -- New broadcast camera (Uses 21 and 22 too)
 --scrpts[23].Active=true -- Twist right
---scrpts[24].Active=true -- Dribble
---scrpts[25].Active=true -- Random run angle
---scrpts[26].Active=true -- Stamina
---scrpts[27].Active=true -- Speed experiment (Uses 28-31 too)
+--scrpts[24].Active=true -- Dribble (Uses 25 and 26 too)
+--scrpts[27].Active=true -- Random run angle
+--scrpts[28].Active=true -- Stamina
+--scrpts[29].Active=true -- Speed experiment (Uses 28-30 too)
 
 [DISABLE]
 --scrpts[1].Active=false -- Left arm
@@ -63,10 +63,10 @@ end
 --scrpts[19].Active=false -- Additional time
 --scrpts[20].Active=false -- New broadcast camera (Uses 21 and 22 too)
 --scrpts[23].Active=false -- Twist right
---scrpts[24].Active=false -- Dribble
---scrpts[25].Active=false -- Random run angle
---scrpts[26].Active=false -- Stamina
---scrpts[27].Active=false -- Speed experiment (Uses 28-31 too)
+--scrpts[24].Active=false -- Dribble (Uses 25 and 26 too)
+--scrpts[27].Active=false -- Random run angle
+--scrpts[28].Active=false -- Stamina
+--scrpts[29].Active=false -- Speed experiment (Uses 28-30 too)
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -1649,6 +1649,7 @@ dealloc(newmem_3)
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
+local module_names='PES2021.exe'
 --OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_sma'
 local parts={{'.+',1,'jne_address'}}
@@ -2961,11 +2962,29 @@ opcode_inj[script_ref]=nil
         <CheatEntry>
           <ID>1112</ID>
           <Description>"Physical dribble experiment"</Description>
+          <Options moHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>{$lua}
+          <AssemblerScript>[ENABLE]
+
+[DISABLE]
+
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>1178</ID>
+              <Description>"Scripts"</Description>
+              <Options moAlwaysHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1177</ID>
+                  <Description>"Physical dribble experiment"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
 local suffix='_drbPhys'
+local module_names='PES2021.exe'
 --OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local parts={}
 
@@ -3027,6 +3046,43 @@ opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pa
 opcode_inj.disable(script_ref)
 opcode_inj[script_ref]=nil
 </AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2</ID>
+                  <Description>"Direct towards goal"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+
+aobscanmodule(INJECT_speed_towards_goal,PES2021.exe,08 00 00 00 0F 46 C2 C3 CC) // should be unique
+alloc(newmem,$1000,INJECT_speed_towards_goal)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov eax,00000001
+  ret
+
+INJECT_speed_towards_goal+04:
+  jmp newmem
+return:
+registersymbol(INJECT_speed_towards_goal)
+
+[DISABLE]
+
+INJECT_speed_towards_goal+04:
+  db 0F 46 C2 C3 CC CC CC CC CC
+
+unregistersymbol(INJECT_speed_towards_goal)
+dealloc(newmem)
+
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>1118</ID>
@@ -3380,10 +3436,17 @@ opcode_inj[script_ref]=nil
           <CheatEntries>
             <CheatEntry>
               <ID>5</ID>
-              <Description>"Stamina effect factor"</Description>
+              <Description>"Speed attrbute factor"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>INJECT_speed_rewrite_factors+8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1179</ID>
+              <Description>"Minimum speed"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>INJECT_speed_rewrite_factors+C</Address>
             </CheatEntry>
             <CheatEntry>
               <ID>7</ID>
@@ -3393,41 +3456,20 @@ opcode_inj[script_ref]=nil
               <CheatEntries>
                 <CheatEntry>
                   <ID>1173</ID>
-                  <Description>"getStamina only"</Description>
+                  <Description>"getStamina"</Description>
                   <VariableType>Auto Assembler Script</VariableType>
                   <AssemblerScript>{$lua}
 if syntaxcheck then return end
 local vars={}
 --OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
 local suffix='_speed_get_stamina'
-local parts={{'.+',1,'func_address'}}
+local parts={}
 local module_names='PES2021.exe'
-vars.post={}
 
-vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that are not 'x_reg'
-  local func=vars['func_address']
-  local fcn=tonumber(func,16)
-  local stf
-  local fnd=false
 
-  while fnd==false do
-
-    local dsk = disassemble(fcn)
-
-    local extraField, instruction, bytes, address = splitDisassembledString(dsk)
-    local sz=getInstructionSize(fcn)
-    local mtc=string.match(instruction,'^%s*call%s+(.+)')
-    if mtc~=nil then
-       vars['Stamina_func']=mtc
-       fnd=true
-    else
-        fcn=fcn+sz
-    end
-
-  end
-
-  return vars --IMPORTANT!
-end
+vars.varis_1_n='stamina_info'..suffix
+vars.varis_1_d='db 64 00'
+vars.varis_1_size=2
 
 --COMPULSORY
 local newmem_name='newmem'..suffix
@@ -3443,13 +3485,18 @@ local inj_script=[[
   registersymbol(${inj_name})
   alloc(${newmem_name}, ${newmem_size}, ${inj_name})
 
+  alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
+  registersymbol(${varis_1_n})
+  ${varis_1_n}:
+  ${varis_1_d}
+
   label(code)
   label(return)
 
 ${newmem_name}:
 	code:
-    mov rbx,rax
-    call ${Stamina_func}
+    mov word ptr[${varis_1_n}],0064
+    ${og_instruction}
     ${overwritten}
     jmp return
 
@@ -3460,17 +3507,63 @@ ${newmem_name}:
 
 ]]
 
+local vars2={}
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
+local suffix2='_speed_get_stamina2'
+local parts2={}
+
+--COMPULSORY
+local newmem_name2='newmem'..suffix2
+local newmem_size2='$1000'
+local script_ref2='INJECT_speed_get_stamina2' --  opcode_inj[vars.script_ref] stores vars
+local inj_name2='INJECT'..suffix2
+local pattern2='^%s*call%s+.+'
+local aobs2={'69 D0 80 07 00 00 B8 1F 85 EB 51 F7 E2 44 8B DA 41 C1 EB 05',-21,-21}
+local lookahead_n2=32
+
+local inj_script2=[[
+  define(${inj_name},${address_string})
+  registersymbol(${inj_name})
+  alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+
+  label(code)
+  label(code2)
+  label(return)
+
+${newmem_name}:
+	code:
+    ${og_instruction}
+    cmp byte ptr[stamina_info_speed_get_stamina+1],00
+    jne code2
+    mov [stamina_info_speed_get_stamina],al
+    mov byte ptr[stamina_info_speed_get_stamina+1],01
+    code2:
+    ${overwritten}
+    jmp return
+
+ ${inj_name}:
+	  jmp ${newmem_name}
+      ${post_jmp}
+  return:
+
+]]
+
+
 [ENABLE]
 opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+opcode_inj.inject(script_ref2,inj_name2,newmem_name2,newmem_size2,vars2,inj_script2,pattern2,aobs2,lookahead_n2,parts2,module_names)
 
 [DISABLE]
 opcode_inj.disable(script_ref)
 opcode_inj[script_ref]=nil
 
+opcode_inj.disable(script_ref2)
+opcode_inj[script_ref2]=nil
+
 </AssemblerScript>
                 </CheatEntry>
                 <CheatEntry>
-                  <ID>4</ID>
+                  <ID>1336</ID>
                   <Description>"Speed rewrite"</Description>
                   <VariableType>Auto Assembler Script</VariableType>
                   <AssemblerScript>[ENABLE]
@@ -3479,41 +3572,42 @@ aobscanmodule(INJECT_speed_rewrite,PES2021.exe,C0 0F 2F C8 72 05 0F 28 C2) // sh
 alloc(newmem,$1000,INJECT_speed_rewrite)
 registersymbol(INJECT_speed_rewrite)
 
-alloc(INJECT_speed_rewrite_factors, 12, INJECT_speed_rewrite)
+alloc(INJECT_speed_rewrite_factors, 20, INJECT_speed_rewrite)
 registersymbol(INJECT_speed_rewrite_factors)
 INJECT_speed_rewrite_factors:
 dd (float)0.01
 dd (float)100
-dd (float)5
+dd (float)5 //Default factor
+dd (float)0.7 //Minimum Speed
+dd (float)1
 
 label(code)
+label(code2)
 label(return)
 
 newmem:
 
 code:
-
+cmp byte ptr [stamina_info_speed_get_stamina+1],01
 mov rbx,[rsp+60]
-sub rsp,20
-movdqu [rsp],xmm0 //store stamina
-
-movss xmm0,[INJECT_speed_rewrite_factors+4] //x0=100
-subss xmm0,[rsp] //x0=100-stamina
-mulss xmm0,[INJECT_speed_rewrite_factors]
-
-movss xmm1,[INJECT_speed_rewrite_factors+8] //pow stamina
-call ucrtbase.powf
-
-movdqu [rsp+10],xmm0 // store x0
-mulss xmm6,[INJECT_speed_rewrite_factors] // x6/100
-
-sqrtss xmm6,xmm6 //pow(0.5) - adj speed to x6
-movdqu xmm0,[rsp+10] // restore x0
-
-subss xmm6,xmm0 //x6=x6-x0
-movss [rdi+0000377C],xmm6
+jne code2
+  movss xmm0,xmm6 //x0=attribute
+  mulss xmm0,[INJECT_speed_rewrite_factors]
+  movss xmm1,[INJECT_speed_rewrite_factors+8] //pow attribute
+  call ucrtbase.powf
+  movss xmm7,xmm0
+  movzx eax,byte ptr[stamina_info_speed_get_stamina]
+  cvtsi2ss xmm0, eax //int to float
+  mulss xmm0,[INJECT_speed_rewrite_factors] //stamina/100
+  mulss xmm7,xmm0 //x7=x7*x0 || Adj_speed= Adj_attribute * Stamina
+  movss  xmm2,[INJECT_speed_rewrite_factors+10] // x2=1
+  movss  xmm8,[INJECT_speed_rewrite_factors+C] // x8=min
+  subss xmm2, xmm8//x2=1-min
+  mulss xmm7,xmm2
+  addss xmm7,xmm8 //x7=(Min .-. 1)
+  movss [rdi+0000377C],xmm7
+code2:
 movaps xmm8,[rsp+20]
-add rsp,20
 mov rsi,[rsp+68]
 add rsp,50
 pop rdi
@@ -3530,7 +3624,6 @@ INJECT_speed_rewrite+01:
   db 0F 2F C8 72 05 0F 28 C2
 
 unregistersymbol(INJECT_speed_rewrite)
-unregistersymbol(INJECT_speed_rewrite)
 dealloc(newmem)
 unregistersymbol(INJECT_speed_rewrite_factors)
 dealloc(INJECT_speed_rewrite_factors)
@@ -3538,7 +3631,7 @@ dealloc(INJECT_speed_rewrite_factors)
 </AssemblerScript>
                 </CheatEntry>
                 <CheatEntry>
-                  <ID>0</ID>
+                  <ID>1174</ID>
                   <Description>"Kill switch"</Description>
                   <VariableType>Auto Assembler Script</VariableType>
                   <AssemblerScript>{$lua}
@@ -3579,39 +3672,6 @@ opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pa
 [DISABLE]
 opcode_inj.disable(script_ref)
 opcode_inj[script_ref]=nil
-</AssemblerScript>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>2</ID>
-                  <Description>"Direct towards goal"</Description>
-                  <VariableType>Auto Assembler Script</VariableType>
-                  <AssemblerScript>[ENABLE]
-
-aobscanmodule(INJECT_speed_towards_goal,PES2021.exe,08 00 00 00 0F 46 C2 C3 CC) // should be unique
-alloc(newmem,$1000,INJECT_speed_towards_goal)
-
-label(code)
-label(return)
-
-newmem:
-
-code:
-  mov eax,00000001
-  ret
-
-INJECT_speed_towards_goal+04:
-  jmp newmem
-return:
-registersymbol(INJECT_speed_towards_goal)
-
-[DISABLE]
-
-INJECT_speed_towards_goal+04:
-  db 0F 46 C2 C3 CC CC CC CC CC
-
-unregistersymbol(INJECT_speed_towards_goal)
-dealloc(newmem)
-
 </AssemblerScript>
                 </CheatEntry>
               </CheatEntries>
