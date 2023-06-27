@@ -3436,7 +3436,7 @@ opcode_inj[script_ref]=nil
           <CheatEntries>
             <CheatEntry>
               <ID>5</ID>
-              <Description>"Speed attrbute factor"</Description>
+              <Description>"Speed attribute factor"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>INJECT_speed_rewrite_factors+8</Address>
