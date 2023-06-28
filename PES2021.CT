@@ -3436,7 +3436,7 @@ opcode_inj[script_ref]=nil
           <CheatEntries>
             <CheatEntry>
               <ID>5</ID>
-              <Description>"Speed attribute factor"</Description>
+              <Description>"Stamina factor"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>INJECT_speed_rewrite_factors+8</Address>
@@ -3450,7 +3450,7 @@ opcode_inj[script_ref]=nil
             </CheatEntry>
             <CheatEntry>
               <ID>1337</ID>
-              <Description>"Stamina power (int)"</Description>
+              <Description>"Speed factor (int)"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>INJECT_speed_rewrite_factors+14</Address>
@@ -3584,10 +3584,10 @@ registersymbol(INJECT_speed_rewrite_factors)
 INJECT_speed_rewrite_factors:
 dd (float)0.01
 dd (float)100
-dd (float)5 //Default factor
+dd (float)1.462 //Stamina factor
 dd (float)0.85 //Minimum Speed
 dd (float)1
-dd 2 //Stamina power (int)
+dd 2 //Speed factor (int)
 
 label(code)
 label(code2)
@@ -3602,14 +3602,8 @@ cmp byte ptr [stamina_info_speed_get_stamina+1],01
 mov rbx,[rsp+60]
 jne code2
   movss xmm0,xmm6 //x0=attribute
-  mulss xmm0,[INJECT_speed_rewrite_factors]
-  movss xmm1,[INJECT_speed_rewrite_factors+8] //pow attribute
-  call ucrtbase.powf
-  movss xmm7,xmm0
-  movzx eax,byte ptr[stamina_info_speed_get_stamina]
-  cvtsi2ss xmm0, eax //int to float
-  mulss xmm0,[INJECT_speed_rewrite_factors] //stamina/100
-  mov esi,[INJECT_speed_rewrite_factors+14] //Stamina power
+  mulss xmm0,[INJECT_speed_rewrite_factors] //attribute/100
+  mov esi,[INJECT_speed_rewrite_factors+14] //Speed factor (int)
   cmp esi,1
   jle code_post_loop
   code_loop:
@@ -3618,6 +3612,14 @@ jne code2
     cmp esi,0
     jg code_loop
   code_post_loop:
+
+  movss xmm7,xmm0
+  movzx eax,byte ptr[stamina_info_speed_get_stamina]
+  cvtsi2ss xmm0, eax //int to float
+  mulss xmm0,[INJECT_speed_rewrite_factors] //stamina/100
+  movss xmm1,[INJECT_speed_rewrite_factors+8] //pow attribute
+  call ucrtbase.powf
+
   mulss xmm7,xmm0 //x7=x7*x0 || Adj_speed= Adj_attribute * Stamina
   movss  xmm2,[INJECT_speed_rewrite_factors+10] // x2=1
   movss  xmm8,[INJECT_speed_rewrite_factors+C] // x8=min
