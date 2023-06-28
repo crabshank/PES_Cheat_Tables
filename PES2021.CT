@@ -3585,9 +3585,9 @@ INJECT_speed_rewrite_factors:
 dd (float)0.01
 dd (float)100
 dd (float)5 //Default factor
-dd (float)0.7 //Minimum Speed
+dd (float)0.85 //Minimum Speed
 dd (float)1
-dd 4 //Stamina power (int)
+dd 2 //Stamina power (int)
 
 label(code)
 label(code2)
