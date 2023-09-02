@@ -68,7 +68,7 @@ end
 --scrpts[27].Active=false -- Random run angle
 --scrpts[28].Active=false -- Stamina
 --scrpts[29].Active=false -- Speed experiment (Uses 30-32 too)
---scrpts[32].Active=false -- Attack level experiment
+--scrpts[33].Active=false -- Attack level experiment
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
