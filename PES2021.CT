@@ -43,8 +43,8 @@ end
 --scrpts[24].Active=true -- Dribble (Uses 25 and 26 too)
 --scrpts[27].Active=true -- Random run angle
 --scrpts[28].Active=true -- Stamina
---scrpts[29].Active=true -- Speed experiment (Uses 28-30 too)
---scrpts[31].Active=true -- Attack level experiment
+--scrpts[29].Active=true -- Speed experiment (Uses 30-32 too)
+--scrpts[33].Active=true -- Attack level experiment
 
 [DISABLE]
 --scrpts[1].Active=false -- Left arm
@@ -67,8 +67,8 @@ end
 --scrpts[24].Active=false -- Dribble (Uses 25 and 26 too)
 --scrpts[27].Active=false -- Random run angle
 --scrpts[28].Active=false -- Stamina
---scrpts[29].Active=false -- Speed experiment (Uses 28-30 too)
---scrpts[31].Active=false -- Attack level experiment
+--scrpts[29].Active=false -- Speed experiment (Uses 30-32 too)
+--scrpts[32].Active=false -- Attack level experiment
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
