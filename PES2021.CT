@@ -44,6 +44,7 @@ end
 --scrpts[27].Active=true -- Random run angle
 --scrpts[28].Active=true -- Stamina
 --scrpts[29].Active=true -- Speed experiment (Uses 28-30 too)
+--scrpts[31].Active=true -- Attack level experiment
 
 [DISABLE]
 --scrpts[1].Active=false -- Left arm
@@ -67,6 +68,7 @@ end
 --scrpts[27].Active=false -- Random run angle
 --scrpts[28].Active=false -- Stamina
 --scrpts[29].Active=false -- Speed experiment (Uses 28-30 too)
+--scrpts[31].Active=false -- Attack level experiment
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -3048,7 +3050,7 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
                 </CheatEntry>
                 <CheatEntry>
-                  <ID>2</ID>
+                  <ID>1179</ID>
                   <Description>"Direct towards goal"</Description>
                   <VariableType>Auto Assembler Script</VariableType>
                   <AssemblerScript>[ENABLE]
@@ -3435,14 +3437,14 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>5</ID>
+              <ID>1180</ID>
               <Description>"Stamina factor"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>INJECT_speed_rewrite_factors+8</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>1179</ID>
+              <ID>1181</ID>
               <Description>"Minimum speed"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
@@ -3696,6 +3698,80 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
                 </CheatEntry>
               </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>1338</ID>
+          <Description>"Fix attack level experiment"</Description>
+          <Options moHideChildren="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+
+local vars={}
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
+local suffix='_atkLvlMod'
+
+vars.varis_1_n='set'..suffix
+local set_atk=2 --between 0 and 3
+vars.varis_1_d='dd '..set_atk
+vars.varis_1_size=4
+
+local module_names='PES2021.exe'
+local parts={{'.+',1,'jmpAddress'}}
+
+--COMPULSORY
+local newmem_name='newmem'..suffix
+local newmem_size='$1000'
+local script_ref='Attack_level_mod' --  opcode_inj[vars.script_ref] stores vars
+local inj_name='INJECT'..suffix
+local pattern='^%s*js%s+.+'
+local aobs={'78 36 83 F9 01 7E 2A 83 F9 02 74 1C 83 F9 03 74 0E 83 F9 04',0,0}
+local lookahead_n=20
+
+local inj_script=[[
+	define(${inj_name},${address_string})
+    registersymbol(${inj_name})
+    alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+
+    alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
+  registersymbol(${varis_1_n})
+  ${varis_1_n}:
+  ${varis_1_d}
+
+	label(code)
+	label(return)
+
+    ${newmem_name}:
+	code:
+    mov ecx,[${varis_1_n}]
+    mov [rbx+04],ecx
+    jmp ${jmpAddress}
+
+ ${inj_name}:
+	  jmp ${newmem_name}
+          ${post_jmp}
+          return:
+
+]]
+
+[ENABLE]
+
+opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+
+[DISABLE]
+
+opcode_inj.disable(script_ref)
+opcode_inj[script_ref]=nil
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>1339</ID>
+              <Description>"Set attack level (for both sides) [0-3]"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>set_atkLvlMod</Address>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
