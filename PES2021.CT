@@ -1122,9 +1122,11 @@ vars.varis_1_n='mult'..suffix
 
 local m1=1 -- mean
 local r1=0 -- range
+local m2=1 -- mean (ball)
+local r2=0 -- range (ball)
 
-vars.varis_1_d='dd (float)'..m1..'\ndd (float)'..r1
-vars.varis_1_size=8   --(u +0, r +4, 0.5 +8, 1+C)
+vars.varis_1_d='dd (float)'..m1..'\ndd (float)'..r1..'\ndd (float)'..m2..'\ndd (float)'..r2
+vars.varis_1_size=16
 
 local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
 local module_names='PES2021.exe'
@@ -1211,20 +1213,23 @@ local inj_script=[[
   ${varis_1_d}
 
   label(code)
+  label(code2)
+  label(code3)
   label(return)
+
 
   ${newmem_name}:
   code:
     push rcx
-    push rbx
+    push rdx
     push rax
 
     mov rax,[7FFE0014] //Windows internal clock
-    mov rbx,rax
-    shl rbx,6
+    mov rdx,rax
+    shl rdx,6
     mov rcx,rax
     shl rcx,18
-    imul rcx,rbx
+    imul rcx,rdx
     imul rcx,rax
     shr rcx,20 //ecx has the number
     ${push_xmm}(1,2,3,4,5)
@@ -1268,8 +1273,19 @@ local inj_script=[[
         addss ${xmm~1}, ${xmm~5} //  x~1 = b+ ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x) || FINAL!
     ${stack_pop}(10)
 
-    movss  ${xmm~4},  [${varis_1_n}+4]
+    mov rax,[inv_hgt_mult]
+    cmp rax,rbx
+
+    jne code2
+    movss  ${xmm~4},  [${varis_1_n}+4] // NO BALL!
     movss  ${xmm~3},  [${varis_1_n}] //u
+    jmp code3
+
+    code2:
+    movss  ${xmm~4},  [${varis_1_n}+C] // BALL!
+    movss  ${xmm~3},  [${varis_1_n}+8] //u
+
+    code3:
     subss  ${xmm~3},  ${xmm~4}
     mulss  ${xmm~4},  ${xmm~1} //mul by adj_x
     addss  ${xmm~4},  ${xmm~4}
@@ -1279,7 +1295,7 @@ local inj_script=[[
 	mulss ${x_reg},${xmm~4}
     ${pop_xmm}(1,2,3,4,5)
     pop rax
-    pop rbx
+    pop rdx
     pop rcx
     ${og_instruction}
 
@@ -1293,26 +1309,74 @@ local inj_script=[[
 ]]
 
 [ENABLE]
+local sc1=[[aobscanmodule(INJECT_hm2,PES2021.exe,F3 0F 10 4A 28 F3 0F 11 04 24 F3 0F 10 42 24 F3 0F 11 44 24 08) // should be unique
+alloc(newmem2,$1000,INJECT_hm2)
+
+label(code2)
+label(return2)
+
+alloc(inv_hgt_mult, 8, INJECT_hm2)
+registersymbol(inv_hgt_mult)
+inv_hgt_mult:
+db 00 00 00 00 00 00 00 00
+
+newmem2:
+
+code2:
+  movss xmm1,[rdx+28]
+  mov [inv_hgt_mult],rdi
+  jmp return2
+
+INJECT_hm2:
+  jmp newmem2
+return2:
+registersymbol(INJECT_hm2)]]
+autoAssemble(sc1)
+
 opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
 
 [DISABLE]
+local sc2=[[unregistersymbol(inv_hgt_mult)
+dealloc(inv_hgt_mult)
+
+INJECT_hm2:
+  db F3 0F 10 4A 28 F3 0F 11 04 24 F3 0F 10 42 24 F3 0F 11 44 24 08
+
+unregistersymbol(INJECT_hm2)
+dealloc(newmem2)]]
+autoAssemble(sc2)
+
 opcode_inj.disable(script_ref)
 opcode_inj[script_ref]=nil
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>687</ID>
-              <Description>"Speed mean"</Description>
+              <ID>1340</ID>
+              <Description>"Speed mean (no ball)"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_5</Address>
             </CheatEntry>
             <CheatEntry>
               <ID>688</ID>
-              <Description>"Speed range"</Description>
+              <Description>"Speed range (no ball)"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>mult_5+4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>687</ID>
+              <Description>"Speed mean"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>mult_5+8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1341</ID>
+              <Description>"Speed range"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>mult_5+C</Address>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
