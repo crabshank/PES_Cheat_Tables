@@ -2359,7 +2359,7 @@ local vars={}
 local suffix='_diffMod'
 
 vars.varis_1_n='set_diff'..suffix
-local set_diff=7 --between 0 and 7
+local set_diff=6 --between 0 and 6
 vars.varis_1_d='dd '..set_diff
 vars.varis_1_size=4
 
@@ -2373,7 +2373,14 @@ local script_ref='Difficulty_mod' --  opcode_inj[vars.script_ref] stores vars
 local inj_name='INJECT'..suffix
 local pattern='^%s*test%s+ecx%s*,%s*ecx'
 local aobs={'0F 48 C8 49 8B C0',10,11}
-local lookahead_n=20
+local lookahead_n=40
+
+vars.post={}
+
+vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that are not 'x_reg'
+ vars.lea1=vars.lookaheads.instructions[8]
+ return vars --IMPORTANT!
+end
 
 local inj_script=[[
 	define(${inj_name},${address_string})
@@ -2386,14 +2393,41 @@ local inj_script=[[
   ${varis_1_d}
 
 	label(code)
-	label(return)
+    label(code2)
+	//label(return)
 
     ${newmem_name}:
 	code:
-    mov ecx,[${varis_1_n}]
-    ${og_instruction}
-    ${overwritten}
-    jmp return
+
+    //${og_instruction}
+    push r10
+    push r11
+    //cmp r9d,1F4
+    //jne code2 //skip if CPU
+    cmp rax,40
+    je code2
+    cmp rax,A0
+    je code2
+    cmp rax,E0
+    je code2
+    cmp rax,180
+    je code2
+    cmp rax,1E0
+    je code2
+    cmp rax,200
+    je code2
+    mov ecx,[${varis_1_n}] //equalise
+    code2:
+    lea r10,[rax-20]
+    lea r11,[ecx*4]
+    add r10,r11
+    ${lea1}
+    movss xmm0,[r10+r8]
+    pop r10
+    pop r11
+    ret
+    //${overwritten}
+    //jmp return
 
  ${inj_name}:
 	  jmp ${newmem_name}
@@ -2402,19 +2436,23 @@ local inj_script=[[
 
 ]]
 
+
 [ENABLE]
 
 opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+
 
 [DISABLE]
 
 opcode_inj.disable(script_ref)
 opcode_inj[script_ref]=nil
+
+
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
               <ID>726</ID>
-              <Description>"Set difficulty level [0-7; 5 (Superstar)]"</Description>
+              <Description>"Set difficulty level [0-6; 5 (Superstar)]"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>set_diff_diffMod</Address>
