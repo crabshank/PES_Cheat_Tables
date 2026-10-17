@@ -123,11 +123,15 @@ local function dd_hex(vals, names)
 end
 
 vars.jitC        = 'jitConst'..SUFFIX
-vars.jitC_size   = 16      -- 4 dwords
-vars.jitC_d = [[dd $34000000        // 2^-23
-dd $3F800000        // 1.0f
+vars.jitC_size = '$20'
+vars.jitC_d = [[dd 34000000        // 2^-23
+dd 3F800000        // 1.0f
 dd (float)]]..EPS..[[   // epsilon
-dd $7FFFFFFF        // abs mask (sign-bit clear) ]]
+dd 0               // pad
+dd 7FFFFFFF        // abs mask, x4 so the
+dd 7FFFFFFF        //  16-byte load at +10
+dd 7FFFFFFF        //  is fully in-bounds
+dd 7FFFFFFF ]]
 
 vars.offsC       = 'boneOffs'..SUFFIX
 vars.offsC_size  = string.format('$%X', 4*#BONE_OFFSETS)
@@ -253,7 +257,7 @@ define(${inj_name},${address_string})
 
       // ---- xorshift32, Marsaglia (13,17,5) -- 0xD, 0x11, 0x5 are HEX ----------- //
       mov   ecx, eax
-      shl   ecx, D
+      shl   ecx, 0D
       xor   eax, ecx
       mov   ecx, eax
       shr   ecx, 11
@@ -275,7 +279,7 @@ define(${inj_name},${address_string})
       subss  ${xmm~1}, [${jitC}+4]      // - 1       -&gt; [-1,1)
 
       movaps ${xmm~2}, ${xmm~1}
-      movups ${xmm~3}, [${jitC}+C]    // unaligned load of the abs mask
+      movups ${xmm~3}, [${jitC}+10]    // 0x10..0x1F, all defined
       andps  ${xmm~2}, ${xmm~3}         // |v|   (NOT andps reg,[mem]: would fault)
       mulss  ${xmm~1}, ${xmm~2}         // v*|v| = sign(v)*v^2
 
