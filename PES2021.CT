@@ -23,1088 +23,312 @@ end
 
 [ENABLE]
 -- UNCOMMENT ANY UNWANTED SCRIPTS
---scrpts[1].Active=true -- Left arm
---scrpts[2].Active=true -- Twist
---scrpts[3].Active=true -- Legs dist
---scrpts[4].Active=true -- Animation change
---scrpts[5].Active=true -- Animation speed
---scrpts[6].Active=true -- Pre-kick rush
---scrpts[7].Active=true -- Broadcast focus
---scrpts[8].Active=true -- Angle hijack (stadium)
---scrpts[9].Active=true -- Smoother anim
---scrpts[10].Active=true -- Game speed
---scrpts[11].Active=true -- Height mod (Uses 12 and 13 too)
---scrpts[14].Active=true -- Body Size
---scrpts[15].Active=true -- Camera mod (Uses 16 and 17 too)
---scrpts[18].Active=true -- Difficulty fix
---scrpts[19].Active=true -- Additional time
---scrpts[20].Active=true -- New broadcast camera (Uses 21 and 22 too)
---scrpts[23].Active=true -- Twist right
---scrpts[24].Active=true -- Dribble (Uses 25 and 26 too)
---scrpts[27].Active=true -- Random run angle
---scrpts[28].Active=true -- Stamina
---scrpts[29].Active=true -- Speed experiment (Uses 30-32 too)
---scrpts[33].Active=true -- Attack level experiment
-
+--scrpts[1].Active=true -- Random animations experiment
+--scrpts[2].Active=true -- Animation speed
+--scrpts[3].Active=true -- Pre-kick rush
+--scrpts[4].Active=true -- Broadcast focus
+--scrpts[5].Active=true -- Angle hijack (stadium)
+--scrpts[6].Active=true -- Smoother anim
+--scrpts[7].Active=true -- Game speed
+--scrpts[8].Active=true -- Height mod (Uses 9 and 10 too)
+--scrpts[11].Active=true -- Body Size
+--scrpts[12].Active=true -- Camera mod (Uses 13 and 14 too)
+--scrpts[15].Active=true -- Difficulty fix
+--scrpts[16].Active=true -- Additional time
+--scrpts[17].Active=true -- New broadcast camera (Uses 18 and 19 too)
+--scrpts[20].Active=true -- Dribble (Uses 21 and 22 too)
+--scrpts[23].Active=true -- Random run angle
+--scrpts[24].Active=true -- Stamina
+--scrpts[25].Active=true -- Speed experiment (Uses 26-28 too)
+--scrpts[29].Active=true -- Attack level experiment
 [DISABLE]
---scrpts[1].Active=false -- Left arm
---scrpts[2].Active=false -- Twist
---scrpts[3].Active=false -- Legs dist
---scrpts[4].Active=false -- Animation change
---scrpts[5].Active=false -- Animation speed
---scrpts[6].Active=false -- Pre-kick rush
---scrpts[7].Active=false -- Broadcast focus
---scrpts[8].Active=false -- Angle hijack (stadium)
---scrpts[9].Active=false -- Smoother anim
---scrpts[10].Active=false -- Game speed
---scrpts[11].Active=false -- Height mod (Uses 12 and 13 too)
---scrpts[14].Active=false -- Body Size
---scrpts[15].Active=false -- Camera mod (Uses 16 and 17 too)
---scrpts[18].Active=false -- Difficulty fix
---scrpts[19].Active=false -- Additional time
---scrpts[20].Active=false -- New broadcast camera (Uses 21 and 22 too)
---scrpts[23].Active=false -- Twist right
---scrpts[24].Active=false -- Dribble (Uses 25 and 26 too)
---scrpts[27].Active=false -- Random run angle
---scrpts[28].Active=false -- Stamina
---scrpts[29].Active=false -- Speed experiment (Uses 30-32 too)
---scrpts[33].Active=false -- Attack level experiment
+--scrpts[1].Active=false -- Random animations experiment
+--scrpts[2].Active=false -- Animation speed
+--scrpts[3].Active=false -- Pre-kick rush
+--scrpts[4].Active=false -- Broadcast focus
+--scrpts[5].Active=false -- Angle hijack (stadium)
+--scrpts[6].Active=false -- Smoother anim
+--scrpts[7].Active=false -- Game speed
+--scrpts[8].Active=false -- Height mod (Uses 9 and 10 too)
+--scrpts[11].Active=false -- Body Size
+--scrpts[12].Active=false -- Camera mod (Uses 13 and 14 too)
+--scrpts[15].Active=false -- Difficulty fix
+--scrpts[16].Active=false -- Additional time
+--scrpts[17].Active=false -- New broadcast camera (Uses 18 and 19 too)
+--scrpts[20].Active=false -- Dribble (Uses 21 and 22 too)
+--scrpts[23].Active=false -- Random run angle
+--scrpts[24].Active=false -- Stamina
+--scrpts[25].Active=false -- Speed experiment (Uses 26-28 too)
+--scrpts[29].Active=false -- Attack level experiment
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
-          <ID>676</ID>
-          <Description>"Left arm"</Description>
-          <Options moHideChildren="1"/>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>{$lua}
-if syntaxcheck then return end
-local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
-local suffix='_la'
-vars.varis_1_n='mult'..suffix
-
-local m1=1 -- mean
-local r1=0 -- range
-
-vars.varis_1_d='dd (float)'..m1..'\ndd (float)'..r1
-vars.varis_1_size=8
-local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
-local module_names='PES2021.exe'
-
-vars.post={}
-
-vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that are not 'x_reg'
- local xn=tonumber(vars.xreg_n)
- local c=1
- for i=0,15 do
-  if xn~=i then
-   vars['xmm~'..c]='xmm'..i
-   c=c+1
-  end
- end
- return vars --IMPORTANT!
-end
-
--- token functions (below) run after ['post'] functions
-vars['push_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
-  local n = select('#', ...) -- number of args
-  local s=16*n
-  local t={}
-  local p=string.format('sub rsp, %X',s)
-  table.insert(t,p)
-  local args = {...}
-  for _, v in pairs(args) do
-      s=s-16
-      local r=vars['xmm~'..v]
-      if v=='0' then
-	     r=vars['x_reg']
-      end
-      p=string.format('movdqu [rsp+%X],%s',s,r)
-      table.insert(t,p)
-  end
-  return table.concat(t,'\n')
-end
-
-vars['pop_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
-  local n = select('#', ...) -- number of args
-  local s=16*n
-  local s_og=s
-  local t={}
-  local args = {...}
-  local p=''
-  for _, v in pairs(args) do
-      s=s-16
-      local r=vars['xmm~'..v]
-      if v=='0' then
-      	r=vars['x_reg']
-      end
-      p=string.format('movdqu %s,[rsp+%X]',r,s)
-      table.insert(t,p)
-  end
-  p=string.format('add rsp, %X',s_og)
-  table.insert(t,p)
-  return table.concat(t,'\n')
-end
-
-vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-		return 'sub rsp, ' .. n
-end
-
-vars['stack_pop']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-		return 'add rsp, ' .. n
-end
-
---COMPULSORY
-local newmem_name='newmem'..suffix
-local newmem_size='$1000'
-local script_ref='Left_arm' --  opcode_inj[vars.script_ref] stores vars
-local inj_name='INJECT'..suffix
-local pattern='^%s*mov.+%s*xmm%d+,%s*%[[^%]]+%]'
-local aobs={'48 89 44 24 20 C7 44 24 28 FF FF FF FF 89 44 24 2C',-24,0}
-local lookahead_n=32
-
-local inj_script=[[
-define(${inj_name},${address_string})
-  registersymbol(${inj_name})
-  alloc(${newmem_name}, ${newmem_size}, ${inj_name})
-
-  alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
-  registersymbol(${varis_1_n})
-  ${varis_1_n}:
-  ${varis_1_d}
-
-  label(code)
-  label(return)
-
-  ${newmem_name}:
-  code:
-    push rcx
-    push rbx
-    push rax
-
-    mov rax,[7FFE0014] //Windows internal clock
-    mov rbx,rax
-    shl rbx,6
-    mov rcx,rax
-    shl rcx,18
-    imul rcx,rbx
-    imul rcx,rax
-    shr rcx,20 //ecx has the number
- ${push_xmm}(1,2,3,4,5)
-    ${push_xmm}(0)
-
-    cvtsi2ss ${x_reg}, rcx
-    cvtss2sd ${x_reg}, ${x_reg}
-
-    ${stack_push}(8)
-        mov [rsp],FFE00000
-        mov [rsp+4],41EFFFFF //move max_float into stack
-        divsd ${x_reg}, [rsp] //div by max float (in double precision)
-    ${stack_pop}(8)
-
-    cvtsd2ss ${x_reg}, ${x_reg} //random float in ${x_reg}
-
-    cvtss2si ecx, ${x_reg}  //b as int
-    cvtsi2ss  ${xmm~5}, ecx // b
-
-    ${stack_push}(20)
-        mov [rsp], C0000000 //-2
-        mov [rsp+4], 3F800000 //1
-        mov [rsp+8], 40000000 //2
-        mov [rsp+C], 3F3504F3 //sqHalf
-
-        movss ${xmm~1},  [rsp+C] //sqHalf
-        movss ${xmm~2}, [rsp] //-2
-        movss ${xmm~3}, [rsp+4] //1
-        movss ${xmm~4}, [rsp+8] //2
-
-        mulss ${xmm~4}, ${xmm~5} //x~4=b*2
-        subss ${xmm~3}, ${xmm~4} // x~3=1-b*2
-        mulss ${xmm~1}, ${xmm~3} // x~1 = ( sqHalf* (1-b*2) )
-        mulss ${xmm~2}, ${xmm~5} //x~2 = -2*b
-        mulss ${xmm~2}, ${x_reg} // x~2=(-2*b)*x
-        addss ${xmm~2}, ${xmm~5}//x~2=(-2*b*x)+b
-        addss ${xmm~2}, ${x_reg} // x~2=(-2*b*x)+b+x
-        sqrtss ${xmm~2}, ${xmm~2} // // x~2=sqrt(-2*b*x+b+x)
-        mulss  ${xmm~1},${xmm~2} // x~1 = ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x)
-        addss ${xmm~1}, ${xmm~5} //  x~1 = b+ ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x) || FINAL!
-
-        mov [rsp+10], 3F800000 //1
-        mov [rsp+14], 3F800000 //1
-        mov [rsp+18], 3F800000 //1
-        mov [rsp+1C], 3F800000 //1
-
-        movups ${xmm~4}, [rsp+10] //x~4={1,1,1,1}
-    ${stack_pop}(20)
-
-    mulss  ${xmm~4},  [${varis_1_n}+4] //{r,1,1,1}
-    movss  ${xmm~3},  [${varis_1_n}] //u
-    subss  ${xmm~3},  ${xmm~4}
-    mulss  ${xmm~4},  ${xmm~1} //mul by adj_x
-    addss  ${xmm~4},  ${xmm~4}
-    addss  ${xmm~4},  ${xmm~3} //FINAL MULT in x~4 !
-    pslldq ${xmm~4},8 //(?,r,~,~)
-    ${stack_push}(20)
-        movdqu [rsp], ${xmm~4}
-        mov [rsp], 3F800000 //1
-        mov [rsp+4], 3F800000 //1
-        mov [rsp+C], 3F800000 //1
-        movups ${xmm~4}, [rsp] ////(1,r,r,1)
-    ${stack_pop}(20)
-
-    ${pop_xmm}(0)
-	${og_instruction}  //loads 4 x floats into ${x_reg}
-	mulps ${x_reg},${xmm~4}
-
-    ${pop_xmm}(1,2,3,4,5)
-    pop rax
-    pop rbx
-    pop rcx
-      ${overwritten}
-	  jmp return
-
-	${inj_name}:
-	  jmp ${newmem_name}
-	  ${post_jmp}
-      return:
-]]
-
-[ENABLE]
-opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
-
-[DISABLE]
-opcode_inj.disable(script_ref)
-opcode_inj[script_ref]=nil
-</AssemblerScript>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>642</ID>
-              <Description>"Left arm mean"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>mult_la</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>643</ID>
-              <Description>"Left arm range"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>mult_la+4</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>644</ID>
-          <Description>"Twist (left) + Right arm"</Description>
-          <Options moHideChildren="1"/>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>{$lua}
-if syntaxcheck then return end
-local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
-local suffix='_ra'
-vars.varis_1_n='mult'..suffix
-
-local m1=1 -- Right arm mean
-local r1=0 -- Right arm range
-local m2=1 -- Twist (left) mean
-local r2=0 -- Twist (left) range
-
-vars.varis_1_d='dd (float)'..m1..'\ndd (float)'..r1..'\ndd (float)'..m2..'\ndd (float)'..r2
-vars.varis_1_size=16
-local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
-local module_names='PES2021.exe'
-vars.post={}
-
-vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that are not 'x_reg'
- local xn=tonumber(vars.xreg_n)
- local c=1
- for i=0,15 do
-  if xn~=i then
-   vars['xmm~'..c]='xmm'..i
-   c=c+1
-  end
- end
- return vars --IMPORTANT!
-end
-
--- token functions (below) run after ['post'] functions
-vars['push_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
-  local n = select('#', ...) -- number of args
-  local s=16*n
-  local t={}
-  local p=string.format('sub rsp, %X',s)
-  table.insert(t,p)
-  local args = {...}
-  for _, v in pairs(args) do
-      s=s-16
-      local r=vars['xmm~'..v]
-      if v=='0' then
-	     r=vars['x_reg']
-      end
-      p=string.format('movdqu [rsp+%X],%s',s,r)
-      table.insert(t,p)
-  end
-  return table.concat(t,'\n')
-end
-
-vars['pop_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
-  local n = select('#', ...) -- number of args
-  local s=16*n
-  local s_og=s
-  local t={}
-  local args = {...}
-  local p=''
-  for _, v in pairs(args) do
-      s=s-16
-      local r=vars['xmm~'..v]
-      if v=='0' then
-      	r=vars['x_reg']
-      end
-      p=string.format('movdqu %s,[rsp+%X]',r,s)
-      table.insert(t,p)
-  end
-  p=string.format('add rsp, %X',s_og)
-  table.insert(t,p)
-  return table.concat(t,'\n')
-end
-
-vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-		return 'sub rsp, ' .. n
-end
-
-vars['stack_pop']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-		return 'add rsp, ' .. n
-end
-
---COMPULSORY
-local newmem_name='newmem'..suffix
-local newmem_size='$1000'
-local script_ref='Twist_left_right_arm' --  opcode_inj[vars.script_ref] stores vars
-local inj_name='INJECT'..suffix
-local pattern='^%s*mov.+%s*xmm%d+,%s*%[[^%]]+%]'
-local aobs={'41 0F 28 C0 48 8B BC 24 88 00 00 00 41 8B CB',-32,0}
-local lookahead_n=32
-
-local inj_script=[[
-	define(${inj_name},${address_string})
-    registersymbol(${inj_name})
-    alloc(${newmem_name}, ${newmem_size}, ${inj_name})
-	alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
-    registersymbol(${varis_1_n})
-	${varis_1_n}:
-	${varis_1_d}
-
-	label(code)
-	label(return)
-
-	${newmem_name}:
-	code:
-    ${push_xmm}(6)
-    push rcx
-    push rbx
-    push rax
-    ${push_xmm}(8,7,4,1,2,3,5,0)
-
-${stack_push}(18)
-    mov rax,[7FFE0014] //Windows internal clock
-    mov rbx,rax
-    shl rbx,6
-    mov rcx,rax
-    shl rcx,18
-    imul rcx,rbx
-    imul rcx,rax
-    shr rcx,20 //ecx has the number
-
-    cvtsi2ss ${xmm~7}, rcx
-    cvtss2sd ${xmm~7}, ${xmm~7}
-
-        mov [rsp],FFE00000
-        mov [rsp+4],41EFFFFF //move max_float into stack
-        divsd ${xmm~7}, [rsp] //div by max float (in double precision)
-
-
-    cvtsd2ss ${xmm~7}, ${xmm~7} //random float in ${xmm~7}
-
-    cvtss2si ecx, ${xmm~7}  //b as int
-    cvtsi2ss  ${xmm~8}, ecx // b
-
-    movss ${x_reg},${xmm~7}
-    movss ${xmm~5},${xmm~8}
-
-    //ROUND 2
-
-    mov rbx,[7FFE0014] //Windows internal clock
-    mov rbx,rax
-    shl rbx,6
-    mov rcx,rax
-    shl rcx,18
-    imul rcx,rbx
-    imul rcx,rax
-    shr rcx,20 //ecx has the number
-
-    cvtsi2ss ${xmm~7}, rcx
-    cvtss2sd ${xmm~7}, ${xmm~7}
-
-        divsd ${xmm~7}, [rsp] //div by max float (in double precision)
-
-    cvtsd2ss ${xmm~7}, ${xmm~7} //random float in ${xmm~7}
-
-    cvtss2si ecx, ${xmm~7}  //b as int
-    cvtsi2ss  ${xmm~8}, ecx // b
-
-    pslldq ${x_reg},4
-    movss ${x_reg},${xmm~7}
-     pslldq ${xmm~5},4
-    movss ${xmm~5},${xmm~8}
-
-        mov [rsp+8], C0000000 //-2
-        mov [rsp+C], 3F800000 //1
-        mov [rsp+10], 40000000 //2
-        mov [rsp+14], 3F3504F3 //sqHalf
-
-        movss ${xmm~1},  [rsp+14] //sqHalf
-        shufps ${xmm~1},${xmm~1},0 // every element := [0]
-        movss ${xmm~2}, [rsp+8] //-2
-        shufps ${xmm~2},${xmm~2},0 // every element := [0]
-        movss ${xmm~3}, [rsp+C] //1
-        shufps ${xmm~3},${xmm~3},0 // every element := [0]
-        movss ${xmm~4}, [rsp+10] //2
-        shufps ${xmm~4},${xmm~4},0 // every element := [0]
-
-        mulps ${xmm~4}, ${xmm~5} //x~4=b*2
-        subps ${xmm~3}, ${xmm~4} // x~3=1-b*2
-        mulps ${xmm~1}, ${xmm~3} // x~1 = ( sqHalf* (1-b*2) )
-        mulps ${xmm~2}, ${xmm~5} //x~2 = -2*b
-        mulps ${xmm~2}, ${x_reg} // x~2=(-2*b)*x
-        addps ${xmm~2}, ${xmm~5}//x~2=(-2*b*x)+b
-        addps ${xmm~2}, ${x_reg} // x~2=(-2*b*x)+b+x
-        sqrtps ${xmm~2}, ${xmm~2} // // x~2=sqrt(-2*b*x+b+x)
-        mulps  ${xmm~1},${xmm~2} // x~1 = ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x)
-        addps ${xmm~1}, ${xmm~5} //  x~1 = b+ ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x) || FINAL!
-
-
-	movss ${xmm~5}, [${varis_1_n}+C]
-    movss ${xmm~4}, ${xmm~5}
-	pslldq ${xmm~4},4
-	movss ${xmm~5}, [${varis_1_n}+4]
-    movss ${xmm~4}, ${xmm~5}
-
-
-    movss ${xmm~5}, [${varis_1_n}+8]
-    movss ${xmm~3}, ${xmm~5}
-	pslldq ${xmm~3},4
-	movss ${xmm~5}, [${varis_1_n}]
-    movss ${xmm~3}, ${xmm~5}
-
-    subps  ${xmm~3},  ${xmm~4}
-    mulps  ${xmm~4},  ${xmm~1} //mul by adj_x
-    addps  ${xmm~4},  ${xmm~4}
-    addps  ${xmm~4},  ${xmm~3} //FINAL MULTS in x~4 !
-
-    movups ${xmm~6}, ${xmm~4} // (~,~,r,r)
-    pslldq ${xmm~6},4 //(~,r,r,~)
-
-        movdqu [rsp], ${xmm~6}
-        mov [rsp], 3F800000 //1
-        mov [rsp+C], 3F800000 //1
-        movups ${xmm~6}, [rsp] ////(1,r,r,1)
-    ${stack_pop}(18)
-
-    ${pop_xmm}(8,7,4,1,2,3,5,0)
-    pop rax
-    pop rbx
-    pop rcx
-      ${og_instruction}
-      mulps ${x_reg},${xmm~6}
-      ${pop_xmm}(6)
-      ${overwritten}
-	  jmp return
-
-	${inj_name}:
-	  jmp ${newmem_name}
-	  ${post_jmp}
-	return:
-]]
-
-[ENABLE]
-opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
-
-[DISABLE]
-opcode_inj.disable(script_ref)
-opcode_inj[script_ref]=nil
-</AssemblerScript>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>677</ID>
-              <Description>"Right arm mean"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>mult_ra</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>678</ID>
-              <Description>"Right arm range"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>mult_ra+4</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>647</ID>
-              <Description>"Twist (left) mean"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>mult_ra+8</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>648</ID>
-              <Description>"Twist (left) range"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>mult_ra+C</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>649</ID>
-          <Description>"Legs dist from body"</Description>
-          <Options moHideChildren="1"/>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>{$lua}
-if syntaxcheck then return end
-local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
-local suffix='_d'
-
-vars.varis_1_n='mult'..suffix
-
-local m1=1 -- mean
-local r1=0 -- range
-
-vars.varis_1_d='dd (float)'..m1..'\ndd (float)'..r1
-vars.varis_1_size=8   --(u +0, r +4)
-
-vars.push_xmm='sub rsp,10\nmovdqu [rsp],'
-vars.pop_xmm=',[rsp]\nadd rsp,10'
-
-local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
-local module_names='PES2021.exe'
-vars.post={}
-
-vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that are not 'x_reg'
- local xn=tonumber(vars.xreg_n)
- local c=1
- for i=0,15 do
-  if xn~=i then
-   vars['xmm~'..c]='xmm'..i
-   c=c+1
-  end
- end
- return vars --IMPORTANT!
-end
-
--- token functions (below) run after ['post'] functions
-vars['push_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
-  local n = select('#', ...) -- number of args
-  local s=16*n
-  local t={}
-  local p=string.format('sub rsp, %X',s)
-  table.insert(t,p)
-  local args = {...}
-  for _, v in pairs(args) do
-      s=s-16
-      local r=vars['xmm~'..v]
-      if v=='0' then
-	     r=vars['x_reg']
-      end
-      p=string.format('movdqu [rsp+%X],%s',s,r)
-      table.insert(t,p)
-  end
-  return table.concat(t,'\n')
-end
-
-vars['pop_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
-  local n = select('#', ...) -- number of args
-  local s=16*n
-  local s_og=s
-  local t={}
-  local args = {...}
-  local p=''
-  for _, v in pairs(args) do
-      s=s-16
-      local r=vars['xmm~'..v]
-      if v=='0' then
-      	r=vars['x_reg']
-      end
-      p=string.format('movdqu %s,[rsp+%X]',r,s)
-      table.insert(t,p)
-  end
-  p=string.format('add rsp, %X',s_og)
-  table.insert(t,p)
-  return table.concat(t,'\n')
-end
-
-vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-		return 'sub rsp, ' .. n
-end
-
-vars['stack_pop']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-		return 'add rsp, ' .. n
-end
-
---COMPULSORY
-local newmem_name='newmem'..suffix
-local newmem_size='$1000'
-local script_ref='Legs_dist_body' --  opcode_inj[vars.script_ref] stores vars
-local inj_name='INJECT'..suffix
-local pattern='^%s*mov.+%s*xmm%d+,%s*%[[^%]]+%]'
-local aobs={'FF FF FF FF 48 89 44 24 24 89 44 24 2C 0F 28 4C 24 20 0F 54 C1',-32,0}
-local lookahead_n=32
-
-local inj_script=[[
-	  define(${inj_name},${address_string})
-  registersymbol(${inj_name})
-  alloc(${newmem_name}, ${newmem_size}, ${inj_name})
-
-  alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
-  registersymbol(${varis_1_n})
-  ${varis_1_n}:
-  ${varis_1_d}
-
-  label(code)
-  label(return)
-
-  ${newmem_name}:
-  code:
-    push rcx
-    push rbx
-    push rax
-
-    mov rax,[7FFE0014] //Windows internal clock
-    mov rbx,rax
-    shl rbx,6
-    mov rcx,rax
-    shl rcx,18
-    imul rcx,rbx
-    imul rcx,rax
-    shr rcx,20 //ecx has the number
-    ${push_xmm}(1,2,3,4,5)
-    ${push_xmm}(0)
-
-
-    cvtsi2ss ${x_reg}, rcx
-    cvtss2sd ${x_reg}, ${x_reg}
-
-    ${stack_push}(8)
-        mov [rsp],FFE00000
-        mov [rsp+4],41EFFFFF //move max_float into stack
-        divsd ${x_reg}, [rsp] //div by max float (in double precision)
-    ${stack_pop}(8)
-
-    cvtsd2ss ${x_reg}, ${x_reg} //random float in ${x_reg}
-
-    cvtss2si ecx, ${x_reg}  //b as int
-    cvtsi2ss  ${xmm~5}, ecx // b
-
-    ${stack_push}(20)
-        mov [rsp], C0000000 //-2
-        mov [rsp+4], 3F800000 //1
-        mov [rsp+8], 40000000 //2
-        mov [rsp+C], 3F3504F3 //sqHalf
-
-        movss ${xmm~1},  [rsp+C] //sqHalf
-        movss ${xmm~2}, [rsp] //-2
-        movss ${xmm~3}, [rsp+4] //1
-        movss ${xmm~4}, [rsp+8] //2
-
-        mulss ${xmm~4}, ${xmm~5} //x~4=b*2
-        subss ${xmm~3}, ${xmm~4} // x~3=1-b*2
-        mulss ${xmm~1}, ${xmm~3} // x~1 = ( sqHalf* (1-b*2) )
-        mulss ${xmm~2}, ${xmm~5} //x~2 = -2*b
-        mulss ${xmm~2}, ${x_reg} // x~2=(-2*b)*x
-        addss ${xmm~2}, ${xmm~5}//x~2=(-2*b*x)+b
-        addss ${xmm~2}, ${x_reg} // x~2=(-2*b*x)+b+x
-        sqrtss ${xmm~2}, ${xmm~2} // // x~2=sqrt(-2*b*x+b+x)
-        mulss  ${xmm~1},${xmm~2} // x~1 = ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x)
-        addss ${xmm~1}, ${xmm~5} //  x~1 = b+ ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x) || FINAL!
-
-        mov [rsp+10], 3F800000 //1
-        mov [rsp+14], 3F800000 //1
-        mov [rsp+18], 3F800000 //1
-        mov [rsp+1C], 3F800000 //1
-
-        movups ${xmm~4}, [rsp+10] //x~4={1,1,1,1}
-    ${stack_pop}(20)
-
-    mulss  ${xmm~4},  [${varis_1_n}+4] //{r,1,1,1}
-    movss  ${xmm~3},  [${varis_1_n}] //u
-    subss  ${xmm~3},  ${xmm~4}
-    mulss  ${xmm~4},  ${xmm~1} //mul by adj_x
-    addss  ${xmm~4},  ${xmm~4}
-    addss  ${xmm~4},  ${xmm~3} //FINAL MULT in x~4 !
-
-    ${pop_xmm}(0)
-	${og_instruction}  //loads 4 x floats into ${x_reg}
-	mulps ${x_reg},${xmm~4}
-
-    ${pop_xmm}(1,2,3,4,5)
-    pop rax
-    pop rbx
-    pop rcx
-      ${overwritten}
-	  jmp return
-
-	${inj_name}:
-	  jmp ${newmem_name}
-	  ${post_jmp}
-	return:
-]]
-
-[ENABLE]
-opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
-
-[DISABLE]
-opcode_inj.disable(script_ref)
-opcode_inj[script_ref]=nil
-</AssemblerScript>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>650</ID>
-              <Description>"Distance mean"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>mult_d</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>651</ID>
-              <Description>"Distance range"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>mult_d+4</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
           <ID>679</ID>
-          <Description>"Animation change"</Description>
-          <Options moHideChildren="1"/>
+          <Description>"Random animations experiment"</Description>
+          <Options moHideChildren="1" moDeactivateChildrenAsWell="1"/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>{$lua}
 if syntaxcheck then return end
-local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
-local suffix='_anim'
-vars.varis_1_n='mult_1'
+-- ============================================================================
 
-local m1=1 -- Arms in/out mean
-local r1=0 -- Arms in/out range
-local m2=1 -- Arms dist mean
-local r2=0 -- Arms dist range
-local m3=1 -- Lean avg
-local r3=0 -- Lean range
+-- ---- KNOBS -----------------------------------------------------------------
+local SUFFIX       = '_fj'
+local EPS          = 0.06     -- jitter bound, RADIANS (HALF-angle).
+                             --   visible rotation change = 2*EPS.
+local MODULE_NAMES = 'PES2021.exe'
+local LOOKAHEAD_N  = 32
 
-vars.varis_1_d='dd (float)'..m1..'\ndd (float)'..r1..'\ndd (float)'..m2..'\ndd (float)'..r2..'\ndd (float)'..m3..'\ndd (float)'..r3
-vars.varis_1_size=24
-local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
-local module_names='PES2021.exe'
-vars.post={}
+-- Bone table
+local BONE_OFFSETS = {
+  0x1E0, 0x320, 0x360, 0x3A0, 0x440, 0x480, 0x4C0, 0x500, 0x540, 0x580,
+  0x5C0, 0x600, 0x6A0, 0x6E0, 0x720, 0x760, 0x800, 0x840, 0x880,
+}
+local BONE_NAMES = {
+  'root_hip',
+  'thigh_l','leg_l','foot_l',
+  'thigh_r','leg_r','foot_r',
+  'belly','chest','neck','head',
+  'shoulder_l','upperarm_l','forearm_l','hand_l',
+  'shoulder_r','upperarm_r','forearm_r','hand_r',
+}
+-- Per-bone multiplier on EPS.  0 = leave the authored rotation alone.
+local BONE_GAIN = {
+  0,        --  0 root_hip     (drives the whole tree)
+  1, 1, 1,  --  1 thigh_l   2 leg_l      3 foot_l
+  1, 1, 1,  --  4 thigh_r   5 leg_r      6 foot_r
+  1, 0.32, 1, 1,--  7 belly     8 chest      9 neck      10 head
+  1, 1, 1, 1,-- 11 shoulder_l 12 upperarm_l 13 forearm_l 14 hand_l
+  1, 1, 1, 1,-- 15 shoulder_r 16 upperarm_r 17 forearm_r 18 hand_r
+  0,        -- 19 UNKNOWN slot  (fail closed)
+}
+-- ----------------------------------------------------------------------------
 
-vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that are not 'x_reg'
- local xn=tonumber(vars.xreg_n)
- local c=1
- for i=0,15 do
-  if xn~=i then
-   vars['xmm~'..c]='xmm'..i
-   c=c+1
+local vars = {}
+
+-- Emit the tables as CE auto-assembler data lines.
+local function dd_floats(vals, names)
+  local out = {}
+  for i, v in ipairs(vals) do
+    local nm = names and names[i] or (i == #vals and 'UNKNOWN slot' or '?')
+    out[#out+1] = string.format('dd (float)%-5s // %2d %s', tostring(v), i-1, nm)
   end
- end
- return vars --IMPORTANT!
+  return table.concat(out, '\n')
 end
-
--- token functions (below) run after ['post'] functions
-vars['push_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
-  local n = select('#', ...) -- number of args
-  local s=16*n
-  local t={}
-  local p=string.format('sub rsp, %X',s)
-  table.insert(t,p)
-  local args = {...}
-  for _, v in pairs(args) do
-      s=s-16
-      local r=vars['xmm~'..v]
-      if v=='0' then
-	     r=vars['x_reg']
-      end
-      p=string.format('movdqu [rsp+%X],%s',s,r)
-      table.insert(t,p)
+local function dd_hex(vals, names)
+  local out = {}
+  for i, v in ipairs(vals) do
+    out[#out+1] = string.format('dd $%-5X // %2d %s', v, i-1, names[i])
   end
-  return table.concat(t,'\n')
+  return table.concat(out, '\n')
 end
 
-vars['pop_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
-  local n = select('#', ...) -- number of args
-  local s=16*n
-  local s_og=s
-  local t={}
-  local args = {...}
-  local p=''
-  for _, v in pairs(args) do
-      s=s-16
-      local r=vars['xmm~'..v]
-      if v=='0' then
-      	r=vars['x_reg']
-      end
-      p=string.format('movdqu %s,[rsp+%X]',r,s)
-      table.insert(t,p)
+vars.jitC        = 'jitConst'..SUFFIX
+vars.jitC_size   = 16      -- 4 dwords
+vars.jitC_d = [[dd $34000000        // 2^-23
+dd $3F800000        // 1.0f
+dd (float)]]..EPS..[[   // epsilon
+dd $7FFFFFFF        // abs mask (sign-bit clear) ]]
+
+vars.offsC       = 'boneOffs'..SUFFIX
+vars.offsC_size  = string.format('$%X', 4*#BONE_OFFSETS)
+vars.offsC_d     = dd_hex(BONE_OFFSETS, BONE_NAMES)
+
+vars.gainC       = 'boneGain'..SUFFIX
+vars.gainC_size  = string.format('$%X', 4*#BONE_GAIN)
+vars.gainC_d     = dd_floats(BONE_GAIN, BONE_NAMES)
+
+vars.post = {}
+
+-- Aliasing: name every XMM except the instruction's own destination.
+vars.post[1] = function()
+  local xn = tonumber(vars.xreg_n)
+  local c = 1
+  for i = 0, 15 do
+    if xn ~= i then
+      vars['xmm~'..c] = 'xmm'..i
+      c = c + 1
+    end
   end
-  p=string.format('add rsp, %X',s_og)
-  table.insert(t,p)
-  return table.concat(t,'\n')
+  return vars                               -- IMPORTANT!
 end
 
-vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-		return 'sub rsp, ' .. n
+vars['push_xmm'] = function(...)
+  local n = select('#', ...)
+  local s = 16*n
+  local t = { string.format('sub rsp, %X', s) }
+  for _, v in pairs({...}) do
+    s = s - 16
+    local r = (v == '0') and vars['x_reg'] or vars['xmm~'..v]
+    table.insert(t, string.format('movdqu [rsp+%X],%s', s, r))
+  end
+  return table.concat(t, '\n')
+end
+vars['pop_xmm'] = function(...)
+  local n = select('#', ...)
+  local s = 16*n
+  local s_og = s
+  local t = {}
+  for _, v in pairs({...}) do
+    s = s - 16
+    local r = (v == '0') and vars['x_reg'] or vars['xmm~'..v]
+    table.insert(t, string.format('movdqu %s,[rsp+%X]', r, s))
+  end
+  table.insert(t, string.format('add rsp, %X', s_og))
+  return table.concat(t, '\n')
 end
 
-vars['stack_pop']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-		return 'add rsp, ' .. n
-end
+local newmem_name = 'newmem'..SUFFIX
+local newmem_size = '$1000'
+local script_ref  = 'flJitter'..SUFFIX
+local inj_name    = 'INJECT'..SUFFIX
 
---COMPULSORY
-local newmem_name='newmem'..suffix
-local newmem_size='$2000'
-local script_ref='Animation_change' --  opcode_inj[vars.script_ref] stores vars
-local inj_name='INJECT'..suffix
-local pattern='^%s*mov.+%s*xmm%d+,%s*%[[^%]]+%]'
-local aobs={'0F 28 44 24 20 41 0F 29 07 48 8B 4C 24 30',-10,16}
-local lookahead_n=32
+local pattern = '^%s*mulss%s+xmm%d+,%s*%[[^%]]+%]'
+local parts = {
+  {'xmm%d+',  1, 'x_reg'},
+  {'%d+',     1, 'xreg_n'},
+  {'[^%]]+',  1, 'operand_text'},
+}
 
-local inj_script=[[
+local aobs = {'F3 0F 59 3D 48 A8 1A 00', 0, 0}
+
+local inj_script = [[
 define(${inj_name},${address_string})
-    registersymbol(${inj_name})
-    alloc(${newmem_name}, ${newmem_size}, ${inj_name})
-	alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
-    registersymbol(${varis_1_n})
-	${varis_1_n}:
-	${varis_1_d}
+  registersymbol(${inj_name})
+  alloc(${newmem_name}, ${newmem_size}, ${inj_name})
 
-	label(code)
-	label(return)
+  alloc(${jitC}, ${jitC_size}, ${inj_name})
+  registersymbol(${jitC})
+  ${jitC}:
+  ${jitC_d}
 
-	${newmem_name}:
-	code:
-    ${push_xmm}(9,7,6)
-		    movaps ${xmm~9},[${localAddress}+30]
+  alloc(${offsC}, ${offsC_size}, ${inj_name})
+  registersymbol(${offsC})
+  ${offsC}:
+  ${offsC_d}
+
+  alloc(${gainC}, ${gainC_size}, ${inj_name})
+  registersymbol(${gainC})
+  ${gainC}:
+  ${gainC_d}
+
+  label(return)
+  label(boneScan)
+  label(boneDone)
+
+  ${newmem_name}:
+    ${og_instruction}             // ORIGINAL first, pristine regs -&gt; x_reg = theta*Cb
+
+    push rdx
     push rcx
-    push rbx
-    push rax
-    ${push_xmm}(8,4,1,2,3,5)
+    push rax                      // 3 pushes = 0x18
+    ${push_xmm}(1,2,3)
 
-    ${push_xmm}(0)
+      // ================= PHASE 1: which bone is this? ======================
+      // Pose-object pointer lives in the DISPATCHER's frame at un-pushed
+      // [rsp+220]; A1 makes no stack adjustment between here and its tail, so
+      // the same slot applies at this site.  Add back our own 0x28 + 0x20.
+      mov   rax, r15
+      sub   rax, [rsp+248+20]        // 0x220 + 0x28 +0x20  -&gt;  byte offset of this slot
+      mov   edx, 13              // 0x13 = 19 = index of the UNKNOWN gain
+      cmp   rax, 1000
+      ja    boneDone              // outside the object (or negative, unsigned)
+      lea   rcx, [${offsC}]
+      xor   edx, edx
+    boneScan:
+      cmp   eax, [rcx+rdx*4]      // eax == rax here: rax already range-checked &lt; 0x1000
+      je    boneDone              // matched -&gt; edx = bone index
+      inc   edx
+      cmp   edx, 13
+      jb    boneScan
+      mov   edx, 13              // ran off the table -&gt; UNKNOWN
+    boneDone:
 
-${stack_push}(18)
-    mov rax,[7FFE0014] //Windows internal clock
-    mov rbx,rax
-    shl rbx,6
-    mov rcx,rax
-    shl rcx,18
-    imul rcx,rbx
-    imul rcx,rax
-    shr rcx,20 //ecx has the number
+      // ================= PHASE 2: hash the slot pointer ====================
+      // Pure function of r15, no clock: the offset is FIXED per bone, so it
+      // can never become per-frame vibration.
+      mov   rax, r15
+      shr   rax, 4               // drop the 16-byte alignment bits
+      imul  eax, eax, 9E3779B1   // golden-ratio mix
+      or    eax, 1               // xorshift state must never be 0
 
-    cvtsi2ss ${xmm~7}, rcx
-    cvtss2sd ${xmm~7}, ${xmm~7}
+      // ---- xorshift32, Marsaglia (13,17,5) -- 0xD, 0x11, 0x5 are HEX ----------- //
+      mov   ecx, eax
+      shl   ecx, D
+      xor   eax, ecx
+      mov   ecx, eax
+      shr   ecx, 11
+      xor   eax, ecx
+      mov   ecx, eax
+      shl   ecx, 5
+      xor   eax, ecx
 
-        mov [rsp],FFE00000
-        mov [rsp+4],41EFFFFF //move max_float into stack
-        divsd ${xmm~7}, [rsp] //div by max float (in double precision)
+      // ============ PHASE 3: 23 bits -&gt; u -&gt; 2u-1 -&gt; *EPS -&gt; *gain =========
+      // BUGFIX: shift FIRST (high 23 bits).  The old order (mask to 23 bits,
+      // THEN shift by 9) left only 14 bits, so u was pinned near 0 and delta
+      // was a near-constant -0.998*EPS on every bone -- a uniform 23-degree
+      // skew, not randomisation.  High bits are also the better-quality end
+      // of a xorshift generator.
+      shr    eax, 9              // 32 - 23 = 9; result is exactly 23 bits
+      cvtsi2ss ${xmm~1}, eax
+      mulss  ${xmm~1}, [${jitC}]        // * 2^-23   -&gt; u in [0,1)
+      addss  ${xmm~1}, ${xmm~1}         // 2u
+      subss  ${xmm~1}, [${jitC}+4]      // - 1       -&gt; [-1,1)
 
+      movaps ${xmm~2}, ${xmm~1}
+      movups ${xmm~3}, [${jitC}+C]    // unaligned load of the abs mask
+      andps  ${xmm~2}, ${xmm~3}         // |v|   (NOT andps reg,[mem]: would fault)
+      mulss  ${xmm~1}, ${xmm~2}         // v*|v| = sign(v)*v^2
 
-    cvtsd2ss ${xmm~7}, ${xmm~7} //random float in ${xmm~7}
-	//pslldq ${x_reg},4
-	movss ${x_reg}, ${xmm~7}
+      mulss  ${xmm~1}, [${jitC}+8]      // * EPS     -&gt; [-EPS,+EPS)
+      lea    rcx, [${gainC}]
+      mulss  ${xmm~1}, [rcx+rdx*4]      // * per-bone gain (0.0 -&gt; no-op)
 
-	cvtss2si ecx, ${xmm~7}  //b as int
-    cvtsi2ss  ${xmm~8}, ecx // b
-	//pslldq ${xmm~5},4
-	movss ${xmm~5}, ${xmm~8}
+      addss  ${x_reg}, ${xmm~1}         // theta += delta (BOTH sin and cos see it)
 
-    //ROUND 2
-
-    mov rbx,[7FFE0014] //Windows internal clock
-    mov rbx,rax
-    shl rbx,6
-    mov rcx,rax
-    shl rcx,18
-    imul rcx,rbx
-    imul rcx,rax
-    shr rcx,20 //ecx has the number
-
-    cvtsi2ss ${xmm~7}, rcx
-    cvtss2sd ${xmm~7}, ${xmm~7}
-
-        mov [rsp],FFE00000
-        mov [rsp+4],41EFFFFF //move max_float into stack
-        divsd ${xmm~7}, [rsp] //div by max float (in double precision)
-
-
-    cvtsd2ss ${xmm~7}, ${xmm~7} //random float in ${xmm~7}
-	pslldq ${x_reg},4
-	movss ${x_reg}, ${xmm~7}
-
-	cvtss2si ecx, ${xmm~7}  //b as int
-    cvtsi2ss  ${xmm~8}, ecx // b
-	pslldq ${xmm~5},4
-	movss ${xmm~5}, ${xmm~8}
-
-	//ROUND 3
-
-    mov rax,[7FFE0014] //Windows internal clock
-    mov rbx,rax
-    shl rbx,6
-    mov rcx,rax
-    shl rcx,18
-    imul rcx,rbx
-    imul rcx,rax
-    shr rcx,20 //ecx has the number
-
-    cvtsi2ss ${xmm~7}, rcx
-    cvtss2sd ${xmm~7}, ${xmm~7}
-
-        mov [rsp],FFE00000
-        mov [rsp+4],41EFFFFF //move max_float into stack
-        divsd ${xmm~7}, [rsp] //div by max float (in double precision)
-
-
-    cvtsd2ss ${xmm~7}, ${xmm~7} //random float in ${xmm~7}
-	pslldq ${x_reg},4
-	movss ${x_reg}, ${xmm~7} // x_reg: (~,r,r,r)
-
-    cvtss2si ecx, ${xmm~7}  //b as int
-    cvtsi2ss  ${xmm~8}, ecx // b
-	pslldq ${xmm~5},4
-	movss ${xmm~5}, ${xmm~8} // x~5: (~,r,r,r)
-
-	mov [rsp+8], C0000000 //-2
-	mov [rsp+C], 3F800000 //1
-	mov [rsp+10], 40000000 //2
-	mov [rsp+14], 3F3504F3 //sqHalf
-
-	movss ${xmm~1},  [rsp+14] //sqHalf
-	shufps ${xmm~1},${xmm~1},0 // every element := [0]
-	movss ${xmm~2}, [rsp+8] //-2
-	shufps ${xmm~2},${xmm~2},0 // every element := [0]
-	movss ${xmm~3}, [rsp+C] //1
-	shufps ${xmm~3},${xmm~3},0 // every element := [0]
-	movss ${xmm~4}, [rsp+10] //2
-	shufps ${xmm~4},${xmm~4},0 // every element := [0]
-
-	mulps ${xmm~4}, ${xmm~5} //x~4=b*2
-	subps ${xmm~3}, ${xmm~4} // x~3=1-b*2
-	mulps ${xmm~1}, ${xmm~3} // x~1 = ( sqHalf* (1-b*2) )
-	mulps ${xmm~2}, ${xmm~5} //x~2 = -2*b
-	mulps ${xmm~2}, ${x_reg} // x~2=(-2*b)*x
-	addps ${xmm~2}, ${xmm~5}//x~2=(-2*b*x)+b
-	addps ${xmm~2}, ${x_reg} // x~2=(-2*b*x)+b+x
-	sqrtps ${xmm~2}, ${xmm~2} // // x~2=sqrt(-2*b*x+b+x)
-	mulps  ${xmm~1},${xmm~2} // x~1 = ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x)
-	addps ${xmm~1}, ${xmm~5} //  x~1 = b+ ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x) || FINAL!
-
-	movss ${xmm~5}, [${varis_1_n}+4]
-    movss ${xmm~4}, ${xmm~5} // (~,~,~,g)
-	pslldq ${xmm~4},4 // (~,~,g,~)
-	movss ${xmm~5}, [${varis_1_n}+C]
-	movss ${xmm~4}, ${xmm~5} // (~,~,g,g)
-	pslldq ${xmm~4},4 // (~,g,g,~)
-    movss ${xmm~5}, [${varis_1_n}+14]
-    movss ${xmm~4}, ${xmm~5} // (~,g,g,g)
-
-	movss ${xmm~5}, [${varis_1_n}]
-    movss ${xmm~3}, ${xmm~5} // (~,~,~,u)
-	pslldq ${xmm~3},4 // (~,~,u,~)
-	movss ${xmm~5}, [${varis_1_n}+8]
-	movss ${xmm~3}, ${xmm~5} // (~,~,u,u)
-	pslldq ${xmm~3},4 // (~,u,u,~)
-    movss ${xmm~5}, [${varis_1_n}+10]
-    movss ${xmm~3}, ${xmm~5} // (~,u,u,u)
-
-	subps  ${xmm~3},  ${xmm~4}
-    mulps  ${xmm~4},  ${xmm~1} //mul by adj_x
-    addps  ${xmm~4},  ${xmm~4}
-    addps  ${xmm~4},  ${xmm~3} //FINAL MULTS in x~4 !
-
-	movdqu [rsp], ${xmm~4}
-	mov [rsp+C], 3F800000 //1
-	movups ${xmm~6}, [rsp] ////(1,mlt,mlt,mlt)
-
- ${stack_pop}(18)
-    ${pop_xmm}(0)
-    mulps ${xmm~9},${xmm~6}
-    movups ${x_reg},${xmm~9}
-    ${pop_xmm}(8,4,1,2,3,5)
+    ${pop_xmm}(1,2,3)
     pop rax
-    pop rbx
     pop rcx
-      //${og_instruction}
-      ${pop_xmm}(9,7,6)
-      ${overwritten}
-	  jmp return
+    pop rdx                     // exact inverse of the pushes: rsp alignment
+                                // on exit is identical, so the following
+                                // sinf/cosf calls stay ABI-legal
+    ${overwritten}
+    jmp return
 
-	${inj_name}:
-	  jmp ${newmem_name}
-	  ${post_jmp}
-	return:
+  ${inj_name}:
+    jmp ${newmem_name}
+    ${post_jmp}
+  return:
 ]]
 
 [ENABLE]
-opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+opcode_inj.inject(script_ref, inj_name, newmem_name, newmem_size, vars, inj_script, pattern, aobs, LOOKAHEAD_N, parts, MODULE_NAMES)
 
 [DISABLE]
 opcode_inj.disable(script_ref)
-opcode_inj[script_ref]=nil
+opcode_inj[script_ref] = nil
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>680</ID>
-              <Description>"Arms in/out average"</Description>
+              <ID>1350</ID>
+              <Description>"Angle"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
-              <Address>mult_1</Address>
+              <Address>jitConst_fj+8</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>681</ID>
-              <Description>"Arms in/out range"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>mult_1+4</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>682</ID>
-              <Description>"Arm distance from body average"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>mult_1+8</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>683</ID>
-              <Description>"Arm distance from body range"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>mult_1+C</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>684</ID>
-              <Description>"Lean average"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>mult_1+10</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>685</ID>
-              <Description>"Lean range"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>mult_1+14</Address>
+              <ID>1352</ID>
+              <Description>"Internal"</Description>
+              <Options moHideChildren="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1351</ID>
+                  <Description>"BONE_GAIN root"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>boneGain_fj</Address>
+                </CheatEntry>
+              </CheatEntries>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
@@ -2839,227 +2063,6 @@ opcode_inj[script_ref]=nil
 </AssemblerScript>
                 </CheatEntry>
               </CheatEntries>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>889</ID>
-          <Description>"Twist right, left arm (-ve mean)"</Description>
-          <Options moHideChildren="1"/>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>{$lua}
-if syntaxcheck then return end
-local vars={}
---OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
-local suffix='_twrla'
-vars.varis_1_n='mult'..suffix
-
-local m1=1 -- Twist (right) / Left arm mean
-local r1=0 -- Twist (right) / Left arm range
-
-vars.varis_1_d='dd (float)'..m1..'\ndd (float)'..r1
-vars.varis_1_size=8   --(u +0, r +4)
-
-local parts={{'[^%]]+',1,'localAddress'},{'%d+',1,'xreg_n'},{'xmm%d+',1,'x_reg'},{'mov.+',1,'mov_op'}}
-local module_names='PES2021.exe'
-vars.post={}
-
-vars.post[1]=function() --gives names "xmm~1" to "xmm~15" to all registers that are not 'x_reg'
- local xn=tonumber(vars.xreg_n)
- local c=1
- for i=0,15 do
-  if xn~=i then
-   vars['xmm~'..c]='xmm'..i
-   c=c+1
-  end
- end
- return vars --IMPORTANT!
-end
-
--- token functions (below) run after ['post'] functions
-vars['push_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
-  local n = select('#', ...) -- number of args
-  local s=16*n
-  local t={}
-  local p=string.format('sub rsp, %X',s)
-  table.insert(t,p)
-  local args = {...}
-  for _, v in pairs(args) do
-      s=s-16
-      local r=vars['xmm~'..v]
-      if v=='0' then
-	     r=vars['x_reg']
-      end
-      p=string.format('movdqu [rsp+%X],%s',s,r)
-      table.insert(t,p)
-  end
-  return table.concat(t,'\n')
-end
-
-vars['pop_xmm']=function(...) -- n, as all arguments used for token functions, is necessarily a string!
-  local n = select('#', ...) -- number of args
-  local s=16*n
-  local s_og=s
-  local t={}
-  local args = {...}
-  local p=''
-  for _, v in pairs(args) do
-      s=s-16
-      local r=vars['xmm~'..v]
-      if v=='0' then
-      	r=vars['x_reg']
-      end
-      p=string.format('movdqu %s,[rsp+%X]',r,s)
-      table.insert(t,p)
-  end
-  p=string.format('add rsp, %X',s_og)
-  table.insert(t,p)
-  return table.concat(t,'\n')
-end
-
-vars['stack_push']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-		return 'sub rsp, ' .. n
-end
-
-vars['stack_pop']=function(n) -- n, as all arguments used for token functions, is necessarily a string!
-		return 'add rsp, ' .. n
-end
-
---COMPULSORY
-local newmem_name='newmem'..suffix
-local newmem_size='$1000'
-local script_ref='Twist_right_left_arm' --  opcode_inj[vars.script_ref] stores vars
-local inj_name='INJECT'..suffix
-local pattern='^%s*mov.+%s*xmm%d+,%s*%[[^%]]+%]'
-local aobs={'0F 28 F0 0F 56 F1 41 F6 C2 02 74 29',12,13}
-local lookahead_n=32
-
-local inj_script=[[
-	  define(${inj_name},${address_string})
-  registersymbol(${inj_name})
-  alloc(${newmem_name}, ${newmem_size}, ${inj_name})
-
-  alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
-  registersymbol(${varis_1_n})
-  ${varis_1_n}:
-  ${varis_1_d}
-
-  label(code)
-  label(return)
-
-  ${newmem_name}:
-  code:
-    push rcx
-    push rbx
-    push rax
-
-    mov rax,[7FFE0014] //Windows internal clock
-    mov rbx,rax
-    shl rbx,6
-    mov rcx,rax
-    shl rcx,18
-    imul rcx,rbx
-    imul rcx,rax
-    shr rcx,20 //ecx has the number
-    ${push_xmm}(1,2,3,4,5)
-    ${push_xmm}(0)
-
-    cvtsi2ss ${x_reg}, rcx
-    cvtss2sd ${x_reg}, ${x_reg}
-
-    ${stack_push}(8)
-        mov [rsp],FFE00000
-        mov [rsp+4],41EFFFFF //move max_float into stack
-        divsd ${x_reg}, [rsp] //div by max float (in double precision)
-    ${stack_pop}(8)
-
-    cvtsd2ss ${x_reg}, ${x_reg} //random float in ${x_reg}
-
-    cvtss2si ecx, ${x_reg}  //b as int
-    cvtsi2ss  ${xmm~5}, ecx // b
-
-    ${stack_push}(20)
-        mov [rsp], C0000000 //-2
-        mov [rsp+4], 3F800000 //1
-        mov [rsp+8], 40000000 //2
-        mov [rsp+C], 3F3504F3 //sqHalf
-
-        movss ${xmm~1},  [rsp+C] //sqHalf
-        movss ${xmm~2}, [rsp] //-2
-        movss ${xmm~3}, [rsp+4] //1
-        movss ${xmm~4}, [rsp+8] //2
-
-        mulss ${xmm~4}, ${xmm~5} //x~4=b*2
-        subss ${xmm~3}, ${xmm~4} // x~3=1-b*2
-        mulss ${xmm~1}, ${xmm~3} // x~1 = ( sqHalf* (1-b*2) )
-        mulss ${xmm~2}, ${xmm~5} //x~2 = -2*b
-        mulss ${xmm~2}, ${x_reg} // x~2=(-2*b)*x
-        addss ${xmm~2}, ${xmm~5}//x~2=(-2*b*x)+b
-        addss ${xmm~2}, ${x_reg} // x~2=(-2*b*x)+b+x
-        sqrtss ${xmm~2}, ${xmm~2} // // x~2=sqrt(-2*b*x+b+x)
-        mulss  ${xmm~1},${xmm~2} // x~1 = ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x)
-        addss ${xmm~1}, ${xmm~5} //  x~1 = b+ ( sqHalf* (1-b*2) )*sqrt(-2*b*x+b+x) || FINAL!
-
-        mov [rsp+10], 3F800000 //1
-        mov [rsp+14], 3F800000 //1
-        mov [rsp+18], 3F800000 //1
-        mov [rsp+1C], 3F800000 //1
-
-        movups ${xmm~4}, [rsp+10] //x~4={1,1,1,1}
-    ${stack_pop}(20)
-
-    mulss  ${xmm~4},  [${varis_1_n}+4] //{r,1,1,1}
-    movss  ${xmm~3},  [${varis_1_n}] //u
-    subss  ${xmm~3},  ${xmm~4}
-    mulss  ${xmm~4},  ${xmm~1} //mul by adj_x
-    addss  ${xmm~4},  ${xmm~4}
-    addss  ${xmm~4},  ${xmm~3} //FINAL MULT in x~4 !
-
-    ${pop_xmm}(0)
-	${og_instruction}  //loads 4 x floats into ${x_reg}
-
-  ${stack_push}(10)
-    pslldq ${xmm~4},4 //(~,r,1,1)
-     movdqu [rsp], ${xmm~4}
-     mov [rsp], 3F800000 //1
-     movups ${xmm~4}, [rsp] ////(1,r,1,1)
-	mulps ${x_reg},${xmm~4}
-  ${stack_pop}(10)
-
-    ${pop_xmm}(1,2,3,4,5)
-    pop rax
-    pop rbx
-    pop rcx
-      ${overwritten}
-	  jmp return
-
-	${inj_name}:
-	  jmp ${newmem_name}
-	  ${post_jmp}
-	return:
-]]
-
-[ENABLE]
-opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
-
-[DISABLE]
-opcode_inj.disable(script_ref)
-opcode_inj[script_ref]=nil
-</AssemblerScript>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>872</ID>
-              <Description>"Mean"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>mult_twrla</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>876</ID>
-              <Description>"Range"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>mult_twrla+4</Address>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
