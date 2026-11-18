@@ -185,7 +185,7 @@ local parts = {
 
 -- Fully pinned, no wildcards: a different build finds nothing and patches
 -- nothing (fails closed).  The pattern gate still runs on the AOB path.
-local aobs = {'F3 0F 59 3D 48 A8 1A 00', 0, 0}
+local aobs = {'0F 54 C1 0F 55 CE 0F 28 F0 0F 56 F1 F3 0F 59 3D', 12, 12}
 
 local inj_script = [[
 define(${inj_name},${address_string})
@@ -1555,7 +1555,7 @@ local aob1=0
 	memscan = createMemScan()
 		  memscan.firstScan(
 				soExactValue, vtByteArray, nil,
-				'13 33 D2 48 8B CB E8 C4 F6', nil, madr,madz, '',
+				'48 8B DA 74 13 33 D2 48 8B CB E8', nil, madr,madz, '',
 				fsmNotAligned, '', true, true, false,false)
 	memscan.waitTillDone()
 	 local foundlist = createFoundList(memscan)
