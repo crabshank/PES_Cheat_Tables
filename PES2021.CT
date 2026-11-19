@@ -41,6 +41,7 @@ end
 --scrpts[24].Active=true -- Stamina
 --scrpts[25].Active=true -- Speed experiment (Uses 26-28 too)
 --scrpts[29].Active=true -- Attack level experiment
+--scrpts[30].Active=true -- Smoother anim 2
 [DISABLE]
 --scrpts[1].Active=false -- Random animations experiment
 --scrpts[2].Active=false -- Animation speed
@@ -59,7 +60,8 @@ end
 --scrpts[23].Active=false -- Random run angle
 --scrpts[24].Active=false -- Stamina
 --scrpts[25].Active=false -- Speed experiment (Uses 26-28 too)
---scrpts[29].Active=false -- Attack level experiment
+--scrpts[29].Active=false -- Attack level 
+--scrpts[30].Active=false -- Smoother anim 2
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
@@ -2778,8 +2780,220 @@ opcode_inj[script_ref]=nil
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
+        <CheatEntry>
+          <ID>1351</ID>
+          <Description>"Smoother animation experiment 2"</Description>
+          <Options moHideChildren="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+
+--get thetaRef
+local aob1=0
+
+	local mdl='PES2021.exe'
+	local madr=getAddress(mdl)
+	local madz=madr+getModuleSize(mdl)-1
+
+	memscan = createMemScan()
+		  memscan.firstScan(
+				soExactValue, vtByteArray, nil,
+				'F3 0F 10 8D 80 02 00 00', nil, madr,madz, '',
+				fsmNotAligned, '', true, true, false,false)
+	memscan.waitTillDone()
+	 local foundlist = createFoundList(memscan)
+		   foundlist.initialize()
+	if foundlist.Count==1 then
+	   aob1=tonumber("0x"..foundlist.Address[0])+60
+	   foundlist.destroy()
+	   memscan.destroy()
+	else
+		print('Unique AOB not found!')
+	end
+        local disStr = disassemble(aob1)
+
+local address, opcode, bytes, extra = splitDisassembledString(disStr)
+local thetaRefAddr=string.match(opcode,'%[(.-)%]')
+
+local vars={}
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
+local suffix='_animSmoother2'
+
+vars.varis_1_n='ang_diff'..suffix
+vars.varis_1_d='dd (float)0\ndd (float)0.5\ndd (float)2.0'
+vars.varis_1_size=12
+
+local module_names='PES2021.exe'
+local parts={{'xmm%d+',1,'x_reg'}}
+
+--COMPULSORY
+local newmem_name='newmem'..suffix
+local newmem_size='$1000'
+local script_ref='animSmoother2' --  opcode_inj[vars.script_ref] stores vars
+local inj_name='INJECT'..suffix
+local pattern='^%s*movaps%s+xmm%d+%s*,%s*xmm%d+'
+local aobs={'0F 28 F0 44 0F 2F C6 76 0D',0,0}
+local lookahead_n=25
+
+local inj_script=[[
+	define(${inj_name},${address_string})
+    registersymbol(${inj_name})
+    alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+
+    alloc(${varis_1_n}, $%d{varis_1_size}, ${inj_name})
+  registersymbol(${varis_1_n})
+  ${varis_1_n}:
+  ${varis_1_d}
+
+	label(code)
+	label(return)
+
+    ${newmem_name}:
+	code:
+    ${og_instruction}
+    movss [${varis_1_n}],${x_reg}
+    ${overwritten}
+    jmp return
+
+ ${inj_name}:
+	  jmp ${newmem_name}
+          ${post_jmp}
+          return:
+
+]]
+
+
+local vars2={}
+--OPTIONAL (Add as named element of 'vars' table to use in '${...}' notation)
+local suffix2='_animSmoother2_1'
+
+local parts2={{'[^%]]+',1,'t0'},{'xmm%d+',1,'x_reg'},{'%d+',1,'x_reg_n'}}
+
+vars2.post = {}
+
+-- Aliasing: name every XMM except the instruction's own destination.
+local post1 = function()
+  local xn = tonumber(vars2.x_reg_n)
+  local c = 1
+  for i = 0, 15 do
+    if xn ~= i then
+      vars2['xmm~'..c] = 'xmm'..i
+      c = c + 1
+    end
+  end
+  return vars2                               -- IMPORTANT!
+end
+
+
+
+local push_xmm=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local t={}
+  local p=string.format('sub rsp, %X',s)
+  table.insert(t,p)
+  local args = {...}
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars2['xmm~'..v]
+      if v=='0' then
+	     r=vars2['x_reg']
+      end
+      p=string.format('movdqu [rsp+%X],%s',s,r)
+      table.insert(t,p)
+  end
+  return table.concat(t,'\n')
+end
+
+local pop_xmm=function(...) -- n, as all arguments used for token functions, is necessarily a string!
+  local n = select('#', ...) -- number of args
+  local s=16*n
+  local s_og=s
+  local t={}
+  local args = {...}
+  local p=''
+  for _, v in pairs(args) do
+      s=s-16
+      local r=vars2['xmm~'..v]
+      if v=='0' then
+      	r=vars2['x_reg']
+      end
+      p=string.format('movdqu %s,[rsp+%X]',r,s)
+      table.insert(t,p)
+  end
+  p=string.format('add rsp, %X',s_og)
+  table.insert(t,p)
+  return table.concat(t,'\n')
+end
+
+vars2.post[1]=post1
+vars2['push_xmm']=push_xmm
+vars2['pop_xmm']=pop_xmm
+
+vars2['ang_diff']=vars.varis_1_n
+vars2['thetaRef']=thetaRefAddr
+
+--COMPULSORY
+local newmem_name2='newmem'..suffix2
+local newmem_size2='$1000'
+local script_ref2='animSmoother2_1' --  opcode_inj[vars.script_ref] stores vars
+local inj_name2='INJECT'..suffix2
+local pattern2 = '^%s*movss%s+xmm%d+%s*,%s*%[[^%]]+%]'
+local aobs2={'33 C0 41 8B D7 89',9,9}
+local lookahead_n2=25
+
+local inj_script2=[[
+	define(${inj_name},${address_string})
+    registersymbol(${inj_name})
+    alloc(${newmem_name}, ${newmem_size}, ${inj_name})
+
+	label(code)
+	label(return)
+
+    ${newmem_name}:
+	code:
+    ${push_xmm}(1,2,3,4,5)
+    movaps ${xmm~3},xmm6
+    movss ${xmm~1}, [${ang_diff}] //x~1:=delta
+      //fabs(x~3)
+    pcmpeqd ${xmm~2}, ${xmm~2}               // Set all bits to 1
+    psrld   ${xmm~2}, 1                  // Shift each 32-bit lane right by 1 -&gt; 0x7FFFFFFF
+    andps   ${xmm~3}, ${xmm~2}               // Apply mask - x~3 is fabs now
+	movss ${xmm~4}, ${xmm~1} //x~4=t0
+	movss ${xmm~5}, ${xmm~1} //x~5=t0
+	mulss ${xmm~1}, [${t0}] //x~1*=t0 =&gt; x~1=delta*t0
+	divss ${xmm~1}, [${thetaRef}] // x~1=(delta*t0)/thetaRef
+	mulss ${xmm~4},  [${ang_diff}+4] //0.5*
+	mulss ${xmm~5},   [${ang_diff}+8] //2*
+	maxss ${xmm~1}, ${xmm~4}
+	minss ${xmm~1}, ${xmm~5}
+	movss ${x_reg}, ${xmm~1}
+	${pop_xmm}(1,2,3,4,5)
+    ${overwritten}
+    jmp return
+
+ ${inj_name}:
+	  jmp ${newmem_name}
+          ${post_jmp}
+          return:
+
+]]
+
+[ENABLE]
+opcode_inj.inject(script_ref,inj_name,newmem_name,newmem_size,vars,inj_script,pattern,aobs,lookahead_n,parts,module_names)
+opcode_inj.inject(script_ref2,inj_name2,newmem_name2,newmem_size2,vars2,inj_script2,pattern2,aobs2,lookahead_n2,parts2,module_names)
+
+[DISABLE]
+
+opcode_inj.disable(script_ref2)
+opcode_inj[script_ref2]=nil
+
+
+opcode_inj.disable(script_ref)
+opcode_inj[script_ref]=nil
+</AssemblerScript>
+        </CheatEntry>
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
-  <UserdefinedSymbols/>
 </CheatTable>
